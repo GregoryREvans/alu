@@ -1,0 +1,73 @@
+\documentclass[11pt]{report}
+\usepackage[T1]{fontenc}
+\usepackage[papersize={11in, 8.5in}, margin=0.5in]{geometry}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{xltxtra,fontspec,xunicode}
+\usetikzlibrary{calc}
+\defaultfontfeatures{Scale=MatchLowercase}
+\newlength{\drop}
+\pagenumbering{gobble}
+\parindent=0pt
+\setmainfont{Bell MT}
+\usepackage{microtype}
+%Adobe Garamond Pro Bold
+\begin{document}
+    \begin{titlepage}
+
+        \begin{tikzpicture}[remember picture, overlay]
+            \draw[line width = 5pt]
+                ($(current page.north west) + (0.6in,-0.6in)$)
+                rectangle
+                ($(current page.south east) + (-0.6in,0.6in)$);
+        \end{tikzpicture}
+
+        \begin{tikzpicture}[remember picture, overlay]
+            \draw[line width = 1pt]
+                ($(current page.north west) + (0.75in,-0.75in)$)
+                rectangle
+                ($(current page.south east) + (-0.75in,0.75in)$);
+        \end{tikzpicture}
+
+        \drop=0.1\textheight
+
+        \vspace*{3\baselineskip}
+\begin{center}
+      {
+            \scalebox{0.5}[0.5]
+            {\fontsize{1.2cm}{1em}\selectfont GREGORY ROWLAND EVANS}
+        }
+\end{center}
+
+        \vspace*{4\baselineskip}
+\begin{center}
+      {
+      	\scalebox{3}[3]
+            {\fontsize{1cm}{1em}\selectfont ASPLEDON alu}
+        }
+\end{center}
+
+        \vspace*{2\baselineskip}
+\begin{center}
+        {
+            \scalebox{0.5}[0.5]
+            {\fontsize{1.3cm}{1em}\selectfont for string quartet}
+        }
+\end{center}
+        \vspace*{0.5\baselineskip}
+\begin{center}
+        {
+            \scalebox{0.5}[0.5]
+            {\fontsize{1cm}{1em}\selectfont 2021}
+        }
+\end{center}
+        \vspace*{8\baselineskip}
+\begin{center}
+        {
+            \scalebox{0.5}[0.5]
+            {\fontsize{1cm}{1em}\selectfont SCORE}
+        }
+\end{center}
+
+    \end{titlepage}
+\end{document}end{document}
