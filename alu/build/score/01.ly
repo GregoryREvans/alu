@@ -6,7 +6,7 @@
                   %! COMMENT_MEASURE_NUMBERS
                   %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 1]
-                \tempo 4=40
+                \tempo 4=48
                 \mark \markup \bold {  }
                   %! scaling time signatures
                 \time 4/4
@@ -15,7 +15,7 @@
                   \raise #6 \with-dimensions-from \null
                   \override #'(font-size . 3)
                   \concat {
-                      \abjad-metronome-mark-markup #2 #0 #1 #"40"
+                      \abjad-metronome-mark-markup #2 #0 #1 #"48"
                   }
                 }
 
@@ -875,6 +875,7 @@
                                         \set Staff.instrumentName = \markup { \hcenter-in #14 "Trombone" }
                                           %! applying staff names and clefs
                                         \set Staff.shortInstrumentName = \markup { \hcenter-in #12 "tbn" }
+                                        \clef "bass"
                                         r1
 
                                           %! COMMENT_MEASURE_NUMBERS
@@ -990,6 +991,7 @@
                                         \set Staff.instrumentName = \markup { \hcenter-in #14 "Tuba" }
                                           %! applying staff names and clefs
                                         \set Staff.shortInstrumentName = \markup { \hcenter-in #12 "tba" }
+                                        \clef "bass"
                                         r1
 
                                           %! COMMENT_MEASURE_NUMBERS
@@ -1115,12 +1117,236 @@
                                         \set Staff.instrumentName = \markup { \hcenter-in #14 "Percussion 1" }
                                           %! applying staff names and clefs
                                         \set Staff.shortInstrumentName = \markup { \hcenter-in #12 "pc 1" }
+                                        \clef "percussion"
+                                        \staff-line-count #1
                                         r1
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [percussion 1 voice measure 2]
-                                        r1
+                                        \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                                            {
+                                                \context Score = "Score"
+                                                \with
+                                                {
+                                                    \override SpacingSpanner.spacing-increment = 0.5
+                                                    proportionalNotationDuration = ##f
+                                                }
+                                                <<
+                                                    \context RhythmicStaff = "Rhythmic_Staff"
+                                                    \with
+                                                    {
+                                                        \remove Time_signature_engraver
+                                                        \remove Staff_symbol_engraver
+                                                        \override Stem.direction = #up
+                                                        \override Stem.length = 5
+                                                        \override TupletBracket.bracket-visibility = ##t
+                                                        \override TupletBracket.direction = #up
+                                                        \override TupletBracket.minimum-length = 4
+                                                        \override TupletBracket.padding = 1.25
+                                                        \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                                        \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                                        \override TupletNumber.font-size = 0
+                                                        \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                                        tupletFullLength = ##t
+                                                    }
+                                                    {
+                                                        c'4
+                                                        ~
+                                                        c'16
+                                                    }
+                                                >>
+                                                \layout
+                                                {
+                                                    indent = 0
+                                                    ragged-right = ##t
+                                                }
+                                            }
+                                        \scaleDurations #'(1 . 1)
+                                        {
+
+                                              %! COMMENT_MEASURE_NUMBERS
+                                              %! evans.SegmentMaker.comment_measure_numbers()
+                                            % [percussion 1 voice measure 2]
+                                            \once \override Beam.grow-direction = #left
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            c'16 * 368/1024
+                                            [
+
+                                            c'16 * 784/1024
+
+                                            c'16 * 1072/1024
+
+                                            c'16 * 1328/1024
+
+                                            \revert Staff.Stem.stemlet-length
+                                            c'16 * 1568/1024
+                                            ]
+
+                                        }
+                                        \revert TupletNumber.text
+
+                                        \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                                            {
+                                                \context Score = "Score"
+                                                \with
+                                                {
+                                                    \override SpacingSpanner.spacing-increment = 0.5
+                                                    proportionalNotationDuration = ##f
+                                                }
+                                                <<
+                                                    \context RhythmicStaff = "Rhythmic_Staff"
+                                                    \with
+                                                    {
+                                                        \remove Time_signature_engraver
+                                                        \remove Staff_symbol_engraver
+                                                        \override Stem.direction = #up
+                                                        \override Stem.length = 5
+                                                        \override TupletBracket.bracket-visibility = ##t
+                                                        \override TupletBracket.direction = #up
+                                                        \override TupletBracket.minimum-length = 4
+                                                        \override TupletBracket.padding = 1.25
+                                                        \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                                        \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                                        \override TupletNumber.font-size = 0
+                                                        \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                                        tupletFullLength = ##t
+                                                    }
+                                                    {
+                                                        c'8.
+                                                    }
+                                                >>
+                                                \layout
+                                                {
+                                                    indent = 0
+                                                    ragged-right = ##t
+                                                }
+                                            }
+                                        \scaleDurations #'(1 . 1)
+                                        {
+
+                                            \once \override Beam.grow-direction = #left
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            c'16 * 512/1024
+                                            [
+
+                                            c'16 * 1072/1024
+
+                                            \revert Staff.Stem.stemlet-length
+                                            c'16 * 1488/1024
+                                            ]
+
+                                        }
+                                        \revert TupletNumber.text
+
+                                        \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                                            {
+                                                \context Score = "Score"
+                                                \with
+                                                {
+                                                    \override SpacingSpanner.spacing-increment = 0.5
+                                                    proportionalNotationDuration = ##f
+                                                }
+                                                <<
+                                                    \context RhythmicStaff = "Rhythmic_Staff"
+                                                    \with
+                                                    {
+                                                        \remove Time_signature_engraver
+                                                        \remove Staff_symbol_engraver
+                                                        \override Stem.direction = #up
+                                                        \override Stem.length = 5
+                                                        \override TupletBracket.bracket-visibility = ##t
+                                                        \override TupletBracket.direction = #up
+                                                        \override TupletBracket.minimum-length = 4
+                                                        \override TupletBracket.padding = 1.25
+                                                        \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                                        \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                                        \override TupletNumber.font-size = 0
+                                                        \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                                        tupletFullLength = ##t
+                                                    }
+                                                    {
+                                                        c'8.
+                                                    }
+                                                >>
+                                                \layout
+                                                {
+                                                    indent = 0
+                                                    ragged-right = ##t
+                                                }
+                                            }
+                                        \scaleDurations #'(1 . 1)
+                                        {
+
+                                            \once \override Beam.grow-direction = #right
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            c'16 * 1552/1024
+                                            [
+
+                                            c'16 * 832/1024
+
+                                            \revert Staff.Stem.stemlet-length
+                                            c'16 * 688/1024
+                                            ]
+
+                                        }
+                                        \revert TupletNumber.text
+
+                                        \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                                            {
+                                                \context Score = "Score"
+                                                \with
+                                                {
+                                                    \override SpacingSpanner.spacing-increment = 0.5
+                                                    proportionalNotationDuration = ##f
+                                                }
+                                                <<
+                                                    \context RhythmicStaff = "Rhythmic_Staff"
+                                                    \with
+                                                    {
+                                                        \remove Time_signature_engraver
+                                                        \remove Staff_symbol_engraver
+                                                        \override Stem.direction = #up
+                                                        \override Stem.length = 5
+                                                        \override TupletBracket.bracket-visibility = ##t
+                                                        \override TupletBracket.direction = #up
+                                                        \override TupletBracket.minimum-length = 4
+                                                        \override TupletBracket.padding = 1.25
+                                                        \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                                        \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                                        \override TupletNumber.font-size = 0
+                                                        \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                                        tupletFullLength = ##t
+                                                    }
+                                                    {
+                                                        c'4
+                                                        ~
+                                                        c'16
+                                                    }
+                                                >>
+                                                \layout
+                                                {
+                                                    indent = 0
+                                                    ragged-right = ##t
+                                                }
+                                            }
+                                        \scaleDurations #'(1 . 1)
+                                        {
+
+                                            \once \override Beam.grow-direction = #left
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            c'16 * 368/1024
+                                            [
+
+                                            c'16 * 784/1024
+
+                                            c'16 * 1072/1024
+
+                                            c'16 * 1328/1024
+
+                                            \revert Staff.Stem.stemlet-length
+                                            c'16 * 1568/1024
+                                            ]
+
+                                        }
+                                        \revert TupletNumber.text
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
@@ -1230,6 +1456,8 @@
                                         \set Staff.instrumentName = \markup { \hcenter-in #14 "Percussion 2" }
                                           %! applying staff names and clefs
                                         \set Staff.shortInstrumentName = \markup { \hcenter-in #12 "pc 2" }
+                                        \clef "percussion"
+                                        \staff-line-count #1
                                         r1
 
                                           %! COMMENT_MEASURE_NUMBERS
@@ -1353,24 +1581,422 @@
                                     \context Voice = "piano 1 voice"
                                     {
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [piano 1 voice measure 1]
-                                          %! applying staff names and clefs
-                                        \set Staff.instrumentName = \markup { \hcenter-in #14 \with-color #white "Piano LH" }
-                                          %! applying staff names and clefs
-                                        \set Staff.shortInstrumentName = \markup { \hcenter-in #12 \with-color #white "LH" }
-                                        r1
+                                        <<
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [piano 1 voice measure 2]
-                                        r1
+                                            \context Voice = "piano 1 voice temp"
+                                            {
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [piano 1 voice measure 3]
-                                        r1
+                                                  %! COMMENT_MEASURE_NUMBERS
+                                                  %! evans.SegmentMaker.comment_measure_numbers()
+                                                % [piano 1 voice temp measure 1]
+                                                  %! applying staff names and clefs
+                                                \set Staff.instrumentName = \markup { \hcenter-in #14 \with-color #white "Piano LH" }
+                                                  %! applying staff names and clefs
+                                                \set Staff.shortInstrumentName = \markup { \hcenter-in #12 \with-color #white "LH" }
+                                                \override Staff.Stem.stemlet-length = 0.75
+                                                \voiceTwo
+                                                e''8.
+                                                - \staccato
+                                                [
+
+                                                \revert Staff.Stem.stemlet-length
+                                                ef''16
+                                                - \staccato
+                                                ]
+
+                                                e''4
+                                                - \staccato
+
+                                                \times 2/3
+                                                {
+
+                                                    \override Staff.Stem.stemlet-length = 0.75
+                                                    d''16
+                                                    - \staccato
+                                                    [
+
+                                                    ef''16
+                                                    - \staccato
+
+                                                    \revert Staff.Stem.stemlet-length
+                                                    d''16
+                                                    - \staccato
+                                                    ]
+
+                                                }
+
+                                                \override Staff.Stem.stemlet-length = 0.75
+                                                ef''16
+                                                - \staccato
+                                                [
+
+                                                \revert Staff.Stem.stemlet-length
+                                                cs''16
+                                                - \staccato
+                                                ]
+
+                                                \override Staff.Stem.stemlet-length = 0.75
+                                                cs''16
+                                                - \staccato
+                                                [
+
+                                                c''8
+                                                - \staccato
+
+                                                \revert Staff.Stem.stemlet-length
+                                                cs''16
+                                                - \staccato
+                                                ]
+
+                                            }
+
+                                            \context Voice = "piano 1 intermittent_voice_1"
+                                            {
+
+                                                \times 4/5
+                                                {
+
+                                                      %! COMMENT_MEASURE_NUMBERS
+                                                      %! evans.SegmentMaker.comment_measure_numbers()
+                                                    % [piano 1 intermittent_voice_1 measure 1]
+                                                    \override Staff.Stem.stemlet-length = 0.75
+                                                    \voiceOne
+                                                    f''16
+                                                    - \accent
+                                                    [
+
+                                                    fs''8
+                                                    - \accent
+
+                                                    \revert Staff.Stem.stemlet-length
+                                                    f''8
+                                                    - \accent
+                                                    ]
+                                                    ~
+
+                                                }
+
+                                                \override Staff.Stem.stemlet-length = 0.75
+                                                f''16
+                                                [
+
+                                                g''16
+                                                - \accent
+
+                                                \revert Staff.Stem.stemlet-length
+                                                fs''8
+                                                - \accent
+                                                ]
+
+                                                \times 2/3
+                                                {
+
+                                                    \override Staff.Stem.stemlet-length = 0.75
+                                                    g''8.
+                                                    - \accent
+                                                    [
+
+                                                    fs''16
+                                                    - \accent
+
+                                                    \revert Staff.Stem.stemlet-length
+                                                    af''8
+                                                    - \accent
+                                                    ]
+
+                                                }
+
+                                                \times 4/5
+                                                {
+
+                                                    \override Staff.Stem.stemlet-length = 0.75
+                                                    af''8.
+                                                    - \accent
+                                                    [
+
+                                                    a''16
+                                                    - \accent
+
+                                                    \revert Staff.Stem.stemlet-length
+                                                    af''16
+                                                    - \accent
+                                                    ]
+
+                                                }
+
+                                            }
+
+                                        >>
+                                        \oneVoice
+
+                                        \scaleDurations #'(1 . 1)
+                                        {
+
+                                              %! COMMENT_MEASURE_NUMBERS
+                                              %! evans.SegmentMaker.comment_measure_numbers()
+                                            % [piano 1 voice measure 2]
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            r16
+                                            [
+
+                                            c''32
+
+                                            b'32
+
+                                            bf'32
+
+                                            a'32
+
+                                            af'32
+
+                                            \revert Staff.Stem.stemlet-length
+                                            g'32
+                                            ]
+
+                                        }
+
+                                        \times 8/9
+                                        {
+
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            c''32
+                                            [
+
+                                            b'32
+
+                                            bf'32
+
+                                            a'32
+
+                                            af'32
+
+                                            g'32
+
+                                            fs'32
+
+                                            f'32
+
+                                            \revert Staff.Stem.stemlet-length
+                                            e'32
+                                            ]
+
+                                        }
+
+                                        \scaleDurations #'(1 . 1)
+                                        {
+
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            c''32
+                                            [
+
+                                            b'32
+
+                                            bf'32
+
+                                            a'32
+
+                                            af'32
+
+                                            g'32
+
+                                            fs'32
+
+                                            \revert Staff.Stem.stemlet-length
+                                            f'32
+                                            ]
+
+                                        }
+
+                                        \times 4/5
+                                        {
+
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            af'32
+                                            [
+
+                                            g'32
+
+                                            fs'32
+
+                                            f'32
+
+                                            e'32
+
+                                            ef'32
+
+                                            \revert Staff.Stem.stemlet-length
+                                            r8
+                                            ]
+
+                                        }
+
+                                        <<
+
+                                            \context Voice = "piano 1 voice temp"
+                                            {
+
+                                                  %! COMMENT_MEASURE_NUMBERS
+                                                  %! evans.SegmentMaker.comment_measure_numbers()
+                                                % [piano 1 voice temp measure 3]
+                                                \override Staff.Stem.stemlet-length = 0.75
+                                                \voiceTwo
+                                                e''8.
+                                                - \portato
+                                                [
+
+                                                \revert Staff.Stem.stemlet-length
+                                                ef''16
+                                                - \portato
+                                                ]
+
+                                                e''4
+                                                - \portato
+
+                                                \override Staff.Stem.stemlet-length = 0.75
+                                                d''16
+                                                - \portato
+                                                [
+
+                                                ef''16
+                                                - \portato
+
+                                                d''16
+                                                - \portato
+
+                                                \revert Staff.Stem.stemlet-length
+                                                ef''16
+                                                - \portato
+                                                ]
+
+                                                \times 2/3
+                                                {
+
+                                                    \override Staff.Stem.stemlet-length = 0.75
+                                                    cs''16
+                                                    - \portato
+                                                    [
+
+                                                    \revert Staff.Stem.stemlet-length
+                                                    cs''8
+                                                    - \portato
+                                                    ]
+
+                                                }
+
+                                                \override Staff.Stem.stemlet-length = 0.75
+                                                c''16
+                                                - \portato
+                                                [
+
+                                                \revert Staff.Stem.stemlet-length
+                                                cs''16
+                                                - \portato
+                                                ]
+
+                                            }
+
+                                            \context Voice = "piano 1 intermittent_voice_2"
+                                            {
+
+                                                \times 4/5
+                                                {
+
+                                                      %! COMMENT_MEASURE_NUMBERS
+                                                      %! evans.SegmentMaker.comment_measure_numbers()
+                                                    % [piano 1 intermittent_voice_2 measure 3]
+                                                    \override Staff.Stem.stemlet-length = 0.75
+                                                    \voiceOne
+                                                    f''16
+                                                    - \marcato
+                                                    [
+
+                                                    fs''16
+                                                    - \marcato
+
+                                                    f''16
+                                                    - \marcato
+
+                                                    g''16
+                                                    - \marcato
+
+                                                    \revert Staff.Stem.stemlet-length
+                                                    fs''16
+                                                    - \marcato
+                                                    ]
+
+                                                }
+
+                                                \override Staff.Stem.stemlet-length = 0.75
+                                                g''16
+                                                - \marcato
+                                                [
+
+                                                fs''16
+                                                - \marcato
+
+                                                af''16
+                                                - \marcato
+
+                                                \revert Staff.Stem.stemlet-length
+                                                af''16
+                                                - \marcato
+                                                ]
+
+                                                \times 2/3
+                                                {
+
+                                                    \override Staff.Stem.stemlet-length = 0.75
+                                                    a''16
+                                                    - \marcato
+                                                    [
+
+                                                    af''16
+                                                    - \marcato
+
+                                                    bf''16
+                                                    - \marcato
+
+                                                    a''16
+                                                    - \marcato
+
+                                                    bf''16
+                                                    - \marcato
+
+                                                    \revert Staff.Stem.stemlet-length
+                                                    a''16
+                                                    - \marcato
+                                                    ]
+
+                                                }
+
+                                                \times 4/5
+                                                {
+
+                                                    \override Staff.Stem.stemlet-length = 0.75
+                                                    b''16
+                                                    - \marcato
+                                                    [
+
+                                                    b''16
+                                                    - \marcato
+
+                                                    c'''16
+                                                    - \marcato
+
+                                                    b''16
+                                                    - \marcato
+
+                                                    \revert Staff.Stem.stemlet-length
+                                                    cs'''16
+                                                    - \marcato
+                                                    ]
+
+                                                }
+
+                                            }
+
+                                        >>
+                                        \oneVoice
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
@@ -1475,17 +2101,133 @@
                                         \set Staff.instrumentName = \markup { \hcenter-in #14 \with-color #white "Piano RH" }
                                           %! applying staff names and clefs
                                         \set Staff.shortInstrumentName = \markup { \hcenter-in #12 \with-color #white "RH" }
-                                        r1
+                                        \clef "bass"
+                                        c'4
+                                        ~
+
+                                        \times 4/5
+                                        {
+
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            c'8.
+                                            [
+
+                                            \revert Staff.Stem.stemlet-length
+                                            fs8
+                                            ]
+                                            ~
+
+                                        }
+
+                                        \times 2/3
+                                        {
+
+                                            fs4
+
+                                            bf8
+                                            ~
+
+                                        }
+
+                                        \tweak text #tuplet-number::calc-fraction-text
+                                        \times 8/7
+                                        {
+
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            bf16.
+                                            [
+
+                                            \revert Staff.Stem.stemlet-length
+                                            b8
+                                            ]
+
+                                        }
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [piano 2 voice measure 2]
-                                        r1
+                                        a4
+                                        ~
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [piano 2 voice measure 3]
-                                        r1
+                                        \times 4/5
+                                        {
+
+                                            a16
+
+                                            bf4
+                                            ~
+
+                                        }
+
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        bf8
+                                        [
+
+                                        \revert Staff.Stem.stemlet-length
+                                        e8
+                                        ]
+                                        ~
+
+                                        \times 4/5
+                                        {
+
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            e8.
+                                            [
+
+                                            \revert Staff.Stem.stemlet-length
+                                            af8
+                                            ]
+                                            ~
+
+                                        }
+
+                                        \times 2/3
+                                        {
+
+                                              %! COMMENT_MEASURE_NUMBERS
+                                              %! evans.SegmentMaker.comment_measure_numbers()
+                                            % [piano 2 voice measure 3]
+                                            af8
+
+                                            a4
+                                            ~
+
+                                        }
+
+                                        \tweak text #tuplet-number::calc-fraction-text
+                                        \times 8/7
+                                        {
+
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            a16.
+                                            [
+
+                                            \revert Staff.Stem.stemlet-length
+                                            g8
+                                            ]
+                                            ~
+
+                                        }
+
+                                        \times 2/3
+                                        {
+
+                                            g8
+
+                                            b4
+                                            ~
+
+                                        }
+
+                                        \times 4/5
+                                        {
+
+                                            b16
+
+                                            f4
+
+                                        }
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
@@ -1830,6 +2572,7 @@
                                         \set Staff.instrumentName = \markup { \hcenter-in #14 "Viola" }
                                           %! applying staff names and clefs
                                         \set Staff.shortInstrumentName = \markup { \hcenter-in #12 "va" }
+                                        \clef "alto"
                                         r1
 
                                           %! COMMENT_MEASURE_NUMBERS
@@ -1945,6 +2688,7 @@
                                         \set Staff.instrumentName = \markup { \hcenter-in #14 "Violoncello" }
                                           %! applying staff names and clefs
                                         \set Staff.shortInstrumentName = \markup { \hcenter-in #12 "vc" }
+                                        \clef "bass"
                                         r1
 
                                           %! COMMENT_MEASURE_NUMBERS
@@ -2060,6 +2804,7 @@
                                         \set Staff.instrumentName = \markup { \hcenter-in #14 "Contrabass" }
                                           %! applying staff names and clefs
                                         \set Staff.shortInstrumentName = \markup { \hcenter-in #12 "cb" }
+                                        \clef "bass"
                                         r1
 
                                           %! COMMENT_MEASURE_NUMBERS

@@ -1,120 +1,260 @@
 import abjad
 import baca
 import evans
+from fractions import Fraction
 
 # lily met
 
-met_130 = abjad.MetronomeMark((1, 4), 130)
+met_144 = abjad.MetronomeMark((1, 4), 144)
 
-met_111 = abjad.MetronomeMark((1, 4), 111)
+met_96 = abjad.MetronomeMark((1, 4), 96)
 
-met_93 = abjad.MetronomeMark((1, 4), 93)
+met_72 = abjad.MetronomeMark((1, 4), 72)
 
-met_66 = abjad.MetronomeMark((1, 4), 66)
+met_57 = abjad.MetronomeMark((1, 4), 58)
 
-met_40 = abjad.MetronomeMark((1, 4), 40)
-
-met_30 = abjad.MetronomeMark((1, 4), 30)
+met_48 = abjad.MetronomeMark((1, 4), 48)
 
 # markup met
 
-met_30_mark = abjad.MetronomeMark.make_tempo_equation_markup((1, 4), 30)
+met_48_mark = abjad.MetronomeMark.make_tempo_equation_markup((1, 4), 48)
 
-mark_30 = abjad.LilyPondLiteral(
+mark_48 = abjad.LilyPondLiteral(
     [
         r"^ \markup {",
         r"  \raise #6 \with-dimensions-from \null",
         # r"  \override #'(font-size . 5.5)", # score
         r"  \override #'(font-size . 3)",  # parts
         r"  \concat {",
-        f"      {met_30_mark.string[8:]}",
+        f"      {met_48_mark.string[8:]}",
         r"  }",
         r"}",
     ],
     site="after",
 )
 
-met_40_mark = abjad.MetronomeMark.make_tempo_equation_markup((1, 4), 40)
+### 48 modulations
 
-mark_40 = abjad.LilyPondLiteral(
+mod_48_57 = evans.metric_modulation(
+    metronome_mark=((1, 4), 48),
+    left_note=(abjad.Tuplet(multiplier="6:5", components=[abjad.Note("c'4")])),
+    right_note=(abjad.Note("c'4")),
+    modulated_beat=(abjad.Note("c'4")),
+)
+
+mod_48_72 = evans.metric_modulation(
+    metronome_mark=((1, 4), 48),
+    left_note=(abjad.Tuplet(multiplier="3:2", components=[abjad.Note("c'4")])),
+    right_note=(abjad.Note("c'4")),
+    modulated_beat=(abjad.Note("c'4")),
+)
+
+mod_48_96 = evans.metric_modulation(
+    metronome_mark=((1, 4), 48),
+    left_note=(abjad.Note("c'8")),
+    right_note=(abjad.Note("c'4")),
+    modulated_beat=(abjad.Note("c'4")),
+)
+
+mod_48_144 = evans.metric_modulation(
+    metronome_mark=((1, 4), 48),
+    left_note=(abjad.Note("c'8")),
+    right_note=(abjad.Note("c'4.")),
+    modulated_beat=(abjad.Note("c'4")),
+)
+
+###
+
+
+met_57_mark = abjad.MetronomeMark.make_tempo_equation_markup((1, 4), 58)
+
+mark_57 = abjad.LilyPondLiteral(
     [
         r"^ \markup {",
         r"  \raise #6 \with-dimensions-from \null",
         # r"  \override #'(font-size . 5.5)", # score
         r"  \override #'(font-size . 3)",  # parts
         r"  \concat {",
-        f"      {met_40_mark.string[8:]}",
+        f"      {met_57_mark.string[8:]}",
         r"  }",
         r"}",
     ],
     site="after",
 )
 
+### 57 modulations
 
-met_66_mark = abjad.MetronomeMark.make_tempo_equation_markup((1, 4), 66)
+mod_57_48 = evans.metric_modulation(
+    metronome_mark=((1, 4), Fraction(288, 5)),
+    left_note=(abjad.Tuplet(multiplier="5:6", components=[abjad.Note("c'4")])),
+    right_note=(abjad.Note("c'4")),
+    modulated_beat=(abjad.Note("c'4")),
+)
 
-mark_66 = abjad.LilyPondLiteral(
+mod_57_72 = evans.metric_modulation(
+    metronome_mark=((1, 4), Fraction(288, 5)),
+    left_note=(abjad.Tuplet(multiplier="5:4", components=[abjad.Note("c'4")])),
+    right_note=(abjad.Note("c'4")),
+    modulated_beat=(abjad.Note("c'4")),
+)
+
+mod_57_96 = evans.metric_modulation(
+    metronome_mark=((1, 4), Fraction(288, 5)),
+    left_note=(abjad.Tuplet(multiplier="5:3", components=[abjad.Note("c'4")])),
+    right_note=(abjad.Note("c'4")),
+    modulated_beat=(abjad.Note("c'4")),
+)
+
+mod_57_144 = evans.metric_modulation(
+    metronome_mark=((1, 4), Fraction(288, 5)),
+    left_note=(abjad.Tuplet(multiplier="5:2", components=[abjad.Note("c'4")])),
+    right_note=(abjad.Note("c'4")),
+    modulated_beat=(abjad.Note("c'4")),
+)
+
+###
+
+met_72_mark = abjad.MetronomeMark.make_tempo_equation_markup((1, 4), 72)
+
+mark_72 = abjad.LilyPondLiteral(
     [
         r"^ \markup {",
         r"  \raise #6 \with-dimensions-from \null",
         # r"  \override #'(font-size . 5.5)", # score
         r"  \override #'(font-size . 3)",  # parts
         r"  \concat {",
-        f"      {met_66_mark.string[8:]}",
+        f"      {met_72_mark.string[8:]}",
         r"  }",
         r"}",
     ],
     site="after",
 )
 
+### 72 modulations
 
-met_93_mark = abjad.MetronomeMark.make_tempo_equation_markup((1, 4), 93)
-
-mark_93 = abjad.LilyPondLiteral(
-    [
-        r"^ \markup {",
-        r"  \raise #6 \with-dimensions-from \null",
-        # r"  \override #'(font-size . 5.5)", # score
-        r"  \override #'(font-size . 3)",  # parts
-        r"  \concat {",
-        f"      {met_93_mark.string[8:]}",
-        r"  }",
-        r"}",
-    ],
-    site="after",
+mod_72_48 = evans.metric_modulation(
+    metronome_mark=((1, 4), 72),
+    left_note=(abjad.Tuplet(multiplier="2:3", components=[abjad.Note("c'4")])),
+    right_note=(abjad.Note("c'4")),
+    modulated_beat=(abjad.Note("c'4")),
 )
 
+mod_72_57 = evans.metric_modulation(
+    metronome_mark=((1, 4), 72),
+    left_note=(abjad.Tuplet(multiplier="4:5", components=[abjad.Note("c'4")])),
+    right_note=(abjad.Note("c'4")),
+    modulated_beat=(abjad.Note("c'4")),
+)
 
-met_111_mark = abjad.MetronomeMark.make_tempo_equation_markup((1, 4), 111)
+mod_72_96 = evans.metric_modulation(
+    metronome_mark=((1, 4), 72),
+    left_note=(abjad.Tuplet(multiplier="4:3", components=[abjad.Note("c'4")])),
+    right_note=(abjad.Note("c'4")),
+    modulated_beat=(abjad.Note("c'4")),
+)
 
-mark_111 = abjad.LilyPondLiteral(
+mod_72_144 = evans.metric_modulation(
+    metronome_mark=((1, 4), 72),
+    left_note=(abjad.Note("c'8")),
+    right_note=(abjad.Note("c'4")),
+    modulated_beat=(abjad.Note("c'4")),
+)
+
+###
+
+
+met_96_mark = abjad.MetronomeMark.make_tempo_equation_markup((1, 4), 96)
+
+mark_96 = abjad.LilyPondLiteral(
     [
         r"^ \markup \raise #6 \with-dimensions-from \null {",
         # r"  \override #'(font-size . 5.5)", # score
         r"  \override #'(font-size . 3)",  # parts
         r"  \concat {",
-        f"      {met_111_mark.string[8:]}",
+        f"      {met_96_mark.string[8:]}",
         r"  }",
         r"}",
     ],
     site="after",
 )
 
+### 96 modulations
 
-met_130_mark = abjad.MetronomeMark.make_tempo_equation_markup((1, 4), 130)
+mod_96_48 = evans.metric_modulation(
+    metronome_mark=((1, 4), 96),
+    left_note=(abjad.Note("c'4")),
+    right_note=(abjad.Note("c'8")),
+    modulated_beat=(abjad.Note("c'4")),
+)
 
-mark_130 = abjad.LilyPondLiteral(
+mod_96_57 = evans.metric_modulation(
+    metronome_mark=((1, 4), 96),
+    left_note=(abjad.Tuplet(multiplier="3:5", components=[abjad.Note("c'4")])),
+    right_note=(abjad.Note("c'4")),
+    modulated_beat=(abjad.Note("c'4")),
+)
+
+mod_96_72 = evans.metric_modulation(
+    metronome_mark=((1, 4), 96),
+    left_note=(abjad.Tuplet(multiplier="3:4", components=[abjad.Note("c'4")])),
+    right_note=(abjad.Note("c'4")),
+    modulated_beat=(abjad.Note("c'4")),
+)
+
+mod_96_144 = evans.metric_modulation(
+    metronome_mark=((1, 4), 96),
+    left_note=(abjad.Tuplet(multiplier="3:2", components=[abjad.Note("c'4")])),
+    right_note=(abjad.Note("c'4")),
+    modulated_beat=(abjad.Note("c'4")),
+)
+
+###
+
+
+met_144_mark = abjad.MetronomeMark.make_tempo_equation_markup((1, 4), 144)
+
+mark_144 = abjad.LilyPondLiteral(
     [
         r"^ \markup {",
         r"  \raise #6 \with-dimensions-from \null",
         # r"  \override #'(font-size . 5.5)", # score
         r"  \override #'(font-size . 3)",  # parts
         r"  \concat {",
-        f"      {met_130_mark.string[8:]}",
+        f"      {met_144_mark.string[8:]}",
         r"  }",
         r"}",
     ],
     site="after",
+)
+
+### 144 modulations
+
+mod_144_48 = evans.metric_modulation(
+    metronome_mark=((1, 4), 144),
+    left_note=(abjad.Note("c'4.")),
+    right_note=(abjad.Note("c'8")),
+    modulated_beat=(abjad.Note("c'4")),
+)
+
+mod_144_57 = evans.metric_modulation(
+    metronome_mark=((1, 4), 144),
+    left_note=(abjad.Tuplet(multiplier="2:5", components=[abjad.Note("c'4")])),
+    right_note=(abjad.Note("c'4")),
+    modulated_beat=(abjad.Note("c'4")),
+)
+
+mod_144_72 = evans.metric_modulation(
+    metronome_mark=((1, 4), 144),
+    left_note=(abjad.Note("c'4")),
+    right_note=(abjad.Note("c'8")),
+    modulated_beat=(abjad.Note("c'4")),
+)
+
+mod_144_96 = evans.metric_modulation(
+    metronome_mark=((1, 4), 144),
+    left_note=(abjad.Tuplet(multiplier="2:3", components=[abjad.Note("c'4")])),
+    right_note=(abjad.Note("c'4")),
+    modulated_beat=(abjad.Note("c'4")),
 )
 
 

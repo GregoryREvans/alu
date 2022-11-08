@@ -19,15 +19,15 @@
 				\override #'(font-name . "Bell MT")
 				\fontsize #3.4 "A   L   U"
 			}
-            \override #'(font-name . "Noto Sans Runic")
+            \override #'(font-name . "Futhark")
             \fontsize #14
             \line {
                 \concat {
-                ᚨ
+                A
                 \hspace #1
-                ᛚ
+                L
                 \hspace #1
-                ᚢ
+                U
                 \hspace #1
                 }
             }
