@@ -6,7 +6,7 @@
                   %! COMMENT_MEASURE_NUMBERS
                   %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 1]
-                \tempo 4=48
+                \tempo 4=46
                 \mark \markup \bold {  }
                   %! scaling time signatures
                 \time 4/4
@@ -15,7 +15,7 @@
                   \raise #6 \with-dimensions-from \null
                   \override #'(font-size . 3)
                   \concat {
-                      \abjad-metronome-mark-markup #2 #0 #1 #"48"
+                      {\abjad-metronome-mark-markup #2 #0 #1 #"46" \fraction 2 3 }
                   }
                 }
 
@@ -51,96 +51,12 @@
                   %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 6]
                   %! scaling time signatures
-                \time 4/4
-                s1 * 1
+                \time 3/4
+                s1 * 3/4
 
                   %! COMMENT_MEASURE_NUMBERS
                   %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 7]
-                  %! scaling time signatures
-                \time 4/4
-                s1 * 1
-
-                  %! COMMENT_MEASURE_NUMBERS
-                  %! evans.SegmentMaker.comment_measure_numbers()
-                % [Global Context measure 8]
-                  %! scaling time signatures
-                \time 4/4
-                s1 * 1
-
-                  %! COMMENT_MEASURE_NUMBERS
-                  %! evans.SegmentMaker.comment_measure_numbers()
-                % [Global Context measure 9]
-                  %! scaling time signatures
-                \time 4/4
-                s1 * 1
-
-                  %! COMMENT_MEASURE_NUMBERS
-                  %! evans.SegmentMaker.comment_measure_numbers()
-                % [Global Context measure 10]
-                  %! scaling time signatures
-                \time 4/4
-                s1 * 1
-
-                  %! COMMENT_MEASURE_NUMBERS
-                  %! evans.SegmentMaker.comment_measure_numbers()
-                % [Global Context measure 11]
-                  %! scaling time signatures
-                \time 4/4
-                s1 * 1
-
-                  %! COMMENT_MEASURE_NUMBERS
-                  %! evans.SegmentMaker.comment_measure_numbers()
-                % [Global Context measure 12]
-                  %! scaling time signatures
-                \time 4/4
-                s1 * 1
-
-                  %! COMMENT_MEASURE_NUMBERS
-                  %! evans.SegmentMaker.comment_measure_numbers()
-                % [Global Context measure 13]
-                  %! scaling time signatures
-                \time 4/4
-                s1 * 1
-
-                  %! COMMENT_MEASURE_NUMBERS
-                  %! evans.SegmentMaker.comment_measure_numbers()
-                % [Global Context measure 14]
-                  %! scaling time signatures
-                \time 4/4
-                s1 * 1
-
-                  %! COMMENT_MEASURE_NUMBERS
-                  %! evans.SegmentMaker.comment_measure_numbers()
-                % [Global Context measure 15]
-                  %! scaling time signatures
-                \time 4/4
-                s1 * 1
-
-                  %! COMMENT_MEASURE_NUMBERS
-                  %! evans.SegmentMaker.comment_measure_numbers()
-                % [Global Context measure 16]
-                  %! scaling time signatures
-                \time 4/4
-                s1 * 1
-
-                  %! COMMENT_MEASURE_NUMBERS
-                  %! evans.SegmentMaker.comment_measure_numbers()
-                % [Global Context measure 17]
-                  %! scaling time signatures
-                \time 4/4
-                s1 * 1
-
-                  %! COMMENT_MEASURE_NUMBERS
-                  %! evans.SegmentMaker.comment_measure_numbers()
-                % [Global Context measure 18]
-                  %! scaling time signatures
-                \time 4/4
-                s1 * 1
-
-                  %! COMMENT_MEASURE_NUMBERS
-                  %! evans.SegmentMaker.comment_measure_numbers()
-                % [Global Context measure 19]
                   %! scaling time signatures
                 \time 4/4
                 s1 * 1
@@ -171,101 +87,69 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [flute voice measure 1]
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
                                           %! applying staff names and clefs
                                         \set Staff.instrumentName = \markup { \hcenter-in #14 "Flute" }
                                           %! applying staff names and clefs
                                         \set Staff.shortInstrumentName = \markup { \hcenter-in #12 "fl" }
-                                        r1
+                                        r1 * 1/2
+
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [flute voice measure 2]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 1/2
+
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [flute voice measure 3]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 1/2
+
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [flute voice measure 4]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 1/2
+
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [flute voice measure 5]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 1/2
+
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [flute voice measure 6]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 3/8
+
+                                        R1 * 3/8
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [flute voice measure 7]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 1/2
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [flute voice measure 8]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [flute voice measure 9]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [flute voice measure 10]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [flute voice measure 11]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [flute voice measure 12]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [flute voice measure 13]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [flute voice measure 14]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [flute voice measure 15]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [flute voice measure 16]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [flute voice measure 17]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [flute voice measure 18]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [flute voice measure 19]
-                                        r1
+                                        R1 * 1/2
                                         \bar "||"
 
                                     }
@@ -286,101 +170,69 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [oboe voice measure 1]
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
                                           %! applying staff names and clefs
                                         \set Staff.instrumentName = \markup { \hcenter-in #14 "Oboe" }
                                           %! applying staff names and clefs
                                         \set Staff.shortInstrumentName = \markup { \hcenter-in #12 "ob" }
-                                        r1
+                                        r1 * 1/2
+
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [oboe voice measure 2]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 1/2
+
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [oboe voice measure 3]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 1/2
+
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [oboe voice measure 4]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 1/2
+
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [oboe voice measure 5]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 1/2
+
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [oboe voice measure 6]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 3/8
+
+                                        R1 * 3/8
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [oboe voice measure 7]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 1/2
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [oboe voice measure 8]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [oboe voice measure 9]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [oboe voice measure 10]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [oboe voice measure 11]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [oboe voice measure 12]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [oboe voice measure 13]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [oboe voice measure 14]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [oboe voice measure 15]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [oboe voice measure 16]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [oboe voice measure 17]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [oboe voice measure 18]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [oboe voice measure 19]
-                                        r1
+                                        R1 * 1/2
                                         \bar "||"
 
                                     }
@@ -401,101 +253,69 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [clarinet in b flat voice measure 1]
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
                                           %! applying staff names and clefs
                                         \set Staff.instrumentName = \markup { \hcenter-in #14 "Clarinet" }
                                           %! applying staff names and clefs
                                         \set Staff.shortInstrumentName = \markup { \hcenter-in #12 "cl" }
-                                        r1
+                                        r1 * 1/2
+
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [clarinet in b flat voice measure 2]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 1/2
+
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [clarinet in b flat voice measure 3]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 1/2
+
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [clarinet in b flat voice measure 4]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 1/2
+
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [clarinet in b flat voice measure 5]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 1/2
+
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [clarinet in b flat voice measure 6]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 3/8
+
+                                        R1 * 3/8
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [clarinet in b flat voice measure 7]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 1/2
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [clarinet in b flat voice measure 8]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [clarinet in b flat voice measure 9]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [clarinet in b flat voice measure 10]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [clarinet in b flat voice measure 11]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [clarinet in b flat voice measure 12]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [clarinet in b flat voice measure 13]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [clarinet in b flat voice measure 14]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [clarinet in b flat voice measure 15]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [clarinet in b flat voice measure 16]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [clarinet in b flat voice measure 17]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [clarinet in b flat voice measure 18]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [clarinet in b flat voice measure 19]
-                                        r1
+                                        R1 * 1/2
                                         \bar "||"
 
                                     }
@@ -516,101 +336,69 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [bassoon voice measure 1]
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
                                           %! applying staff names and clefs
                                         \set Staff.instrumentName = \markup { \hcenter-in #14 "Bassoon" }
                                           %! applying staff names and clefs
                                         \set Staff.shortInstrumentName = \markup { \hcenter-in #12 "bs" }
-                                        r1
+                                        r1 * 1/2
+
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [bassoon voice measure 2]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 1/2
+
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [bassoon voice measure 3]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 1/2
+
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [bassoon voice measure 4]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 1/2
+
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [bassoon voice measure 5]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 1/2
+
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [bassoon voice measure 6]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 3/8
+
+                                        R1 * 3/8
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [bassoon voice measure 7]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 1/2
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [bassoon voice measure 8]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [bassoon voice measure 9]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [bassoon voice measure 10]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [bassoon voice measure 11]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [bassoon voice measure 12]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [bassoon voice measure 13]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [bassoon voice measure 14]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [bassoon voice measure 15]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [bassoon voice measure 16]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [bassoon voice measure 17]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [bassoon voice measure 18]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [bassoon voice measure 19]
-                                        r1
+                                        R1 * 1/2
                                         \bar "||"
 
                                     }
@@ -631,101 +419,69 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [french horn voice measure 1]
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
                                           %! applying staff names and clefs
                                         \set Staff.instrumentName = \markup { \hcenter-in #14 "Horn" }
                                           %! applying staff names and clefs
                                         \set Staff.shortInstrumentName = \markup { \hcenter-in #12 "hn" }
-                                        r1
+                                        r1 * 1/2
+
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [french horn voice measure 2]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 1/2
+
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [french horn voice measure 3]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 1/2
+
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [french horn voice measure 4]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 1/2
+
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [french horn voice measure 5]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 1/2
+
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [french horn voice measure 6]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 3/8
+
+                                        R1 * 3/8
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [french horn voice measure 7]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 1/2
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [french horn voice measure 8]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [french horn voice measure 9]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [french horn voice measure 10]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [french horn voice measure 11]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [french horn voice measure 12]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [french horn voice measure 13]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [french horn voice measure 14]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [french horn voice measure 15]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [french horn voice measure 16]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [french horn voice measure 17]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [french horn voice measure 18]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [french horn voice measure 19]
-                                        r1
+                                        R1 * 1/2
                                         \bar "||"
 
                                     }
@@ -756,101 +512,69 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [trumpet voice measure 1]
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
                                           %! applying staff names and clefs
                                         \set Staff.instrumentName = \markup { \hcenter-in #14 "Trumpet" }
                                           %! applying staff names and clefs
                                         \set Staff.shortInstrumentName = \markup { \hcenter-in #12 "tp" }
-                                        r1
+                                        r1 * 1/2
+
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [trumpet voice measure 2]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 1/2
+
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [trumpet voice measure 3]
-                                        r1
+                                          %! MATERIAL_COLOR
+                                        \staffHighlight #(rgb-color 0.6862745098039216 0.6274509803921569 0.9254901960784314)
+                                        c'1
+                                          %! MATERIAL_COLOR
+                                        \stopStaffHighlight
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [trumpet voice measure 4]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 1/2
+
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [trumpet voice measure 5]
-                                        r1
+                                          %! MATERIAL_COLOR
+                                        \staffHighlight #(rgb-color 0.6862745098039216 0.6274509803921569 0.9254901960784314)
+                                        c'1
+                                          %! MATERIAL_COLOR
+                                        \stopStaffHighlight
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [trumpet voice measure 6]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 3/8
+
+                                        R1 * 3/8
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [trumpet voice measure 7]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 1/2
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [trumpet voice measure 8]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [trumpet voice measure 9]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [trumpet voice measure 10]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [trumpet voice measure 11]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [trumpet voice measure 12]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [trumpet voice measure 13]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [trumpet voice measure 14]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [trumpet voice measure 15]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [trumpet voice measure 16]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [trumpet voice measure 17]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [trumpet voice measure 18]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [trumpet voice measure 19]
-                                        r1
+                                        R1 * 1/2
                                         \bar "||"
 
                                     }
@@ -871,102 +595,71 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tenor trombone voice measure 1]
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
                                           %! applying staff names and clefs
                                         \set Staff.instrumentName = \markup { \hcenter-in #14 "Trombone" }
                                           %! applying staff names and clefs
                                         \set Staff.shortInstrumentName = \markup { \hcenter-in #12 "tbn" }
+                                          %! applying indicators
                                         \clef "bass"
-                                        r1
+                                        r1 * 1/2
+
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tenor trombone voice measure 2]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 1/2
+
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tenor trombone voice measure 3]
-                                        r1
+                                          %! MATERIAL_COLOR
+                                        \staffHighlight #(rgb-color 0.6862745098039216 0.6274509803921569 0.9254901960784314)
+                                        c'1
+                                          %! MATERIAL_COLOR
+                                        \stopStaffHighlight
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tenor trombone voice measure 4]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 1/2
+
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tenor trombone voice measure 5]
-                                        r1
+                                          %! MATERIAL_COLOR
+                                        \staffHighlight #(rgb-color 0.6862745098039216 0.6274509803921569 0.9254901960784314)
+                                        c'1
+                                          %! MATERIAL_COLOR
+                                        \stopStaffHighlight
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tenor trombone voice measure 6]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 3/8
+
+                                        R1 * 3/8
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tenor trombone voice measure 7]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 1/2
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [tenor trombone voice measure 8]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [tenor trombone voice measure 9]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [tenor trombone voice measure 10]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [tenor trombone voice measure 11]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [tenor trombone voice measure 12]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [tenor trombone voice measure 13]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [tenor trombone voice measure 14]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [tenor trombone voice measure 15]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [tenor trombone voice measure 16]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [tenor trombone voice measure 17]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [tenor trombone voice measure 18]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [tenor trombone voice measure 19]
-                                        r1
+                                        R1 * 1/2
                                         \bar "||"
 
                                     }
@@ -987,102 +680,71 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tuba voice measure 1]
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
                                           %! applying staff names and clefs
                                         \set Staff.instrumentName = \markup { \hcenter-in #14 "Tuba" }
                                           %! applying staff names and clefs
                                         \set Staff.shortInstrumentName = \markup { \hcenter-in #12 "tba" }
+                                          %! applying indicators
                                         \clef "bass"
-                                        r1
+                                        r1 * 1/2
+
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tuba voice measure 2]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 1/2
+
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tuba voice measure 3]
-                                        r1
+                                          %! MATERIAL_COLOR
+                                        \staffHighlight #(rgb-color 0.6862745098039216 0.6274509803921569 0.9254901960784314)
+                                        c'1
+                                          %! MATERIAL_COLOR
+                                        \stopStaffHighlight
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tuba voice measure 4]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 1/2
+
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tuba voice measure 5]
-                                        r1
+                                          %! MATERIAL_COLOR
+                                        \staffHighlight #(rgb-color 0.6862745098039216 0.6274509803921569 0.9254901960784314)
+                                        c'1
+                                          %! MATERIAL_COLOR
+                                        \stopStaffHighlight
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tuba voice measure 6]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 3/8
+
+                                        R1 * 3/8
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tuba voice measure 7]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 1/2
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [tuba voice measure 8]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [tuba voice measure 9]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [tuba voice measure 10]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [tuba voice measure 11]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [tuba voice measure 12]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [tuba voice measure 13]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [tuba voice measure 14]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [tuba voice measure 15]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [tuba voice measure 16]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [tuba voice measure 17]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [tuba voice measure 18]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [tuba voice measure 19]
-                                        r1
+                                        R1 * 1/2
                                         \bar "||"
 
                                     }
@@ -1110,17 +772,6 @@
                                     \context Voice = "percussion 1 voice"
                                     {
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [percussion 1 voice measure 1]
-                                          %! applying staff names and clefs
-                                        \set Staff.instrumentName = \markup { \hcenter-in #14 "Percussion 1" }
-                                          %! applying staff names and clefs
-                                        \set Staff.shortInstrumentName = \markup { \hcenter-in #12 "pc 1" }
-                                        \clef "percussion"
-                                        \staff-line-count #1
-                                        r1
-
                                         \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
                                             {
                                                 \context Score = "Score"
@@ -1148,9 +799,7 @@
                                                         tupletFullLength = ##t
                                                     }
                                                     {
-                                                        c'4
-                                                        ~
-                                                        c'16
+                                                        c'\breve
                                                     }
                                                 >>
                                                 \layout
@@ -1159,25 +808,46 @@
                                                     ragged-right = ##t
                                                 }
                                             }
-                                        \scaleDurations #'(1 . 1)
+                                        \times 2/2
                                         {
 
                                               %! COMMENT_MEASURE_NUMBERS
                                               %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [percussion 1 voice measure 2]
+                                            % [percussion 1 voice measure 1]
+                                              %! applying staff names and clefs
+                                            \set Staff.instrumentName = \markup { \hcenter-in #14 "Percussion 1" }
+                                              %! applying staff names and clefs
+                                            \set Staff.shortInstrumentName = \markup { \hcenter-in #12 "pc 1" }
+                                              %! MATERIAL_COLOR
+                                            \staffHighlight #(rgb-color 0.6862745098039216 0.6274509803921569 0.9254901960784314)
                                             \once \override Beam.grow-direction = #left
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            c'16 * 368/1024
+                                            \clef "percussion"
+                                            \staff-line-count #4
+                                            b16 * 123/64
+                                            - \boxed-markup woodblocks #1
                                             [
 
-                                            c'16 * 784/1024
+                                            r16 * 31/16
 
-                                            c'16 * 1072/1024
+                                            d'16 * 127/64
 
-                                            c'16 * 1328/1024
+                                            b16 * 133/64
 
-                                            \revert Staff.Stem.stemlet-length
-                                            c'16 * 1568/1024
+                                            r16 * 71/32
+
+                                            d'16 * 153/64
+
+                                            f'16 * 167/64
+
+                                            b16 * 183/64
+
+                                            r16 * 201/64
+
+                                            d'16 * 109/32
+
+                                            r16 * 117/32
+
+                                            g16 * 243/64
                                             ]
 
                                         }
@@ -1210,7 +880,7 @@
                                                         tupletFullLength = ##t
                                                     }
                                                     {
-                                                        c'8.
+                                                        c'1
                                                     }
                                                 >>
                                                 \layout
@@ -1219,19 +889,25 @@
                                                     ragged-right = ##t
                                                 }
                                             }
-                                        \scaleDurations #'(1 . 1)
+                                        \times 2/2
                                         {
 
+                                              %! COMMENT_MEASURE_NUMBERS
+                                              %! evans.SegmentMaker.comment_measure_numbers()
+                                            % [percussion 1 voice measure 3]
                                             \once \override Beam.grow-direction = #left
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            c'16 * 512/1024
+                                            b16 * 2
                                             [
 
-                                            c'16 * 1072/1024
+                                            r16 * 133/64
 
-                                            \revert Staff.Stem.stemlet-length
-                                            c'16 * 1488/1024
-                                            ]
+                                            d'16 * 147/64
+
+                                            b16 * 43/16
+
+                                            d'16 * 205/64
+
+                                            r16 * 239/64
 
                                         }
                                         \revert TupletNumber.text
@@ -1263,7 +939,7 @@
                                                         tupletFullLength = ##t
                                                     }
                                                     {
-                                                        c'8.
+                                                        c'1
                                                     }
                                                 >>
                                                 \layout
@@ -1272,18 +948,25 @@
                                                     ragged-right = ##t
                                                 }
                                             }
-                                        \scaleDurations #'(1 . 1)
+                                        \times 2/2
                                         {
 
-                                            \once \override Beam.grow-direction = #right
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            c'16 * 1552/1024
+                                              %! COMMENT_MEASURE_NUMBERS
+                                              %! evans.SegmentMaker.comment_measure_numbers()
+                                            % [percussion 1 voice measure 4]
+                                            \once \override Beam.grow-direction = #left
+                                            f'16 * 2
                                             [
 
-                                            c'16 * 832/1024
+                                            r16 * 133/64
 
-                                            \revert Staff.Stem.stemlet-length
-                                            c'16 * 688/1024
+                                            b16 * 147/64
+
+                                            d'16 * 43/16
+
+                                            r16 * 205/64
+
+                                            g16 * 239/64
                                             ]
 
                                         }
@@ -1316,9 +999,9 @@
                                                         tupletFullLength = ##t
                                                     }
                                                     {
-                                                        c'4
+                                                        c'\breve
                                                         ~
-                                                        c'16
+                                                        c'2.
                                                     }
                                                 >>
                                                 \layout
@@ -1327,112 +1010,52 @@
                                                     ragged-right = ##t
                                                 }
                                             }
-                                        \scaleDurations #'(1 . 1)
+                                        \times 2/2
                                         {
 
+                                              %! COMMENT_MEASURE_NUMBERS
+                                              %! evans.SegmentMaker.comment_measure_numbers()
+                                            % [percussion 1 voice measure 5]
                                             \once \override Beam.grow-direction = #left
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            c'16 * 368/1024
+                                            b16 * 127/64
                                             [
 
-                                            c'16 * 784/1024
+                                            d'16 * 127/64
 
-                                            c'16 * 1072/1024
+                                            r16 * 129/64
 
-                                            c'16 * 1328/1024
+                                            b16 * 133/64
 
-                                            \revert Staff.Stem.stemlet-length
-                                            c'16 * 1568/1024
+                                            r16 * 137/64
+
+                                            d'16 * 143/64
+
+                                            f'16 * 151/64
+
+                                            r16 * 5/2
+
+                                            b16 * 85/32
+
+                                            d'16 * 91/32
+
+                                            g16 * 195/64
+
+                                            r16 * 13/4
+
+                                            b16 * 111/32
+
+                                            r16 * 235/64
+
+                                            d'16 * 245/64
+
+                                            b16 * 63/16
                                             ]
+                                            \bar "||"
+                                              %! MATERIAL_COLOR
+                                            \stopStaffHighlight
 
                                         }
                                         \revert TupletNumber.text
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [percussion 1 voice measure 3]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [percussion 1 voice measure 4]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [percussion 1 voice measure 5]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [percussion 1 voice measure 6]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [percussion 1 voice measure 7]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [percussion 1 voice measure 8]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [percussion 1 voice measure 9]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [percussion 1 voice measure 10]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [percussion 1 voice measure 11]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [percussion 1 voice measure 12]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [percussion 1 voice measure 13]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [percussion 1 voice measure 14]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [percussion 1 voice measure 15]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [percussion 1 voice measure 16]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [percussion 1 voice measure 17]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [percussion 1 voice measure 18]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [percussion 1 voice measure 19]
-                                        r1
-                                        \bar "||"
 
                                     }
 
@@ -1449,107 +1072,431 @@
                                     \context Voice = "percussion 2 voice"
                                     {
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [percussion 2 voice measure 1]
-                                          %! applying staff names and clefs
-                                        \set Staff.instrumentName = \markup { \hcenter-in #14 "Percussion 2" }
-                                          %! applying staff names and clefs
-                                        \set Staff.shortInstrumentName = \markup { \hcenter-in #12 "pc 2" }
-                                        \clef "percussion"
-                                        \staff-line-count #1
-                                        r1
+                                        \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                                            {
+                                                \context Score = "Score"
+                                                \with
+                                                {
+                                                    \override SpacingSpanner.spacing-increment = 0.5
+                                                    proportionalNotationDuration = ##f
+                                                }
+                                                <<
+                                                    \context RhythmicStaff = "Rhythmic_Staff"
+                                                    \with
+                                                    {
+                                                        \remove Time_signature_engraver
+                                                        \remove Staff_symbol_engraver
+                                                        \override Stem.direction = #up
+                                                        \override Stem.length = 5
+                                                        \override TupletBracket.bracket-visibility = ##t
+                                                        \override TupletBracket.direction = #up
+                                                        \override TupletBracket.minimum-length = 4
+                                                        \override TupletBracket.padding = 1.25
+                                                        \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                                        \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                                        \override TupletNumber.font-size = 0
+                                                        \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                                        tupletFullLength = ##t
+                                                    }
+                                                    {
+                                                        c'1
+                                                    }
+                                                >>
+                                                \layout
+                                                {
+                                                    indent = 0
+                                                    ragged-right = ##t
+                                                }
+                                            }
+                                        \times 2/2
+                                        {
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [percussion 2 voice measure 2]
-                                        r1
+                                              %! COMMENT_MEASURE_NUMBERS
+                                              %! evans.SegmentMaker.comment_measure_numbers()
+                                            % [percussion 2 voice measure 1]
+                                              %! applying staff names and clefs
+                                            \set Staff.instrumentName = \markup { \hcenter-in #14 "Percussion 2" }
+                                              %! applying staff names and clefs
+                                            \set Staff.shortInstrumentName = \markup { \hcenter-in #12 "pc 2" }
+                                              %! MATERIAL_COLOR
+                                            \staffHighlight #(rgb-color 0.6862745098039216 0.6274509803921569 0.9254901960784314)
+                                            \once \override Beam.grow-direction = #right
+                                            \clef "percussion"
+                                            \staff-line-count #4
+                                            g16 * 235/64
+                                            - \boxed-markup "slit drum" #1
+                                            [
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [percussion 2 voice measure 3]
-                                        r1
+                                            r16 * 109/32
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [percussion 2 voice measure 4]
-                                        r1
+                                            d'16 * 45/16
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [percussion 2 voice measure 5]
-                                        r1
+                                            b16 * 73/32
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [percussion 2 voice measure 6]
-                                        r1
+                                            r16 * 63/32
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [percussion 2 voice measure 7]
-                                        r1
+                                            f'16 * 119/64
+                                            ]
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [percussion 2 voice measure 8]
-                                        r1
+                                        }
+                                        \revert TupletNumber.text
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [percussion 2 voice measure 9]
-                                        r1
+                                        \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                                            {
+                                                \context Score = "Score"
+                                                \with
+                                                {
+                                                    \override SpacingSpanner.spacing-increment = 0.5
+                                                    proportionalNotationDuration = ##f
+                                                }
+                                                <<
+                                                    \context RhythmicStaff = "Rhythmic_Staff"
+                                                    \with
+                                                    {
+                                                        \remove Time_signature_engraver
+                                                        \remove Staff_symbol_engraver
+                                                        \override Stem.direction = #up
+                                                        \override Stem.length = 5
+                                                        \override TupletBracket.bracket-visibility = ##t
+                                                        \override TupletBracket.direction = #up
+                                                        \override TupletBracket.minimum-length = 4
+                                                        \override TupletBracket.padding = 1.25
+                                                        \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                                        \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                                        \override TupletNumber.font-size = 0
+                                                        \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                                        tupletFullLength = ##t
+                                                    }
+                                                    {
+                                                        c'1
+                                                    }
+                                                >>
+                                                \layout
+                                                {
+                                                    indent = 0
+                                                    ragged-right = ##t
+                                                }
+                                            }
+                                        \times 2/2
+                                        {
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [percussion 2 voice measure 10]
-                                        r1
+                                              %! COMMENT_MEASURE_NUMBERS
+                                              %! evans.SegmentMaker.comment_measure_numbers()
+                                            % [percussion 2 voice measure 2]
+                                            \once \override Beam.grow-direction = #left
+                                            d'16 * 13/8
+                                            [
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [percussion 2 voice measure 11]
-                                        r1
+                                            b16 * 111/64
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [percussion 2 voice measure 12]
-                                        r1
+                                            r16 * 65/32
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [percussion 2 voice measure 13]
-                                        r1
+                                            d'16 * 83/32
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [percussion 2 voice measure 14]
-                                        r1
+                                            r16 * 223/64
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [percussion 2 voice measure 15]
-                                        r1
+                                            b16 * 145/32
+                                            ]
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [percussion 2 voice measure 16]
-                                        r1
+                                        }
+                                        \revert TupletNumber.text
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [percussion 2 voice measure 17]
-                                        r1
+                                        \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                                            {
+                                                \context Score = "Score"
+                                                \with
+                                                {
+                                                    \override SpacingSpanner.spacing-increment = 0.5
+                                                    proportionalNotationDuration = ##f
+                                                }
+                                                <<
+                                                    \context RhythmicStaff = "Rhythmic_Staff"
+                                                    \with
+                                                    {
+                                                        \remove Time_signature_engraver
+                                                        \remove Staff_symbol_engraver
+                                                        \override Stem.direction = #up
+                                                        \override Stem.length = 5
+                                                        \override TupletBracket.bracket-visibility = ##t
+                                                        \override TupletBracket.direction = #up
+                                                        \override TupletBracket.minimum-length = 4
+                                                        \override TupletBracket.padding = 1.25
+                                                        \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                                        \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                                        \override TupletNumber.font-size = 0
+                                                        \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                                        tupletFullLength = ##t
+                                                    }
+                                                    {
+                                                        c'1
+                                                    }
+                                                >>
+                                                \layout
+                                                {
+                                                    indent = 0
+                                                    ragged-right = ##t
+                                                }
+                                            }
+                                        \times 2/2
+                                        {
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [percussion 2 voice measure 18]
-                                        r1
+                                              %! COMMENT_MEASURE_NUMBERS
+                                              %! evans.SegmentMaker.comment_measure_numbers()
+                                            % [percussion 2 voice measure 3]
+                                            \once \override Beam.grow-direction = #right
+                                            g16 * 235/64
+                                            [
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [percussion 2 voice measure 19]
-                                        r1
-                                        \bar "||"
+                                            r16 * 109/32
+
+                                            d'16 * 45/16
+
+                                            b16 * 73/32
+
+                                            f'16 * 63/32
+
+                                            r16 * 119/64
+
+                                        }
+                                        \revert TupletNumber.text
+
+                                        \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                                            {
+                                                \context Score = "Score"
+                                                \with
+                                                {
+                                                    \override SpacingSpanner.spacing-increment = 0.5
+                                                    proportionalNotationDuration = ##f
+                                                }
+                                                <<
+                                                    \context RhythmicStaff = "Rhythmic_Staff"
+                                                    \with
+                                                    {
+                                                        \remove Time_signature_engraver
+                                                        \remove Staff_symbol_engraver
+                                                        \override Stem.direction = #up
+                                                        \override Stem.length = 5
+                                                        \override TupletBracket.bracket-visibility = ##t
+                                                        \override TupletBracket.direction = #up
+                                                        \override TupletBracket.minimum-length = 4
+                                                        \override TupletBracket.padding = 1.25
+                                                        \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                                        \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                                        \override TupletNumber.font-size = 0
+                                                        \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                                        tupletFullLength = ##t
+                                                    }
+                                                    {
+                                                        c'1
+                                                    }
+                                                >>
+                                                \layout
+                                                {
+                                                    indent = 0
+                                                    ragged-right = ##t
+                                                }
+                                            }
+                                        \times 2/2
+                                        {
+
+                                              %! COMMENT_MEASURE_NUMBERS
+                                              %! evans.SegmentMaker.comment_measure_numbers()
+                                            % [percussion 2 voice measure 4]
+                                            \once \override Beam.grow-direction = #left
+                                            d'16 * 13/8
+                                            [
+
+                                            r16 * 111/64
+
+                                            b16 * 65/32
+
+                                            d'16 * 83/32
+
+                                            r16 * 223/64
+
+                                            b16 * 145/32
+                                            ]
+
+                                        }
+                                        \revert TupletNumber.text
+
+                                        \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                                            {
+                                                \context Score = "Score"
+                                                \with
+                                                {
+                                                    \override SpacingSpanner.spacing-increment = 0.5
+                                                    proportionalNotationDuration = ##f
+                                                }
+                                                <<
+                                                    \context RhythmicStaff = "Rhythmic_Staff"
+                                                    \with
+                                                    {
+                                                        \remove Time_signature_engraver
+                                                        \remove Staff_symbol_engraver
+                                                        \override Stem.direction = #up
+                                                        \override Stem.length = 5
+                                                        \override TupletBracket.bracket-visibility = ##t
+                                                        \override TupletBracket.direction = #up
+                                                        \override TupletBracket.minimum-length = 4
+                                                        \override TupletBracket.padding = 1.25
+                                                        \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                                        \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                                        \override TupletNumber.font-size = 0
+                                                        \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                                        tupletFullLength = ##t
+                                                    }
+                                                    {
+                                                        c'1
+                                                    }
+                                                >>
+                                                \layout
+                                                {
+                                                    indent = 0
+                                                    ragged-right = ##t
+                                                }
+                                            }
+                                        \times 2/2
+                                        {
+
+                                              %! COMMENT_MEASURE_NUMBERS
+                                              %! evans.SegmentMaker.comment_measure_numbers()
+                                            % [percussion 2 voice measure 5]
+                                            \once \override Beam.grow-direction = #right
+                                            g16 * 235/64
+                                            [
+
+                                            d'16 * 109/32
+
+                                            r16 * 45/16
+
+                                            b16 * 73/32
+
+                                            r16 * 63/32
+
+                                            f'16 * 119/64
+                                            ]
+
+                                        }
+                                        \revert TupletNumber.text
+
+                                        \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                                            {
+                                                \context Score = "Score"
+                                                \with
+                                                {
+                                                    \override SpacingSpanner.spacing-increment = 0.5
+                                                    proportionalNotationDuration = ##f
+                                                }
+                                                <<
+                                                    \context RhythmicStaff = "Rhythmic_Staff"
+                                                    \with
+                                                    {
+                                                        \remove Time_signature_engraver
+                                                        \remove Staff_symbol_engraver
+                                                        \override Stem.direction = #up
+                                                        \override Stem.length = 5
+                                                        \override TupletBracket.bracket-visibility = ##t
+                                                        \override TupletBracket.direction = #up
+                                                        \override TupletBracket.minimum-length = 4
+                                                        \override TupletBracket.padding = 1.25
+                                                        \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                                        \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                                        \override TupletNumber.font-size = 0
+                                                        \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                                        tupletFullLength = ##t
+                                                    }
+                                                    {
+                                                        c'2.
+                                                    }
+                                                >>
+                                                \layout
+                                                {
+                                                    indent = 0
+                                                    ragged-right = ##t
+                                                }
+                                            }
+                                        \times 2/2
+                                        {
+
+                                              %! COMMENT_MEASURE_NUMBERS
+                                              %! evans.SegmentMaker.comment_measure_numbers()
+                                            % [percussion 2 voice measure 6]
+                                            \once \override Beam.grow-direction = #left
+                                            d'16 * 45/32
+                                            [
+
+                                            r16 * 25/16
+
+                                            b16 * 65/32
+
+                                            d'16 * 47/16
+
+                                            b16 * 65/16
+                                            ]
+
+                                        }
+                                        \revert TupletNumber.text
+
+                                        \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                                            {
+                                                \context Score = "Score"
+                                                \with
+                                                {
+                                                    \override SpacingSpanner.spacing-increment = 0.5
+                                                    proportionalNotationDuration = ##f
+                                                }
+                                                <<
+                                                    \context RhythmicStaff = "Rhythmic_Staff"
+                                                    \with
+                                                    {
+                                                        \remove Time_signature_engraver
+                                                        \remove Staff_symbol_engraver
+                                                        \override Stem.direction = #up
+                                                        \override Stem.length = 5
+                                                        \override TupletBracket.bracket-visibility = ##t
+                                                        \override TupletBracket.direction = #up
+                                                        \override TupletBracket.minimum-length = 4
+                                                        \override TupletBracket.padding = 1.25
+                                                        \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                                        \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                                        \override TupletNumber.font-size = 0
+                                                        \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                                        tupletFullLength = ##t
+                                                    }
+                                                    {
+                                                        c'1
+                                                    }
+                                                >>
+                                                \layout
+                                                {
+                                                    indent = 0
+                                                    ragged-right = ##t
+                                                }
+                                            }
+                                        \times 2/2
+                                        {
+
+                                              %! COMMENT_MEASURE_NUMBERS
+                                              %! evans.SegmentMaker.comment_measure_numbers()
+                                            % [percussion 2 voice measure 7]
+                                            r16 * 235/64
+
+                                            g16 * 109/32
+
+                                            r16 * 45/16
+
+                                            d'16 * 73/32
+
+                                            b16 * 63/32
+
+                                            r16 * 119/64
+                                            \bar "||"
+                                              %! MATERIAL_COLOR
+                                            \stopStaffHighlight
+
+                                        }
+                                        \revert TupletNumber.text
 
                                     }
 
@@ -1581,502 +1528,68 @@
                                     \context Voice = "piano 1 voice"
                                     {
 
-                                        <<
-
-                                            \context Voice = "piano 1 voice temp"
-                                            {
-
-                                                  %! COMMENT_MEASURE_NUMBERS
-                                                  %! evans.SegmentMaker.comment_measure_numbers()
-                                                % [piano 1 voice temp measure 1]
-                                                  %! applying staff names and clefs
-                                                \set Staff.instrumentName = \markup { \hcenter-in #14 \with-color #white "Piano LH" }
-                                                  %! applying staff names and clefs
-                                                \set Staff.shortInstrumentName = \markup { \hcenter-in #12 \with-color #white "LH" }
-                                                \override Staff.Stem.stemlet-length = 0.75
-                                                \voiceTwo
-                                                e''8.
-                                                - \staccato
-                                                [
-
-                                                \revert Staff.Stem.stemlet-length
-                                                ef''16
-                                                - \staccato
-                                                ]
-
-                                                e''4
-                                                - \staccato
-
-                                                \times 2/3
-                                                {
-
-                                                    \override Staff.Stem.stemlet-length = 0.75
-                                                    d''16
-                                                    - \staccato
-                                                    [
-
-                                                    ef''16
-                                                    - \staccato
-
-                                                    \revert Staff.Stem.stemlet-length
-                                                    d''16
-                                                    - \staccato
-                                                    ]
-
-                                                }
-
-                                                \override Staff.Stem.stemlet-length = 0.75
-                                                ef''16
-                                                - \staccato
-                                                [
-
-                                                \revert Staff.Stem.stemlet-length
-                                                cs''16
-                                                - \staccato
-                                                ]
-
-                                                \override Staff.Stem.stemlet-length = 0.75
-                                                cs''16
-                                                - \staccato
-                                                [
-
-                                                c''8
-                                                - \staccato
-
-                                                \revert Staff.Stem.stemlet-length
-                                                cs''16
-                                                - \staccato
-                                                ]
-
-                                            }
-
-                                            \context Voice = "piano 1 intermittent_voice_1"
-                                            {
-
-                                                \times 4/5
-                                                {
-
-                                                      %! COMMENT_MEASURE_NUMBERS
-                                                      %! evans.SegmentMaker.comment_measure_numbers()
-                                                    % [piano 1 intermittent_voice_1 measure 1]
-                                                    \override Staff.Stem.stemlet-length = 0.75
-                                                    \voiceOne
-                                                    f''16
-                                                    - \accent
-                                                    [
-
-                                                    fs''8
-                                                    - \accent
-
-                                                    \revert Staff.Stem.stemlet-length
-                                                    f''8
-                                                    - \accent
-                                                    ]
-                                                    ~
-
-                                                }
-
-                                                \override Staff.Stem.stemlet-length = 0.75
-                                                f''16
-                                                [
-
-                                                g''16
-                                                - \accent
-
-                                                \revert Staff.Stem.stemlet-length
-                                                fs''8
-                                                - \accent
-                                                ]
-
-                                                \times 2/3
-                                                {
-
-                                                    \override Staff.Stem.stemlet-length = 0.75
-                                                    g''8.
-                                                    - \accent
-                                                    [
-
-                                                    fs''16
-                                                    - \accent
-
-                                                    \revert Staff.Stem.stemlet-length
-                                                    af''8
-                                                    - \accent
-                                                    ]
-
-                                                }
-
-                                                \times 4/5
-                                                {
-
-                                                    \override Staff.Stem.stemlet-length = 0.75
-                                                    af''8.
-                                                    - \accent
-                                                    [
-
-                                                    a''16
-                                                    - \accent
-
-                                                    \revert Staff.Stem.stemlet-length
-                                                    af''16
-                                                    - \accent
-                                                    ]
-
-                                                }
-
-                                            }
-
-                                        >>
-                                        \oneVoice
-
-                                        \scaleDurations #'(1 . 1)
-                                        {
-
-                                              %! COMMENT_MEASURE_NUMBERS
-                                              %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [piano 1 voice measure 2]
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            r16
-                                            [
-
-                                            c''32
-
-                                            b'32
-
-                                            bf'32
-
-                                            a'32
-
-                                            af'32
-
-                                            \revert Staff.Stem.stemlet-length
-                                            g'32
-                                            ]
-
-                                        }
-
-                                        \times 8/9
-                                        {
-
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            c''32
-                                            [
-
-                                            b'32
-
-                                            bf'32
-
-                                            a'32
-
-                                            af'32
-
-                                            g'32
-
-                                            fs'32
-
-                                            f'32
-
-                                            \revert Staff.Stem.stemlet-length
-                                            e'32
-                                            ]
-
-                                        }
-
-                                        \scaleDurations #'(1 . 1)
-                                        {
-
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            c''32
-                                            [
-
-                                            b'32
-
-                                            bf'32
-
-                                            a'32
-
-                                            af'32
-
-                                            g'32
-
-                                            fs'32
-
-                                            \revert Staff.Stem.stemlet-length
-                                            f'32
-                                            ]
-
-                                        }
-
-                                        \times 4/5
-                                        {
-
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            af'32
-                                            [
-
-                                            g'32
-
-                                            fs'32
-
-                                            f'32
-
-                                            e'32
-
-                                            ef'32
-
-                                            \revert Staff.Stem.stemlet-length
-                                            r8
-                                            ]
-
-                                        }
-
-                                        <<
-
-                                            \context Voice = "piano 1 voice temp"
-                                            {
-
-                                                  %! COMMENT_MEASURE_NUMBERS
-                                                  %! evans.SegmentMaker.comment_measure_numbers()
-                                                % [piano 1 voice temp measure 3]
-                                                \override Staff.Stem.stemlet-length = 0.75
-                                                \voiceTwo
-                                                e''8.
-                                                - \portato
-                                                [
-
-                                                \revert Staff.Stem.stemlet-length
-                                                ef''16
-                                                - \portato
-                                                ]
-
-                                                e''4
-                                                - \portato
-
-                                                \override Staff.Stem.stemlet-length = 0.75
-                                                d''16
-                                                - \portato
-                                                [
-
-                                                ef''16
-                                                - \portato
-
-                                                d''16
-                                                - \portato
-
-                                                \revert Staff.Stem.stemlet-length
-                                                ef''16
-                                                - \portato
-                                                ]
-
-                                                \times 2/3
-                                                {
-
-                                                    \override Staff.Stem.stemlet-length = 0.75
-                                                    cs''16
-                                                    - \portato
-                                                    [
-
-                                                    \revert Staff.Stem.stemlet-length
-                                                    cs''8
-                                                    - \portato
-                                                    ]
-
-                                                }
-
-                                                \override Staff.Stem.stemlet-length = 0.75
-                                                c''16
-                                                - \portato
-                                                [
-
-                                                \revert Staff.Stem.stemlet-length
-                                                cs''16
-                                                - \portato
-                                                ]
-
-                                            }
-
-                                            \context Voice = "piano 1 intermittent_voice_2"
-                                            {
-
-                                                \times 4/5
-                                                {
-
-                                                      %! COMMENT_MEASURE_NUMBERS
-                                                      %! evans.SegmentMaker.comment_measure_numbers()
-                                                    % [piano 1 intermittent_voice_2 measure 3]
-                                                    \override Staff.Stem.stemlet-length = 0.75
-                                                    \voiceOne
-                                                    f''16
-                                                    - \marcato
-                                                    [
-
-                                                    fs''16
-                                                    - \marcato
-
-                                                    f''16
-                                                    - \marcato
-
-                                                    g''16
-                                                    - \marcato
-
-                                                    \revert Staff.Stem.stemlet-length
-                                                    fs''16
-                                                    - \marcato
-                                                    ]
-
-                                                }
-
-                                                \override Staff.Stem.stemlet-length = 0.75
-                                                g''16
-                                                - \marcato
-                                                [
-
-                                                fs''16
-                                                - \marcato
-
-                                                af''16
-                                                - \marcato
-
-                                                \revert Staff.Stem.stemlet-length
-                                                af''16
-                                                - \marcato
-                                                ]
-
-                                                \times 2/3
-                                                {
-
-                                                    \override Staff.Stem.stemlet-length = 0.75
-                                                    a''16
-                                                    - \marcato
-                                                    [
-
-                                                    af''16
-                                                    - \marcato
-
-                                                    bf''16
-                                                    - \marcato
-
-                                                    a''16
-                                                    - \marcato
-
-                                                    bf''16
-                                                    - \marcato
-
-                                                    \revert Staff.Stem.stemlet-length
-                                                    a''16
-                                                    - \marcato
-                                                    ]
-
-                                                }
-
-                                                \times 4/5
-                                                {
-
-                                                    \override Staff.Stem.stemlet-length = 0.75
-                                                    b''16
-                                                    - \marcato
-                                                    [
-
-                                                    b''16
-                                                    - \marcato
-
-                                                    c'''16
-                                                    - \marcato
-
-                                                    b''16
-                                                    - \marcato
-
-                                                    \revert Staff.Stem.stemlet-length
-                                                    cs'''16
-                                                    - \marcato
-                                                    ]
-
-                                                }
-
-                                            }
-
-                                        >>
-                                        \oneVoice
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [piano 1 voice measure 1]
+                                          %! applying staff names and clefs
+                                        \set Staff.instrumentName = \markup { \hcenter-in #14 \with-color #white "Piano LH" }
+                                          %! applying staff names and clefs
+                                        \set Staff.shortInstrumentName = \markup { \hcenter-in #12 \with-color #white "LH" }
+                                          %! MATERIAL_COLOR
+                                        \staffHighlight #(rgb-color 0.6862745098039216 0.6274509803921569 0.9254901960784314)
+                                        c'1
+
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [piano 1 voice measure 2]
+                                        c'1
+                                          %! MATERIAL_COLOR
+                                        \stopStaffHighlight
+
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [piano 1 voice measure 3]
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 1/2
+
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [piano 1 voice measure 4]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 1/2
+
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [piano 1 voice measure 5]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 1/2
+
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [piano 1 voice measure 6]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 3/8
+
+                                        R1 * 3/8
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [piano 1 voice measure 7]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 1/2
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [piano 1 voice measure 8]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [piano 1 voice measure 9]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [piano 1 voice measure 10]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [piano 1 voice measure 11]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [piano 1 voice measure 12]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [piano 1 voice measure 13]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [piano 1 voice measure 14]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [piano 1 voice measure 15]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [piano 1 voice measure 16]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [piano 1 voice measure 17]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [piano 1 voice measure 18]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [piano 1 voice measure 19]
-                                        r1
+                                        R1 * 1/2
                                         \bar "||"
 
                                     }
@@ -2101,213 +1614,62 @@
                                         \set Staff.instrumentName = \markup { \hcenter-in #14 \with-color #white "Piano RH" }
                                           %! applying staff names and clefs
                                         \set Staff.shortInstrumentName = \markup { \hcenter-in #12 \with-color #white "RH" }
+                                          %! MATERIAL_COLOR
+                                        \staffHighlight #(rgb-color 0.6862745098039216 0.6274509803921569 0.9254901960784314)
                                         \clef "bass"
-                                        c'4
-                                        ~
-
-                                        \times 4/5
-                                        {
-
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            c'8.
-                                            [
-
-                                            \revert Staff.Stem.stemlet-length
-                                            fs8
-                                            ]
-                                            ~
-
-                                        }
-
-                                        \times 2/3
-                                        {
-
-                                            fs4
-
-                                            bf8
-                                            ~
-
-                                        }
-
-                                        \tweak text #tuplet-number::calc-fraction-text
-                                        \times 8/7
-                                        {
-
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            bf16.
-                                            [
-
-                                            \revert Staff.Stem.stemlet-length
-                                            b8
-                                            ]
-
-                                        }
+                                        c'1
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [piano 2 voice measure 2]
-                                        a4
-                                        ~
+                                        c'1
+                                          %! MATERIAL_COLOR
+                                        \stopStaffHighlight
 
-                                        \times 4/5
-                                        {
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [piano 2 voice measure 3]
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 1/2
 
-                                            a16
-
-                                            bf4
-                                            ~
-
-                                        }
-
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        bf8
-                                        [
-
-                                        \revert Staff.Stem.stemlet-length
-                                        e8
-                                        ]
-                                        ~
-
-                                        \times 4/5
-                                        {
-
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            e8.
-                                            [
-
-                                            \revert Staff.Stem.stemlet-length
-                                            af8
-                                            ]
-                                            ~
-
-                                        }
-
-                                        \times 2/3
-                                        {
-
-                                              %! COMMENT_MEASURE_NUMBERS
-                                              %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [piano 2 voice measure 3]
-                                            af8
-
-                                            a4
-                                            ~
-
-                                        }
-
-                                        \tweak text #tuplet-number::calc-fraction-text
-                                        \times 8/7
-                                        {
-
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            a16.
-                                            [
-
-                                            \revert Staff.Stem.stemlet-length
-                                            g8
-                                            ]
-                                            ~
-
-                                        }
-
-                                        \times 2/3
-                                        {
-
-                                            g8
-
-                                            b4
-                                            ~
-
-                                        }
-
-                                        \times 4/5
-                                        {
-
-                                            b16
-
-                                            f4
-
-                                        }
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [piano 2 voice measure 4]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 1/2
+
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [piano 2 voice measure 5]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 1/2
+
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [piano 2 voice measure 6]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 3/8
+
+                                        R1 * 3/8
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [piano 2 voice measure 7]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 1/2
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [piano 2 voice measure 8]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [piano 2 voice measure 9]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [piano 2 voice measure 10]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [piano 2 voice measure 11]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [piano 2 voice measure 12]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [piano 2 voice measure 13]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [piano 2 voice measure 14]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [piano 2 voice measure 15]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [piano 2 voice measure 16]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [piano 2 voice measure 17]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [piano 2 voice measure 18]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [piano 2 voice measure 19]
-                                        r1
+                                        R1 * 1/2
                                         \bar "||"
 
                                     }
@@ -2342,98 +1704,54 @@
                                         \set Staff.instrumentName = \markup { \hcenter-in #14 "Violin I" }
                                           %! applying staff names and clefs
                                         \set Staff.shortInstrumentName = \markup { \hcenter-in #12 "vn I" }
-                                        r1
+                                          %! MATERIAL_COLOR
+                                        \staffHighlight #(rgb-color 0.6862745098039216 0.6274509803921569 0.9254901960784314)
+                                        c'1
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 1 voice measure 2]
-                                        r1
+                                        c'1
+                                          %! MATERIAL_COLOR
+                                        \stopStaffHighlight
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 1 voice measure 3]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 1/2
+
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 1 voice measure 4]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 1/2
+
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 1 voice measure 5]
-                                        r1
+                                          %! MATERIAL_COLOR
+                                        \staffHighlight #(rgb-color 0.7294117647058823 0.9921568627450981 0.6509803921568628)
+                                        c'1
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 1 voice measure 6]
-                                        r1
+                                        c'2.
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 1 voice measure 7]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 1 voice measure 8]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 1 voice measure 9]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 1 voice measure 10]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 1 voice measure 11]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 1 voice measure 12]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 1 voice measure 13]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 1 voice measure 14]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 1 voice measure 15]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 1 voice measure 16]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 1 voice measure 17]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 1 voice measure 18]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 1 voice measure 19]
-                                        r1
+                                        c'1
                                         \bar "||"
+                                          %! MATERIAL_COLOR
+                                        \stopStaffHighlight
 
                                     }
 
@@ -2453,102 +1771,62 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 2 voice measure 1]
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
                                           %! applying staff names and clefs
                                         \set Staff.instrumentName = \markup { \hcenter-in #14 "Violin II" }
                                           %! applying staff names and clefs
                                         \set Staff.shortInstrumentName = \markup { \hcenter-in #12 "vn II" }
-                                        r1
+                                        r1 * 1/2
+
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 2 voice measure 2]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 1/2
+
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 2 voice measure 3]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 1/2
+
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 2 voice measure 4]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 1/2
+
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 2 voice measure 5]
-                                        r1
+                                          %! MATERIAL_COLOR
+                                        \staffHighlight #(rgb-color 0.7294117647058823 0.9921568627450981 0.6509803921568628)
+                                        c'1
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 2 voice measure 6]
-                                        r1
+                                        c'2.
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 2 voice measure 7]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 8]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 9]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 10]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 11]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 12]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 13]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 14]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 15]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 16]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 17]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 18]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 19]
-                                        r1
+                                        c'1
                                         \bar "||"
+                                          %! MATERIAL_COLOR
+                                        \stopStaffHighlight
 
                                     }
 
@@ -2568,103 +1846,64 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [viola voice measure 1]
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
                                           %! applying staff names and clefs
                                         \set Staff.instrumentName = \markup { \hcenter-in #14 "Viola" }
                                           %! applying staff names and clefs
                                         \set Staff.shortInstrumentName = \markup { \hcenter-in #12 "va" }
+                                          %! applying indicators
                                         \clef "alto"
-                                        r1
+                                        r1 * 1/2
+
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [viola voice measure 2]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 1/2
+
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [viola voice measure 3]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 1/2
+
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [viola voice measure 4]
-                                        r1
+                                          %! MATERIAL_COLOR
+                                        \staffHighlight #(rgb-color 1.0 1.0 0.6666666666666666)
+                                        c'1
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [viola voice measure 5]
-                                        r1
+                                        c'1
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [viola voice measure 6]
-                                        r1
+                                        c'2.
+                                          %! MATERIAL_COLOR
+                                        \stopStaffHighlight
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [viola voice measure 7]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [viola voice measure 8]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [viola voice measure 9]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [viola voice measure 10]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [viola voice measure 11]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [viola voice measure 12]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [viola voice measure 13]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [viola voice measure 14]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [viola voice measure 15]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [viola voice measure 16]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [viola voice measure 17]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [viola voice measure 18]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [viola voice measure 19]
-                                        r1
+                                          %! MATERIAL_COLOR
+                                        \staffHighlight #(rgb-color 0.7294117647058823 0.9921568627450981 0.6509803921568628)
+                                        c'1
                                         \bar "||"
+                                          %! MATERIAL_COLOR
+                                        \stopStaffHighlight
 
                                     }
 
@@ -2688,99 +1927,51 @@
                                         \set Staff.instrumentName = \markup { \hcenter-in #14 "Violoncello" }
                                           %! applying staff names and clefs
                                         \set Staff.shortInstrumentName = \markup { \hcenter-in #12 "vc" }
+                                          %! MATERIAL_COLOR
+                                        \staffHighlight #(rgb-color 0.6862745098039216 0.6274509803921569 0.9254901960784314)
                                         \clef "bass"
-                                        r1
+                                        c'1
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [cello voice measure 2]
-                                        r1
+                                        c'1
+                                          %! MATERIAL_COLOR
+                                        \stopStaffHighlight
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [cello voice measure 3]
-                                        r1
+                                          %! MATERIAL_COLOR
+                                        \staffHighlight #(rgb-color 1.0 1.0 0.6666666666666666)
+                                        c'1
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [cello voice measure 4]
-                                        r1
+                                        c'1
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [cello voice measure 5]
-                                        r1
+                                        c'1
+                                          %! MATERIAL_COLOR
+                                        \stopStaffHighlight
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [cello voice measure 6]
-                                        r1
+                                          %! MATERIAL_COLOR
+                                        \staffHighlight #(rgb-color 0.7294117647058823 0.9921568627450981 0.6509803921568628)
+                                        c'2.
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [cello voice measure 7]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [cello voice measure 8]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [cello voice measure 9]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [cello voice measure 10]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [cello voice measure 11]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [cello voice measure 12]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [cello voice measure 13]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [cello voice measure 14]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [cello voice measure 15]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [cello voice measure 16]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [cello voice measure 17]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [cello voice measure 18]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [cello voice measure 19]
-                                        r1
+                                        c'1
                                         \bar "||"
+                                          %! MATERIAL_COLOR
+                                        \stopStaffHighlight
 
                                     }
 
@@ -2800,103 +1991,60 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [contrabass voice measure 1]
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
                                           %! applying staff names and clefs
                                         \set Staff.instrumentName = \markup { \hcenter-in #14 "Contrabass" }
                                           %! applying staff names and clefs
                                         \set Staff.shortInstrumentName = \markup { \hcenter-in #12 "cb" }
+                                          %! applying indicators
                                         \clef "bass"
-                                        r1
+                                        r1 * 1/2
+
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [contrabass voice measure 2]
-                                        r1
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 1/2
+
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [contrabass voice measure 3]
-                                        r1
+                                          %! MATERIAL_COLOR
+                                        \staffHighlight #(rgb-color 1.0 1.0 0.6666666666666666)
+                                        c''1
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [contrabass voice measure 4]
-                                        r1
+                                        c''1
+                                          %! MATERIAL_COLOR
+                                        \stopStaffHighlight
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [contrabass voice measure 5]
-                                        r1
+                                          %! MATERIAL_COLOR
+                                        \staffHighlight #(rgb-color 0.7294117647058823 0.9921568627450981 0.6509803921568628)
+                                        c''1
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [contrabass voice measure 6]
-                                        r1
+                                        c''2.
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [contrabass voice measure 7]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [contrabass voice measure 8]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [contrabass voice measure 9]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [contrabass voice measure 10]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [contrabass voice measure 11]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [contrabass voice measure 12]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [contrabass voice measure 13]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [contrabass voice measure 14]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [contrabass voice measure 15]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [contrabass voice measure 16]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [contrabass voice measure 17]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [contrabass voice measure 18]
-                                        r1
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [contrabass voice measure 19]
-                                        r1
+                                        c''1
                                         \bar "||"
+                                          %! MATERIAL_COLOR
+                                        \stopStaffHighlight
 
                                     }
 

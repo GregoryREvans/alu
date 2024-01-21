@@ -6,25 +6,10 @@ import alu
 
 breaks = evans.Breaks(
     evans.Page(
-        evans.System(measures=3, lbsd=(20, "(19 20 20 20)"), x_offset=2),
+        evans.System(measures=4, lbsd=(20, "(19 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20)"), x_offset=2),
     ),
     evans.Page(
-        evans.System(measures=3, lbsd=(20, "(19 20 20 20)"), x_offset=2),
-    ),
-    evans.Page(
-        evans.System(measures=3, lbsd=(20, "(19 20 20 20)"), x_offset=2),
-    ),
-    evans.Page(
-        evans.System(measures=3, lbsd=(20, "(19 20 20 20)"), x_offset=2),
-    ),
-    evans.Page(
-        evans.System(measures=3, lbsd=(20, "(19 20 20 20)"), x_offset=2),
-    ),
-    evans.Page(
-        evans.System(measures=3, lbsd=(20, "(19 20 20 20)"), x_offset=2),
-    ),
-    evans.Page(
-        evans.System(measures=1, lbsd=(20, "(19 20 20 20)"), x_offset=2),
+        evans.System(measures=3, lbsd=(20, "(19 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20)"), x_offset=2),
     ),
     time_signatures=alu.reduced_signatures_01,
     default_spacing=(1, 35),  # 42

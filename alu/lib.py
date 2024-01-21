@@ -3,259 +3,107 @@ import baca
 import evans
 from fractions import Fraction
 
+def measure_numbers(arg):
+    return [_ - 1 for _ in arg]
+
 # lily met
 
-met_144 = abjad.MetronomeMark((1, 4), 144)
+met_122 = abjad.MetronomeMark((1, 4), 122)
 
-met_96 = abjad.MetronomeMark((1, 4), 96)
+met_105 = abjad.MetronomeMark((1, 4), 105)
 
-met_72 = abjad.MetronomeMark((1, 4), 72)
+met_87 = abjad.MetronomeMark((1, 4), 87)
 
-met_57 = abjad.MetronomeMark((1, 4), 58)
+met_70 = abjad.MetronomeMark((1, 4), 70)
 
-met_48 = abjad.MetronomeMark((1, 4), 48)
+met_46 = abjad.MetronomeMark((1, 4), 46)
 
 # markup met
 
-met_48_mark = abjad.MetronomeMark.make_tempo_equation_markup((1, 4), 48)
+met_46_mark = abjad.MetronomeMark.make_tempo_equation_markup((1, 4), 46 + Fraction(2, 3), decimal=True)
 
-mark_48 = abjad.LilyPondLiteral(
+met_46_mark =  abjad.Markup(string=r'\markup {\abjad-metronome-mark-markup #2 #0 #1 #"46" \fraction 2 3 }')
+
+mark_46 = abjad.LilyPondLiteral( # 01
     [
         r"^ \markup {",
         r"  \raise #6 \with-dimensions-from \null",
         # r"  \override #'(font-size . 5.5)", # score
         r"  \override #'(font-size . 3)",  # parts
         r"  \concat {",
-        f"      {met_48_mark.string[8:]}",
+        f"      {met_46_mark.string[8:]}",
         r"  }",
         r"}",
     ],
     site="after",
 )
 
-### 48 modulations
+### 46 modulations
 
-mod_48_57 = evans.metric_modulation(
-    metronome_mark=((1, 4), 48),
-    left_note=(abjad.Tuplet(multiplier="6:5", components=[abjad.Note("c'4")])),
-    right_note=(abjad.Note("c'4")),
+mod_46_87 = evans.metric_modulation( # 02 X
+    metronome_mark=((1, 4), 46 + Fraction(2, 3)),
+    left_note=(abjad.Tuplet(multiplier="15:8", components=[abjad.Note("c'16")])),
+    right_note=(abjad.Note("c'16")),
     modulated_beat=(abjad.Note("c'4")),
 )
 
-mod_48_72 = evans.metric_modulation(
-    metronome_mark=((1, 4), 48),
-    left_note=(abjad.Tuplet(multiplier="3:2", components=[abjad.Note("c'4")])),
-    right_note=(abjad.Note("c'4")),
-    modulated_beat=(abjad.Note("c'4")),
-)
+### 70 modulations
 
-mod_48_96 = evans.metric_modulation(
-    metronome_mark=((1, 4), 48),
-    left_note=(abjad.Note("c'8")),
-    right_note=(abjad.Note("c'4")),
-    modulated_beat=(abjad.Note("c'4")),
-)
-
-mod_48_144 = evans.metric_modulation(
-    metronome_mark=((1, 4), 48),
-    left_note=(abjad.Note("c'8")),
-    right_note=(abjad.Note("c'4.")),
-    modulated_beat=(abjad.Note("c'4")),
-)
-
-###
-
-
-met_57_mark = abjad.MetronomeMark.make_tempo_equation_markup((1, 4), 58)
-
-mark_57 = abjad.LilyPondLiteral(
-    [
-        r"^ \markup {",
-        r"  \raise #6 \with-dimensions-from \null",
-        # r"  \override #'(font-size . 5.5)", # score
-        r"  \override #'(font-size . 3)",  # parts
-        r"  \concat {",
-        f"      {met_57_mark.string[8:]}",
-        r"  }",
-        r"}",
-    ],
-    site="after",
-)
-
-### 57 modulations
-
-mod_57_48 = evans.metric_modulation(
-    metronome_mark=((1, 4), Fraction(288, 5)),
-    left_note=(abjad.Tuplet(multiplier="5:6", components=[abjad.Note("c'4")])),
-    right_note=(abjad.Note("c'4")),
-    modulated_beat=(abjad.Note("c'4")),
-)
-
-mod_57_72 = evans.metric_modulation(
-    metronome_mark=((1, 4), Fraction(288, 5)),
-    left_note=(abjad.Tuplet(multiplier="5:4", components=[abjad.Note("c'4")])),
-    right_note=(abjad.Note("c'4")),
-    modulated_beat=(abjad.Note("c'4")),
-)
-
-mod_57_96 = evans.metric_modulation(
-    metronome_mark=((1, 4), Fraction(288, 5)),
-    left_note=(abjad.Tuplet(multiplier="5:3", components=[abjad.Note("c'4")])),
-    right_note=(abjad.Note("c'4")),
-    modulated_beat=(abjad.Note("c'4")),
-)
-
-mod_57_144 = evans.metric_modulation(
-    metronome_mark=((1, 4), Fraction(288, 5)),
-    left_note=(abjad.Tuplet(multiplier="5:2", components=[abjad.Note("c'4")])),
-    right_note=(abjad.Note("c'4")),
-    modulated_beat=(abjad.Note("c'4")),
-)
-
-###
-
-met_72_mark = abjad.MetronomeMark.make_tempo_equation_markup((1, 4), 72)
-
-mark_72 = abjad.LilyPondLiteral(
-    [
-        r"^ \markup {",
-        r"  \raise #6 \with-dimensions-from \null",
-        # r"  \override #'(font-size . 5.5)", # score
-        r"  \override #'(font-size . 3)",  # parts
-        r"  \concat {",
-        f"      {met_72_mark.string[8:]}",
-        r"  }",
-        r"}",
-    ],
-    site="after",
-)
-
-### 72 modulations
-
-mod_72_48 = evans.metric_modulation(
-    metronome_mark=((1, 4), 72),
-    left_note=(abjad.Tuplet(multiplier="2:3", components=[abjad.Note("c'4")])),
-    right_note=(abjad.Note("c'4")),
-    modulated_beat=(abjad.Note("c'4")),
-)
-
-mod_72_57 = evans.metric_modulation(
-    metronome_mark=((1, 4), 72),
-    left_note=(abjad.Tuplet(multiplier="4:5", components=[abjad.Note("c'4")])),
-    right_note=(abjad.Note("c'4")),
-    modulated_beat=(abjad.Note("c'4")),
-)
-
-mod_72_96 = evans.metric_modulation(
-    metronome_mark=((1, 4), 72),
-    left_note=(abjad.Tuplet(multiplier="4:3", components=[abjad.Note("c'4")])),
-    right_note=(abjad.Note("c'4")),
-    modulated_beat=(abjad.Note("c'4")),
-)
-
-mod_72_144 = evans.metric_modulation(
-    metronome_mark=((1, 4), 72),
-    left_note=(abjad.Note("c'8")),
-    right_note=(abjad.Note("c'4")),
-    modulated_beat=(abjad.Note("c'4")),
-)
-
-###
-
-
-met_96_mark = abjad.MetronomeMark.make_tempo_equation_markup((1, 4), 96)
-
-mark_96 = abjad.LilyPondLiteral(
-    [
-        r"^ \markup \raise #6 \with-dimensions-from \null {",
-        # r"  \override #'(font-size . 5.5)", # score
-        r"  \override #'(font-size . 3)",  # parts
-        r"  \concat {",
-        f"      {met_96_mark.string[8:]}",
-        r"  }",
-        r"}",
-    ],
-    site="after",
-)
-
-### 96 modulations
-
-mod_96_48 = evans.metric_modulation(
-    metronome_mark=((1, 4), 96),
-    left_note=(abjad.Note("c'4")),
+mod_70_105 = evans.metric_modulation( # 09 X 14 X
+    metronome_mark=((1, 4), 70),
+    left_note=(abjad.Tuplet(multiplier="3:2", components=[abjad.Note("c'8")])),
     right_note=(abjad.Note("c'8")),
     modulated_beat=(abjad.Note("c'4")),
 )
 
-mod_96_57 = evans.metric_modulation(
-    metronome_mark=((1, 4), 96),
-    left_note=(abjad.Tuplet(multiplier="3:5", components=[abjad.Note("c'4")])),
-    right_note=(abjad.Note("c'4")),
-    modulated_beat=(abjad.Note("c'4")),
-)
+### 87 modulations
 
-mod_96_72 = evans.metric_modulation(
-    metronome_mark=((1, 4), 96),
-    left_note=(abjad.Tuplet(multiplier="3:4", components=[abjad.Note("c'4")])),
-    right_note=(abjad.Note("c'4")),
-    modulated_beat=(abjad.Note("c'4")),
-)
-
-mod_96_144 = evans.metric_modulation(
-    metronome_mark=((1, 4), 96),
-    left_note=(abjad.Tuplet(multiplier="3:2", components=[abjad.Note("c'4")])),
-    right_note=(abjad.Note("c'4")),
-    modulated_beat=(abjad.Note("c'4")),
-)
-
-###
-
-
-met_144_mark = abjad.MetronomeMark.make_tempo_equation_markup((1, 4), 144)
-
-mark_144 = abjad.LilyPondLiteral(
-    [
-        r"^ \markup {",
-        r"  \raise #6 \with-dimensions-from \null",
-        # r"  \override #'(font-size . 5.5)", # score
-        r"  \override #'(font-size . 3)",  # parts
-        r"  \concat {",
-        f"      {met_144_mark.string[8:]}",
-        r"  }",
-        r"}",
-    ],
-    site="after",
-)
-
-### 144 modulations
-
-mod_144_48 = evans.metric_modulation(
-    metronome_mark=((1, 4), 144),
-    left_note=(abjad.Note("c'4.")),
+mod_87_122 = evans.metric_modulation( # 05 X
+    metronome_mark=((1, 4), 87 + Fraction(1, 2)),
+    left_note=(abjad.Tuplet(multiplier="7:5", components=[abjad.Note("c'8")])),
     right_note=(abjad.Note("c'8")),
     modulated_beat=(abjad.Note("c'4")),
 )
 
-mod_144_57 = evans.metric_modulation(
-    metronome_mark=((1, 4), 144),
-    left_note=(abjad.Tuplet(multiplier="2:5", components=[abjad.Note("c'4")])),
-    right_note=(abjad.Note("c'4")),
+mod_87_70 = evans.metric_modulation( # 08 X 13 X
+    metronome_mark=((1, 4), 87 + Fraction(1, 2)),
+    left_note=(abjad.Tuplet(multiplier="4:5", components=[abjad.Note("c'16")])),
+    right_note=(abjad.Note("c'16")),
     modulated_beat=(abjad.Note("c'4")),
 )
 
-mod_144_72 = evans.metric_modulation(
-    metronome_mark=((1, 4), 144),
-    left_note=(abjad.Note("c'4")),
+### 105 modulations
+
+mod_105_87 = evans.metric_modulation( # 07 X 12 X
+    metronome_mark=((1, 4), 105),
+    left_note=(abjad.Tuplet(multiplier="5:6", components=[abjad.Note("c'16")])),
+    right_note=(abjad.Note("c'16")),
+    modulated_beat=(abjad.Note("c'4")),
+)
+
+mod_105_122 = evans.metric_modulation( # 10 X
+    metronome_mark=((1, 4), 105),
+    left_note=(abjad.Tuplet(multiplier="7:6", components=[abjad.Note("c'16")])),
+    right_note=(abjad.Note("c'16")),
+    modulated_beat=(abjad.Note("c'4")),
+)
+
+mod_105_70 = evans.metric_modulation( # 15 X
+    metronome_mark=((1, 4), 105),
+    left_note=(abjad.Tuplet(multiplier="2:3", components=[abjad.Note("c'8")])),
     right_note=(abjad.Note("c'8")),
     modulated_beat=(abjad.Note("c'4")),
 )
 
-mod_144_96 = evans.metric_modulation(
-    metronome_mark=((1, 4), 144),
-    left_note=(abjad.Tuplet(multiplier="2:3", components=[abjad.Note("c'4")])),
-    right_note=(abjad.Note("c'4")),
+### 122 modulations
+
+mod_122_105 = evans.metric_modulation( # 06 X 11 X
+    metronome_mark=((1, 4), 122 + Fraction(1, 2)),
+    left_note=(abjad.Tuplet(multiplier="6:7", components=[abjad.Note("c'16")])),
+    right_note=(abjad.Note("c'16")),
     modulated_beat=(abjad.Note("c'4")),
 )
+
 
 
 ##
@@ -666,7 +514,7 @@ class MAS:
 
 A = MAS(
     string="[A].",
-    color="#(rgb-color 0.6 0.6 1)",
+    color=f"#(rgb-color {175/255} {160/255} {236/255})",
     staff_padding=5.5,
 )
 
@@ -676,7 +524,7 @@ def A_color(selections):
     groups = abjad.select.group_by_contiguity(leaves)
     tag = abjad.Tag("MATERIAL_COLOR")
     start = abjad.LilyPondLiteral(
-        r"\staffHighlight #(rgb-color 0.6 0.6 1)", site="before"
+        rf"\staffHighlight #(rgb-color {175/255} {160/255} {236/255})", site="before"
     )
     stop = abjad.LilyPondLiteral(r"\stopStaffHighlight", site="after")
     for group in groups:
@@ -686,7 +534,7 @@ def A_color(selections):
 
 B = MAS(
     string="[B].",
-    color="#(rgb-color 0.961 0.961 0.406)",
+    color=f"#(rgb-color {255/255} {255/255} {170/255})",
     staff_padding=5.5,
 )
 
@@ -696,7 +544,7 @@ def B_color(selections):
     groups = abjad.select.group_by_contiguity(leaves)
     tag = abjad.Tag("MATERIAL_COLOR")
     start = abjad.LilyPondLiteral(
-        r"\staffHighlight #(rgb-color 0.961 0.961 0.406)", site="before"
+        rf"\staffHighlight #(rgb-color {255/255} {255/255} {170/255})", site="before"
     )
     stop = abjad.LilyPondLiteral(r"\stopStaffHighlight", site="after")
     for group in groups:
@@ -706,7 +554,7 @@ def B_color(selections):
 
 C = MAS(
     string="[C].",
-    color="#(rgb-color 0.2 1 0.592)",
+    color=f"#(rgb-color {186/255} {253/255} {166/255})",
     staff_padding=5.5,
 )
 
@@ -716,7 +564,7 @@ def C_color(selections):
     groups = abjad.select.group_by_contiguity(leaves)
     tag = abjad.Tag("MATERIAL_COLOR")
     start = abjad.LilyPondLiteral(
-        r"\staffHighlight #(rgb-color 0.2 1 0.592)", site="before"
+        rf"\staffHighlight #(rgb-color {186/255} {253/255} {166/255})", site="before"
     )
     stop = abjad.LilyPondLiteral(r"\stopStaffHighlight", site="after")
     for group in groups:
@@ -726,7 +574,7 @@ def C_color(selections):
 
 D = MAS(
     string="[D].",
-    color="#(rgb-color 1 0.2 0.2)",
+    color=f"#(rgb-color {245/255} {153/255} {145/255})",
     staff_padding=5.5,
 )
 
@@ -736,7 +584,7 @@ def D_color(selections):
     groups = abjad.select.group_by_contiguity(leaves)
     tag = abjad.Tag("MATERIAL_COLOR")
     start = abjad.LilyPondLiteral(
-        r"\staffHighlight #(rgb-color 1 0.2 0.2)", site="before"
+        rf"\staffHighlight #(rgb-color {245/255} {153/255} {145/255})", site="before"
     )
     stop = abjad.LilyPondLiteral(r"\stopStaffHighlight", site="after")
     for group in groups:
@@ -746,7 +594,7 @@ def D_color(selections):
 
 E = MAS(
     string="[E].",
-    color="#(rgb-color 0.6 0.8 1)",
+    color=f"#(rgb-color {177/255} {211/255} {238/255})",
     staff_padding=5.5,
 )
 
@@ -756,7 +604,7 @@ def E_color(selections):
     groups = abjad.select.group_by_contiguity(leaves)
     tag = abjad.Tag("MATERIAL_COLOR")
     start = abjad.LilyPondLiteral(
-        r"\staffHighlight #(rgb-color 0.6 0.8 1)", site="before"
+        rf"\staffHighlight #(rgb-color {177/255} {211/255} {238/255})", site="before"
     )
     stop = abjad.LilyPondLiteral(r"\stopStaffHighlight", site="after")
     for group in groups:
@@ -764,73 +612,83 @@ def E_color(selections):
         abjad.attach(stop, group[-1], tag=tag)
 
 
-def chilled_stage_3_bowing(series="A", rotation=0, staff_padding=2):
-    series_dict = {
-        "A": evans.Sequence(
-            [(1, 7), (4, 7), (6, 7), (5, 7), (7, 7), (6, 7), (5, 7), (3, 7), (2, 7)]
-        ),
-        "B": evans.Sequence([(5, 5), (1, 5), (4, 5), (3, 5), (2, 5), (3, 5), (1, 5)]),
-    }
-    bowing_padding = staff_padding + 2.5
-    return baca.bcps(  # WARNING: doble check this
-        series_dict[series].rotate(rotation),
-        abjad.tweak(staff_padding).staff_padding,
-        bow_change_tweaks=(
-            abjad.tweak(abjad.LEFT).self_alignment_X,
-            abjad.tweak(bowing_padding).staff_padding,
-        ),
+F = MAS(
+    string="[F].",
+    color=f"#(rgb-color {247/255} {194/255} {156/255})",
+    staff_padding=5.5,
+)
+
+
+def F_color(selections):
+    leaves = abjad.select.leaves(selections)
+    groups = abjad.select.group_by_contiguity(leaves)
+    tag = abjad.Tag("MATERIAL_COLOR")
+    start = abjad.LilyPondLiteral(
+        rf"\staffHighlight #(rgb-color {247/255} {194/255} {156/255})", site="before"
     )
+    stop = abjad.LilyPondLiteral(r"\stopStaffHighlight", site="after")
+    for group in groups:
+        abjad.attach(start, group[0], tag=tag)
+        abjad.attach(stop, group[-1], tag=tag)
 
 
-def make_proportional_notation(selections):
-    for tuplet in abjad.Selection(selections).tuplets():
-        abjad.tweak(tuplet, r"\tweak TupletBracket.transparent ##t")
-        abjad.tweak(tuplet, r"\tweak TupletNumber.transparent ##t")
-
-    for rest in abjad.Selection(selections).leaves(pitched=False):
-        transparent_literal = abjad.LilyPondLiteral(
-            r"\once \override Rest.transparent = ##t", site="before"
-        )
-        transparent_dots_literal = abjad.LilyPondLiteral(
-            r"\once \override Dots.transparent = ##t", site="before"
-        )
-        abjad.attach(transparent_literal, rest)
-        abjad.attach(transparent_dots_literal, rest)
-
-    for note in abjad.Selection(selections).leaves(pitched=True):
-        abjad.attach(evans.DurationLine(), note)
-        style_literal = abjad.LilyPondLiteral(r"\duration-line-style", site="before")
-        abjad.attach(style_literal, note)
+G = MAS(
+    string="[G].",
+    color=f"#(rgb-color {226/255} {226/255} {226/255})",
+    staff_padding=5.5,
+)
 
 
-def make_proportaional_global_context(selections):
-    leaves = abjad.Selection(selections).leaves()
-    leaves_count = len(leaves)
-    for i, leaf in enumerate(leaves):
-        if i == 0:  # Experimental
-            continue
-        if i != leaves_count:
-            bar_literal = abjad.LilyPondLiteral(
-                r"\once \override Score.BarLine.stencil = ##f", site="before"
-            )
-            abjad.attach(bar_literal, leaf)
-            span_literal = abjad.LilyPondLiteral(
-                r"\once \override Score.SpanBar.stencil = ##f", site="before"
-            )
-            abjad.attach(span_literal, leaf)
-        if i != 0:
-            hidden_literal = abjad.LilyPondLiteral(
-                r"\once \override Score.TimeSignature.stencil = ##f",
-                site="before",
-            )
-            abjad.attach(hidden_literal, leaf)
-
-    first_leaf = abjad.Selection(selections).leaf(0)
-    x_literal = abjad.LilyPondLiteral(
-        r"\once \override Score.TimeSignature.stencil = #(blank-time-signature)",
-        site="before",
+def G_color(selections):
+    leaves = abjad.select.leaves(selections)
+    groups = abjad.select.group_by_contiguity(leaves)
+    tag = abjad.Tag("MATERIAL_COLOR")
+    start = abjad.LilyPondLiteral(
+        rf"\staffHighlight #(rgb-color {226/255} {226/255} {226/255})", site="before"
     )
-    abjad.attach(x_literal, first_leaf)
+    stop = abjad.LilyPondLiteral(r"\stopStaffHighlight", site="after")
+    for group in groups:
+        abjad.attach(start, group[0], tag=tag)
+        abjad.attach(stop, group[-1], tag=tag)
+
+
+H = MAS(
+    string="[H].",
+    color=f"#(rgb-color {186/255} {253/255} {254/255})",
+    staff_padding=5.5,
+)
+
+
+def H_color(selections):
+    leaves = abjad.select.leaves(selections)
+    groups = abjad.select.group_by_contiguity(leaves)
+    tag = abjad.Tag("MATERIAL_COLOR")
+    start = abjad.LilyPondLiteral(
+        rf"\staffHighlight #(rgb-color {186/255} {253/255} {254/255})", site="before"
+    )
+    stop = abjad.LilyPondLiteral(r"\stopStaffHighlight", site="after")
+    for group in groups:
+        abjad.attach(start, group[0], tag=tag)
+        abjad.attach(stop, group[-1], tag=tag)
+
+I = MAS(
+    string="[I].",
+    color=f"#(rgb-color {197/255} {201/255} {251/255})",
+    staff_padding=5.5,
+)
+
+
+def I_color(selections):
+    leaves = abjad.select.leaves(selections)
+    groups = abjad.select.group_by_contiguity(leaves)
+    tag = abjad.Tag("MATERIAL_COLOR")
+    start = abjad.LilyPondLiteral(
+        rf"\staffHighlight #(rgb-color {197/255} {201/255} {251/255})", site="before"
+    )
+    stop = abjad.LilyPondLiteral(r"\stopStaffHighlight", site="after")
+    for group in groups:
+        abjad.attach(start, group[0], tag=tag)
+        abjad.attach(stop, group[-1], tag=tag)
 
 
 def label_clock_time(selections):

@@ -3,6 +3,7 @@ import pathlib
 import abjad
 import baca
 import evans
+from abjadext import rmakers
 
 import alu
 
@@ -50,6 +51,7 @@ maker = evans.SegmentMaker(
     name_staves=True,
     fermata_measures=alu.fermata_measures_01,
     commands=[
+        # PREFIX
         evans.attach(
             "tenor trombone voice",
             abjad.Clef("bass"),
@@ -67,8 +69,14 @@ maker = evans.SegmentMaker(
         ),
         evans.attach(
             "percussion 1 voice",
-            abjad.LilyPondLiteral(r"\staff-line-count #1"),
+            abjad.LilyPondLiteral(r"\staff-line-count #4"),
             lambda _: abjad.select.leaf(_, 0),
+        ),
+        evans.attach(
+            "percussion 1 voice",
+            abjad.Markup(r"\boxed-markup woodblocks #1"),
+            lambda _: abjad.select.leaf(_, 0),
+            direction=abjad.UP,
         ),
         evans.attach(
             "percussion 2 voice",
@@ -77,8 +85,14 @@ maker = evans.SegmentMaker(
         ),
         evans.attach(
             "percussion 2 voice",
-            abjad.LilyPondLiteral(r"\staff-line-count #1"),
+            abjad.LilyPondLiteral(r"\staff-line-count #4"),
             lambda _: abjad.select.leaf(_, 0),
+        ),
+        evans.attach(
+            "percussion 2 voice",
+            abjad.Markup(r'\boxed-markup "slit drum" #1'),
+            lambda _: abjad.select.leaf(_, 0),
+            direction=abjad.UP,
         ),
         evans.attach(
             "piano 2 voice",
@@ -100,104 +114,162 @@ maker = evans.SegmentMaker(
             abjad.Clef("bass"),
             lambda _: abjad.select.leaf(_, 0),
         ),
+        # MUSIC
+        # FLUTE
+        # OBOE
+        # CLARINET
+        # evans.MusicCommand(
+        #     ("clarinet in b flat voice", [0, 1]),
+        #     evans.accelerando(
+        #         [(1, 8), (1, 4), (1, 16)],
+        #         preprocessor=evans.make_preprocessor(sum=True)
+        #     ),
+        #     evans.Callable(
+        #         rmakers.force_rest,
+        #         selector=lambda _: abjad.select.get(abjad.select.notes(_), ~abjad.index([0, 2, 3, 5, 6, 7], 9)),
+        #     ),
+        #     evans.PitchHandler(["cs'", "df'"]),
+        # ),
+        # BASSOON
+        # HORN
+        # TRUMPET
         evans.MusicCommand(
-            ("piano 1 voice", 0),
-            evans.Skeleton(
-                r"c'8. c'16 c'4 \times 2/3 {c'16 c'16 c'16} c'16 c'16 c'16 c'8 c'16"
-            ),
-            evans.loop([16, 15, 16, 14], [-1, -2]),
-            evans.ArticulationHandler(["staccato"]),
-            evans.IntermittentVoiceHandler(
-                evans.talea(
-                    [1, 2, 3],
-                    16,
-                    extra_counts=[1, 0, 2],
-                    preprocessor=evans.make_preprocessor(quarters=True),
-                ),
-                direction=abjad.UP,
-                voice_name="piano 1 intermittent_voice_1"
-            ),
-        ),
-        evans.call(
-            "piano 1 intermittent_voice_1",
-            evans.loop([17, 18, 17, 19], [1, 2]),
-            lambda _: _,
-        ),
-        evans.call(
-            "piano 1 intermittent_voice_1",
-            evans.ArticulationHandler([">"]),
-            lambda _: _,
+            ("trumpet voice", alu.measure_numbers([3])),
+            evans.note(),
+            alu.A_color,
         ),
         evans.MusicCommand(
-            ("piano 1 voice", 1),
-            evans.Skeleton(
-                evans.figure(
-                    [[12, 11, 10, 9, 8, 7], [12, 11, 10, 9, 8, 7, 6, 5, 4], [12, 11, 10, 9, 8, 7, 6, 5], [8, 7, 6, 5, 4, 3]],
-                    [1],
-                    32,
-                    # affix=baca.rests_before([2]),
-                    affix=baca.rests_around([2], [4]),
-                    treatments=[(1, 4)]
-                )
-            ),
+            ("trumpet voice", alu.measure_numbers([5])),
+            evans.note(),
+            alu.A_color,
+        ),
+        # TROMBONE
+        evans.MusicCommand(
+            ("tenor trombone voice", alu.measure_numbers([3])),
+            evans.note(),
+            alu.A_color,
         ),
         evans.MusicCommand(
-            ("piano 1 voice", 2),
-            evans.Skeleton(
-                r"c'8. c'16 c'4 c'16 c'16 c'16 c'16 \times 2/3 {c'16 c'8} c'16 c'16"
-            ),
-            evans.loop([16, 15, 16, 14], [-1, -2]),
-            evans.ArticulationHandler(["portato"]),
-            evans.IntermittentVoiceHandler(
-                evans.talea(
-                    [1],
-                    16,
-                    extra_counts=[1, 0, 2],
-                    preprocessor=evans.make_preprocessor(quarters=True),
-                ),
-                direction=abjad.UP,
-                voice_name="piano 1 intermittent_voice_2"
-            ),
+            ("tenor trombone voice", alu.measure_numbers([5])),
+            evans.note(),
+            alu.A_color,
         ),
-        evans.call(
-            "piano 1 intermittent_voice_2",
-            evans.loop([17, 18, 17, 19], [1, 2]),
-            lambda _: _,
-        ),
-        evans.call(
-            "piano 1 intermittent_voice_2",
-            evans.ArticulationHandler(["marcato"]),
-            lambda _: _,
+        # TUBA
+        evans.MusicCommand(
+            ("tuba voice", alu.measure_numbers([3])),
+            evans.note(),
+            alu.A_color,
         ),
         evans.MusicCommand(
-            ("piano 2 voice", (0, 3)),
-            evans.talea([7, 6, 5, 4], 16, extra_counts=[0, 1, 2, 3, 2, 1], preprocessor=evans.make_preprocessor(quarters=True)),
-            evans.loop([0, -6, -2, -1, -3], [-2, 1, -3, 2]),
+            ("tuba voice", alu.measure_numbers([5])),
+            evans.note(),
+            alu.A_color,
+        ),
+        # PERCUSSION 1
+        evans.MusicCommand(
+            ("percussion 1 voice", [_ - 1 for _ in [1, 2, 3, 4, 5, 6, 7]]),
+            evans.accelerando(
+                [(1, 8), (1, 4), (1, 16)],
+                preprocessor=evans.make_preprocessor(fuse_counts=[2, 1, 1, 3, 2])
+            ),
+            evans.Callable(
+                rmakers.force_rest,
+                selector=lambda _: abjad.select.get(abjad.select.notes(_), ~abjad.index([0, 2, 3, 5, 6, 7], 9)),
+            ),
+            evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
+            alu.A_color,
+        ),
+        # PERCUSSION 2
+        evans.MusicCommand(
+            ("percussion 2 voice", [_ - 1 for _ in [1, 2, 3, 4, 5, 6, 7]]),
+            evans.accelerando(
+                [(1, 4), (1, 8), (1, 16)],
+                [(1, 9), (1, 3), (1, 16)],
+                # preprocessor=None,
+            ),
+            evans.Callable(
+                rmakers.force_rest,
+                selector=lambda _: abjad.select.get(abjad.select.notes(_), ~abjad.index([0, 2, 3, 5, 6, 7], 9)),
+            ),
+            evans.PitchHandler(abjad.sequence.reverse([-1, 1, -1, 1, 3, -1, 1, -3]), staff_positions=True),
+            alu.A_color,
+        ),
+        # PIANO 1
+        evans.MusicCommand(
+            ("piano 1 voice", alu.measure_numbers([1, 2])),
+            evans.note(),
+            alu.A_color,
+        ),
+        # PIANO 2
+        evans.MusicCommand(
+            ("piano 2 voice", alu.measure_numbers([1, 2])),
+            evans.note(),
+            alu.A_color,
+        ),
+        # VIOLIN 1
+        evans.MusicCommand(
+            ("violin 1 voice", alu.measure_numbers([1, 2])),
+            evans.note(),
+            alu.A_color,
         ),
         evans.MusicCommand(
-            ("percussion 1 voice", 1),
-            evans.Skeleton(
-                evans.figure(
-                    [[0, 0, 0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0, 0, 0]],
-                    [1],
-                    16,
-                    treatments=["rit", "rit", "accel", "rit"],
-                )
-            ),
+            ("violin 1 voice", alu.measure_numbers([5, 6, 7])),
+            evans.note(),
+            alu.C_color,
         ),
-        evans.call(
-            "score",
-            evans.SegmentMaker.beam_score_without_splitting,
-            lambda _: abjad.select.components(_, abjad.Score),
+        # VIOLIN 2
+        evans.MusicCommand(
+            ("violin 2 voice", alu.measure_numbers([5, 6, 7])),
+            evans.note(),
+            alu.C_color,
         ),
+        # VIOLA
+        evans.MusicCommand(
+            ("viola voice", alu.measure_numbers([4, 5, 6])),
+            evans.note(),
+            alu.B_color,
+        ),
+        evans.MusicCommand(
+            ("viola voice", alu.measure_numbers([7])),
+            evans.note(),
+            alu.C_color,
+        ),
+        # CELLO
+        evans.MusicCommand(
+            ("cello voice", alu.measure_numbers([1, 2])),
+            evans.note(),
+            alu.A_color,
+        ),
+        evans.MusicCommand(
+            ("cello voice", alu.measure_numbers([3, 4, 5])),
+            evans.note(),
+            alu.B_color,
+        ),
+        evans.MusicCommand(
+            ("cello voice", alu.measure_numbers([6, 7])),
+            evans.note(),
+            alu.C_color,
+        ),
+        # BASS
+        evans.MusicCommand(
+            ("contrabass voice", alu.measure_numbers([3, 4])),
+            evans.note(),
+            alu.B_color,
+        ),
+        evans.MusicCommand(
+            ("contrabass voice", alu.measure_numbers([5, 6, 7])),
+            evans.note(),
+            alu.C_color,
+        ),
+        # SUFFIX
         evans.attach(
             "Global Context",
-            alu.lib.mark_48,
+            alu.lib.mark_46,
             lambda _: abjad.select.leaf(_, 0),
         ),
         evans.attach(
             "Global Context",
-            alu.lib.met_48,
+            alu.lib.met_46,
             lambda _: abjad.select.leaf(_, 0),
         ),
     ],
@@ -220,7 +292,7 @@ maker = evans.SegmentMaker(
     rehearsal_mark="",
     fermata="scripts.ufermata",
     with_layout=True,
-    mm_rests=False,
+    mm_rests=True,
     extra_rewrite=False,  # should default to false but defaults to true
     print_clock_time=True,
 )

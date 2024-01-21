@@ -5,7 +5,7 @@ colophon = \markup {
         \line {
             Iowa City, Ia.
         }
-        \line { September \hspace #0.75 – \hspace #0.75 November 2022. }
+        \line { September 2022 \hspace #0.75 – \hspace #0.75 February 2023. }
         }
     }
 
