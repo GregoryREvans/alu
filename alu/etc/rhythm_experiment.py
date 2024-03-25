@@ -3,14 +3,24 @@ import baca
 import evans
 from abjadext import rmakers
 
-def make_lilypond_file(music, signatures=None, beam=True, pitch=False, spacing=10, replace_silent_tuplets=False):
+
+def make_lilypond_file(
+    music,
+    signatures=None,
+    beam=True,
+    pitch=False,
+    spacing=10,
+    replace_silent_tuplets=False,
+):
 
     score = abjad.Score()
     if pitch is False:
         skips = rmakers.multiplied_duration(signatures, abjad.Skip)
         for sig, skip in zip(signatures, skips):
             abjad.attach(sig, skip)
-        ts_c = abjad.Staff(skips, lilypond_type="TimeSignatureContext", name="Global Context")
+        ts_c = abjad.Staff(
+            skips, lilypond_type="TimeSignatureContext", name="Global Context"
+        )
         score.append(ts_c)
 
     if not isinstance(music[0], list):
@@ -43,22 +53,20 @@ def make_lilypond_file(music, signatures=None, beam=True, pitch=False, spacing=1
         items=[
             "system-system-spacing = #'((basic-distance . 16) (minimum-distance . 16) (padding . 4))",
             "indent = 20\mm",
-            "print-page-number = ##f"
+            "print-page-number = ##f",
         ],
     )
 
     header = abjad.Block(
         "header",
-        items=[
-            "tagline = ##f"
-        ],
+        items=["tagline = ##f"],
     )
 
     if pitch is False:
         block = abjad.Block(
             "layout",
             items=[
-            r"""
+                r"""
             indent = #0
             \context {
                 \Score
@@ -115,7 +123,7 @@ def make_lilypond_file(music, signatures=None, beam=True, pitch=False, spacing=1
         block = abjad.Block(
             "layout",
             items=[
-            r"""
+                r"""
             indent = #0
             \accidentalStyle dodecaphonic
             \context {
@@ -245,23 +253,48 @@ def make_shell_exchange_rhythm(
         interaction_series_ = [0, 1]
     elif total_parts == 3:
         interaction_series_ = [
-            0, 1, 2,
-            0, 1,
-            0, 1, 2,
-            0, 2,
-            0, 1, 2,
+            0,
+            1,
+            2,
+            0,
+            1,
+            0,
+            1,
+            2,
+            0,
+            2,
+            0,
+            1,
+            2,
         ]
     elif total_parts == 4:
         interaction_series_ = [
-            0, 1, 2, 3,
-            0, 1, 2,
-            1, 2, 3,
-            0, 1, 2, 3,
-            2, 3,
-            0, 1,
-            0, 1, 2, 3,
-            0, 3,
-            0, 1,
+            0,
+            1,
+            2,
+            3,
+            0,
+            1,
+            2,
+            1,
+            2,
+            3,
+            0,
+            1,
+            2,
+            3,
+            2,
+            3,
+            0,
+            1,
+            0,
+            1,
+            2,
+            3,
+            0,
+            3,
+            0,
+            1,
         ]
     else:
         raise ValueError(total_parts)
@@ -294,16 +327,28 @@ def make_shell_exchange_rhythm(
     extras_ = [0, 0, -1, 0, 0, -1, -1]
     extras = abjad.sequence.rotate(extras_, n=extra_counts_rotation)
     durations = [_.duration for _ in time_signatures]
-    tuplets = rmakers.talea(durations, counts, 8, extra_counts=extras, )
+    tuplets = rmakers.talea(
+        durations,
+        counts,
+        8,
+        extra_counts=extras,
+    )
     voice = rmakers.wrap_in_time_signature_staff(tuplets, time_signatures)
     lt = baca.select.lt(voice, -1)
-    rmakers.force_rest(lt, )
-    rmakers.beam(voice, )
-    rmakers.rewrite_rest_filled(voice, )
+    rmakers.force_rest(
+        lt,
+    )
+    rmakers.beam(
+        voice,
+    )
+    rmakers.rewrite_rest_filled(
+        voice,
+    )
     rmakers.trivialize(voice)
     rmakers.extract_trivial(voice)
     music = abjad.mutate.eject_contents(voice)
     return music
+
 
 ### Faberge swells
 # music_1 = make_shell_exchange_rhythm(
@@ -570,6 +615,8 @@ def _tuplet_ratios_a():
         (2, 1, 1),
         (1, 1, 1, 1, 1),
     )
+
+
 #
 # def _make_glow_rhythm(time_signatures, *, tuplet_ratio_rotation=0):
 #     tuplet_ratios = _tuplet_ratios_a()
@@ -767,7 +814,15 @@ def _tuplet_ratios_a():
 ### helianthation swells NEW for ALU
 extra_counts = baca.sequence.boustrophedon([0, 1, 2, 3])
 
-def my_exchanging_rhythms(number_of_voices=4, voice_number=0, extra_counts=None, basic_rest_period=9, preprocessor=None, rewrite=None):
+
+def my_exchanging_rhythms(
+    number_of_voices=4,
+    voice_number=0,
+    extra_counts=None,
+    basic_rest_period=9,
+    preprocessor=None,
+    rewrite=None,
+):
 
     out = []
 
@@ -779,7 +834,7 @@ def my_exchanging_rhythms(number_of_voices=4, voice_number=0, extra_counts=None,
 
     cyc_voices = evans.CyclicList(voices, forget=False)
 
-    for group in zip(*[iter(index_patterns)]*4):
+    for group in zip(*[iter(index_patterns)] * 4):
         for item in group:
             voice = cyc_voices(r=1)[0]
             voice.append(item)
@@ -797,12 +852,15 @@ def my_exchanging_rhythms(number_of_voices=4, voice_number=0, extra_counts=None,
     music = maker(signatures)
     music = abjad.Staff(music)
     ties = abjad.select.logical_ties(music)
-    ties = abjad.select.get(ties, ~abjad.index(voice, len(index_patterns)+voice_number))
+    ties = abjad.select.get(
+        ties, ~abjad.index(voice, len(index_patterns) + voice_number)
+    )
     rmakers.force_rest(ties)
     music = abjad.mutate.eject_contents(music)
     out.append(music)
 
     return out
+
 
 music_1 = my_exchanging_rhythms(
     number_of_voices=5,

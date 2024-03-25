@@ -1,26 +1,26 @@
 import abjad
+import baca
 import evans
 from abjadext import rmakers
-import baca
 
-
-
-
-divisions = [abjad.TimeSignature(_) for _ in [
-    (4, 8),
-    (2, 4), # was (2, 8),
-    (3, 4), # was (3, 8),
-    (5, 12),
-    (3, 24),
-    (6, 24), # was (3, 24),
-    (5, 12),
-    (3, 8),
-    (3, 8),
-    (10, 12), # was (5, 12),
-    (3, 24),
-    (5, 8),
-    (3, 24),
-]]
+divisions = [
+    abjad.TimeSignature(_)
+    for _ in [
+        (4, 8),
+        (2, 4),  # was (2, 8),
+        (3, 4),  # was (3, 8),
+        (5, 12),
+        (3, 24),
+        (6, 24),  # was (3, 24),
+        (5, 12),
+        (3, 8),
+        (3, 8),
+        (10, 12),  # was (5, 12),
+        (3, 24),
+        (5, 8),
+        (3, 24),
+    ]
+]
 
 maker = evans.unsichtbare_farben(
     subdivisions_range=(1, 7),
@@ -40,20 +40,21 @@ maker = evans.unsichtbare_farben(
 
 music = maker(divisions)
 
-signature_context = abjad.Staff(rmakers.multiplied_duration(divisions, abjad.Skip), lilypond_type="TimeSignatureContext")
+signature_context = abjad.Staff(
+    rmakers.multiplied_duration(divisions, abjad.Skip),
+    lilypond_type="TimeSignatureContext",
+)
 for division, leaf in zip(divisions, abjad.select.leaves(signature_context)):
     abjad.attach(division, leaf)
-staff = abjad.Staff(music,lilypond_type="RhythmicStaff")
+staff = abjad.Staff(music, lilypond_type="RhythmicStaff")
 
 score = abjad.Score([signature_context, staff])
 
-evans.long_beam(
-    staff, beam_rests=True, beam_lone_notes=False # fix
-)
+evans.long_beam(staff, beam_rests=True, beam_lone_notes=False)  # fix
 file = abjad.LilyPondFile(
     items=[
         r'#(set-default-paper-size "11x17landscape")',
-        r'#(set-global-staff-size 18)',
+        r"#(set-global-staff-size 18)",
         r'\include "/Users/gregoryevans/abjad/abjad/scm/abjad.ily"',
         abjad.Block(
             "layout",
@@ -134,18 +135,13 @@ file = abjad.LilyPondFile(
                     %    \remove Time_signature_engraver
                       }
                 """
-            ]
+            ],
         ),
-        abjad.Block(
-            "score",
-            items=[score]
-        ),
+        abjad.Block("score", items=[score]),
     ],
 )
 
 abjad.show(file)
-
-
 
 
 # a = evans.CyclicList([3, 2, 4, 4, 3, 6, 6, 3, 5, 7, 5, 6], forget=False)

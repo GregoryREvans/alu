@@ -60,10 +60,10 @@
             s1 * 3/4
             \noBreak
             \evans-new-spacing-section #1 #35
-            s1 * 1
+            s1 * 5/4
             \noBreak
             \evans-new-spacing-section #1 #35
-            s1 * 5/4
+            s1 * 1
             \noBreak
             \evans-new-spacing-section #1 #24
             s1 * 1

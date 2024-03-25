@@ -7,6 +7,8 @@
 %{ \ekmelicStyle evans-alt-one % just trying this out %}
 
 \include "baca.ily"
+\include "/Users/gregoryevans/evans/lilypond/evans-markups.ily"
+\include "/Users/gregoryevans/evans/lilypond/evans-spanners.ily"
 \include "../../lib.ily"
 \include "evans.ily"
 \include "evans-accidentals-markups.ily"
@@ -89,6 +91,7 @@ afterGraceFraction = #(cons 15 16)
         \consists Time_signature_engraver
 		%{ \consists Mark_engraver %}
 		%{ \consists Metronome_mark_engraver %}
+		\consists "Measure_grouping_engraver"
 		\consists Text_engraver
 		\consists Text_spanner_engraver
 		\accepts LayoutContext
@@ -213,7 +216,7 @@ afterGraceFraction = #(cons 15 16)
 		\override VoltaBracketSpanner.Y-offset = #6 %?
 		\override MeasureCounter.Y-offset = #6 %?
 
-		\override Clef.stencil = \old-clefs
+		%{ \override Clef.stencil = \old-clefs %}
         \override Accidental.stencil = \alt-accidentals
         \override TupletBracket.edge-text = #(cons
             (markup #:arrow-head X LEFT #f)
@@ -225,51 +228,9 @@ afterGraceFraction = #(cons 15 16)
 		\Voice
 		\remove Forbid_line_break_engraver
 		\consists "Horizontal_bracket_engraver"
-		%{ \override HorizontalBracket.thickness = 1.6 %}
-		%{ \override HorizontalBracket.bracket-flare = #'(0 . 0) %}
-		%{ \override HorizontalBracket.style = #'dashed-line %}
-		\override HorizontalBracket.transparent = ##t
-		\override HorizontalBracketText.Y-offset = -0.5
-		%{ \override HorizontalBracketText.text = \markup {\hspace #1.25 "(" \hspace #-0.5 \scale #'(0.5 . 0.5) \score
-			{
-				\context Score = "Score"
-				\with
-				{
-					\override SpacingSpanner.spacing-increment = 0.5
-					proportionalNotationDuration = ##f
-				}
-				<<
-					\context RhythmicStaff = "Rhythmic_Staff"
-					\with
-					{
-						\remove Time_signature_engraver
-						\remove Staff_symbol_engraver
-						\override Stem.direction = #up
-						\override Stem.length = 5
-						\override TupletBracket.bracket-visibility = ##t
-						\override TupletBracket.direction = #up
-						\override TupletBracket.minimum-length = 4
-						\override TupletBracket.padding = 1.25
-						\override TupletBracket.shorten-pair = #'(-1 . -1.5)
-						\override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
-						\override TupletNumber.font-size = 0
-						\override TupletNumber.text = #tuplet-number::calc-fraction-text
-						tupletFullLength = ##t
-					}
-					{
-						c'8
-					}
-				>>
-				\layout
-				{
-					indent = 0
-					ragged-right = ##t
-				}
-			}
-			\hspace #-0.5
-			")"
-		} %}
-		\override HorizontalBracket.padding = 2.5
+		\override HorizontalBracket.direction = #UP
+		\override HorizontalBracket.staff-padding = 7.5
+		\override HorizontalBracket.bracket-flare = #'(0 . 0)
 		%{ \consists Duration_line_engraver %}
 		\override Accidental.font-size = 1
 		%{ #(define afterGraceFraction (cons 1 4)) %}

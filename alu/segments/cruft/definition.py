@@ -6,7 +6,6 @@ import evans
 
 import alu
 
-
 maker = evans.SegmentMaker(
     instruments=alu.instruments,
     names=[
@@ -57,7 +56,9 @@ maker = evans.SegmentMaker(
         ),
         evans.attach(
             "Global Context",
-            abjad.LilyPondLiteral(r"""\set Score.repeatCommands = #'((volta "1-2"))""", site="before"),
+            abjad.LilyPondLiteral(
+                r"""\set Score.repeatCommands = #'((volta "1-2"))""", site="before"
+            ),
             lambda _: abjad.select.leaf(_, 2),
         ),
         evans.attach(
@@ -143,7 +144,7 @@ maker = evans.SegmentMaker(
             evans.accelerando(
                 [(1, 20), (1, 32), (1, 16)],
                 [(1, 20), (1, 16), (1, 16)],
-                preprocessor=evans.make_preprocessor(quarters=True)
+                preprocessor=evans.make_preprocessor(quarters=True),
             ),
         ),
         evans.MusicCommand(
@@ -161,7 +162,7 @@ maker = evans.SegmentMaker(
                     preprocessor=evans.make_preprocessor(quarters=True),
                 ),
                 direction=abjad.UP,
-                voice_name="piano 1 intermittent_voice_1"
+                voice_name="piano 1 intermittent_voice_1",
             ),
         ),
         evans.call(
@@ -178,12 +179,17 @@ maker = evans.SegmentMaker(
             ("piano 1 voice", 1),
             evans.Skeleton(
                 evans.figure(
-                    [[12, 11, 10, 9, 8, 7], [12, 11, 10, 9, 8, 7, 6, 5, 4], [12, 11, 10, 9, 8, 7, 6, 5], [8, 7, 6, 5, 4, 3]],
+                    [
+                        [12, 11, 10, 9, 8, 7],
+                        [12, 11, 10, 9, 8, 7, 6, 5, 4],
+                        [12, 11, 10, 9, 8, 7, 6, 5],
+                        [8, 7, 6, 5, 4, 3],
+                    ],
                     [1],
                     32,
                     # affix=baca.rests_before([2]),
                     affix=baca.rests_around([2], [4]),
-                    treatments=[(1, 4)]
+                    treatments=[(1, 4)],
                 )
             ),
         ),
@@ -202,7 +208,7 @@ maker = evans.SegmentMaker(
                     preprocessor=evans.make_preprocessor(quarters=True),
                 ),
                 direction=abjad.UP,
-                voice_name="piano 1 intermittent_voice_2"
+                voice_name="piano 1 intermittent_voice_2",
             ),
         ),
         evans.call(
@@ -224,13 +230,18 @@ maker = evans.SegmentMaker(
                     16,
                     # affix=baca.rests_before([2]),
                     affix=baca.rests_around([2], [4]),
-                    treatments=[1, 0, -1]
+                    treatments=[1, 0, -1],
                 ),
             ),
         ),
         evans.MusicCommand(
             ("piano 2 voice", (0, 3)),
-            evans.talea([7, 6, 5, 4], 16, extra_counts=[0, 1, 2, 3, 2, 1], preprocessor=evans.make_preprocessor(quarters=True)),
+            evans.talea(
+                [7, 6, 5, 4],
+                16,
+                extra_counts=[0, 1, 2, 3, 2, 1],
+                preprocessor=evans.make_preprocessor(quarters=True),
+            ),
             evans.loop([0, -6, -2, -1, -3], [-2, 1, -3, 2]),
         ),
         # evans.attach(
@@ -255,7 +266,9 @@ maker = evans.SegmentMaker(
         ),
         evans.call(
             "piano 1 voice",
-            lambda _: evans.imbricate(_, [7, 4, 5, 3], "piano 1 voice imbrication 1", articulation="accent"),
+            lambda _: evans.imbricate(
+                _, [7, 4, 5, 3], "piano 1 voice imbrication 1", articulation="accent"
+            ),
             selector=evans.select_measures([1], leaves=True),
         ),
         evans.call(
@@ -266,12 +279,9 @@ maker = evans.SegmentMaker(
         evans.call(
             "piano 1 voice",
             lambda _: evans.imbricate(
-                _,
-                [1, 5, 4, 6, 8],
-                "imbrication 1",
-                articulation="marcato"
+                _, [1, 5, 4, 6, 8], "imbrication 1", articulation="marcato"
             ),
-            selector=evans.select_measures([3], leaves=True)
+            selector=evans.select_measures([3], leaves=True),
         ),
         evans.call(
             "imbrication 1",
@@ -280,8 +290,10 @@ maker = evans.SegmentMaker(
         ),
         evans.call(
             "sub group 4",
-            lambda _: evans.make_anchor_skips_from_voices(_, name="anchor voice", destination="piano 2 voice"),
-            selector= lambda _: abjad.select.components(_, abjad.Voice),
+            lambda _: evans.make_anchor_skips_from_voices(
+                _, name="anchor voice", destination="piano 2 voice"
+            ),
+            selector=lambda _: abjad.select.components(_, abjad.Voice),
         ),
         evans.call(
             "anchor voice",

@@ -1,6 +1,7 @@
 import abjad
 import evans
 
+
 def sigs(series, rotation, count):
     if series == "A":
         numerators = evans.Sequence([[4, 4, 4], [4, 4, 3], [4, 3, 2], [4, 3]])
@@ -17,6 +18,7 @@ def sigs(series, rotation, count):
         _time_signatures = [abjad.TimeSignature((_, 4)) for _ in numerators]
         cyc_sigs = evans.CyclicList(_time_signatures)
         return cyc_sigs(r=count)
+
 
 ##
 ## 01 ##

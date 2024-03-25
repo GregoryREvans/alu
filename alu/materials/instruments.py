@@ -24,7 +24,7 @@ import evans
 instruments = [
     abjad.Flute(),
     abjad.Oboe(),
-    abjad.ClarinetInBFlat(),
+    abjad.BassClarinet(),
     abjad.Bassoon(),
     abjad.FrenchHorn(),
     abjad.Trumpet(),

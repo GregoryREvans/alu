@@ -6,25 +6,95 @@ import alu
 
 breaks = evans.Breaks(
     evans.Page(
-        evans.System(measures=4, lbsd=(20, "(19 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20)"), x_offset=2),
+        evans.System(
+            measures=2,
+            lbsd=(20, "(19 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20)"),
+            x_offset=2,
+        ),
     ),
     evans.Page(
-        evans.System(measures=4, lbsd=(20, "(19 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20)"), x_offset=2),
+        evans.System(
+            measures=2,
+            lbsd=(20, "(19 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20)"),
+            x_offset=2,
+        ),
     ),
     evans.Page(
-        evans.System(measures=4, lbsd=(20, "(19 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20)"), x_offset=2),
+        evans.System(
+            measures=2,
+            lbsd=(20, "(19 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20)"),
+            x_offset=2,
+        ),
     ),
     evans.Page(
-        evans.System(measures=4, lbsd=(20, "(19 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20)"), x_offset=2),
+        evans.System(
+            measures=2,
+            lbsd=(20, "(19 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20)"),
+            x_offset=2,
+        ),
     ),
     evans.Page(
-        evans.System(measures=4, lbsd=(20, "(19 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20)"), x_offset=2),
+        evans.System(
+            measures=2,
+            lbsd=(20, "(19 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20)"),
+            x_offset=2,
+        ),
     ),
     evans.Page(
-        evans.System(measures=4, lbsd=(20, "(19 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20)"), x_offset=2),
+        evans.System(
+            measures=2,
+            lbsd=(20, "(19 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20)"),
+            x_offset=2,
+        ),
     ),
     evans.Page(
-        evans.System(measures=2, lbsd=(20, "(19 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20)"), x_offset=2),
+        evans.System(
+            measures=2,
+            lbsd=(20, "(19 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20)"),
+            x_offset=2,
+        ),
+    ),
+    evans.Page(
+        evans.System(
+            measures=2,
+            lbsd=(20, "(19 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20)"),
+            x_offset=2,
+        ),
+    ),
+    evans.Page(
+        evans.System(
+            measures=2,
+            lbsd=(20, "(19 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20)"),
+            x_offset=2,
+        ),
+    ),
+    evans.Page(
+        evans.System(
+            measures=2,
+            lbsd=(20, "(19 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20)"),
+            x_offset=2,
+        ),
+    ),
+    evans.Page(
+        evans.System(
+            measures=2,
+            lbsd=(20, "(19 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20)"),
+            x_offset=2,
+        ),
+    ),
+    evans.Page(
+        evans.System(
+            measures=2,
+            lbsd=(20, "(19 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20)"),
+            x_offset=2,
+        ),
+    ),
+    evans.Page(
+        evans.System(
+            measures=2,
+            lbsd=(20, "(19 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20 20)"),
+            x_offset=2,
+        ),
     ),
     time_signatures=alu.reduced_signatures_12,
     default_spacing=(1, 35),  # 42

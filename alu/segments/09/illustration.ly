@@ -152,15 +152,15 @@
                   %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 18]
                   %! scaling time signatures
-                \time 4/4
-                s1 * 1
+                \time 3/4
+                s1 * 3/4
 
                   %! COMMENT_MEASURE_NUMBERS
                   %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 19]
                   %! scaling time signatures
-                \time 3/4
-                s1 * 3/4
+                \time 4/4
+                s1 * 1
 
                   %! COMMENT_MEASURE_NUMBERS
                   %! evans.SegmentMaker.comment_measure_numbers()
@@ -223,222 +223,241 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [flute voice measure 1]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
                                           %! applying staff names and clefs
                                         \set Staff.instrumentName = \markup { \hcenter-in #14 "Flute" }
                                           %! applying staff names and clefs
                                         \set Staff.shortInstrumentName = \markup { \hcenter-in #12 "fl" }
-                                        r1 * 1/4
-
-                                        R1 * 1/4
+                                        ef'''2
+                                          %! SPANNER_STOP
+                                          %! baca.PiecewiseCommand._call(2)
+                                          %! baca.hairpin()
+                                        \mp
+                                          %! SPANNER_START
+                                          %! baca.PiecewiseCommand._call(2)
+                                          %! baca.hairpin()
+                                        \<
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [flute voice measure 2]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        dqs'''2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        dqf'''4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [flute voice measure 3]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        dqf'''4
 
-                                        R1 * 3/8
+                                        dqf'''4
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        cqs'''4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [flute voice measure 4]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        cqs'''4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        cs'''2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [flute voice measure 5]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
-
-                                        R1 * 3/8
+                                        bqs''2.
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [flute voice measure 6]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        bqs''4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        cqs'''2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [flute voice measure 7]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        c'''2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        b''2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [flute voice measure 8]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        b''4
 
-                                        R1 * 1/2
+                                        b''2.
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [flute voice measure 9]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        b''4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 3/8
+                                        bf''2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [flute voice measure 10]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        bf''2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        bqf''4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [flute voice measure 11]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        bqf''2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        a''4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [flute voice measure 12]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        a''2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        bf''2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [flute voice measure 13]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        bf''2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        aqs''2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [flute voice measure 14]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
-
-                                        R1 * 3/8
+                                        aqf''2.
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [flute voice measure 15]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        aqf''2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        gqs''4
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        af''4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [flute voice measure 16]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        af''4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 3/8
+                                        gqf''2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [flute voice measure 17]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/4
+                                        gqf''4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/4
+                                        gqs''4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [flute voice measure 18]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
-
-                                        R1 * 1/2
+                                        gqs''2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [flute voice measure 19]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        g''2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 3/8
+                                        fs''4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [flute voice measure 20]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        fs''4
 
-                                        R1 * 1/2
+                                        fs''2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [flute voice measure 21]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
-
-                                        R1 * 1/2
+                                        f''1
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [flute voice measure 22]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
-
-                                        R1 * 1/2
+                                        fqs''1
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [flute voice measure 23]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        fqs''4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        e''2.
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [flute voice measure 24]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        e''4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        f''2.
+                                          %! SPANNER_STOP
+                                          %! baca.PiecewiseCommand._call(3)
+                                          %! baca.hairpin()
+                                        \fff
                                         \bar "||"
 
                                     }
@@ -459,222 +478,250 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [oboe voice measure 1]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
                                           %! applying staff names and clefs
                                         \set Staff.instrumentName = \markup { \hcenter-in #14 "Oboe" }
                                           %! applying staff names and clefs
                                         \set Staff.shortInstrumentName = \markup { \hcenter-in #12 "ob" }
-                                        r1 * 1/4
-
-                                        R1 * 1/4
+                                        c'''2
+                                          %! SPANNER_STOP
+                                          %! baca.PiecewiseCommand._call(2)
+                                          %! baca.hairpin()
+                                        \mp
+                                          %! SPANNER_START
+                                          %! baca.PiecewiseCommand._call(2)
+                                          %! baca.hairpin()
+                                        \<
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [oboe voice measure 2]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        c'''4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        bqs''2
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        bqf''4
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [oboe voice measure 3]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        bqf''2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 3/8
+                                        aqs''4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [oboe voice measure 4]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        aqs''2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        bf''2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [oboe voice measure 5]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        bf''2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 3/8
+                                        aqf''4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [oboe voice measure 6]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        aqf''2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        aqs''2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [oboe voice measure 7]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        a''2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        af''4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [oboe voice measure 8]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        af''2.
 
-                                        R1 * 1/2
+                                        af''4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [oboe voice measure 9]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
-
-                                        R1 * 3/8
+                                        af''2.
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [oboe voice measure 10]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        af''4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        g''2.
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [oboe voice measure 11]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        g''4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        gqs''2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [oboe voice measure 12]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
-
-                                        R1 * 1/2
+                                        fs''1
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [oboe voice measure 13]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        g''2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        gqf''2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [oboe voice measure 14]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        gqf''4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 3/8
+                                        fqs''2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [oboe voice measure 15]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        fqs''4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        eqs''2
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        f''4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [oboe voice measure 16]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        f''2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 3/8
+                                        eqf''4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [oboe voice measure 17]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/4
-
-                                        R1 * 1/4
+                                        eqf''2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [oboe voice measure 18]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        eqf''4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        eqs''2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [oboe voice measure 19]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        eqs''4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 3/8
+                                        e''2
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        ef''4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [oboe voice measure 20]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        ef''2
 
-                                        R1 * 1/2
+                                        ef''2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [oboe voice measure 21]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        ef''2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        d''2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [oboe voice measure 22]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        d''2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        dqs''4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [oboe voice measure 23]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        dqs''2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        cs''4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [oboe voice measure 24]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        cs''2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        d''2
+                                          %! SPANNER_STOP
+                                          %! baca.PiecewiseCommand._call(3)
+                                          %! baca.hairpin()
+                                        \fff
                                         \bar "||"
 
                                     }
@@ -686,231 +733,247 @@
                             \tag #'voice3
                             {
 
-                                \context Staff = "clarinet in b flat staff"
+                                \context Staff = "bass clarinet staff"
                                 {
 
-                                    \context Voice = "clarinet in b flat voice"
+                                    \context Voice = "bass clarinet voice"
                                     {
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [clarinet in b flat voice measure 1]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
+                                        % [bass clarinet voice measure 1]
                                           %! applying staff names and clefs
-                                        \set Staff.instrumentName = \markup { \hcenter-in #14 "Clarinet" }
+                                        \set Staff.instrumentName = \markup { \hcenter-in #14 "Bass Clarinet" }
                                           %! applying staff names and clefs
-                                        \set Staff.shortInstrumentName = \markup { \hcenter-in #12 "cl" }
-                                        r1 * 1/4
-
-                                        R1 * 1/4
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [clarinet in b flat voice measure 2]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
-
-                                        R1 * 1/2
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [clarinet in b flat voice measure 3]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
-
-                                        R1 * 3/8
+                                        \set Staff.shortInstrumentName = \markup { \hcenter-in #12 "bcl" }
+                                        d''2
+                                          %! SPANNER_STOP
+                                          %! baca.PiecewiseCommand._call(2)
+                                          %! baca.hairpin()
+                                        \mp
+                                          %! SPANNER_START
+                                          %! baca.PiecewiseCommand._call(2)
+                                          %! baca.hairpin()
+                                        \<
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [clarinet in b flat voice measure 4]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        % [bass clarinet voice measure 2]
+                                        ctqs''4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        cqs''2
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [clarinet in b flat voice measure 5]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
-
-                                        R1 * 3/8
+                                        cqs''4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [clarinet in b flat voice measure 6]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        % [bass clarinet voice measure 3]
+                                        cqs''2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [clarinet in b flat voice measure 7]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
-
-                                        R1 * 1/2
+                                        bqs'4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [clarinet in b flat voice measure 8]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        % [bass clarinet voice measure 4]
+                                        bqs'2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [clarinet in b flat voice measure 9]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
-
-                                        R1 * 3/8
+                                        c''4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [clarinet in b flat voice measure 10]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        % [bass clarinet voice measure 5]
+                                        c''2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [clarinet in b flat voice measure 11]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
-
-                                        R1 * 1/2
+                                        bqf'4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [clarinet in b flat voice measure 12]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        % [bass clarinet voice measure 6]
+                                        bqf'4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [clarinet in b flat voice measure 13]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
-
-                                        R1 * 1/2
+                                        bqs'2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [clarinet in b flat voice measure 14]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
-
-                                        R1 * 3/8
+                                        % [bass clarinet voice measure 7]
+                                        b'1
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [clarinet in b flat voice measure 15]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
-
-                                        R1 * 1/2
+                                        % [bass clarinet voice measure 8]
+                                        bf'1
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [clarinet in b flat voice measure 16]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        % [bass clarinet voice measure 9]
+                                        bf'4
 
-                                        R1 * 3/8
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [clarinet in b flat voice measure 17]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/4
-
-                                        R1 * 1/4
+                                        bf'2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [clarinet in b flat voice measure 18]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        % [bass clarinet voice measure 10]
+                                        bf'2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [clarinet in b flat voice measure 19]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
-
-                                        R1 * 3/8
+                                        a'2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [clarinet in b flat voice measure 20]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        % [bass clarinet voice measure 11]
+                                        a'4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [clarinet in b flat voice measure 21]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
-
-                                        R1 * 1/2
+                                        aqs'2.
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [clarinet in b flat voice measure 22]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        % [bass clarinet voice measure 12]
+                                        aqs'4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        gs'2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [clarinet in b flat voice measure 23]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
-
-                                        R1 * 1/2
+                                        a'4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [clarinet in b flat voice measure 24]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        % [bass clarinet voice measure 13]
+                                        a'2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        aqf'2
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [bass clarinet voice measure 14]
+                                        gqs'4
+
+                                        gqs'2
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [bass clarinet voice measure 15]
+                                        ftqs'2.
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        g'4
+                                        ~
+
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [bass clarinet voice measure 16]
+                                        g'2.
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [bass clarinet voice measure 17]
+                                        fqs'2
+                                        ~
+
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [bass clarinet voice measure 18]
+                                        fqs'4
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        ftqs'2
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [bass clarinet voice measure 19]
+                                        fs'2.
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        f'4
+                                        ~
+
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [bass clarinet voice measure 20]
+                                        f'2.
+
+                                        f'4
+                                        ~
+
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [bass clarinet voice measure 21]
+                                        f'1
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [bass clarinet voice measure 22]
+                                        e'1
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [bass clarinet voice measure 23]
+                                        eqs'2.
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        ds'4
+                                        ~
+
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [bass clarinet voice measure 24]
+                                        ds'2.
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        e'4
+                                          %! SPANNER_STOP
+                                          %! baca.PiecewiseCommand._call(3)
+                                          %! baca.hairpin()
+                                        \fff
                                         \bar "||"
 
                                     }
@@ -931,222 +994,254 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [bassoon voice measure 1]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
                                           %! applying staff names and clefs
                                         \set Staff.instrumentName = \markup { \hcenter-in #14 "Bassoon" }
                                           %! applying staff names and clefs
                                         \set Staff.shortInstrumentName = \markup { \hcenter-in #12 "bs" }
-                                        r1 * 1/4
+                                        \clef "bass"
+                                        a4
+                                          %! SPANNER_STOP
+                                          %! baca.PiecewiseCommand._call(2)
+                                          %! baca.hairpin()
+                                        \mp
+                                          %! SPANNER_START
+                                          %! baca.PiecewiseCommand._call(2)
+                                          %! baca.hairpin()
+                                        \<
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/4
+                                        aqf4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [bassoon voice measure 2]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        aqf4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        gqs2.
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [bassoon voice measure 3]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
-
-                                        R1 * 3/8
+                                        gqs2.
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [bassoon voice measure 4]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        gqs4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        gqf2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [bassoon voice measure 5]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        g2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 3/8
+                                        fqs4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [bassoon voice measure 6]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        fqs2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        gqf2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [bassoon voice measure 7]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        gqf2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        fs2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [bassoon voice measure 8]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        fs2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        f4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [bassoon voice measure 9]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
-
-                                        R1 * 3/8
+                                        f2.
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [bassoon voice measure 10]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        f2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        e4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [bassoon voice measure 11]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        e2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        eqs4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [bassoon voice measure 12]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        eqs4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        ef2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [bassoon voice measure 13]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        e2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        eqf4
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        dqs4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [bassoon voice measure 14]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        dqs4
 
-                                        R1 * 3/8
+                                        dqs2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [bassoon voice measure 15]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        dqs4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        dqf2.
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [bassoon voice measure 16]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        dqf4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 3/8
+                                        d2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [bassoon voice measure 17]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/4
+                                        d4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/4
+                                        cqs4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [bassoon voice measure 18]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        cqs4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        dqf2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [bassoon voice measure 19]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        dqf4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 3/8
+                                        cs2.
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [bassoon voice measure 20]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        cs4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        c2.
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [bassoon voice measure 21]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        c2
 
-                                        R1 * 1/2
+                                        c2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [bassoon voice measure 22]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        c2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        b,2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [bassoon voice measure 23]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        b,4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        bqs,2.
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [bassoon voice measure 24]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        bqs,4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        bf,2
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        b,4
+                                          %! SPANNER_STOP
+                                          %! baca.PiecewiseCommand._call(3)
+                                          %! baca.hairpin()
+                                        \fff
                                         \bar "||"
 
                                     }
@@ -1167,222 +1262,225 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [french horn voice measure 1]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
                                           %! applying staff names and clefs
                                         \set Staff.instrumentName = \markup { \hcenter-in #14 "Horn" }
                                           %! applying staff names and clefs
                                         \set Staff.shortInstrumentName = \markup { \hcenter-in #12 "hn" }
-                                        r1 * 1/4
-
-                                        R1 * 1/4
+                                        bf'2
+                                          %! SPANNER_STOP
+                                          %! baca.PiecewiseCommand._call(2)
+                                          %! baca.hairpin()
+                                        \mp
+                                          %! SPANNER_START
+                                          %! baca.PiecewiseCommand._call(2)
+                                          %! baca.hairpin()
+                                        \<
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [french horn voice measure 2]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        aqs'2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        aqf'4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [french horn voice measure 3]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
-
-                                        R1 * 3/8
+                                        aqf'2.
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [french horn voice measure 4]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        aqf'2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        gqs'4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [french horn voice measure 5]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        gqs'4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 3/8
+                                        gs'2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [french horn voice measure 6]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        gs'4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        ftqs'2.
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [french horn voice measure 7]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        ftqs'4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        gqs'2.
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [french horn voice measure 8]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        gqs'2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        g'2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [french horn voice measure 9]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        g'2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 3/8
+                                        fs'4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [french horn voice measure 10]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        fs'2
 
-                                        R1 * 1/2
+                                        fs'2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [french horn voice measure 11]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        fs'2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        f'2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [french horn voice measure 12]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        fqs'2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        e'4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [french horn voice measure 13]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        e'4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        f'4
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        eqs'2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [french horn voice measure 14]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
-
-                                        R1 * 3/8
+                                        eqf'2.
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [french horn voice measure 15]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
-
-                                        R1 * 1/2
+                                        eqf'1
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [french horn voice measure 16]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
-
-                                        R1 * 3/8
+                                        dqs'2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [french horn voice measure 17]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/4
-
-                                        R1 * 1/4
+                                        ef'2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [french horn voice measure 18]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
-
-                                        R1 * 1/2
+                                        dqf'2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [french horn voice measure 19]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
-
-                                        R1 * 3/8
+                                        dqs'1
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [french horn voice measure 20]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
-
-                                        R1 * 1/2
+                                        d'1
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [french horn voice measure 21]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        d'4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        cs'2.
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [french horn voice measure 22]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        cs'4
 
-                                        R1 * 1/2
+                                        cs'2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [french horn voice measure 23]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
-
-                                        R1 * 1/2
+                                        c'1
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [french horn voice measure 24]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        cqs'2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        b2
+                                          %! SPANNER_STOP
+                                          %! baca.PiecewiseCommand._call(3)
+                                          %! baca.hairpin()
+                                        \fff
                                         \bar "||"
 
                                     }
@@ -1413,222 +1511,240 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [trumpet voice measure 1]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
                                           %! applying staff names and clefs
                                         \set Staff.instrumentName = \markup { \hcenter-in #14 "Trumpet" }
                                           %! applying staff names and clefs
                                         \set Staff.shortInstrumentName = \markup { \hcenter-in #12 "tp" }
-                                        r1 * 1/4
-
-                                        R1 * 1/4
+                                        ef''2
+                                          %! SPANNER_STOP
+                                          %! baca.PiecewiseCommand._call(2)
+                                          %! baca.hairpin()
+                                        \mp
+                                          %! SPANNER_START
+                                          %! baca.PiecewiseCommand._call(2)
+                                          %! baca.hairpin()
+                                        \<
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [trumpet voice measure 2]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        ef''4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        dqs''2.
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [trumpet voice measure 3]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        dqs''4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 3/8
+                                        dqf''2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [trumpet voice measure 4]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        dqf''4
 
-                                        R1 * 1/2
+                                        dqf''2
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        cqs''4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [trumpet voice measure 5]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        cqs''2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 3/8
+                                        cs''4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [trumpet voice measure 6]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        cs''2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        bqs'4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [trumpet voice measure 7]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
-
-                                        R1 * 1/2
+                                        bqs'1
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [trumpet voice measure 8]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
-
-                                        R1 * 1/2
+                                        cqs''1
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [trumpet voice measure 9]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
-
-                                        R1 * 3/8
+                                        c''2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [trumpet voice measure 10]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
-
-                                        R1 * 1/2
+                                        b'1
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [trumpet voice measure 11]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        b'2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        bf'2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [trumpet voice measure 12]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        bf'4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        bqf'2
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        a'4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [trumpet voice measure 13]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        bf'2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        aqs'2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [trumpet voice measure 14]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        aqs'4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 3/8
+                                        aqf'2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [trumpet voice measure 15]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        aqf'2
 
-                                        R1 * 1/2
+                                        aqf'2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [trumpet voice measure 16]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        aqf'4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 3/8
+                                        gqs'2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [trumpet voice measure 17]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/4
-
-                                        R1 * 1/4
+                                        af'2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [trumpet voice measure 18]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        af'4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        gqf'2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [trumpet voice measure 19]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        gqf'2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 3/8
+                                        gqs'2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [trumpet voice measure 20]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        gqs'2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        g'4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [trumpet voice measure 21]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        g'2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        fs'4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [trumpet voice measure 22]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        fs'2
 
-                                        R1 * 1/2
+                                        fs'2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [trumpet voice measure 23]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        fs'2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        f'2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [trumpet voice measure 24]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        fqs'2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        e'4
+                                          %! SPANNER_STOP
+                                          %! baca.PiecewiseCommand._call(3)
+                                          %! baca.hairpin()
+                                        \fff
                                         \bar "||"
 
                                     }
@@ -1649,224 +1765,239 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tenor trombone voice measure 1]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
                                           %! applying staff names and clefs
                                         \set Staff.instrumentName = \markup { \hcenter-in #14 "Trombone" }
                                           %! applying staff names and clefs
                                         \set Staff.shortInstrumentName = \markup { \hcenter-in #12 "tbn" }
-                                          %! applying indicators
                                         \clef "bass"
-                                        r1 * 1/4
-
-                                        R1 * 1/4
+                                        b2
+                                          %! SPANNER_STOP
+                                          %! baca.PiecewiseCommand._call(2)
+                                          %! baca.hairpin()
+                                        \mp
+                                          %! SPANNER_START
+                                          %! baca.PiecewiseCommand._call(2)
+                                          %! baca.hairpin()
+                                        \<
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tenor trombone voice measure 2]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        b2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        bqf2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tenor trombone voice measure 3]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        bqf4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 3/8
+                                        aqs2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tenor trombone voice measure 4]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        aqs2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        aqf4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tenor trombone voice measure 5]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
-
-                                        R1 * 3/8
+                                        aqf2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tenor trombone voice measure 6]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
-
-                                        R1 * 1/2
+                                        a1
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tenor trombone voice measure 7]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        a4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        gqs2.
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tenor trombone voice measure 8]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        gqs4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        aqf2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tenor trombone voice measure 9]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
-
-                                        R1 * 3/8
+                                        af2.
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tenor trombone voice measure 10]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        af4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        g2
+
+                                        g4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tenor trombone voice measure 11]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        g2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        fs2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tenor trombone voice measure 12]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        gqf4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        f2
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        fs4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tenor trombone voice measure 13]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        fs2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        fqs2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tenor trombone voice measure 14]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        fqs2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 3/8
+                                        eqs4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tenor trombone voice measure 15]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        eqs2
 
-                                        R1 * 1/2
+                                        eqs2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tenor trombone voice measure 16]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
-
-                                        R1 * 3/8
+                                        eqf2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tenor trombone voice measure 17]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/4
-
-                                        R1 * 1/4
+                                        e2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tenor trombone voice measure 18]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        e2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        dqs4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tenor trombone voice measure 19]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
-
-                                        R1 * 3/8
+                                        dqs1
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tenor trombone voice measure 20]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
-
-                                        R1 * 1/2
+                                        eqf1
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tenor trombone voice measure 21]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        ef2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        d4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tenor trombone voice measure 22]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        d2.
 
-                                        R1 * 1/2
+                                        d4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tenor trombone voice measure 23]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        d4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        cs2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tenor trombone voice measure 24]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        dqf2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        c4
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        cs4
+                                          %! SPANNER_STOP
+                                          %! baca.PiecewiseCommand._call(3)
+                                          %! baca.hairpin()
+                                        \fff
                                         \bar "||"
 
                                     }
@@ -1887,224 +2018,242 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tuba voice measure 1]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
                                           %! applying staff names and clefs
                                         \set Staff.instrumentName = \markup { \hcenter-in #14 "Tuba" }
                                           %! applying staff names and clefs
                                         \set Staff.shortInstrumentName = \markup { \hcenter-in #12 "tba" }
-                                          %! applying indicators
                                         \clef "bass"
-                                        r1 * 1/4
-
-                                        R1 * 1/4
+                                        ef2
+                                          %! SPANNER_STOP
+                                          %! baca.PiecewiseCommand._call(2)
+                                          %! baca.hairpin()
+                                        \mp
+                                          %! SPANNER_START
+                                          %! baca.PiecewiseCommand._call(2)
+                                          %! baca.hairpin()
+                                        \<
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tuba voice measure 2]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        ef4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        dqs2
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        dqf4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tuba voice measure 3]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        dqf2
 
-                                        R1 * 3/8
+                                        dqf4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tuba voice measure 4]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        dqf2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        cqs4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tuba voice measure 5]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
-
-                                        R1 * 3/8
+                                        cqs2.
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tuba voice measure 6]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        cqs4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        cs2.
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tuba voice measure 7]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        cs4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        bqs,2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tuba voice measure 8]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
-
-                                        R1 * 1/2
+                                        cqs1
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tuba voice measure 9]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        c2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 3/8
+                                        b,4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tuba voice measure 10]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        b,2
 
-                                        R1 * 1/2
+                                        b,2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tuba voice measure 11]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        bf,4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        bqf,2
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        a,4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tuba voice measure 12]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        a,2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        bf,2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tuba voice measure 13]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        bf,2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        aqs,2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tuba voice measure 14]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        aqs,4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 3/8
+                                        aqf,2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tuba voice measure 15]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        aqf,2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        gqs,4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tuba voice measure 16]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
-
-                                        R1 * 3/8
+                                        gqs,2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tuba voice measure 17]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/4
-
-                                        R1 * 1/4
+                                        af,2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tuba voice measure 18]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
-
-                                        R1 * 1/2
+                                        af,2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tuba voice measure 19]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
-
-                                        R1 * 3/8
+                                        gqf,1
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tuba voice measure 20]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        gqs,2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        g,4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tuba voice measure 21]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        g,2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        fs,4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tuba voice measure 22]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        fs,4
 
-                                        R1 * 1/2
+                                        fs,2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tuba voice measure 23]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        f,2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        fqs,4
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        e,4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tuba voice measure 24]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        e,4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        f,2.
+                                          %! SPANNER_STOP
+                                          %! baca.PiecewiseCommand._call(3)
+                                          %! baca.hairpin()
+                                        \fff
                                         \bar "||"
 
                                     }
@@ -2135,228 +2284,190 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 1 voice measure 1]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
                                           %! applying staff names and clefs
                                         \set Staff.instrumentName = \markup { \hcenter-in #14 "Percussion 1" }
                                           %! applying staff names and clefs
                                         \set Staff.shortInstrumentName = \markup { \hcenter-in #12 "pc 1" }
-                                          %! applying indicators
                                         \clef "percussion"
-                                          %! applying indicators
-                                        \staff-line-count #4
-                                        r1 * 1/4
-                                          %! applying indicators
-                                        - \boxed-markup woodblocks #1
-
-                                        R1 * 1/4
+                                        \staff-line-count #1
+                                        c'2
+                                          %! SPANNER_STOP
+                                          %! baca.PiecewiseCommand._call(2)
+                                          %! baca.hairpin()
+                                        \mp
+                                        - \boxed-markup "bass drum + superball" #1
+                                          %! SPANNER_START
+                                          %! baca.PiecewiseCommand._call(2)
+                                          %! baca.hairpin()
+                                        \<
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 1 voice measure 2]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        c'2.
 
-                                        R1 * 1/2
+                                        c'4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 1 voice measure 3]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
-
-                                        R1 * 3/8
+                                        c'2.
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 1 voice measure 4]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
-
-                                        R1 * 1/2
+                                        c'1
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 1 voice measure 5]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        c'4
 
-                                        R1 * 3/8
+                                        c'2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 1 voice measure 6]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        c'2
 
-                                        R1 * 1/2
+                                        c'2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 1 voice measure 7]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        c'4
 
-                                        R1 * 1/2
+                                        c'2.
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 1 voice measure 8]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        c'4
 
-                                        R1 * 1/2
+                                        c'2
+
+                                        c'4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 1 voice measure 9]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        c'2
 
-                                        R1 * 3/8
+                                        c'4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 1 voice measure 10]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        c'4
 
-                                        R1 * 1/2
+                                        c'4
+
+                                        c'2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 1 voice measure 11]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        c'2.
 
-                                        R1 * 1/2
+                                        c'4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 1 voice measure 12]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        c'2.
 
-                                        R1 * 1/2
+                                        c'4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 1 voice measure 13]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        c'2
 
-                                        R1 * 1/2
+                                        c'2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 1 voice measure 14]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
-
-                                        R1 * 3/8
+                                        c'2.
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 1 voice measure 15]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
-
-                                        R1 * 1/2
+                                        c'1
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 1 voice measure 16]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
-
-                                        R1 * 3/8
+                                        c'2.
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 1 voice measure 17]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/4
-
-                                        R1 * 1/4
+                                        c'2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 1 voice measure 18]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
-
-                                        R1 * 1/2
+                                        c'2.
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 1 voice measure 19]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        c'4
 
-                                        R1 * 3/8
+                                        c'2.
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 1 voice measure 20]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
-
-                                        R1 * 1/2
+                                        c'1
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 1 voice measure 21]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        c'2
 
-                                        R1 * 1/2
+                                        c'2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 1 voice measure 22]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        c'4
 
-                                        R1 * 1/2
+                                        c'2
+
+                                        c'4
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 1 voice measure 23]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        c'2
 
-                                        R1 * 1/2
+                                        c'2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 1 voice measure 24]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        c'4
 
-                                        R1 * 1/2
+                                        c'2.
+                                          %! SPANNER_STOP
+                                          %! baca.PiecewiseCommand._call(3)
+                                          %! baca.hairpin()
+                                        \fff
                                         \bar "||"
 
                                     }
@@ -2377,228 +2488,199 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 2 voice measure 1]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
                                           %! applying staff names and clefs
                                         \set Staff.instrumentName = \markup { \hcenter-in #14 "Percussion 2" }
                                           %! applying staff names and clefs
                                         \set Staff.shortInstrumentName = \markup { \hcenter-in #12 "pc 2" }
-                                          %! applying indicators
                                         \clef "percussion"
-                                          %! applying indicators
-                                        \staff-line-count #4
-                                        r1 * 1/4
-                                          %! applying indicators
-                                        - \boxed-markup "slit drum" #1
-
-                                        R1 * 1/4
+                                        \staff-line-count #1
+                                        c'2
+                                          %! SPANNER_STOP
+                                          %! baca.PiecewiseCommand._call(2)
+                                          %! baca.hairpin()
+                                        \mp
+                                        - \boxed-markup "tam tam + superball" #1
+                                          %! SPANNER_START
+                                          %! baca.PiecewiseCommand._call(2)
+                                          %! baca.hairpin()
+                                        \<
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 2 voice measure 2]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        c'4
 
-                                        R1 * 1/2
+                                        c'2.
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 2 voice measure 3]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        c'4
 
-                                        R1 * 3/8
+                                        c'2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 2 voice measure 4]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        c'2.
 
-                                        R1 * 1/2
+                                        c'4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 2 voice measure 5]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
-
-                                        R1 * 3/8
+                                        c'2.
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 2 voice measure 6]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        c'2.
 
-                                        R1 * 1/2
+                                        c'4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 2 voice measure 7]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        c'2.
 
-                                        R1 * 1/2
+                                        c'4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 2 voice measure 8]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        c'4
 
-                                        R1 * 1/2
+                                        c'2.
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 2 voice measure 9]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        c'2
 
-                                        R1 * 3/8
+                                        c'4
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 2 voice measure 10]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        c'2
 
-                                        R1 * 1/2
+                                        c'2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 2 voice measure 11]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        c'4
 
-                                        R1 * 1/2
+                                        c'2.
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 2 voice measure 12]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        c'4
 
-                                        R1 * 1/2
+                                        c'2.
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 2 voice measure 13]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        c'2
 
-                                        R1 * 1/2
+                                        c'2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 2 voice measure 14]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        c'4
 
-                                        R1 * 3/8
+                                        c'2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 2 voice measure 15]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        c'2
 
-                                        R1 * 1/2
+                                        c'2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 2 voice measure 16]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
-
-                                        R1 * 3/8
+                                        c'2.
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 2 voice measure 17]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/4
-
-                                        R1 * 1/4
+                                        c'2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 2 voice measure 18]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        c'2
 
-                                        R1 * 1/2
+                                        c'4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 2 voice measure 19]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        c'2
 
-                                        R1 * 3/8
+                                        c'2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 2 voice measure 20]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        c'2
 
-                                        R1 * 1/2
+                                        c'2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 2 voice measure 21]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        c'2.
 
-                                        R1 * 1/2
+                                        c'4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 2 voice measure 22]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        c'4
 
-                                        R1 * 1/2
+                                        c'4
+
+                                        c'2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 2 voice measure 23]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        c'2.
 
-                                        R1 * 1/2
+                                        c'4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 2 voice measure 24]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        c'2.
 
-                                        R1 * 1/2
+                                        c'4
+                                          %! SPANNER_STOP
+                                          %! baca.PiecewiseCommand._call(3)
+                                          %! baca.hairpin()
+                                        \fff
                                         \bar "||"
 
                                     }
@@ -2793,18 +2875,18 @@
                                         % [piano 1 voice measure 18]
                                           %! applying invisibility
                                         \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        r1 * 3/8
 
-                                        R1 * 1/2
+                                        R1 * 3/8
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [piano 1 voice measure 19]
                                           %! applying invisibility
                                         \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        r1 * 1/2
 
-                                        R1 * 3/8
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
@@ -3031,18 +3113,18 @@
                                         % [piano 2 voice measure 18]
                                           %! applying invisibility
                                         \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        r1 * 3/8
 
-                                        R1 * 1/2
+                                        R1 * 3/8
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [piano 2 voice measure 19]
                                           %! applying invisibility
                                         \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        r1 * 1/2
 
-                                        R1 * 3/8
+                                        R1 * 1/2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
@@ -3118,222 +3200,248 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 1 voice measure 1]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
                                           %! applying staff names and clefs
                                         \set Staff.instrumentName = \markup { \hcenter-in #14 "Violin I" }
                                           %! applying staff names and clefs
                                         \set Staff.shortInstrumentName = \markup { \hcenter-in #12 "vn I" }
-                                        r1 * 1/4
-
-                                        R1 * 1/4
+                                        d'''2
+                                          %! SPANNER_STOP
+                                          %! baca.PiecewiseCommand._call(2)
+                                          %! baca.hairpin()
+                                        \mp
+                                          %! SPANNER_START
+                                          %! baca.PiecewiseCommand._call(2)
+                                          %! baca.hairpin()
+                                        \<
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 1 voice measure 2]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        d'''2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        dqf'''2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 1 voice measure 3]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        dqf'''4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 3/8
+                                        cqs'''2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 1 voice measure 4]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        cqs'''2
 
-                                        R1 * 1/2
+                                        cqs'''2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 1 voice measure 5]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
-
-                                        R1 * 3/8
+                                        bqs''2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 1 voice measure 6]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        c'''2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        bqf''4
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        bqs''4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 1 voice measure 7]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        bqs''4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        b''2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 1 voice measure 8]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
-
-                                        R1 * 1/2
+                                        bf''1
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 1 voice measure 9]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
-
-                                        R1 * 3/8
+                                        bf''2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 1 voice measure 10]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        a''2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        aqs''2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 1 voice measure 11]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        aqs''4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        af''2.
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 1 voice measure 12]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        af''4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        a''2.
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 1 voice measure 13]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        a''2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        aqf''2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 1 voice measure 14]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        aqf''2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 3/8
+                                        gqs''4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 1 voice measure 15]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        gqs''2
 
-                                        R1 * 1/2
+                                        gqs''2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 1 voice measure 16]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        gqs''2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 3/8
+                                        gqf''4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 1 voice measure 17]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/4
+                                        gqf''4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/4
+                                        g''4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 1 voice measure 18]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        g''2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        fqs''4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 1 voice measure 19]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        fqs''4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 3/8
+                                        gqf''4
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        fs''2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 1 voice measure 20]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        f''2.
 
-                                        R1 * 1/2
+                                        f''4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 1 voice measure 21]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        f''2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        e''4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 1 voice measure 22]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        e''2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        eqs''2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 1 voice measure 23]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        ef''2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        e''4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 1 voice measure 24]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        e''2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        eqf''4
+                                          %! SPANNER_STOP
+                                          %! baca.PiecewiseCommand._call(3)
+                                          %! baca.hairpin()
+                                        \fff
                                         \bar "||"
 
                                     }
@@ -3354,222 +3462,241 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 2 voice measure 1]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
                                           %! applying staff names and clefs
                                         \set Staff.instrumentName = \markup { \hcenter-in #14 "Violin II" }
                                           %! applying staff names and clefs
                                         \set Staff.shortInstrumentName = \markup { \hcenter-in #12 "vn II" }
-                                        r1 * 1/4
-
-                                        R1 * 1/4
+                                        cs'''2
+                                          %! SPANNER_STOP
+                                          %! baca.PiecewiseCommand._call(2)
+                                          %! baca.hairpin()
+                                        \mp
+                                          %! SPANNER_START
+                                          %! baca.PiecewiseCommand._call(2)
+                                          %! baca.hairpin()
+                                        \<
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 2 voice measure 2]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        cs'''4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        cqs'''2.
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 2 voice measure 3]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        cqs'''4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 3/8
+                                        bqs''2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 2 voice measure 4]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        bqs''2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        bqf''4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 2 voice measure 5]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        bqf''4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 3/8
+                                        b''4
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        aqs''4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 2 voice measure 6]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        aqs''4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        bqf''2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 2 voice measure 7]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
-
-                                        R1 * 1/2
+                                        bf''1
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 2 voice measure 8]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        a''2.
 
-                                        R1 * 1/2
+                                        a''4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 2 voice measure 9]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        a''4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 3/8
+                                        af''2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 2 voice measure 10]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        af''4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        aqf''2.
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 2 voice measure 11]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        aqf''4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        g''2.
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 2 voice measure 12]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        g''2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        af''2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 2 voice measure 13]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        af''2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        gqs''2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 2 voice measure 14]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        gqs''4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 3/8
+                                        gqf''2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 2 voice measure 15]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        gqf''2
 
-                                        R1 * 1/2
+                                        gqf''2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 2 voice measure 16]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
-
-                                        R1 * 3/8
+                                        fqs''2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 2 voice measure 17]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/4
-
-                                        R1 * 1/4
+                                        fs''2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 2 voice measure 18]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        eqs''4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        fqs''2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 2 voice measure 19]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        f''2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 3/8
+                                        e''4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 2 voice measure 20]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        e''2.
 
-                                        R1 * 1/2
+                                        e''4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 2 voice measure 21]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        e''2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        ef''2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 2 voice measure 22]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        eqf''2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        d''4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 2 voice measure 23]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        d''2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        ef''4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 2 voice measure 24]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
-
-                                        R1 * 1/2
+                                        ef''1
+                                          %! SPANNER_STOP
+                                          %! baca.PiecewiseCommand._call(3)
+                                          %! baca.hairpin()
+                                        \fff
                                         \bar "||"
 
                                     }
@@ -3590,224 +3717,236 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [viola voice measure 1]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
                                           %! applying staff names and clefs
                                         \set Staff.instrumentName = \markup { \hcenter-in #14 "Viola" }
                                           %! applying staff names and clefs
                                         \set Staff.shortInstrumentName = \markup { \hcenter-in #12 "va" }
-                                          %! applying indicators
                                         \clef "alto"
-                                        r1 * 1/4
-
-                                        R1 * 1/4
+                                        a'2
+                                          %! SPANNER_STOP
+                                          %! baca.PiecewiseCommand._call(2)
+                                          %! baca.hairpin()
+                                        \mp
+                                          %! SPANNER_START
+                                          %! baca.PiecewiseCommand._call(2)
+                                          %! baca.hairpin()
+                                        \<
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [viola voice measure 2]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        a'2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        aqf'2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [viola voice measure 3]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
-
-                                        R1 * 3/8
+                                        gqs'2.
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [viola voice measure 4]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        gqs'2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        gqf'4
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        g'4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [viola voice measure 5]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        g'4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 3/8
+                                        fqs'2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [viola voice measure 6]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        fqs'4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        gqf'2.
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [viola voice measure 7]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        gqf'4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        fs'2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [viola voice measure 8]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        f'2
 
-                                        R1 * 1/2
+                                        f'2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [viola voice measure 9]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        f'4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 3/8
+                                        e'2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [viola voice measure 10]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        e'2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        eqs'2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [viola voice measure 11]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        eqs'2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        ef'4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [viola voice measure 12]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        ef'2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        e'4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [viola voice measure 13]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        e'2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        eqf'2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [viola voice measure 14]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        eqf'2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 3/8
+                                        dqs'4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [viola voice measure 15]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        dqs'4
 
-                                        R1 * 1/2
+                                        dqs'2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [viola voice measure 16]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        dqf'2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 3/8
+                                        d'4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [viola voice measure 17]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/4
-
-                                        R1 * 1/4
+                                        cqs'2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [viola voice measure 18]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
-
-                                        R1 * 1/2
+                                        dqf'2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [viola voice measure 19]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
-
-                                        R1 * 3/8
+                                        cs'1
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [viola voice measure 20]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        c'2.
 
-                                        R1 * 1/2
+                                        c'4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [viola voice measure 21]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        c'4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        b2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [viola voice measure 22]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
-
-                                        R1 * 1/2
+                                        bqs1
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [viola voice measure 23]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
-
-                                        R1 * 1/2
+                                        bf1
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [viola voice measure 24]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        bf4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        b2.
+                                          %! SPANNER_STOP
+                                          %! baca.PiecewiseCommand._call(3)
+                                          %! baca.hairpin()
+                                        \fff
                                         \bar "||"
 
                                     }
@@ -3828,224 +3967,242 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [cello voice measure 1]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
                                           %! applying staff names and clefs
                                         \set Staff.instrumentName = \markup { \hcenter-in #14 "Violoncello" }
                                           %! applying staff names and clefs
                                         \set Staff.shortInstrumentName = \markup { \hcenter-in #12 "vc" }
-                                          %! applying indicators
                                         \clef "bass"
-                                        r1 * 1/4
-
-                                        R1 * 1/4
+                                        af'2
+                                          %! SPANNER_STOP
+                                          %! baca.PiecewiseCommand._call(2)
+                                          %! baca.hairpin()
+                                        \mp
+                                          %! SPANNER_START
+                                          %! baca.PiecewiseCommand._call(2)
+                                          %! baca.hairpin()
+                                        \<
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [cello voice measure 2]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        gqs'2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        gqf'4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [cello voice measure 3]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        gqf'4
 
-                                        R1 * 3/8
+                                        gqf'4
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        fqs'4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [cello voice measure 4]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        fqs'4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        fs'2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [cello voice measure 5]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
-
-                                        R1 * 3/8
+                                        eqs'2.
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [cello voice measure 6]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        eqs'4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        fqs'2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [cello voice measure 7]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        f'2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        e'2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [cello voice measure 8]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        e'4
 
-                                        R1 * 1/2
+                                        e'2.
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [cello voice measure 9]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        e'4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 3/8
+                                        ef'2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [cello voice measure 10]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        ef'2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        eqf'4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [cello voice measure 11]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        eqf'2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        d'4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [cello voice measure 12]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        d'2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        ef'2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [cello voice measure 13]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        ef'2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        dqs'2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [cello voice measure 14]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
-
-                                        R1 * 3/8
+                                        dqf'2.
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [cello voice measure 15]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        dqf'2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        cqs'4
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        cs'4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [cello voice measure 16]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        cs'4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 3/8
+                                        bqs2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [cello voice measure 17]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/4
+                                        bqs4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/4
+                                        cqs'4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [cello voice measure 18]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
-
-                                        R1 * 1/2
+                                        cqs'2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [cello voice measure 19]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        c'2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 3/8
+                                        b4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [cello voice measure 20]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        b4
 
-                                        R1 * 1/2
+                                        b2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [cello voice measure 21]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
-
-                                        R1 * 1/2
+                                        bf1
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [cello voice measure 22]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
-
-                                        R1 * 1/2
+                                        bqf1
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [cello voice measure 23]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        bqf4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        a2.
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [cello voice measure 24]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        a4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        bf2.
+                                          %! SPANNER_STOP
+                                          %! baca.PiecewiseCommand._call(3)
+                                          %! baca.hairpin()
+                                        \fff
                                         \bar "||"
 
                                     }
@@ -4066,224 +4223,251 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [contrabass voice measure 1]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
                                           %! applying staff names and clefs
                                         \set Staff.instrumentName = \markup { \hcenter-in #14 "Contrabass" }
                                           %! applying staff names and clefs
                                         \set Staff.shortInstrumentName = \markup { \hcenter-in #12 "cb" }
-                                          %! applying indicators
                                         \clef "bass"
-                                        r1 * 1/4
-
-                                        R1 * 1/4
+                                        cs'2
+                                          %! SPANNER_STOP
+                                          %! baca.PiecewiseCommand._call(2)
+                                          %! baca.hairpin()
+                                        \mp
+                                          %! SPANNER_START
+                                          %! baca.PiecewiseCommand._call(2)
+                                          %! baca.hairpin()
+                                        \<
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [contrabass voice measure 2]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        cs'4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        cqs'2
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        bqs4
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [contrabass voice measure 3]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        bqs2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 3/8
+                                        bqf4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [contrabass voice measure 4]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        bqf2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        b2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [contrabass voice measure 5]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        b2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 3/8
+                                        aqs4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [contrabass voice measure 6]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        aqs2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        bqf2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [contrabass voice measure 7]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        bf2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        a4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [contrabass voice measure 8]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        a2.
 
-                                        R1 * 1/2
+                                        a4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [contrabass voice measure 9]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
-
-                                        R1 * 3/8
+                                        a2.
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [contrabass voice measure 10]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        a4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        af2.
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [contrabass voice measure 11]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        af4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        aqf2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [contrabass voice measure 12]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
-
-                                        R1 * 1/2
+                                        g1
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [contrabass voice measure 13]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        af2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        gqs2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [contrabass voice measure 14]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        gqs4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 3/8
+                                        gqf2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [contrabass voice measure 15]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        gqf4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        fqs2
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        fs4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [contrabass voice measure 16]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        fs2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 3/8
+                                        eqs4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [contrabass voice measure 17]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/4
-
-                                        R1 * 1/4
+                                        eqs2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [contrabass voice measure 18]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        eqs4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        fqs2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [contrabass voice measure 19]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        fqs4
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 3/8
+                                        f2
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        e4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [contrabass voice measure 20]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        e2
 
-                                        R1 * 1/2
+                                        e2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [contrabass voice measure 21]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        e2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        ef2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [contrabass voice measure 22]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        ef2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        eqf4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [contrabass voice measure 23]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        eqf2.
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        d4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [contrabass voice measure 24]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        d2
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                        R1 * 1/2
+                                        ef2
+                                          %! SPANNER_STOP
+                                          %! baca.PiecewiseCommand._call(3)
+                                          %! baca.hairpin()
+                                        \fff
                                         \bar "||"
 
                                     }

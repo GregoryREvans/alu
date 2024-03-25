@@ -1,8 +1,8 @@
-import abjad
-import evans
 from fractions import Fraction
 from itertools import combinations
 
+import abjad
+import evans
 
 preamble = r"""#(set-global-staff-size 16)
 

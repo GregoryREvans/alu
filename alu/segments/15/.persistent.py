@@ -107,6 +107,15 @@ info = {
             site="before",
             directed=False,
         ),
+        Dynamic(
+            name="f",
+            command=None,
+            format_hairpin_stop=False,
+            hide=False,
+            leak=False,
+            name_is_textual=False,
+            ordinal=2,
+        ),
     ],
     "Voice 10": [
         LilyPondLiteral(
@@ -167,6 +176,15 @@ info = {
             site="before",
             directed=False,
         ),
+        Dynamic(
+            name="pp",
+            command=None,
+            format_hairpin_stop=False,
+            hide=False,
+            leak=False,
+            name_is_textual=False,
+            ordinal=-3,
+        ),
     ],
     "Voice 15": [
         LilyPondLiteral(
@@ -179,6 +197,15 @@ info = {
             site="before",
             directed=False,
         ),
+        Dynamic(
+            name="f",
+            command=None,
+            format_hairpin_stop=False,
+            hide=False,
+            leak=False,
+            name_is_textual=False,
+            ordinal=2,
+        ),
     ],
     "Voice 16": [
         LilyPondLiteral(
@@ -190,6 +217,15 @@ info = {
             argument="\\once \\override Rest.transparent = ##t",
             site="before",
             directed=False,
+        ),
+        Dynamic(
+            name="f",
+            command=None,
+            format_hairpin_stop=False,
+            hide=False,
+            leak=False,
+            name_is_textual=False,
+            ordinal=2,
         ),
     ],
     "Voice 17": [

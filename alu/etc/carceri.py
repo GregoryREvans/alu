@@ -1,5 +1,5 @@
-import abjad, evans
-
+import abjad
+import evans
 
 preamble = r"""#(set-global-staff-size 16)
 
@@ -73,15 +73,57 @@ melodic_sequence = [11, 10, 4, 6, 5, 7, 1, 3, 2, 0, 9, 8]
 s_1 = abjad.Staff([abjad.Note(_, abjad.Duration((1, 4))) for _ in melodic_sequence])
 
 source_chord = ["b", "ds'", "fs'", "bf'", "ef''", "a''", "c'''", "g'''"]
-score_1 = abjad.illustrators.make_piano_score([abjad.Chord(source_chord, abjad.Duration((1, 4)))])
+score_1 = abjad.illustrators.make_piano_score(
+    [abjad.Chord(source_chord, abjad.Duration((1, 4)))]
+)
 
-reordering_series = evans.Sequence([abjad.NumberedPitch(_) for _ in ["af'", "g'", "cs'", "ef'", "d'", "e'", "bf'", "c'", "b'", "a'", "fs'", "f'"]])
+reordering_series = evans.Sequence(
+    [
+        abjad.NumberedPitch(_)
+        for _ in [
+            "af'",
+            "g'",
+            "cs'",
+            "ef'",
+            "d'",
+            "e'",
+            "bf'",
+            "c'",
+            "b'",
+            "a'",
+            "fs'",
+            "f'",
+        ]
+    ]
+)
 vertical_stack_1 = reordering_series.stack_pitches()
-score_2 = abjad.illustrators.make_piano_score([abjad.Chord(vertical_stack_1, abjad.Duration((1, 4)))])
+score_2 = abjad.illustrators.make_piano_score(
+    [abjad.Chord(vertical_stack_1, abjad.Duration((1, 4)))]
+)
 
-reversed_reordering = evans.Sequence([abjad.NumberedPitch(_) for _ in ["af'", "g'", "cs'", "ef'", "d'", "e'", "bf'", "c'", "b'", "a'", "fs'", "f'"]]).reverse()
+reversed_reordering = evans.Sequence(
+    [
+        abjad.NumberedPitch(_)
+        for _ in [
+            "af'",
+            "g'",
+            "cs'",
+            "ef'",
+            "d'",
+            "e'",
+            "bf'",
+            "c'",
+            "b'",
+            "a'",
+            "fs'",
+            "f'",
+        ]
+    ]
+).reverse()
 vertical_stack_2 = reversed_reordering.stack_pitches()
-score_3 = abjad.illustrators.make_piano_score([abjad.Chord(vertical_stack_2, abjad.Duration((1, 4)))])
+score_3 = abjad.illustrators.make_piano_score(
+    [abjad.Chord(vertical_stack_2, abjad.Duration((1, 4)))]
+)
 
 pitches = evans.carceri_pitches(
     melodic_sequence,

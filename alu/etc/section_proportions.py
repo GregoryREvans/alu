@@ -4,7 +4,13 @@ phi = 1.6
 
 desired_duration = 20 * 60
 
-proportions = [1, (reference_size*2)/phi, reference_size, reference_size, ((reference_size*2)/phi)/phi]
+proportions = [
+    1,
+    (reference_size * 2) / phi,
+    reference_size,
+    reference_size,
+    ((reference_size * 2) / phi) / phi,
+]
 
 durations_in_seconds = []
 

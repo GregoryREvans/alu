@@ -1,10 +1,14 @@
+import random
+from fractions import Fraction
+
 import abjad
 import baca
 import evans
-from fractions import Fraction
+
 
 def measure_numbers(arg):
     return [_ - 1 for _ in arg]
+
 
 # lily met
 
@@ -20,11 +24,15 @@ met_46 = abjad.MetronomeMark((1, 4), 46)
 
 # markup met
 
-met_46_mark = abjad.MetronomeMark.make_tempo_equation_markup((1, 4), 46 + Fraction(2, 3), decimal=True)
+met_46_mark = abjad.MetronomeMark.make_tempo_equation_markup(
+    (1, 4), 46 + Fraction(2, 3), decimal=True
+)
 
-met_46_mark =  abjad.Markup(string=r'\markup {\abjad-metronome-mark-markup #2 #0 #1 #"46" \fraction 2 3 }')
+met_46_mark = abjad.Markup(
+    string=r'\markup {\abjad-metronome-mark-markup #2 #0 #1 #"46" \fraction 2 3 }'
+)
 
-mark_46 = abjad.LilyPondLiteral( # 01
+mark_46 = abjad.LilyPondLiteral(  # 01
     [
         r"^ \markup {",
         r"  \raise #6 \with-dimensions-from \null",
@@ -40,16 +48,16 @@ mark_46 = abjad.LilyPondLiteral( # 01
 
 ### 46 modulations
 
-mod_46_87 = evans.metric_modulation( # 02 X
+mod_46_87 = evans.metric_modulation(  # 02 X
     metronome_mark=((1, 4), 46 + Fraction(2, 3)),
-    left_note=(abjad.Tuplet(multiplier="15:8", components=[abjad.Note("c'16")])),
+    left_note=(abjad.Tuplet(multiplier="15:16", components=[abjad.Note("c'32")])),
     right_note=(abjad.Note("c'16")),
     modulated_beat=(abjad.Note("c'4")),
 )
 
 ### 70 modulations
 
-mod_70_105 = evans.metric_modulation( # 09 X 14 X
+mod_70_105 = evans.metric_modulation(  # 09 X 14 X
     metronome_mark=((1, 4), 70),
     left_note=(abjad.Tuplet(multiplier="3:2", components=[abjad.Note("c'8")])),
     right_note=(abjad.Note("c'8")),
@@ -58,14 +66,14 @@ mod_70_105 = evans.metric_modulation( # 09 X 14 X
 
 ### 87 modulations
 
-mod_87_122 = evans.metric_modulation( # 05 X
+mod_87_122 = evans.metric_modulation(  # 05 X
     metronome_mark=((1, 4), 87 + Fraction(1, 2)),
     left_note=(abjad.Tuplet(multiplier="7:5", components=[abjad.Note("c'8")])),
     right_note=(abjad.Note("c'8")),
     modulated_beat=(abjad.Note("c'4")),
 )
 
-mod_87_70 = evans.metric_modulation( # 08 X 13 X
+mod_87_70 = evans.metric_modulation(  # 08 X 13 X
     metronome_mark=((1, 4), 87 + Fraction(1, 2)),
     left_note=(abjad.Tuplet(multiplier="4:5", components=[abjad.Note("c'16")])),
     right_note=(abjad.Note("c'16")),
@@ -74,21 +82,21 @@ mod_87_70 = evans.metric_modulation( # 08 X 13 X
 
 ### 105 modulations
 
-mod_105_87 = evans.metric_modulation( # 07 X 12 X
+mod_105_87 = evans.metric_modulation(  # 07 X 12 X
     metronome_mark=((1, 4), 105),
     left_note=(abjad.Tuplet(multiplier="5:6", components=[abjad.Note("c'16")])),
     right_note=(abjad.Note("c'16")),
     modulated_beat=(abjad.Note("c'4")),
 )
 
-mod_105_122 = evans.metric_modulation( # 10 X
+mod_105_122 = evans.metric_modulation(  # 10 X
     metronome_mark=((1, 4), 105),
     left_note=(abjad.Tuplet(multiplier="7:6", components=[abjad.Note("c'16")])),
     right_note=(abjad.Note("c'16")),
     modulated_beat=(abjad.Note("c'4")),
 )
 
-mod_105_70 = evans.metric_modulation( # 15 X
+mod_105_70 = evans.metric_modulation(  # 15 X
     metronome_mark=((1, 4), 105),
     left_note=(abjad.Tuplet(multiplier="2:3", components=[abjad.Note("c'8")])),
     right_note=(abjad.Note("c'8")),
@@ -97,13 +105,12 @@ mod_105_70 = evans.metric_modulation( # 15 X
 
 ### 122 modulations
 
-mod_122_105 = evans.metric_modulation( # 06 X 11 X
+mod_122_105 = evans.metric_modulation(  # 06 X 11 X
     metronome_mark=((1, 4), 122 + Fraction(1, 2)),
     left_note=(abjad.Tuplet(multiplier="6:7", components=[abjad.Note("c'16")])),
     right_note=(abjad.Note("c'16")),
     modulated_beat=(abjad.Note("c'4")),
 )
-
 
 
 ##
@@ -671,6 +678,7 @@ def H_color(selections):
         abjad.attach(start, group[0], tag=tag)
         abjad.attach(stop, group[-1], tag=tag)
 
+
 I = MAS(
     string="[I].",
     color=f"#(rgb-color {197/255} {201/255} {251/255})",
@@ -950,3 +958,152 @@ def add_fancy_glisses(indices=[0]):
             )
 
     return returned_function
+
+
+def faberge_swells(selections):
+    ties = abjad.select.logical_ties(selections, pitched=True)
+    for tie in ties:
+        start = tie[0]
+        stop = abjad.get.leaf(tie[-1], 1)
+        abjad.attach(abjad.StartHairpin("o<"), start)
+        abjad.attach(abjad.Dynamic("f"), stop)
+
+
+def alternate_swells(selections, groups=[2, 2, 3, 3]):
+    notes = abjad.select.notes(selections)
+    groups = abjad.select.partition_by_counts(notes, groups, cyclic=True, overhang=True)
+    last_leaf = notes[-1]
+    cyc_dynamics = evans.CyclicList(["p", "f"], forget=False)
+    cyc_hairpins = evans.CyclicList(["<", ">"], forget=False)
+    for group in groups:
+        dyn = cyc_dynamics(r=1)[0]
+        pin = cyc_hairpins(r=1)[0]
+        abjad.attach(abjad.Dynamic(dyn), group[0])
+        abjad.attach(abjad.StartHairpin(pin), group[0])
+    abjad.attach(abjad.Dynamic(cyc_dynamics(r=1)[0]), group[-1])
+
+
+def alternate_full_bows(rotation):
+    def returned_function(selections):
+        ties = abjad.select.logical_ties(selections, pitched=True)
+        strings = abjad.sequence.rotate(
+            [
+                "baca-full-downbow",
+                "baca-stop-on-string-full-upbow",
+                "baca-stop-on-string-full-downbow",
+                "baca-full-upbow",
+                "baca-full-downbow",
+                "baca-full-upbow",
+            ],
+            rotation,
+        )
+        cyc_strings = evans.CyclicList(strings, forget=False)
+        for tie in ties:
+            first_leaf = tie[0]
+            articulation = abjad.Articulation(cyc_strings(r=1)[0])
+            abjad.attach(articulation, first_leaf)
+
+    return returned_function
+
+
+def trill_pitches_followed_by_run(source, trill_length_before_run):
+    trill_pitches = [source[:2] for _ in range(trill_length_before_run)]
+    trill_pitches = abjad.sequence.flatten(trill_pitches)
+    trill_figure = trill_pitches[: trill_length_before_run + 1]
+    run_pitches = source[2:]
+    final_construction = trill_figure + run_pitches
+    return final_construction
+
+
+def center_swell(selections, random_seed=0, niente=True):
+    random.seed(random_seed)
+    dyn = random.choice(["mp", "mf", "f", "ff"])
+    leaves = abjad.select.notes(selections)
+    length_of_leaves = len(leaves)
+    center = length_of_leaves // 2
+    if niente is True:
+        abjad.attach(
+            abjad.StartHairpin("o<"),
+            leaves[0],
+        )
+        abjad.attach(
+            abjad.StartHairpin(">o"),
+            leaves[center],
+        )
+        abjad.attach(
+            abjad.StopHairpin(leak=True),
+            leaves[-1],
+        )
+    else:
+        abjad.attach(
+            abjad.Dynamic("pp"),
+            leaves[0],
+        )
+        abjad.attach(
+            abjad.StartHairpin("<"),
+            leaves[0],
+        )
+        abjad.attach(
+            abjad.StartHairpin(">"),
+            leaves[center],
+        )
+        abjad.attach(
+            abjad.Dynamic("pp"),
+            leaves[-1],
+        )
+    abjad.attach(
+        abjad.Dynamic(dyn),
+        leaves[center],
+    )
+
+
+def get_tuplets(selections):
+    leaves = abjad.select.leaves(selections)
+    top_level = evans.get_top_level_components_from_leaves(leaves)
+    tuplets = abjad.select.tuplets(top_level)
+    indices = abjad.index(
+        [3, 3 + 5, 3 + 5 + 7, 3 + 5 + 7 + 6, 3 + 5 + 7 + 6 + 4], 3 + 5 + 7 + 6 + 4 + 1
+    )
+    return abjad.select.get(tuplets, indices)
+
+
+def get_all_tuplets(selections):
+    leaves = abjad.select.leaves(selections)
+    top_level = evans.get_top_level_components_from_leaves(leaves)
+    tuplets = abjad.select.tuplets(top_level)
+    return tuplets
+
+
+def add_brackets(
+    selections, partitions, hide_heads=True, padding=2, direction="UP", label=False
+):
+    notes = abjad.select.notes(selections)
+    groups = abjad.select.partition_by_counts(
+        notes, partitions, cyclic=True, overhang=True
+    )
+    for group in groups:
+        start = abjad.StartGroup()
+        items = [
+            start,
+            abjad.Tweak(rf"- \tweak HorizontalBracket.staff-padding #{padding}"),
+            abjad.Tweak(rf"- \tweak HorizontalBracket.direction #{direction}"),
+        ]
+        if label is True:
+            items.append(
+                abjad.Tweak(rf'- \tweak HorizontalBracketText.text "{len(group)}"')
+            )
+        bundle = abjad.bundle(*items)
+        abjad.horizontal_bracket(group, start_group=bundle)
+        if hide_heads is True:
+            for i, note in enumerate(group):
+                if 0 < i:
+                    abjad.override(note).NoteHead.transparent = True
+                    abjad.override(note).Accidental.stencil = False
+                    abjad.override(note).NoteHead.no_ledgers = True
+                    # abjad.tweak(
+                    #     note.note_head,
+                    #     # r"\tweak NoteHead.stencil #f",
+                    #     # r"\tweak transparent #t",
+                    #     r"\tweak Accidental.stencil #f",
+                    #     r"\tweak LedgerLines.stencil #f",
+                    # )
