@@ -21,30 +21,55 @@ def potamia_pitches(transposition=0, columns=False, retrograde=False):
     return returned_handler
 
 
-def barraque_potamia(transposition=0, rotation=0, columns=False, retrograde=False):
-    source = (
-        evans.PitchSegment(
-            [
-                abjad.NumberedPitchClass(_).number
-                for _ in [
-                    "b",
-                    "a",
-                    "e",
-                    "bf",
-                    "d",
-                    "ef",
-                    "cs",
-                    "c",
-                    "fs",
-                    "g",
-                    "f",
-                    "af",
+def barraque_potamia(transposition=0, rotation=0, columns=False, retrograde=False, nono_replacement=False):
+    if nono_replacement is False:
+        source = (
+            evans.PitchSegment(
+                [
+                    abjad.NumberedPitchClass(_).number
+                    for _ in [
+                        "b",
+                        "a",
+                        "e",
+                        "bf",
+                        "d",
+                        "ef",
+                        "cs",
+                        "c",
+                        "fs",
+                        "g",
+                        "f",
+                        "af",
+                    ]
                 ]
-            ]
+            )
+            .transpose(transposition)
+            .rotate(rotation)
         )
-        .transpose(transposition)
-        .rotate(rotation)
-    )
+    else:
+        source = (
+            evans.PitchSegment(
+                [
+                    abjad.NumberedPitchClass(_).number
+                    for _ in [
+                        "a",
+                        "bf",
+                        "af",
+                        "b",
+                        "g",
+                        "c",
+                        "fs",
+                        "cs",
+                        "f",
+                        "d",
+                        "e",
+                        "ef",
+                    ]
+                ]
+            )
+            .transpose(transposition)
+            .rotate(rotation)
+        )
     matrix = evans.Sequence(source).matrix()
     river = matrix.potamia(columns=columns, retrograde=retrograde)
     flattened_river = river.flatten()

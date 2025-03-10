@@ -53,6 +53,31 @@ maker = evans.SegmentMaker(
     commands=[
         # PREFIX
         evans.attach(
+            "Global Context",
+            abjad.RehearsalMark(number=1),
+            lambda _: abjad.select.leaf(_, 0),
+        ),
+        evans.attach(
+            "Global Context",
+            abjad.RehearsalMark(number=2),
+            lambda _: abjad.select.leaf(_, 10),
+        ),
+        evans.attach(
+            "Global Context",
+            abjad.RehearsalMark(number=3),
+            lambda _: abjad.select.leaf(_, 18),
+        ),
+        evans.attach(
+            "Global Context",
+            abjad.RehearsalMark(number=4),
+            lambda _: abjad.select.leaf(_, 32),
+        ),
+        evans.attach(
+            "Global Context",
+            abjad.RehearsalMark(number=5),
+            lambda _: abjad.select.leaf(_, 43),
+        ),
+        evans.attach(
             "bassoon voice",
             abjad.Clef("bass"),
             lambda _: abjad.select.leaf(_, 0),
@@ -104,7 +129,7 @@ maker = evans.SegmentMaker(
             evans.talea(
                 [7, 8, 9, 11, 12, 1, 1, 1],
                 16,
-                extra_counts=[0, -1, 0, 1],
+                extra_counts=[0, 2, 0, 1],
                 preprocessor=evans.make_preprocessor(quarters=True),
                 rewrite=-1,
             ),
@@ -125,7 +150,7 @@ maker = evans.SegmentMaker(
                     if abjad.get.duration(x) < abjad.Duration((1, 4))
                 ]
             ),
-            abjad.Dynamic("ff"),
+            abjad.Dynamic("mp"),
             evans.Attachment(
                 abjad.Markup(r"\markup {rigid, mechanical: keep dynamic static}"),
                 selector=lambda _: abjad.select.leaf(_, 0),
@@ -139,6 +164,17 @@ maker = evans.SegmentMaker(
             selector=evans.select_measures([_ for _ in range(56 // 2, 56)]),
         ),
         # OBOE
+        evans.MusicCommand(
+            ("oboe voice", 0),
+            evans.make_tied_notes(rewrite=-1),
+            evans.PitchHandler(["g'"]),
+            abjad.Dynamic("mf"),
+            abjad.StartTrillSpan(),
+            evans.Attachment(
+                abjad.StopTrillSpan(),
+                selector=lambda _: abjad.get.leaf(abjad.select.leaf(_, -1), 1),
+            ),
+        ),
         evans.MusicCommand(
             ("oboe voice", alu.measure_numbers([7, 8])),
             evans.talea(
@@ -189,13 +225,13 @@ maker = evans.SegmentMaker(
                     abjad.select.notes(_), [4], cyclic=True, overhang=True
                 )
             ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [4],
-                padding=5,
-                id=1,
-            ),
+            # evans.text_span(
+            #     [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+            #     "=>",
+            #     [4],
+            #     padding=5,
+            #     id=1,
+            # ),
             evans.hairpin("p < f >", [4]),
             # # alu.E_color,
         ),
@@ -219,13 +255,13 @@ maker = evans.SegmentMaker(
                     abjad.select.notes(_), [4], cyclic=True, overhang=True
                 )
             ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [4],
-                padding=5,
-                id=1,
-            ),
+            # evans.text_span(
+            #     [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+            #     "=>",
+            #     [4],
+            #     padding=5,
+            #     id=1,
+            # ),
             evans.hairpin("p < f >", [4]),
             # # alu.E_color,
         ),
@@ -280,13 +316,13 @@ maker = evans.SegmentMaker(
                     abjad.select.notes(_), [4], cyclic=True, overhang=True
                 )
             ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [4],
-                padding=5,
-                id=1,
-            ),
+            # evans.text_span(
+            #     [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+            #     "=>",
+            #     [4],
+            #     padding=5,
+            #     id=1,
+            # ),
             evans.hairpin("p < f >", [4]),
             # # alu.E_color,
         ),
@@ -310,13 +346,13 @@ maker = evans.SegmentMaker(
                     abjad.select.notes(_), [4], cyclic=True, overhang=True
                 )
             ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [4],
-                padding=5,
-                id=1,
-            ),
+            # evans.text_span(
+            #     [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+            #     "=>",
+            #     [4],
+            #     padding=5,
+            #     id=1,
+            # ),
             evans.hairpin("p < f >", [4]),
             # # alu.E_color,
         ),
@@ -340,13 +376,13 @@ maker = evans.SegmentMaker(
                     abjad.select.notes(_), [4], cyclic=True, overhang=True
                 )
             ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [4],
-                padding=5,
-                id=1,
-            ),
+            # evans.text_span(
+            #     [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+            #     "=>",
+            #     [4],
+            #     padding=5,
+            #     id=1,
+            # ),
             evans.hairpin("p < f >", [4]),
             # # alu.E_color,
         ),
@@ -356,12 +392,12 @@ maker = evans.SegmentMaker(
             evans.talea(
                 [13, 7, 9, 10, 12, 1, 1, 1, 1],
                 16,
-                extra_counts=[0, -1, -1, 0, 1],
+                extra_counts=[0, 2, 2, 0, 1],
                 preprocessor=evans.make_preprocessor(quarters=True),
                 rewrite=-1,
             ),
             evans.PitchHandler(
-                [evans.JIPitch("ef,,", "10/1", with_quarter_tones=True)]
+                [evans.JIPitch("ef,,,", "10/1", with_quarter_tones=True)]
             ),
             lambda _: evans.ArticulationHandler(["accent"])(
                 [
@@ -377,7 +413,7 @@ maker = evans.SegmentMaker(
                     if abjad.get.duration(x) < abjad.Duration((1, 4))
                 ]
             ),
-            abjad.Dynamic("ff"),
+            abjad.Dynamic("mp"),
             evans.Attachment(
                 abjad.Markup(r"\markup {rigid, mechanical: keep dynamic static}"),
                 selector=lambda _: abjad.select.leaf(_, 0),
@@ -395,6 +431,7 @@ maker = evans.SegmentMaker(
             evans.make_tied_notes(),
             evans.PitchHandler(["b,"]),
             abjad.Markup(r'\boxed-markup "son fendu" #1'),
+            abjad.Articulation("trill"),
             # # alu.I_color,
         ),
         # BASSOON
@@ -434,7 +471,8 @@ maker = evans.SegmentMaker(
                 [16, 16, 32],
                 extra_counts=[1, 1, 1, 2, 1, 0],
                 preprocessor=evans.make_preprocessor(
-                    eighths=True, fuse_counts=[2, 3, 2, 2, 3, 1]
+                    eighths=True,
+                    # fuse_counts=[2, 3, 2, 2, 3, 1]
                 ),
             ),
             evans.Callable(
@@ -450,15 +488,20 @@ maker = evans.SegmentMaker(
                     abjad.select.notes(_), [5], cyclic=True, overhang=True
                 )
             ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [5],
-                padding=5,
-                id=1,
-            ),
+            # evans.text_span(
+            #     [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+            #     "=>",
+            #     [5],
+            #     padding=5,
+            #     id=1,
+            # ),
             evans.hairpin("p < f >", [5]),
             # # alu.E_color,
+        ),
+        evans.detach(
+            "bassoon voice",
+            abjad.StartSlur(),
+            selector=evans.select_measures([19], note=-1),
         ),
         evans.MusicCommand(
             ("bassoon voice", alu.measure_numbers([27, 28, 29, 30, 31])),
@@ -496,7 +539,8 @@ maker = evans.SegmentMaker(
                 [16, 16, 32],
                 extra_counts=[1, 1, 1, 2, 1, 0],
                 preprocessor=evans.make_preprocessor(
-                    eighths=True, fuse_counts=[2, 3, 2, 2, 3, 1]
+                    eighths=True,
+                    # fuse_counts=[2, 3, 2, 2, 3, 1]
                 ),
             ),
             evans.Callable(
@@ -512,15 +556,20 @@ maker = evans.SegmentMaker(
                     abjad.select.notes(_), [5], cyclic=True, overhang=True
                 )
             ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [5],
-                padding=5,
-                id=1,
-            ),
+            # evans.text_span(
+            #     [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+            #     "=>",
+            #     [5],
+            #     padding=5,
+            #     id=1,
+            # ),
             evans.hairpin("p < f >", [5]),
             # # alu.E_color,
+        ),
+        evans.detach(
+            "bassoon voice",
+            abjad.StartSlur(),
+            selector=evans.select_measures([38], note=-1)
         ),
         evans.MusicCommand(
             ("bassoon voice", alu.measure_numbers([51, 52, 53, 54, 55])),
@@ -528,7 +577,8 @@ maker = evans.SegmentMaker(
                 [16, 16, 32],
                 extra_counts=[1, 1, 1, 2, 1, 0],
                 preprocessor=evans.make_preprocessor(
-                    eighths=True, fuse_counts=[2, 3, 2, 2, 3, 1]
+                    eighths=True,
+                    # fuse_counts=[2, 3, 2, 2, 3, 1]
                 ),
             ),
             evans.Callable(
@@ -544,17 +594,28 @@ maker = evans.SegmentMaker(
                     abjad.select.notes(_), [5], cyclic=True, overhang=True
                 )
             ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [5],
-                padding=5,
-                id=1,
-            ),
+            # evans.text_span(
+            #     [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+            #     "=>",
+            #     [5],
+            #     padding=5,
+            #     id=1,
+            # ),
             evans.hairpin("p < f >", [5]),
             # # alu.E_color,
         ),
+        evans.detach(
+            "bassoon voice",
+            abjad.StartSlur(),
+            selector=evans.select_measures([54], note=-1)
+        ),
         # HORN
+        evans.MusicCommand(
+            ("french horn voice", 0),
+            evans.talea([1, -20], 4, rewrite=-1),
+            evans.PitchHandler(["a'"]),
+            abjad.Dynamic("ff"),
+        ),
         evans.MusicCommand(
             ("french horn voice", alu.measure_numbers([6, 7, 8, 9])),
             evans.talea(
@@ -624,9 +685,13 @@ maker = evans.SegmentMaker(
                 basic_rest_period=9,
                 rewrite=-1,
                 preprocessor=evans.make_preprocessor(quarters=True, fuse_counts=None),
+                default_rests=False,
+                pre_commands=[
+                    lambda _: rmakers.force_rest(abjad.select.get(abjad.select.logical_ties(_), ~abjad.index([1], 2))),
+                ],
             ),
             alu.barraque_potamia(
-                transposition=0, rotation=0, columns=False, retrograde=False
+                transposition=0, rotation=0, columns=False, retrograde=False, nono_replacement=True,
             ),
             lambda _: evans.contour(
                 _,
@@ -636,15 +701,17 @@ maker = evans.SegmentMaker(
                 ),
                 starting_range=abjad.PitchRange("[B2, F4]"),
             ),
-            lambda _: alu.faberge_swells(_),
-            evans.Attachment(
-                abjad.LilyPondLiteral(r"\kiss-off", site="before"),
-                selector=lambda _: abjad.select.leaf(_, 0),
-            ),
-            evans.Attachment(
-                abjad.LilyPondLiteral(r"\revert-noteheads", site="after"),
-                selector=lambda _: abjad.select.leaf(_, -1),
-            ),
+            # lambda _: alu.faberge_swells(_),
+            abjad.Dynamic("f"),
+            evans.ArticulationHandler(["tremolo"]),
+            # evans.Attachment(
+            #     abjad.LilyPondLiteral(r"\kiss-off", site="before"),
+            #     selector=lambda _: abjad.select.leaf(_, 0),
+            # ),
+            # evans.Attachment(
+            #     abjad.LilyPondLiteral(r"\revert-noteheads", site="after"),
+            #     selector=lambda _: abjad.select.leaf(_, -1),
+            # ),
             # # alu.D_color,
         ),
         evans.MusicCommand(
@@ -656,9 +723,13 @@ maker = evans.SegmentMaker(
                 basic_rest_period=9,
                 rewrite=-1,
                 preprocessor=evans.make_preprocessor(quarters=True, fuse_counts=None),
+                default_rests=False,
+                pre_commands=[
+                    lambda _: rmakers.force_rest(abjad.select.get(abjad.select.logical_ties(_), ~abjad.index([2], 3))),
+                ],
             ),
             alu.barraque_potamia(
-                transposition=1, rotation=-1, columns=False, retrograde=False
+                transposition=1, rotation=-1, columns=False, retrograde=False, nono_replacement=True,
             ),
             lambda _: evans.contour(
                 _,
@@ -669,17 +740,24 @@ maker = evans.SegmentMaker(
                 starting_range=abjad.PitchRange("[B2, F4]"),
             ),
             lambda _: alu.faberge_swells(_),
-            evans.Attachment(
-                abjad.LilyPondLiteral(r"\kiss-on", site="before"),
-                selector=lambda _: abjad.select.leaf(_, 0),
-            ),
-            evans.Attachment(
-                abjad.LilyPondLiteral(r"\revert-noteheads", site="after"),
-                selector=lambda _: abjad.select.leaf(_, -1),
-            ),
+            evans.ArticulationHandler(["tremolo"]),
+            # evans.Attachment(
+            #     abjad.LilyPondLiteral(r"\kiss-on", site="before"),
+            #     selector=lambda _: abjad.select.leaf(_, 0),
+            # ),
+            # evans.Attachment(
+            #     abjad.LilyPondLiteral(r"\revert-noteheads", site="after"),
+            #     selector=lambda _: abjad.select.leaf(_, -1),
+            # ),
             # # alu.D_color,
         ),
         # TRUMPET
+        evans.MusicCommand(
+            ("trumpet voice", 0),
+            evans.talea([1, -20], 4, rewrite=-1),
+            evans.PitchHandler(["bf''"]),
+            abjad.Dynamic("ff"),
+        ),
         evans.MusicCommand(
             ("trumpet voice", alu.measure_numbers([_ for _ in range(6, 10)])),
             evans.talea(
@@ -719,9 +797,13 @@ maker = evans.SegmentMaker(
                 basic_rest_period=9,
                 rewrite=-1,
                 preprocessor=evans.make_preprocessor(quarters=True, fuse_counts=None),
+                default_rests=False,
+                pre_commands=[
+                    lambda _: rmakers.force_rest(abjad.select.get(abjad.select.logical_ties(_), ~abjad.index([0], 3))),
+                ],
             ),
             alu.barraque_potamia(
-                transposition=2, rotation=-2, columns=False, retrograde=False
+                transposition=2, rotation=-2, columns=False, retrograde=False, nono_replacement=True,
             ),
             lambda _: evans.contour(
                 _,
@@ -774,9 +856,13 @@ maker = evans.SegmentMaker(
                 basic_rest_period=9,
                 rewrite=-1,
                 preprocessor=evans.make_preprocessor(quarters=True, fuse_counts=None),
+                default_rests=False,
+                pre_commands=[
+                    lambda _: rmakers.force_rest(abjad.select.get(abjad.select.logical_ties(_), ~abjad.index([1, 3], 5))),
+                ],
             ),
             alu.barraque_potamia(
-                transposition=3, rotation=-3, columns=False, retrograde=False
+                transposition=3, rotation=-3, columns=False, retrograde=False, nono_replacement=True,
             ),
             lambda _: evans.contour(
                 _,
@@ -786,15 +872,17 @@ maker = evans.SegmentMaker(
                 ),
                 starting_range=abjad.PitchRange("[F#4, D5]"),
             ),
-            lambda _: alu.faberge_swells(_),
-            evans.Attachment(
-                abjad.LilyPondLiteral(r"\kiss-off", site="before"),
-                selector=lambda _: abjad.select.leaf(_, 0),
-            ),
-            evans.Attachment(
-                abjad.LilyPondLiteral(r"\revert-noteheads", site="after"),
-                selector=lambda _: abjad.select.leaf(_, -1),
-            ),
+            # lambda _: alu.faberge_swells(_),
+            abjad.Dynamic("f"),
+            evans.ArticulationHandler(["tremolo"]),
+            # evans.Attachment(
+            #     abjad.LilyPondLiteral(r"\kiss-off", site="before"),
+            #     selector=lambda _: abjad.select.leaf(_, 0),
+            # ),
+            # evans.Attachment(
+            #     abjad.LilyPondLiteral(r"\revert-noteheads", site="after"),
+            #     selector=lambda _: abjad.select.leaf(_, -1),
+            # ),
             # # alu.D_color,
         ),
         evans.MusicCommand(
@@ -806,9 +894,13 @@ maker = evans.SegmentMaker(
                 basic_rest_period=9,
                 rewrite=-1,
                 preprocessor=evans.make_preprocessor(quarters=True, fuse_counts=None),
+                default_rests=False,
+                pre_commands=[
+                    lambda _: rmakers.force_rest(abjad.select.get(abjad.select.logical_ties(_), ~abjad.index([1, 3], 6))),
+                ],
             ),
             alu.barraque_potamia(
-                transposition=4, rotation=-4, columns=False, retrograde=False
+                transposition=4, rotation=-4, columns=False, retrograde=False, nono_replacement=True,
             ),
             lambda _: evans.contour(
                 _,
@@ -819,17 +911,24 @@ maker = evans.SegmentMaker(
                 starting_range=abjad.PitchRange("[F#4, D5]"),
             ),
             lambda _: alu.faberge_swells(_),
-            evans.Attachment(
-                abjad.LilyPondLiteral(r"\kiss-on", site="before"),
-                selector=lambda _: abjad.select.leaf(_, 0),
-            ),
-            evans.Attachment(
-                abjad.LilyPondLiteral(r"\revert-noteheads", site="after"),
-                selector=lambda _: abjad.select.leaf(_, -1),
-            ),
+            evans.ArticulationHandler(["tremolo"]),
+            # evans.Attachment(
+            #     abjad.LilyPondLiteral(r"\kiss-on", site="before"),
+            #     selector=lambda _: abjad.select.leaf(_, 0),
+            # ),
+            # evans.Attachment(
+            #     abjad.LilyPondLiteral(r"\revert-noteheads", site="after"),
+            #     selector=lambda _: abjad.select.leaf(_, -1),
+            # ),
             # # alu.D_color,
         ),
         # TROMBONE
+        evans.MusicCommand(
+            ("tenor trombone voice", 0),
+            evans.talea([1, -20], 4, rewrite=-1),
+            evans.PitchHandler(["gs"]),
+            abjad.Dynamic("ff"),
+        ),
         evans.MusicCommand(
             ("tenor trombone voice", alu.measure_numbers([_ for _ in range(6, 10)])),
             evans.talea(
@@ -847,7 +946,7 @@ maker = evans.SegmentMaker(
                     abjad.NumberedPitch(_).number
                     for _ in alu.constrained_random_walk_from_source(
                         source=alu.constructed_chord_1,
-                        instrument_range=abjad.TenorTrombone().pitch_range,
+                        instrument_range=abjad.PitchRange(range_string='[E2, Eb3]'),
                         rotation=2,
                         random_seed=4,
                         step_list=[1, 1, 2, 1],
@@ -869,9 +968,13 @@ maker = evans.SegmentMaker(
                 basic_rest_period=9,
                 rewrite=-1,
                 preprocessor=evans.make_preprocessor(quarters=True, fuse_counts=None),
+                default_rests=False,
+                pre_commands=[
+                    lambda _: rmakers.force_rest(abjad.select.get(abjad.select.logical_ties(_), ~abjad.index([0, 2], 5))),
+                ],
             ),
             alu.barraque_potamia(
-                transposition=5, rotation=-5, columns=False, retrograde=False
+                transposition=5, rotation=-5, columns=False, retrograde=False, nono_replacement=True,
             ),
             lambda _: evans.contour(
                 _,
@@ -879,17 +982,18 @@ maker = evans.SegmentMaker(
                     [0, 1],
                     evans.Lapidary("up", "previous alteration", "centroid octave"),
                 ),
-                starting_range=abjad.PitchRange("[E3, Eb4]"),
+                starting_range=abjad.PitchRange("[E2, Eb3]"),
             ),
             lambda _: alu.faberge_swells(_),
-            evans.Attachment(
-                abjad.LilyPondLiteral(r"\kiss-on", site="before"),
-                selector=lambda _: abjad.select.leaf(_, 0),
-            ),
-            evans.Attachment(
-                abjad.LilyPondLiteral(r"\revert-noteheads", site="after"),
-                selector=lambda _: abjad.select.leaf(_, -1),
-            ),
+            evans.ArticulationHandler(["tremolo"]),
+            # evans.Attachment(
+            #     abjad.LilyPondLiteral(r"\kiss-on", site="before"),
+            #     selector=lambda _: abjad.select.leaf(_, 0),
+            # ),
+            # evans.Attachment(
+            #     abjad.LilyPondLiteral(r"\revert-noteheads", site="after"),
+            #     selector=lambda _: abjad.select.leaf(_, -1),
+            # ),
             # # alu.D_color,
         ),
         evans.MusicCommand(
@@ -901,9 +1005,13 @@ maker = evans.SegmentMaker(
                 basic_rest_period=9,
                 rewrite=-1,
                 preprocessor=evans.make_preprocessor(quarters=True, fuse_counts=None),
+                default_rests=False,
+                pre_commands=[
+                    lambda _: rmakers.force_rest(abjad.select.get(abjad.select.logical_ties(_), ~abjad.index([2, 5], 6))),
+                ],
             ),
             alu.barraque_potamia(
-                transposition=6, rotation=-6, columns=False, retrograde=False
+                transposition=6, rotation=-6, columns=False, retrograde=False, nono_replacement=True,
             ),
             lambda _: evans.contour(
                 _,
@@ -911,7 +1019,7 @@ maker = evans.SegmentMaker(
                     [0, 1],
                     evans.Lapidary("up", "previous alteration", "centroid octave"),
                 ),
-                starting_range=abjad.PitchRange("[E3, Eb4]"),
+                starting_range=abjad.PitchRange("[E2, Eb3]"),
             ),
             lambda _: alu.faberge_swells(_),
             evans.ArticulationHandler(["tremolo"], forget=False),
@@ -934,7 +1042,7 @@ maker = evans.SegmentMaker(
                     abjad.NumberedPitch(_).number
                     for _ in alu.constrained_random_walk_from_source(
                         source=alu.constructed_chord_2,
-                        instrument_range=abjad.TenorTrombone().pitch_range,
+                        instrument_range=abjad.PitchRange(range_string='[E2, Eb3]'),
                         rotation=2,
                         random_seed=4,
                         step_list=[1, 1, 2, 1],
@@ -956,9 +1064,13 @@ maker = evans.SegmentMaker(
                 basic_rest_period=9,
                 rewrite=-1,
                 preprocessor=evans.make_preprocessor(quarters=True, fuse_counts=None),
+                default_rests=False,
+                pre_commands=[
+                    lambda _: rmakers.force_rest(abjad.select.get(abjad.select.logical_ties(_), ~abjad.index([3, 5], 6))),
+                ],
             ),
             alu.barraque_potamia(
-                transposition=7, rotation=-7, columns=False, retrograde=False
+                transposition=7, rotation=-7, columns=False, retrograde=False, nono_replacement=True,
             ),
             lambda _: evans.contour(
                 _,
@@ -966,17 +1078,19 @@ maker = evans.SegmentMaker(
                     [0, 1],
                     evans.Lapidary("up", "previous alteration", "centroid octave"),
                 ),
-                starting_range=abjad.PitchRange("[E3, Eb4]"),
+                starting_range=abjad.PitchRange("[E2, Eb3]"),
             ),
-            lambda _: alu.faberge_swells(_),
-            evans.Attachment(
-                abjad.LilyPondLiteral(r"\kiss-off", site="before"),
-                selector=lambda _: abjad.select.leaf(_, 0),
-            ),
-            evans.Attachment(
-                abjad.LilyPondLiteral(r"\revert-noteheads", site="after"),
-                selector=lambda _: abjad.select.leaf(_, -1),
-            ),
+            # lambda _: alu.faberge_swells(_),
+            abjad.Dynamic("f"),
+            evans.ArticulationHandler(["tremolo"]),
+            # evans.Attachment(
+            #     abjad.LilyPondLiteral(r"\kiss-off", site="before"),
+            #     selector=lambda _: abjad.select.leaf(_, 0),
+            # ),
+            # evans.Attachment(
+            #     abjad.LilyPondLiteral(r"\revert-noteheads", site="after"),
+            #     selector=lambda _: abjad.select.leaf(_, -1),
+            # ),
             # # alu.D_color,
         ),
         evans.MusicCommand(
@@ -988,9 +1102,13 @@ maker = evans.SegmentMaker(
                 basic_rest_period=9,
                 rewrite=-1,
                 preprocessor=evans.make_preprocessor(quarters=True, fuse_counts=None),
+                default_rests=False,
+                pre_commands=[
+                    lambda _: rmakers.force_rest(abjad.select.get(abjad.select.logical_ties(_), ~abjad.index([3, 4, 6], 7))),
+                ],
             ),
             alu.barraque_potamia(
-                transposition=8, rotation=-8, columns=False, retrograde=False
+                transposition=8, rotation=-8, columns=False, retrograde=False, nono_replacement=True,
             ),
             lambda _: evans.contour(
                 _,
@@ -998,20 +1116,27 @@ maker = evans.SegmentMaker(
                     [0, 1],
                     evans.Lapidary("up", "previous alteration", "centroid octave"),
                 ),
-                starting_range=abjad.PitchRange("[E3, Eb4]"),
+                starting_range=abjad.PitchRange("[E2, Eb3]"),
             ),
             lambda _: alu.faberge_swells(_),
-            evans.Attachment(
-                abjad.LilyPondLiteral(r"\kiss-on", site="before"),
-                selector=lambda _: abjad.select.leaf(_, 0),
-            ),
-            evans.Attachment(
-                abjad.LilyPondLiteral(r"\revert-noteheads", site="after"),
-                selector=lambda _: abjad.select.leaf(_, -1),
-            ),
+            evans.ArticulationHandler(["tremolo"]),
+            # evans.Attachment(
+            #     abjad.LilyPondLiteral(r"\kiss-on", site="before"),
+            #     selector=lambda _: abjad.select.leaf(_, 0),
+            # ),
+            # evans.Attachment(
+            #     abjad.LilyPondLiteral(r"\revert-noteheads", site="after"),
+            #     selector=lambda _: abjad.select.leaf(_, -1),
+            # ),
             # # alu.D_color,
         ),
         # TUBA
+        evans.MusicCommand(
+            ("tuba voice", 0),
+            evans.talea([1, -20], 4, rewrite=-1),
+            evans.PitchHandler(["b,"]),
+            abjad.Dynamic("ff"),
+        ),
         evans.MusicCommand(
             ("tuba voice", alu.measure_numbers([_ for _ in range(5, 11)])),
             evans.talea(
@@ -1051,9 +1176,13 @@ maker = evans.SegmentMaker(
                 basic_rest_period=9,
                 rewrite=-1,
                 preprocessor=evans.make_preprocessor(quarters=True, fuse_counts=None),
+                default_rests=False,
+                pre_commands=[
+                    lambda _: rmakers.force_rest(abjad.select.get(abjad.select.logical_ties(_), ~abjad.index([0], 3))),
+                ],
             ),
             alu.barraque_potamia(
-                transposition=9, rotation=-9, columns=False, retrograde=False
+                transposition=9, rotation=-9, columns=False, retrograde=False, nono_replacement=True,
             ),
             lambda _: evans.contour(
                 _,
@@ -1064,14 +1193,15 @@ maker = evans.SegmentMaker(
                 starting_range=abjad.PitchRange("[D2, F3]"),
             ),
             lambda _: alu.faberge_swells(_),
-            evans.Attachment(
-                abjad.LilyPondLiteral(r"\kiss-on", site="before"),
-                selector=lambda _: abjad.select.leaf(_, 0),
-            ),
-            evans.Attachment(
-                abjad.LilyPondLiteral(r"\revert-noteheads", site="after"),
-                selector=lambda _: abjad.select.leaf(_, -1),
-            ),
+            evans.ArticulationHandler(["tremolo"]),
+            # evans.Attachment(
+            #     abjad.LilyPondLiteral(r"\kiss-on", site="before"),
+            #     selector=lambda _: abjad.select.leaf(_, 0),
+            # ),
+            # evans.Attachment(
+            #     abjad.LilyPondLiteral(r"\revert-noteheads", site="after"),
+            #     selector=lambda _: abjad.select.leaf(_, -1),
+            # ),
             # # alu.D_color,
         ),
         evans.MusicCommand(
@@ -1083,9 +1213,13 @@ maker = evans.SegmentMaker(
                 basic_rest_period=9,
                 rewrite=-1,
                 preprocessor=evans.make_preprocessor(quarters=True, fuse_counts=None),
+                default_rests=False,
+                pre_commands=[
+                    lambda _: rmakers.force_rest(abjad.select.get(abjad.select.logical_ties(_), ~abjad.index([0, 1], 4))),
+                ],
             ),
             alu.barraque_potamia(
-                transposition=10, rotation=-10, columns=False, retrograde=False
+                transposition=10, rotation=-10, columns=False, retrograde=False, nono_replacement=True,
             ),
             lambda _: evans.contour(
                 _,
@@ -1138,9 +1272,13 @@ maker = evans.SegmentMaker(
                 basic_rest_period=9,
                 rewrite=-1,
                 preprocessor=evans.make_preprocessor(quarters=True, fuse_counts=None),
+                default_rests=False,
+                pre_commands=[
+                    lambda _: rmakers.force_rest(abjad.select.get(abjad.select.logical_ties(_), ~abjad.index([1, 3], 5))),
+                ],
             ),
             alu.barraque_potamia(
-                transposition=11, rotation=-11, columns=False, retrograde=False
+                transposition=11, rotation=-11, columns=False, retrograde=False, nono_replacement=True,
             ),
             lambda _: evans.contour(
                 _,
@@ -1150,15 +1288,17 @@ maker = evans.SegmentMaker(
                 ),
                 starting_range=abjad.PitchRange("[D2, F3]"),
             ),
-            lambda _: alu.faberge_swells(_),
-            evans.Attachment(
-                abjad.LilyPondLiteral(r"\kiss-off", site="before"),
-                selector=lambda _: abjad.select.leaf(_, 0),
-            ),
-            evans.Attachment(
-                abjad.LilyPondLiteral(r"\revert-noteheads", site="after"),
-                selector=lambda _: abjad.select.leaf(_, -1),
-            ),
+            # lambda _: alu.faberge_swells(_),
+            abjad.Dynamic("f"),
+            evans.ArticulationHandler(["tremolo"]),
+            # evans.Attachment(
+            #     abjad.LilyPondLiteral(r"\kiss-off", site="before"),
+            #     selector=lambda _: abjad.select.leaf(_, 0),
+            # ),
+            # evans.Attachment(
+            #     abjad.LilyPondLiteral(r"\revert-noteheads", site="after"),
+            #     selector=lambda _: abjad.select.leaf(_, -1),
+            # ),
             # # alu.D_color,
         ),
         evans.MusicCommand(
@@ -1170,9 +1310,13 @@ maker = evans.SegmentMaker(
                 basic_rest_period=9,
                 rewrite=-1,
                 preprocessor=evans.make_preprocessor(quarters=True, fuse_counts=None),
+                default_rests=False,
+                pre_commands=[
+                    lambda _: rmakers.force_rest(abjad.select.get(abjad.select.logical_ties(_), ~abjad.index([0, 3], 6))),
+                ],
             ),
             alu.barraque_potamia(
-                transposition=12, rotation=-12, columns=False, retrograde=False
+                transposition=12, rotation=-12, columns=False, retrograde=False, nono_replacement=True,
             ),
             lambda _: evans.contour(
                 _,
@@ -1183,21 +1327,25 @@ maker = evans.SegmentMaker(
                 starting_range=abjad.PitchRange("[D2, F3]"),
             ),
             lambda _: alu.faberge_swells(_),
-            evans.Attachment(
-                abjad.LilyPondLiteral(r"\kiss-on", site="before"),
-                selector=lambda _: abjad.select.leaf(_, 0),
-            ),
-            evans.Attachment(
-                abjad.LilyPondLiteral(r"\revert-noteheads", site="after"),
-                selector=lambda _: abjad.select.leaf(_, -1),
-            ),
+            evans.ArticulationHandler(["tremolo"]),
+            # evans.Attachment(
+            #     abjad.LilyPondLiteral(r"\kiss-on", site="before"),
+            #     selector=lambda _: abjad.select.leaf(_, 0),
+            # ),
+            # evans.Attachment(
+            #     abjad.LilyPondLiteral(r"\revert-noteheads", site="after"),
+            #     selector=lambda _: abjad.select.leaf(_, -1),
+            # ),
             # # alu.D_color,
         ),
         # PERCUSSION 1
-        evans.MusicCommand(  # modulation
+        evans.MusicCommand(
             ("percussion 1 voice", 0),
-            evans.even_division([16]),
-            evans.PitchHandler([-3, -1, 1, -1, 1, 3, -1, 1], staff_positions=True),
+            evans.talea([1, -20], 4, rewrite=-1),
+            evans.PitchHandler([0], staff_positions=True),
+            abjad.LilyPondLiteral(r"\staff-line-count #1"),
+            abjad.Markup(r'\boxed-markup "bass drum" #1'),
+            abjad.Dynamic("ff"),
         ),
         evans.MusicCommand(
             ("percussion 1 voice", alu.measure_numbers([4])),
@@ -1210,7 +1358,7 @@ maker = evans.SegmentMaker(
                 preprocessor=evans.make_preprocessor(quarters=True, fuse_counts=None),
             ),
             lambda _: alu.faberge_swells(_),
-            abjad.LilyPondLiteral(r"\staff-line-count #1"),
+            # abjad.LilyPondLiteral(r"\staff-line-count #1"),
             abjad.Markup(r'\boxed-markup "bass drum + superball" #1'),
             # # alu.D_color,
         ),
@@ -1267,6 +1415,13 @@ maker = evans.SegmentMaker(
             # # alu.D_color,
         ),
         # PERCUSSION 2
+        evans.MusicCommand(  # modulation
+            ("percussion 2 voice", 0),
+            evans.even_division([16]),
+            evans.PitchHandler([-3, -1, 1, -1, 1, 3, -1, 1], staff_positions=True),
+            abjad.LilyPondLiteral(r"\staff-line-count #4"),
+            abjad.Markup(r'\boxed-markup "toms" #1'),
+        ),
         evans.MusicCommand(
             ("percussion 2 voice", alu.measure_numbers([4])),
             alu.exchanging_rhythms(
@@ -1344,7 +1499,8 @@ maker = evans.SegmentMaker(
                 [16, 16, 32],
                 extra_counts=[1, 1, 1, 2, 1, 0],
                 preprocessor=evans.make_preprocessor(
-                    quarters=True, fuse_counts=[1, 2, 1, 1]
+                    quarters=True,
+                    # fuse_counts=[1, 2, 1, 1]
                 ),
             ),
             evans.Callable(
@@ -1568,9 +1724,10 @@ maker = evans.SegmentMaker(
             ("violin 1 voice", alu.measure_numbers([_ for _ in range(35, 41)])),
             evans.even_division(
                 [16, 32],
-                extra_counts=[0, -1, 1, 0, -1, 1],
+                extra_counts=[0, 2, 1, 0, 2, 1],
                 preprocessor=evans.make_preprocessor(
-                    quarters=True, fuse_counts=[1, 2, 1]
+                    quarters=True,
+                    # fuse_counts=[1, 2, 1]
                 ),
             ),
             evans.Callable(
@@ -1586,15 +1743,15 @@ maker = evans.SegmentMaker(
                     abjad.select.notes(_), [6], cyclic=True, overhang=True
                 )
             ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [6],
-                padding=5,
-                id=1,
-            ),
-            evans.text_span([r"norm.", r"scr."], "=>", padding=7, id=2),
-            evans.text_span([r"clt."], "=|", padding=9, id=3),
+            # evans.text_span(
+            #     [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+            #     "=>",
+            #     [6],
+            #     padding=5,
+            #     id=1,
+            # ),
+            # evans.text_span([r"norm.", r"scr."], "=>", padding=7, id=2),
+            # evans.text_span([r"clt."], "=|", padding=9, id=3),
             evans.hairpin("p < f >", [6]),
             # # alu.E_color,
         ),
@@ -1602,9 +1759,10 @@ maker = evans.SegmentMaker(
             ("violin 1 voice", alu.measure_numbers([_ for _ in range(49, 56)])),
             evans.even_division(
                 [16, 32],
-                extra_counts=[0, -1, 1, 0, -1, 1],
+                extra_counts=[0, 2, 1, 0, 2, 1],
                 preprocessor=evans.make_preprocessor(
-                    quarters=True, fuse_counts=[1, 2, 1]
+                    quarters=True,
+                    # fuse_counts=[1, 2, 1]
                 ),
             ),
             evans.Callable(
@@ -1620,15 +1778,15 @@ maker = evans.SegmentMaker(
                     abjad.select.notes(_), [6], cyclic=True, overhang=True
                 )
             ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [6],
-                padding=5,
-                id=1,
-            ),
-            evans.text_span([r"norm.", r"scr."], "=>", padding=7, id=2),
-            evans.text_span([r"clt."], "=|", padding=9, id=3),
+            # evans.text_span(
+            #     [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+            #     "=>",
+            #     [6],
+            #     padding=5,
+            #     id=1,
+            # ),
+            # evans.text_span([r"norm.", r"scr."], "=>", padding=7, id=2),
+            # evans.text_span([r"clt."], "=|", padding=9, id=3),
             evans.hairpin("p < f >", [6]),
             # # alu.E_color,
         ),
@@ -1697,7 +1855,7 @@ maker = evans.SegmentMaker(
             ("violin 2 voice", alu.measure_numbers([_ for _ in range(36, 40)])),
             evans.even_division(
                 [32, 16],
-                extra_counts=[0, -1, 1, 0, -1, 1],
+                extra_counts=[0, 2, 1, 0, 2, 1],
                 preprocessor=evans.make_preprocessor(quarters=True),
             ),
             evans.Callable(
@@ -1713,15 +1871,15 @@ maker = evans.SegmentMaker(
                     abjad.select.notes(_), [7], cyclic=True, overhang=True
                 )
             ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [7],
-                padding=5,
-                id=1,
-            ),
-            evans.text_span([r"norm.", r"scr."], "=>", padding=7, id=2),
-            evans.text_span([r"clt."], "=|", padding=9, id=3),
+            # evans.text_span(
+            #     [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+            #     "=>",
+            #     [7],
+            #     padding=5,
+            #     id=1,
+            # ),
+            # evans.text_span([r"norm.", r"scr."], "=>", padding=7, id=2),
+            # evans.text_span([r"clt."], "=|", padding=9, id=3),
             evans.hairpin("p < f >", [7]),
             # # alu.E_color,
         ),
@@ -1729,7 +1887,7 @@ maker = evans.SegmentMaker(
             ("violin 2 voice", alu.measure_numbers([43])),
             evans.even_division(
                 [32, 16],
-                extra_counts=[0, -1, 1, 0, -1, 1],
+                extra_counts=[0, 2, 1, 0, 2, 1],
                 preprocessor=evans.make_preprocessor(quarters=True),
             ),
             evans.Callable(
@@ -1745,15 +1903,15 @@ maker = evans.SegmentMaker(
                     abjad.select.notes(_), [7], cyclic=True, overhang=True
                 )
             ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [7],
-                padding=5,
-                id=1,
-            ),
-            evans.text_span([r"norm.", r"scr."], "=>", padding=7, id=2),
-            evans.text_span([r"clt."], "=|", padding=9, id=3),
+            # evans.text_span(
+            #     [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+            #     "=>",
+            #     [7],
+            #     padding=5,
+            #     id=1,
+            # ),
+            # evans.text_span([r"norm.", r"scr."], "=>", padding=7, id=2),
+            # evans.text_span([r"clt."], "=|", padding=9, id=3),
             evans.hairpin("p < f >", [7]),
             lambda _: abjad.detach(
                 abjad.StartSlur(),
@@ -1765,7 +1923,7 @@ maker = evans.SegmentMaker(
             ("violin 2 voice", alu.measure_numbers([_ for _ in range(50, 56)])),
             evans.even_division(
                 [32, 16],
-                extra_counts=[0, -1, 1, 0, -1, 1],
+                extra_counts=[0, 2, 1, 0, 2, 1],
                 preprocessor=evans.make_preprocessor(quarters=True),
             ),
             evans.Callable(
@@ -1781,15 +1939,15 @@ maker = evans.SegmentMaker(
                     abjad.select.notes(_), [7], cyclic=True, overhang=True
                 )
             ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [7],
-                padding=5,
-                id=1,
-            ),
-            evans.text_span([r"norm.", r"scr."], "=>", padding=7, id=2),
-            evans.text_span([r"clt."], "=|", padding=9, id=3),
+            # evans.text_span(
+            #     [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+            #     "=>",
+            #     [7],
+            #     padding=5,
+            #     id=1,
+            # ),
+            # evans.text_span([r"norm.", r"scr."], "=>", padding=7, id=2),
+            # evans.text_span([r"clt."], "=|", padding=9, id=3),
             evans.hairpin("p < f >", [7]),
             # # alu.E_color,
         ),
@@ -1799,7 +1957,7 @@ maker = evans.SegmentMaker(
             evans.talea(
                 [6, 12, 12, 12, 7, 6, 6, 8, 1, 1, 1, 1, 1],
                 16,
-                extra_counts=[0, -1, -1, 1, 0, 1],
+                extra_counts=[0, 2, 2, 1, 0, 1],
                 preprocessor=evans.make_preprocessor(quarters=True),
                 rewrite=-1,
             ),
@@ -1820,7 +1978,7 @@ maker = evans.SegmentMaker(
                     if abjad.get.duration(x) < abjad.Duration((1, 4))
                 ]
             ),
-            abjad.Dynamic("ff"),
+            abjad.Dynamic("mp"),
             evans.Attachment(
                 abjad.Markup(r"\markup {rigid, mechanical: keep dynamic static}"),
                 selector=lambda _: abjad.select.leaf(_, 0),
@@ -1870,7 +2028,7 @@ maker = evans.SegmentMaker(
                     1,
                 ],
                 8,
-                extra_counts=[0, -1, 0, 1, 0, -1, -1, 0, 1, 0, -1, -1, 1, 0, 1],
+                extra_counts=[0, 2, 0, 1, 0, 2, 2, 0, 1, 0, 2, 2, 1, 0, 1],
                 preprocessor=evans.make_preprocessor(quarters=True),
                 rewrite=-1,
             ),
@@ -1880,7 +2038,7 @@ maker = evans.SegmentMaker(
             ),
             lambda _: baca.text_spanner(
                 _,
-                r"\trem-one-markup -> \trem-three-markup -> \trem-two-markup -> \trem-five-markup -> \trem-four-markup ->",
+                r"\trem-one-markup -> \trem-three-markup -> \trem-two-markup ->", # \trem-five-markup -> \trem-four-markup ->",
                 abjad.Tweak(r"\tweak staff-padding 4.5"),
                 abjad.Tweak(r"\tweak bound-details.right.padding 2"),
                 final_piece_spanner=r"\stopTextSpanOne",
@@ -1964,14 +2122,14 @@ maker = evans.SegmentMaker(
                     1,
                 ],
                 8,
-                extra_counts=[0, -1, 0, 1, 0, -1, -1, 0, 1, 0, -1, -1, 1, 0, 1],
+                extra_counts=[0, 2, 0, 1, 0, 2, 2, 0, 1, 0, 2, 2, 1, 0, 1],
                 preprocessor=evans.make_preprocessor(quarters=True),
                 rewrite=-1,
             ),
             evans.PitchHandler([evans.JIPitch("e,,", "9/1", with_quarter_tones=True)]),
             lambda _: baca.text_spanner(
                 _,
-                r"\trem-one-markup -> \trem-three-markup -> \trem-two-markup -> \trem-five-markup -> \trem-four-markup",
+                r"\trem-one-markup -> \trem-three-markup -> \trem-two-markup ->", # \trem-five-markup -> \trem-four-markup",
                 abjad.Tweak(r"\tweak staff-padding 5.5"),
                 abjad.Tweak(r"\tweak bound-details.right.padding 2"),
                 final_piece_spanner=r"\stopTextSpanOne",
@@ -2004,11 +2162,26 @@ maker = evans.SegmentMaker(
             # lambda _: abjad.tie(_),
             # # alu.B_color,
         ),
+        evans.detach(
+            "cello voice",
+            abjad.StartHairpin("<"),
+            selector=lambda _: abjad.select.note(_, -1),
+        ),
+        evans.detach(
+            "cello voice",
+            abjad.Dynamic("f"),
+            selector=lambda _: abjad.select.note(_, -1),
+        ),
+        evans.attach(
+            "cello voice",
+            abjad.Dynamic("p"),
+            selector=lambda _: abjad.select.note(_, -1),
+        ),
         # BASS
         evans.MusicCommand(
             ("contrabass voice", alu.measure_numbers([_ for _ in range(1, 56 // 2)])),
             evans.make_tied_notes(),
-            evans.PitchHandler(["ef,"]),
+            evans.PitchHandler(["c,"]),
             evans.Attachment(
                 abjad.Glissando(), selector=lambda _: abjad.select.leaf(_, -1)
             ),
@@ -2025,7 +2198,7 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("contrabass voice", alu.measure_numbers([_ for _ in range(56 // 2, 56)])),
             evans.make_tied_notes(),
-            evans.PitchHandler(["e,"]),
+            evans.PitchHandler(["e,,"]),
             lambda _: alu.alternate_swells(_, [4, 4, 6, 6, 8, 8]),
             # # alu.B_color,
         ),

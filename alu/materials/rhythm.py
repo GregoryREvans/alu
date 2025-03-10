@@ -15,6 +15,8 @@ def exchanging_rhythms(
     basic_rest_period=9,
     preprocessor=None,
     rewrite=None,
+    default_rests=True,
+    pre_commands=None,
 ):
     def returned_function(signatures):
 
@@ -43,14 +45,16 @@ def exchanging_rhythms(
             preprocessor=preprocessor,
             rewrite=rewrite,
             treat_tuplets=False,
+            pre_commands=pre_commands,
         )
         music = maker(signatures)
         music = abjad.Staff(music)
-        ties = abjad.select.logical_ties(music)
-        ties = abjad.select.get(
-            ties, ~abjad.index(voice, len(index_patterns) + voice_number)
-        )
-        rmakers.force_rest(ties)
+        if default_rests is True:
+            ties = abjad.select.logical_ties(music)
+            ties = abjad.select.get(
+                ties, ~abjad.index(voice, len(index_patterns) + voice_number)
+            )
+            rmakers.force_rest(ties)
         music = abjad.mutate.eject_contents(music)
 
         container = abjad.Container()
@@ -78,7 +82,7 @@ def exchanging_rhythms(
 
 
 def C_rhythms(
-    stage=1, rotation=0, number_of_voices=5, denominator=8, extra_counts=None
+    stage=1, rotation=0, number_of_voices=5, denominator=8, extra_counts=None, slow=False,
 ):
     global_numerators = [3, 2, 3, 5, 4, 3, 2, 3, 1, 2, 1, 2, 3, 2]
     if stage == 1:
@@ -94,9 +98,13 @@ def C_rhythms(
     if stage == 2:
         numerators = [_ - 1 if 1 < _ else _ for _ in global_numerators]
         numerators = abjad.sequence.rotate(numerators, rotation)
+        if slow is True:
+            denominator = 8
+        else:
+            denominator = 16
         maker = evans.talea(
             numerators,
-            16,
+            denominator,
             extra_counts=extra_counts,
             preprocessor=evans.make_preprocessor(quarters=True),
         )

@@ -116,6 +116,21 @@ maker = evans.SegmentMaker(
     commands=[
         # PREFIX
         evans.attach(
+            "Global Context",
+            abjad.RehearsalMark(number=9),
+            lambda _: abjad.select.leaf(_, 0),
+        ),
+        evans.attach(
+            "Global Context",
+            abjad.RehearsalMark(number=10),
+            lambda _: abjad.select.leaf(_, 12),
+        ),
+        evans.attach(
+            "Global Context",
+            abjad.RehearsalMark(number=11),
+            lambda _: abjad.select.leaf(_, 21),
+        ),
+        evans.attach(
             "bassoon voice",
             abjad.Clef("bass"),
             lambda _: abjad.select.leaf(_, 0),
@@ -193,14 +208,15 @@ maker = evans.SegmentMaker(
                     abjad.select.notes(_), [3], cyclic=True, overhang=True
                 )
             ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [3],
-                padding=5,
-                id=1,
-            ),
-            evans.hairpin("p < f >", [3]),
+            # evans.text_span(
+            #     [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+            #     "=>",
+            #     [3],
+            #     padding=5,
+            #     id=1,
+            # ),
+            # evans.hairpin("p < f >", [3]),
+            evans.hairpin("p < mf > mp < f >", [3 ** 2]),
             # # alu.E_color,
         ),
         evans.MusicCommand(
@@ -238,21 +254,22 @@ maker = evans.SegmentMaker(
                     abjad.select.notes(_), abjad.index([0, -1])
                 ),
             ),
-            evans.loop([_ + 6 for _ in [0, 1, 2]], [1, 2, -1, 3, -1]),
+            evans.loop([_ + 6 for _ in [0, 1, 2]], [1, 2, -1, 3, -1, -1, -2]),
             lambda _: [
                 baca.slur(x)
                 for x in abjad.select.partition_by_counts(
                     abjad.select.notes(_), [3], cyclic=True, overhang=True
                 )
             ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [3],
-                padding=5 + 2,
-                id=1,
-            ),
-            evans.hairpin("p < f >", [3]),
+            # evans.text_span(
+            #     [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+            #     "=>",
+            #     [3],
+            #     padding=5 + 2,
+            #     id=1,
+            # ),
+            # evans.hairpin("p < f >", [3]),
+            evans.hairpin("p < mf > mp < f >", [3 ** 2]),
             lambda _: abjad.detach(
                 abjad.StartSlur(),
                 abjad.select.note(_, -1),
@@ -294,21 +311,22 @@ maker = evans.SegmentMaker(
                     abjad.select.notes(_), abjad.index([0, -1])
                 ),
             ),
-            evans.loop([_ + 6 for _ in [0, 1, 2]], [1, 2, -1, 3, -1]),
+            evans.loop([_ + 6 for _ in [0, 1, 2]], [1, 2, -1, 3, -1, -2, -1]),
             lambda _: [
                 baca.slur(x)
                 for x in abjad.select.partition_by_counts(
                     abjad.select.notes(_), [3], cyclic=True, overhang=True
                 )
             ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [3],
-                padding=5 + 2,
-                id=1,
-            ),
-            evans.hairpin("p < f >", [3]),
+            # evans.text_span(
+            #     [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+            #     "=>",
+            #     [3],
+            #     padding=5 + 2,
+            #     id=1,
+            # ),
+            # evans.hairpin("p < f >", [3]),
+            evans.hairpin("p < mf > mp < f >", [3 ** 2]),
             lambda _: abjad.detach(
                 abjad.StartSlur(),
                 abjad.select.note(_, -1),
@@ -357,14 +375,15 @@ maker = evans.SegmentMaker(
                     abjad.select.notes(_), [3], cyclic=True, overhang=True
                 )
             ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [3],
-                padding=5,
-                id=1,
-            ),
-            evans.hairpin("p < f >", [3]),
+            # evans.text_span(
+            #     [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+            #     "=>",
+            #     [3],
+            #     padding=5,
+            #     id=1,
+            # ),
+            # evans.hairpin("p < f >", [3]),
+            evans.hairpin("p < mf > mp < f >", [3 ** 2]),
             lambda _: abjad.detach(
                 abjad.StartSlur(),
                 abjad.select.note(_, -1),
@@ -413,14 +432,15 @@ maker = evans.SegmentMaker(
                     abjad.select.notes(_), [3], cyclic=True, overhang=True
                 )
             ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [3],
-                padding=5,
-                id=1,
-            ),
-            evans.hairpin("p < f >", [3]),
+            # evans.text_span(
+            #     [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+            #     "=>",
+            #     [3],
+            #     padding=5,
+            #     id=1,
+            # ),
+            # evans.hairpin("p < f >", [3]),
+            evans.hairpin("p < mf > mp < f >", [3 ** 2]),
             # alu.E_color,
         ),
         evans.MusicCommand(
@@ -465,14 +485,15 @@ maker = evans.SegmentMaker(
                     abjad.select.notes(_), [3], cyclic=True, overhang=True
                 )
             ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [3],
-                padding=5,
-                id=1,
-            ),
-            evans.hairpin("p < f >", [3]),
+            # evans.text_span(
+            #     [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+            #     "=>",
+            #     [3],
+            #     padding=5,
+            #     id=1,
+            # ),
+            # evans.hairpin("p < f >", [3]),
+            evans.hairpin("p < mf > mp < f >", [3 ** 2]),
             # alu.E_color,
         ),
         evans.MusicCommand(
@@ -517,7 +538,8 @@ maker = evans.SegmentMaker(
                 [16],
                 extra_counts=[2, 3, 2, 1],
                 preprocessor=evans.make_preprocessor(
-                    eighths=True, fuse_counts=[2, 3, 2, 1, 4, 3, 2, 2]
+                    quarters=True,
+                    # fuse_counts=[2, 3, 2, 1, 4, 3, 2, 2], split_at_measure_boundaries=True,
                 ),
             ),
             # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
@@ -527,21 +549,22 @@ maker = evans.SegmentMaker(
                     abjad.select.notes(_), abjad.index([0, -1])
                 ),
             ),
-            evans.loop([_ + 6 for _ in [0, 1, 2, 1]], [1, 2, -1, 3, -1]),
+            evans.loop([_ + 6 for _ in [0, 1, 2, 1]], [1, 2, -1, 3, -1, -2, -1]),
             lambda _: [
                 baca.slur(x)
                 for x in abjad.select.partition_by_counts(
                     abjad.select.notes(_), [4], cyclic=True, overhang=True
                 )
             ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [4],
-                padding=5,
-                id=1,
-            ),
-            evans.hairpin("p < f >", [4]),
+            # evans.text_span(
+            #     [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+            #     "=>",
+            #     [4],
+            #     padding=5,
+            #     id=1,
+            # ),
+            # evans.hairpin("p < f >", [4]),
+            evans.hairpin("p < mf > mp < f >", [4 ** 2]),
             # alu.E_color,
         ),
         evans.MusicCommand(
@@ -571,7 +594,8 @@ maker = evans.SegmentMaker(
                 [16],
                 extra_counts=[2, 3, 2, 1],
                 preprocessor=evans.make_preprocessor(
-                    eighths=True, fuse_counts=[2, 3, 2, 1, 4, 3, 2, 2]
+                    quarters=True,
+                    # fuse_counts=[2, 3, 2, 1, 4, 3, 2, 2], split_at_measure_boundaries=True,
                 ),
             ),
             # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
@@ -581,21 +605,22 @@ maker = evans.SegmentMaker(
                     abjad.select.notes(_), abjad.index([0, -1])
                 ),
             ),
-            evans.loop([_ + 6 for _ in [0, 1, 2, 1]], [1, 2, -1, 3, -1]),
+            evans.loop([_ + 6 for _ in [0, 1, 2, 1]], [1, 2, -1, 3, -1, -2, -1]),
             lambda _: [
                 baca.slur(x)
                 for x in abjad.select.partition_by_counts(
                     abjad.select.notes(_), [4], cyclic=True, overhang=True
                 )
             ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [4],
-                padding=5 + 2,
-                id=1,
-            ),
-            evans.hairpin("p < f >", [4]),
+            # evans.text_span(
+            #     [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+            #     "=>",
+            #     [4],
+            #     padding=5 + 2,
+            #     id=1,
+            # ),
+            # evans.hairpin("p < f >", [4]),
+            evans.hairpin("p < mf > mp < f >", [4 ** 2]),
             # alu.E_color,
         ),
         evans.MusicCommand(
@@ -625,7 +650,8 @@ maker = evans.SegmentMaker(
                 [16],
                 extra_counts=[2, 3, 2, 1],
                 preprocessor=evans.make_preprocessor(
-                    eighths=True, fuse_counts=[2, 3, 2, 1, 4, 3, 2, 2]
+                    quarters=True,
+                    # fuse_counts=[2, 3, 2, 1, 4, 3, 2, 2], split_at_measure_boundaries=True,
                 ),
             ),
             # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
@@ -635,21 +661,22 @@ maker = evans.SegmentMaker(
                     abjad.select.notes(_), abjad.index([0, -1])
                 ),
             ),
-            evans.loop([_ + 6 for _ in [0, 1, 2, 1]], [1, 2, -1, 3, -1]),
+            evans.loop([_ + 6 for _ in [0, 1, 2, 1]], [1, 2, -1, 3, -1, -2, -1]),
             lambda _: [
                 baca.slur(x)
                 for x in abjad.select.partition_by_counts(
                     abjad.select.notes(_), [4], cyclic=True, overhang=True
                 )
             ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [4],
-                padding=5 + 2,
-                id=1,
-            ),
-            evans.hairpin("p < f >", [4]),
+            # evans.text_span(
+            #     [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+            #     "=>",
+            #     [4],
+            #     padding=5 + 2,
+            #     id=1,
+            # ),
+            # evans.hairpin("p < f >", [4]),
+            evans.hairpin("p < mf > mp < f >", [4 ** 2]),
             # alu.E_color,
         ),
         evans.MusicCommand(
@@ -679,7 +706,8 @@ maker = evans.SegmentMaker(
                 [16],
                 extra_counts=[2, 3, 2, 1],
                 preprocessor=evans.make_preprocessor(
-                    eighths=True, fuse_counts=[2, 3, 2, 1, 4, 3, 2, 2]
+                    quarters=True,
+                    # fuse_counts=[2, 3, 2, 1, 4, 3, 2, 2], split_at_measure_boundaries=True,
                 ),
             ),
             # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
@@ -689,21 +717,22 @@ maker = evans.SegmentMaker(
                     abjad.select.notes(_), abjad.index([0, -1])
                 ),
             ),
-            evans.loop([_ + 6 for _ in [0, 1, 2, 1]], [1, 2, -1, 3, -1]),
+            evans.loop([_ + 6 for _ in [0, 1, 2, 1]], [1, 2, -1, 3, -1, -2, -1]),
             lambda _: [
                 baca.slur(x)
                 for x in abjad.select.partition_by_counts(
                     abjad.select.notes(_), [4], cyclic=True, overhang=True
                 )
             ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [4],
-                padding=5,
-                id=1,
-            ),
-            evans.hairpin("p < f >", [4]),
+            # evans.text_span(
+            #     [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+            #     "=>",
+            #     [4],
+            #     padding=5,
+            #     id=1,
+            # ),
+            # evans.hairpin("p < f >", [4]),
+            evans.hairpin("p < mf > mp < f >", [4 ** 2]),
             # alu.E_color,
         ),
         evans.MusicCommand(
@@ -769,7 +798,8 @@ maker = evans.SegmentMaker(
                 [16],
                 extra_counts=[3, 4, 3, 2],
                 preprocessor=evans.make_preprocessor(
-                    eighths=True, fuse_counts=[2, 2, 3, 2, 1, 4, 3, 2, 2]
+                    quarters=True,
+                    # fuse_counts=[2, 2, 3, 2, 1, 4, 3, 2, 2], split_at_measure_boundaries=True,
                 ),
             ),
             # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
@@ -779,21 +809,22 @@ maker = evans.SegmentMaker(
                     abjad.select.notes(_), abjad.index([0, -1])
                 ),
             ),
-            evans.loop([_ - 8 for _ in [0, 1, 2, 1, 3]], [1, 2, -1, 3, -1]),
+            evans.loop([_ - 8 for _ in [0, 1, 2, 1, 3]], [1, 2, -1, 3, -1, -2, -1]),
             lambda _: [
                 baca.slur(x)
                 for x in abjad.select.partition_by_counts(
                     abjad.select.notes(_), [5], cyclic=True, overhang=True
                 )
             ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [5],
-                padding=5,
-                id=1,
-            ),
-            evans.hairpin("p < f >", [5]),
+            # evans.text_span(
+            #     [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+            #     "=>",
+            #     [5],
+            #     padding=5,
+            #     id=1,
+            # ),
+            # evans.hairpin("p < f >", [5]),
+            evans.hairpin("p < mf > mp < f >", [5 ** 2]),
             # alu.E_color,
         ),
         evans.MusicCommand(
@@ -823,7 +854,8 @@ maker = evans.SegmentMaker(
                 [16],
                 extra_counts=[3, 4, 3, 2],
                 preprocessor=evans.make_preprocessor(
-                    eighths=True, fuse_counts=[2, 2, 3, 2, 1, 4, 3, 2, 2]
+                    quarters=True,
+                    # fuse_counts=[2, 2, 3, 2, 1, 4, 3, 2, 2], split_at_measure_boundaries=True,
                 ),
             ),
             # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
@@ -833,21 +865,22 @@ maker = evans.SegmentMaker(
                     abjad.select.notes(_), abjad.index([0, -1])
                 ),
             ),
-            evans.loop([_ - 8 for _ in [0, 1, 2, 1, 3]], [1, 2, -1, 3, -1]),
+            evans.loop([_ - 8 for _ in [0, 1, 2, 1, 3]], [1, 2, -1, 3, -1, -2, -1]),
             lambda _: [
                 baca.slur(x)
                 for x in abjad.select.partition_by_counts(
                     abjad.select.notes(_), [5], cyclic=True, overhang=True
                 )
             ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [5],
-                padding=5,
-                id=1,
-            ),
-            evans.hairpin("p < f >", [5]),
+            # evans.text_span(
+            #     [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+            #     "=>",
+            #     [5],
+            #     padding=5,
+            #     id=1,
+            # ),
+            # evans.hairpin("p < f >", [5]),
+            evans.hairpin("p < mf > mp < f >", [5 ** 2]),
             # alu.E_color,
         ),
         evans.MusicCommand(
@@ -877,7 +910,8 @@ maker = evans.SegmentMaker(
                 [16],
                 extra_counts=[3, 4, 3, 2],
                 preprocessor=evans.make_preprocessor(
-                    eighths=True, fuse_counts=[2, 2, 3, 2, 1, 4, 3, 2, 2]
+                    quarters=True,
+                    # fuse_counts=[2, 2, 3, 2, 1, 4, 3, 2, 2], split_at_measure_boundaries=True,
                 ),
             ),
             # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
@@ -887,21 +921,22 @@ maker = evans.SegmentMaker(
                     abjad.select.notes(_), abjad.index([0, -1])
                 ),
             ),
-            evans.loop([_ - 8 for _ in [0, 1, 2, 1, 3]], [1, 2, -1, 3, -1]),
+            evans.loop([_ - 8 for _ in [0, 1, 2, 1, 3]], [1, 2, -1, 3, -1, -2, -1]),
             lambda _: [
                 baca.slur(x)
                 for x in abjad.select.partition_by_counts(
                     abjad.select.notes(_), [5], cyclic=True, overhang=True
                 )
             ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [5],
-                padding=5,
-                id=1,
-            ),
-            evans.hairpin("p < f >", [5]),
+            # evans.text_span(
+            #     [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+            #     "=>",
+            #     [5],
+            #     padding=5,
+            #     id=1,
+            # ),
+            # evans.hairpin("p < f >", [5]),
+            evans.hairpin("p < mf > mp < f >", [5 ** 2]),
             # alu.E_color,
         ),
         evans.MusicCommand(
@@ -931,7 +966,8 @@ maker = evans.SegmentMaker(
                 [16],
                 extra_counts=[3, 4, 3, 2],
                 preprocessor=evans.make_preprocessor(
-                    eighths=True, fuse_counts=[2, 2, 3, 2, 1, 4, 3, 2, 2]
+                    quarters=True,
+                    # fuse_counts=[2, 2, 3, 2, 1, 4, 3, 2, 2], split_at_measure_boundaries=True,
                 ),
             ),
             # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
@@ -941,21 +977,22 @@ maker = evans.SegmentMaker(
                     abjad.select.notes(_), abjad.index([0, -1])
                 ),
             ),
-            evans.loop([_ - 8 for _ in [0, 1, 2, 1, 3]], [1, 2, -1, 3, -1]),
+            evans.loop([_ - 8 for _ in [0, 1, 2, 1, 3]], [1, 2, -1, 3, -1, -2, -1]),
             lambda _: [
                 baca.slur(x)
                 for x in abjad.select.partition_by_counts(
                     abjad.select.notes(_), [5], cyclic=True, overhang=True
                 )
             ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [5],
-                padding=5,
-                id=1,
-            ),
-            evans.hairpin("p < f >", [5]),
+            # evans.text_span(
+            #     [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+            #     "=>",
+            #     [5],
+            #     padding=5,
+            #     id=1,
+            # ),
+            # evans.hairpin("p < f >", [5]),
+            evans.hairpin("p < mf > mp < f >", [5 ** 2]),
             # alu.E_color,
         ),
         evans.MusicCommand(
@@ -1003,7 +1040,8 @@ maker = evans.SegmentMaker(
                 [16],
                 extra_counts=[2, 4, 2, 1],
                 preprocessor=evans.make_preprocessor(
-                    eighths=True, fuse_counts=[2, 1, 2, 3, 2, 1, 4, 3, 2, 2]
+                    quarters=True,
+                    # fuse_counts=[2, 1, 2, 3, 2, 1, 4, 3, 2, 2], split_at_measure_boundaries=True,
                 ),
             ),
             # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
@@ -1013,22 +1051,29 @@ maker = evans.SegmentMaker(
                     abjad.select.notes(_), abjad.index([0, -1])
                 ),
             ),
-            evans.loop([_ - 11 for _ in [0, 1, 2, 1, 3, 2]], [1, 2, -1, 3, -1]),
+            evans.loop([_ - 11 for _ in [0, 1, 2, 1, 3, 2]], [1, 2, -1, 3, -1, -2, -1]),
             lambda _: [
                 baca.slur(x)
                 for x in abjad.select.partition_by_counts(
                     abjad.select.notes(_), [6], cyclic=True, overhang=True
                 )
             ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [6],
-                padding=5,
-                id=1,
-            ),
-            evans.hairpin("p < f >", [6]),
+            # evans.text_span(
+            #     [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+            #     "=>",
+            #     [6],
+            #     padding=5,
+            #     id=1,
+            # ),
+            # evans.hairpin("p < f >", [6]),
+            evans.hairpin("p < mf > mp < f >", [6 ** 2]),
             # alu.E_color,
+            abjad.Clef("bass"),
+        ),
+        evans.detach(
+            "bassoon voice",
+            abjad.StartSlur(),
+            selector=evans.select_measures([4], note=-1),
         ),
         evans.MusicCommand(
             ("bassoon voice", alu.measure_numbers([6, 7, 8, 9])),
@@ -1046,7 +1091,7 @@ maker = evans.SegmentMaker(
             lambda _: evans.contour(
                 _,
                 # ([0, 1], evans.Lapidary("up", "previous alteration", "octave below")),
-                starting_range=abjad.Bassoon().pitch_range,
+                starting_range=abjad.PitchRange(range_string='[Bb1, Eb3]'),
             ),
             lambda _: alu.faberge_swells(_),
             # # alu.D_color,
@@ -1057,7 +1102,8 @@ maker = evans.SegmentMaker(
                 [16],
                 extra_counts=[2, 4, 2, 1],
                 preprocessor=evans.make_preprocessor(
-                    eighths=True, fuse_counts=[2, 1, 2, 3, 2, 1, 4, 3, 2, 2]
+                    quarters=True,
+                    # fuse_counts=[2, 1, 2, 3, 2, 1, 4, 3, 2, 2], split_at_measure_boundaries=True,
                 ),
             ),
             # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
@@ -1067,22 +1113,28 @@ maker = evans.SegmentMaker(
                     abjad.select.notes(_), abjad.index([0, -1])
                 ),
             ),
-            evans.loop([_ - 11 for _ in [0, 1, 2, 1, 3, 2]], [1, 2, -1, 3, -1]),
+            evans.loop([_ - 11 for _ in [0, 1, 2, 1, 3, 2]], [1, 2, -1, 3, -1, -2, -1]),
             lambda _: [
                 baca.slur(x)
                 for x in abjad.select.partition_by_counts(
                     abjad.select.notes(_), [6], cyclic=True, overhang=True
                 )
             ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [6],
-                padding=5,
-                id=1,
-            ),
-            evans.hairpin("p < f >", [6]),
+            # evans.text_span(
+            #     [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+            #     "=>",
+            #     [6],
+            #     padding=5,
+            #     id=1,
+            # ),
+            # evans.hairpin("p < f >", [6]),
+            evans.hairpin("p < mf > mp < f >", [6 ** 2]),
             # alu.E_color,
+        ),
+        evans.detach(
+            "bassoon voice",
+            abjad.StartSlur(),
+            selector=evans.select_measures([13], note=-1),
         ),
         evans.MusicCommand(
             ("bassoon voice", alu.measure_numbers([15, 16, 17, 18])),
@@ -1100,7 +1152,7 @@ maker = evans.SegmentMaker(
             lambda _: evans.contour(
                 _,
                 # ([0, 1], evans.Lapidary("up", "previous alteration", "octave below")),
-                starting_range=abjad.Bassoon().pitch_range,
+                starting_range=abjad.PitchRange(range_string='[Bb1, Eb3]'),
             ),
             lambda _: alu.faberge_swells(_),
             # # alu.D_color,
@@ -1111,7 +1163,8 @@ maker = evans.SegmentMaker(
                 [16],
                 extra_counts=[2, 4, 2, 1],
                 preprocessor=evans.make_preprocessor(
-                    eighths=True, fuse_counts=[2, 1, 2, 3, 2, 1, 4, 3, 2, 2]
+                    quarters=True,
+                    # fuse_counts=[2, 1, 2, 3, 2, 1, 4, 3, 2, 2], split_at_measure_boundaries=True,
                 ),
             ),
             # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
@@ -1121,22 +1174,28 @@ maker = evans.SegmentMaker(
                     abjad.select.notes(_), abjad.index([0, -1])
                 ),
             ),
-            evans.loop([_ - 11 for _ in [0, 1, 2, 1, 3, 2]], [1, 2, -1, 3, -1]),
+            evans.loop([_ - 11 for _ in [0, 1, 2, 1, 3, 2]], [1, 2, -1, 3, -1, -2, -1]),
             lambda _: [
                 baca.slur(x)
                 for x in abjad.select.partition_by_counts(
                     abjad.select.notes(_), [6], cyclic=True, overhang=True
                 )
             ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [6],
-                padding=5,
-                id=1,
-            ),
-            evans.hairpin("p < f >", [6]),
+            # evans.text_span(
+            #     [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+            #     "=>",
+            #     [6],
+            #     padding=5,
+            #     id=1,
+            # ),
+            # evans.hairpin("p < f >", [6]),
+            evans.hairpin("p < mf > mp < f >", [6 ** 2]),
             # alu.E_color,
+        ),
+        evans.detach(
+            "bassoon voice",
+            abjad.StartSlur(),
+            selector=evans.select_measures([22], note=-1),
         ),
         evans.MusicCommand(
             ("bassoon voice", alu.measure_numbers([24])),
@@ -1154,7 +1213,7 @@ maker = evans.SegmentMaker(
             lambda _: evans.contour(
                 _,
                 # ([0, 1], evans.Lapidary("up", "previous alteration", "octave below")),
-                starting_range=abjad.Bassoon().pitch_range,
+                starting_range=abjad.PitchRange(range_string='[Bb1, Eb3]'),
             ),
             lambda _: alu.faberge_swells(_),
             # # alu.D_color,
@@ -1178,7 +1237,7 @@ maker = evans.SegmentMaker(
                     abjad.NumberedPitch(_).number
                     for _ in alu.constrained_random_walk_from_source(
                         source=alu.constructed_chord_4,
-                        instrument_range=abjad.Bassoon().pitch_range,
+                        instrument_range=abjad.PitchRange(range_string='[Bb1, Eb3]'),
                         rotation=4,
                         random_seed=17,
                         step_list=[2, 1, 1, 2, 1],
@@ -1219,40 +1278,42 @@ maker = evans.SegmentMaker(
             lambda _: alu.faberge_swells(_),
             # # alu.D_color,
         ),
-        evans.MusicCommand(
-            ("french horn voice", alu.measure_numbers([16, 17, 18])),
-            evans.even_division(
-                [16],
-                extra_counts=[2, 3, 4, 2, 1],
-                preprocessor=evans.make_preprocessor(
-                    eighths=True, fuse_counts=[2, 1, 2, 3, 2, 2, 1, 4, 3, 2, 2]
-                ),
-            ),
-            # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
-            evans.Callable(
-                rmakers.force_rest,
-                selector=lambda _: abjad.select.get(
-                    abjad.select.notes(_), abjad.index([0, -1])
-                ),
-            ),
-            evans.loop([_ - 6 for _ in [0, 1, 2, 1, 3, 2, 0]], [1, 2, -1, 3, -1]),
-            lambda _: [
-                baca.slur(x)
-                for x in abjad.select.partition_by_counts(
-                    abjad.select.notes(_), [7], cyclic=True, overhang=True
-                )
-            ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [7],
-                padding=5,
-                id=1,
-            ),
-            evans.hairpin("p < f >", [7]),
-            lambda _: abjad.detach(abjad.StartSlur(), abjad.select.note(_, -1)),
-            # alu.E_color,
-        ),
+        # evans.MusicCommand(
+        #     ("french horn voice", alu.measure_numbers([16, 17, 18])),
+        #     evans.even_division(
+        #         [16],
+        #         extra_counts=[2, 3, 4, 2, 1],
+        #         preprocessor=evans.make_preprocessor(
+        #             quarters=True,
+        #             # fuse_counts=[2, 1, 2, 3, 2, 2, 1, 4, 3, 2, 2], split_at_measure_boundaries=True,
+        #         ),
+        #     ),
+        #     # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
+        #     evans.Callable(
+        #         rmakers.force_rest,
+        #         selector=lambda _: abjad.select.get(
+        #             abjad.select.notes(_), abjad.index([0, -1])
+        #         ),
+        #     ),
+        #     evans.loop([_ - 6 for _ in [0, 1, 2, 1, 3, 2, 0]], [1, 2, -1, 3, -1]),
+        #     lambda _: [
+        #         baca.slur(x)
+        #         for x in abjad.select.partition_by_counts(
+        #             abjad.select.notes(_), [7], cyclic=True, overhang=True
+        #         )
+        #     ],
+        #     # evans.text_span(
+        #     #     [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+        #     #     "=>",
+        #     #     [7],
+        #     #     padding=5,
+        #     #     id=1,
+        #     # ),
+        #     # evans.hairpin("p < f >", [7]),
+        #     evans.hairpin("p < mf > mp < f >", [7 ** 2]),
+        #     lambda _: abjad.detach(abjad.StartSlur(), abjad.select.note(_, -1)),
+        #     # alu.E_color,
+        # ),
         evans.MusicCommand(
             ("french horn voice", alu.measure_numbers([19])),
             alu.exchanging_rhythms(
@@ -1321,7 +1382,7 @@ maker = evans.SegmentMaker(
                     abjad.NumberedPitch(_).number
                     for _ in alu.constrained_random_walk_from_source(
                         source=alu.constructed_chord_4,
-                        instrument_range=abjad.FrenchHorn().pitch_range,
+                        instrument_range=abjad.PitchRange('[B2, F5]'),
                         rotation=3,
                         random_seed=18,
                         step_list=[2, 1, 1, 2, 1],
@@ -1362,39 +1423,41 @@ maker = evans.SegmentMaker(
             lambda _: alu.faberge_swells(_),
             # # alu.D_color,
         ),
-        evans.MusicCommand(
-            ("trumpet voice", alu.measure_numbers([15])),
-            evans.even_division(
-                [16],
-                extra_counts=[2, 3, 4, 2, 1],
-                preprocessor=evans.make_preprocessor(
-                    eighths=True, fuse_counts=[2, 1, 2, 3, 2, 2, 1, 4, 3, 2, 2]
-                ),
-            ),
-            # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
-            evans.Callable(
-                rmakers.force_rest,
-                selector=lambda _: abjad.select.get(
-                    abjad.select.notes(_), abjad.index([0, -1])
-                ),
-            ),
-            evans.loop([_ - 6 for _ in [0, 1, 2, 1, 3, 2, 0]], [1, 2, -1, 3, -1]),
-            lambda _: [
-                baca.slur(x)
-                for x in abjad.select.partition_by_counts(
-                    abjad.select.notes(_), [7], cyclic=True, overhang=True
-                )
-            ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [7],
-                padding=5,
-                id=1,
-            ),
-            evans.hairpin("p < f >", [7]),
-            # alu.E_color,
-        ),
+        # evans.MusicCommand(
+        #     ("trumpet voice", alu.measure_numbers([15])),
+        #     evans.even_division(
+        #         [16],
+        #         extra_counts=[2, 3, 4, 2, 1],
+        #         preprocessor=evans.make_preprocessor(
+        #             quarters=True,
+        #             # fuse_counts=[2, 1, 2, 3, 2, 2, 1, 4, 3, 2, 2], split_at_measure_boundaries=True,
+        #         ),
+        #     ),
+        #     # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
+        #     evans.Callable(
+        #         rmakers.force_rest,
+        #         selector=lambda _: abjad.select.get(
+        #             abjad.select.notes(_), abjad.index([0, -1])
+        #         ),
+        #     ),
+        #     evans.loop([_ - 6 for _ in [0, 1, 2, 1, 3, 2, 0]], [1, 2, -1, 3, -1]),
+        #     lambda _: [
+        #         baca.slur(x)
+        #         for x in abjad.select.partition_by_counts(
+        #             abjad.select.notes(_), [7], cyclic=True, overhang=True
+        #         )
+        #     ],
+        #     # evans.text_span(
+        #     #     [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+        #     #     "=>",
+        #     #     [7],
+        #     #     padding=5,
+        #     #     id=1,
+        #     # ),
+        #     # evans.hairpin("p < f >", [7]),
+        #     evans.hairpin("p < mf > mp < f >", [7 ** 2]),
+        #     # alu.E_color,
+        # ),
         evans.MusicCommand(
             ("trumpet voice", alu.measure_numbers([16])),
             alu.exchanging_rhythms(
@@ -1444,39 +1507,41 @@ maker = evans.SegmentMaker(
             lambda _: alu.faberge_swells(_),
             # # alu.D_color,
         ),
-        evans.MusicCommand(
-            ("trumpet voice", alu.measure_numbers([21, 22, 23])),
-            evans.even_division(
-                [16],
-                extra_counts=[2, 3, 4, 2, 1],
-                preprocessor=evans.make_preprocessor(
-                    eighths=True, fuse_counts=[2, 1, 2, 3, 2, 2, 1, 4, 3, 2, 2]
-                ),
-            ),
-            # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
-            evans.Callable(
-                rmakers.force_rest,
-                selector=lambda _: abjad.select.get(
-                    abjad.select.notes(_), abjad.index([0, -1])
-                ),
-            ),
-            evans.loop([_ + 2 for _ in [0, 1, 2, 1, 3, 2, 0, 4]], [1, 2, -1, 3, -1]),
-            lambda _: [
-                baca.slur(x)
-                for x in abjad.select.partition_by_counts(
-                    abjad.select.notes(_), [8], cyclic=True, overhang=True
-                )
-            ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [8],
-                padding=5,
-                id=1,
-            ),
-            evans.hairpin("p < f >", [8]),
-            # alu.E_color,
-        ),
+        # evans.MusicCommand(
+        #     ("trumpet voice", alu.measure_numbers([21, 22, 23])),
+        #     evans.even_division(
+        #         [16],
+        #         extra_counts=[2, 3, 4, 2, 1],
+        #         preprocessor=evans.make_preprocessor(
+        #             quarters=True,
+        #             # fuse_counts=[2, 1, 2, 3, 2, 2, 1, 4, 3, 2, 2], split_at_measure_boundaries=True,
+        #         ),
+        #     ),
+        #     # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
+        #     evans.Callable(
+        #         rmakers.force_rest,
+        #         selector=lambda _: abjad.select.get(
+        #             abjad.select.notes(_), abjad.index([0, -1])
+        #         ),
+        #     ),
+        #     evans.loop([_ + 2 for _ in [0, 1, 2, 1, 3, 2, 0, 4]], [1, 2, -1, 3, -1]),
+        #     lambda _: [
+        #         baca.slur(x)
+        #         for x in abjad.select.partition_by_counts(
+        #             abjad.select.notes(_), [8], cyclic=True, overhang=True
+        #         )
+        #     ],
+        #     # evans.text_span(
+        #     #     [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+        #     #     "=>",
+        #     #     [8],
+        #     #     padding=5,
+        #     #     id=1,
+        #     # ),
+        #     # evans.hairpin("p < f >", [8]),
+        #     evans.hairpin("p < mf > mp < f >", [8 ** 2]),
+        #     # alu.E_color,
+        # ),
         evans.MusicCommand(
             ("trumpet voice", alu.measure_numbers([24])),
             alu.exchanging_rhythms(
@@ -1577,39 +1642,41 @@ maker = evans.SegmentMaker(
             lambda _: alu.center_swell(_, random_seed=28),
             # # alu.B_color,
         ),
-        evans.MusicCommand(
-            ("trumpet voice", alu.measure_numbers([31])),
-            evans.even_division(
-                [16],
-                extra_counts=[2, 3, 4, 2, 1],
-                preprocessor=evans.make_preprocessor(
-                    eighths=True, fuse_counts=[2, 1, 2, 3, 2, 2, 1, 4, 3, 2, 2]
-                ),
-            ),
-            # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
-            evans.Callable(
-                rmakers.force_rest,
-                selector=lambda _: abjad.select.get(
-                    abjad.select.notes(_), abjad.index([0, -1])
-                ),
-            ),
-            evans.loop([_ + 2 for _ in [0, 1, 2, 1, 3, 2, 0, 4]], [1, 2, -1, 3, -1]),
-            lambda _: [
-                baca.slur(x)
-                for x in abjad.select.partition_by_counts(
-                    abjad.select.notes(_), [8], cyclic=True, overhang=True
-                )
-            ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [8],
-                padding=5,
-                id=1,
-            ),
-            evans.hairpin("p < f >", [8]),
-            # alu.E_color,
-        ),
+        # evans.MusicCommand(
+        #     ("trumpet voice", alu.measure_numbers([31])),
+        #     evans.even_division(
+        #         [16],
+        #         extra_counts=[2, 3, 4, 2, 1],
+        #         preprocessor=evans.make_preprocessor(
+        #             quarters=True,
+        #             # fuse_counts=[2, 1, 2, 3, 2, 2, 1, 4, 3, 2, 2], split_at_measure_boundaries=True,
+        #         ),
+        #     ),
+        #     # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
+        #     evans.Callable(
+        #         rmakers.force_rest,
+        #         selector=lambda _: abjad.select.get(
+        #             abjad.select.notes(_), abjad.index([0, -1])
+        #         ),
+        #     ),
+        #     evans.loop([_ + 2 for _ in [0, 1, 2, 1, 3, 2, 0, 4]], [1, 2, -1, 3, -1]),
+        #     lambda _: [
+        #         baca.slur(x)
+        #         for x in abjad.select.partition_by_counts(
+        #             abjad.select.notes(_), [8], cyclic=True, overhang=True
+        #         )
+        #     ],
+        #     # evans.text_span(
+        #     #     [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+        #     #     "=>",
+        #     #     [8],
+        #     #     padding=5,
+        #     #     id=1,
+        #     # ),
+        #     # evans.hairpin("p < f >", [8]),
+        #     evans.hairpin("p < mf > mp < f >", [8 ** 2]),
+        #     # alu.E_color,
+        # ),
         evans.MusicCommand(
             ("trumpet voice", alu.measure_numbers([32])),
             alu.exchanging_rhythms(
@@ -1631,39 +1698,41 @@ maker = evans.SegmentMaker(
             lambda _: alu.faberge_swells(_),
             # # alu.D_color,
         ),
-        evans.MusicCommand(
-            ("trumpet voice", alu.measure_numbers([33, 34, 35])),
-            evans.even_division(
-                [16],
-                extra_counts=[2, 3, 4, 2, 1],
-                preprocessor=evans.make_preprocessor(
-                    eighths=True, fuse_counts=[2, 1, 2, 3, 2, 2, 1, 4, 3, 2, 2]
-                ),
-            ),
-            # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
-            evans.Callable(
-                rmakers.force_rest,
-                selector=lambda _: abjad.select.get(
-                    abjad.select.notes(_), abjad.index([0, -1])
-                ),
-            ),
-            evans.loop([_ + 2 for _ in [0, 1, 2, 1, 3, 2, 0, 4]], [1, 2, -1, 3, -1]),
-            lambda _: [
-                baca.slur(x)
-                for x in abjad.select.partition_by_counts(
-                    abjad.select.notes(_), [8], cyclic=True, overhang=True
-                )
-            ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [8],
-                padding=5,
-                id=1,
-            ),
-            evans.hairpin("p < f >", [8]),
-            # alu.E_color,
-        ),
+        # evans.MusicCommand(
+        #     ("trumpet voice", alu.measure_numbers([33, 34, 35])),
+        #     evans.even_division(
+        #         [16],
+        #         extra_counts=[2, 3, 4, 2, 1],
+        #         preprocessor=evans.make_preprocessor(
+        #             quarters=True,
+        #             # fuse_counts=[2, 1, 2, 3, 2, 2, 1, 4, 3, 2, 2], split_at_measure_boundaries=True,
+        #         ),
+        #     ),
+        #     # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
+        #     evans.Callable(
+        #         rmakers.force_rest,
+        #         selector=lambda _: abjad.select.get(
+        #             abjad.select.notes(_), abjad.index([0, -1])
+        #         ),
+        #     ),
+        #     evans.loop([_ + 2 for _ in [0, 1, 2, 1, 3, 2, 0, 4]], [1, 2, -1, 3, -1]),
+        #     lambda _: [
+        #         baca.slur(x)
+        #         for x in abjad.select.partition_by_counts(
+        #             abjad.select.notes(_), [8], cyclic=True, overhang=True
+        #         )
+        #     ],
+        #     # evans.text_span(
+        #     #     [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+        #     #     "=>",
+        #     #     [8],
+        #     #     padding=5,
+        #     #     id=1,
+        #     # ),
+        #     # evans.hairpin("p < f >", [8]),
+        #     evans.hairpin("p < mf > mp < f >", [8 ** 2]),
+        #     # alu.E_color,
+        # ),
         # TROMBONE
         # evans.MusicCommand(
         #     ("tenor trombone voice", alu.measure_numbers([_ for _ in range(1, 36)])),
@@ -1687,44 +1756,46 @@ maker = evans.SegmentMaker(
             lambda _: evans.contour(
                 _,
                 # ([0, 1], evans.Lapidary("up", "previous alteration", "octave below")),
-                starting_range=abjad.TenorTrombone().pitch_range,
+                starting_range=abjad.PitchRange(range_string='[E2, Eb3]'),
             ),
             lambda _: alu.faberge_swells(_),
             # # alu.D_color,
         ),
-        evans.MusicCommand(
-            ("tenor trombone voice", alu.measure_numbers([15, 16])),
-            evans.even_division(
-                [16],
-                extra_counts=[3, 4, 2, 1, 2],
-                preprocessor=evans.make_preprocessor(
-                    eighths=True, fuse_counts=[2, 2, 1, 2, 3, 2, 2, 1, 4, 3, 2]
-                ),
-            ),
-            # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
-            evans.Callable(
-                rmakers.force_rest,
-                selector=lambda _: abjad.select.get(
-                    abjad.select.notes(_), abjad.index([0, -1])
-                ),
-            ),
-            evans.loop([_ - 9 for _ in [0, 1, 2, 1, 3, 2, 0, 4, 3]], [1, 2, -1, 3, -1]),
-            lambda _: [
-                baca.slur(x)
-                for x in abjad.select.partition_by_counts(
-                    abjad.select.notes(_), [9], cyclic=True, overhang=True
-                )
-            ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [9],
-                padding=5,
-                id=1,
-            ),
-            evans.hairpin("p < f >", [9]),
-            # alu.E_color,
-        ),
+        # evans.MusicCommand(
+        #     ("tenor trombone voice", alu.measure_numbers([15, 16])),
+        #     evans.even_division(
+        #         [16],
+        #         extra_counts=[3, 4, 2, 1, 2],
+        #         preprocessor=evans.make_preprocessor(
+        #             quarters=True,
+        #             # fuse_counts=[2, 2, 1, 2, 3, 2, 2, 1, 4, 3, 2], split_at_measure_boundaries=True,
+        #         ),
+        #     ),
+        #     # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
+        #     evans.Callable(
+        #         rmakers.force_rest,
+        #         selector=lambda _: abjad.select.get(
+        #             abjad.select.notes(_), abjad.index([0, -1])
+        #         ),
+        #     ),
+        #     evans.loop([_ - 9 for _ in [0, 1, 2, 1, 3, 2, 0, 4, 3]], [1, 2, -1, 3, -1]),
+        #     lambda _: [
+        #         baca.slur(x)
+        #         for x in abjad.select.partition_by_counts(
+        #             abjad.select.notes(_), [9], cyclic=True, overhang=True
+        #         )
+        #     ],
+        #     # evans.text_span(
+        #     #     [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+        #     #     "=>",
+        #     #     [9],
+        #     #     padding=5,
+        #     #     id=1,
+        #     # ),
+        #     # evans.hairpin("p < f >", [9]),
+        #     evans.hairpin("p < mf > mp < f >", [9 ** 2]),
+        #     # alu.E_color,
+        # ),
         evans.MusicCommand(
             ("tenor trombone voice", alu.measure_numbers([17])),
             alu.exchanging_rhythms(
@@ -1741,44 +1812,46 @@ maker = evans.SegmentMaker(
             lambda _: evans.contour(
                 _,
                 # ([0, 1], evans.Lapidary("up", "previous alteration", "octave below")),
-                starting_range=abjad.TenorTrombone().pitch_range,
+                starting_range=abjad.PitchRange(range_string='[E2, Eb3]'),
             ),
             lambda _: alu.faberge_swells(_),
             # # alu.D_color,
         ),
-        evans.MusicCommand(
-            ("tenor trombone voice", alu.measure_numbers([18])),
-            evans.even_division(
-                [16],
-                extra_counts=[3, 4, 2, 1, 2],
-                preprocessor=evans.make_preprocessor(
-                    eighths=True, fuse_counts=[2, 2, 1, 2, 3, 2, 2, 1, 4, 3, 2]
-                ),
-            ),
-            # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
-            evans.Callable(
-                rmakers.force_rest,
-                selector=lambda _: abjad.select.get(
-                    abjad.select.notes(_), abjad.index([0, -1])
-                ),
-            ),
-            evans.loop([_ - 9 for _ in [0, 1, 2, 1, 3, 2, 0, 4, 3]], [1, 2, -1, 3, -1]),
-            lambda _: [
-                baca.slur(x)
-                for x in abjad.select.partition_by_counts(
-                    abjad.select.notes(_), [9], cyclic=True, overhang=True
-                )
-            ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [9],
-                padding=5,
-                id=1,
-            ),
-            evans.hairpin("p < f >", [9]),
-            # alu.E_color,
-        ),
+        # evans.MusicCommand(
+        #     ("tenor trombone voice", alu.measure_numbers([18])),
+        #     evans.even_division(
+        #         [16],
+        #         extra_counts=[3, 4, 2, 1, 2],
+        #         preprocessor=evans.make_preprocessor(
+        #             quarters=True,
+        #             # fuse_counts=[2, 2, 1, 2, 3, 2, 2, 1, 4, 3, 2], split_at_measure_boundaries=True,
+        #         ),
+        #     ),
+        #     # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
+        #     evans.Callable(
+        #         rmakers.force_rest,
+        #         selector=lambda _: abjad.select.get(
+        #             abjad.select.notes(_), abjad.index([0, -1])
+        #         ),
+        #     ),
+        #     evans.loop([_ - 9 for _ in [0, 1, 2, 1, 3, 2, 0, 4, 3]], [1, 2, -1, 3, -1]),
+        #     lambda _: [
+        #         baca.slur(x)
+        #         for x in abjad.select.partition_by_counts(
+        #             abjad.select.notes(_), [9], cyclic=True, overhang=True
+        #         )
+        #     ],
+        #     # evans.text_span(
+        #     #     [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+        #     #     "=>",
+        #     #     [9],
+        #     #     padding=5,
+        #     #     id=1,
+        #     # ),
+        #     # evans.hairpin("p < f >", [9]),
+        #     evans.hairpin("p < mf > mp < f >", [9 ** 2]),
+        #     # alu.E_color,
+        # ),
         evans.MusicCommand(
             ("tenor trombone voice", alu.measure_numbers([19, 20])),
             evans.make_tied_notes(),
@@ -1802,7 +1875,7 @@ maker = evans.SegmentMaker(
             lambda _: evans.contour(
                 _,
                 # ([0, 1], evans.Lapidary("up", "previous alteration", "octave below")),
-                starting_range=abjad.TenorTrombone().pitch_range,
+                starting_range=abjad.PitchRange(range_string='[E2, Eb3]'),
             ),
             lambda _: alu.faberge_swells(_),
             # # alu.D_color,
@@ -1830,44 +1903,46 @@ maker = evans.SegmentMaker(
             lambda _: evans.contour(
                 _,
                 # ([0, 1], evans.Lapidary("up", "previous alteration", "octave below")),
-                starting_range=abjad.TenorTrombone().pitch_range,
+                starting_range=abjad.PitchRange(range_string='[E2, Eb3]'),
             ),
             lambda _: alu.faberge_swells(_),
             # # alu.D_color,
         ),
-        evans.MusicCommand(
-            ("tenor trombone voice", alu.measure_numbers([26])),
-            evans.even_division(
-                [16],
-                extra_counts=[3, 4, 2, 1, 2],
-                preprocessor=evans.make_preprocessor(
-                    eighths=True, fuse_counts=[2, 2, 1, 2, 3, 2, 2, 1, 4, 3, 2]
-                ),
-            ),
-            # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
-            evans.Callable(
-                rmakers.force_rest,
-                selector=lambda _: abjad.select.get(
-                    abjad.select.notes(_), abjad.index([0, -1])
-                ),
-            ),
-            evans.loop([_ - 9 for _ in [0, 1, 2, 1, 3, 2, 0, 4, 3]], [1, 2, -1, 3, -1]),
-            lambda _: [
-                baca.slur(x)
-                for x in abjad.select.partition_by_counts(
-                    abjad.select.notes(_), [9], cyclic=True, overhang=True
-                )
-            ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [9],
-                padding=5,
-                id=1,
-            ),
-            evans.hairpin("p < f >", [9]),
-            # alu.E_color,
-        ),
+        # evans.MusicCommand(
+        #     ("tenor trombone voice", alu.measure_numbers([26])),
+        #     evans.even_division(
+        #         [16],
+        #         extra_counts=[3, 4, 2, 1, 2],
+        #         preprocessor=evans.make_preprocessor(
+        #             quarters=True,
+        #             # fuse_counts=[2, 2, 1, 2, 3, 2, 2, 1, 4, 3, 2], split_at_measure_boundaries=True,
+        #         ),
+        #     ),
+        #     # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
+        #     evans.Callable(
+        #         rmakers.force_rest,
+        #         selector=lambda _: abjad.select.get(
+        #             abjad.select.notes(_), abjad.index([0, -1])
+        #         ),
+        #     ),
+        #     evans.loop([_ - 9 for _ in [0, 1, 2, 1, 3, 2, 0, 4, 3]], [1, 2, -1, 3, -1]),
+        #     lambda _: [
+        #         baca.slur(x)
+        #         for x in abjad.select.partition_by_counts(
+        #             abjad.select.notes(_), [9], cyclic=True, overhang=True
+        #         )
+        #     ],
+        #     # evans.text_span(
+        #     #     [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+        #     #     "=>",
+        #     #     [9],
+        #     #     padding=5,
+        #     #     id=1,
+        #     # ),
+        #     # evans.hairpin("p < f >", [9]),
+        #     evans.hairpin("p < mf > mp < f >", [9 ** 2]),
+        #     # alu.E_color,
+        # ),
         evans.MusicCommand(
             ("tenor trombone voice", alu.measure_numbers([27])),
             alu.exchanging_rhythms(
@@ -1884,44 +1959,46 @@ maker = evans.SegmentMaker(
             lambda _: evans.contour(
                 _,
                 # ([0, 1], evans.Lapidary("up", "previous alteration", "octave below")),
-                starting_range=abjad.TenorTrombone().pitch_range,
+                starting_range=abjad.PitchRange(range_string='[E2, Eb3]'),
             ),
             lambda _: alu.faberge_swells(_),
             # # alu.D_color,
         ),
-        evans.MusicCommand(
-            ("tenor trombone voice", alu.measure_numbers([28])),
-            evans.even_division(
-                [16],
-                extra_counts=[3, 4, 2, 1, 2],
-                preprocessor=evans.make_preprocessor(
-                    eighths=True, fuse_counts=[2, 2, 1, 2, 3, 2, 2, 1, 4, 3, 2]
-                ),
-            ),
-            # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
-            evans.Callable(
-                rmakers.force_rest,
-                selector=lambda _: abjad.select.get(
-                    abjad.select.notes(_), abjad.index([0, -1])
-                ),
-            ),
-            evans.loop([_ - 9 for _ in [0, 1, 2, 1, 3, 2, 0, 4, 3]], [1, 2, -1, 3, -1]),
-            lambda _: [
-                baca.slur(x)
-                for x in abjad.select.partition_by_counts(
-                    abjad.select.notes(_), [9], cyclic=True, overhang=True
-                )
-            ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [9],
-                padding=5,
-                id=1,
-            ),
-            evans.hairpin("p < f >", [9]),
-            # alu.E_color,
-        ),
+        # evans.MusicCommand(
+        #     ("tenor trombone voice", alu.measure_numbers([28])),
+        #     evans.even_division(
+        #         [16],
+        #         extra_counts=[3, 4, 2, 1, 2],
+        #         preprocessor=evans.make_preprocessor(
+        #             quarters=True,
+        #             # fuse_counts=[2, 2, 1, 2, 3, 2, 2, 1, 4, 3, 2], split_at_measure_boundaries=True,
+        #         ),
+        #     ),
+        #     # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
+        #     evans.Callable(
+        #         rmakers.force_rest,
+        #         selector=lambda _: abjad.select.get(
+        #             abjad.select.notes(_), abjad.index([0, -1])
+        #         ),
+        #     ),
+        #     evans.loop([_ - 9 for _ in [0, 1, 2, 1, 3, 2, 0, 4, 3]], [1, 2, -1, 3, -1]),
+        #     lambda _: [
+        #         baca.slur(x)
+        #         for x in abjad.select.partition_by_counts(
+        #             abjad.select.notes(_), [9], cyclic=True, overhang=True
+        #         )
+        #     ],
+        #     # evans.text_span(
+        #     #     [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+        #     #     "=>",
+        #     #     [9],
+        #     #     padding=5,
+        #     #     id=1,
+        #     # ),
+        #     # evans.hairpin("p < f >", [9]),
+        #     evans.hairpin("p < mf > mp < f >", [9 ** 2]),
+        #     # alu.E_color,
+        # ),
         evans.MusicCommand(
             ("tenor trombone voice", alu.measure_numbers([29])),
             alu.exchanging_rhythms(
@@ -1938,7 +2015,7 @@ maker = evans.SegmentMaker(
             lambda _: evans.contour(
                 _,
                 # ([0, 1], evans.Lapidary("up", "previous alteration", "octave below")),
-                starting_range=abjad.TenorTrombone().pitch_range,
+                starting_range=abjad.PitchRange(range_string='[E2, Eb3]'),
             ),
             lambda _: alu.faberge_swells(_),
             # # alu.D_color,
@@ -1959,7 +2036,7 @@ maker = evans.SegmentMaker(
                     abjad.NumberedPitch(_).number
                     for _ in alu.constrained_random_walk_from_source(
                         source=alu.constructed_chord_4,
-                        instrument_range=abjad.TenorTrombone().pitch_range,
+                        instrument_range=abjad.PitchRange(range_string='[E2, Eb3]'),
                         rotation=1,
                         random_seed=21,
                         step_list=[2, 1, 1, 2, 1],
@@ -1988,44 +2065,46 @@ maker = evans.SegmentMaker(
             lambda _: evans.contour(
                 _,
                 # ([0, 1], evans.Lapidary("up", "previous alteration", "octave below")),
-                starting_range=abjad.TenorTrombone().pitch_range,
+                starting_range=abjad.PitchRange(range_string='[E2, Eb3]'),
             ),
             lambda _: alu.faberge_swells(_),
             # # alu.D_color,
         ),
-        evans.MusicCommand(
-            ("tenor trombone voice", alu.measure_numbers([32])),
-            evans.even_division(
-                [16],
-                extra_counts=[3, 4, 2, 1, 2],
-                preprocessor=evans.make_preprocessor(
-                    eighths=True, fuse_counts=[2, 2, 1, 2, 3, 2, 2, 1, 4, 3, 2]
-                ),
-            ),
-            # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
-            evans.Callable(
-                rmakers.force_rest,
-                selector=lambda _: abjad.select.get(
-                    abjad.select.notes(_), abjad.index([0, -1])
-                ),
-            ),
-            evans.loop([_ - 9 for _ in [0, 1, 2, 1, 3, 2, 0, 4, 3]], [1, 2, -1, 3, -1]),
-            lambda _: [
-                baca.slur(x)
-                for x in abjad.select.partition_by_counts(
-                    abjad.select.notes(_), [9], cyclic=True, overhang=True
-                )
-            ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [9],
-                padding=5,
-                id=1,
-            ),
-            evans.hairpin("p < f >", [9]),
-            # alu.E_color,
-        ),
+        # evans.MusicCommand(
+        #     ("tenor trombone voice", alu.measure_numbers([32])),
+        #     evans.even_division(
+        #         [16],
+        #         extra_counts=[3, 4, 2, 1, 2],
+        #         preprocessor=evans.make_preprocessor(
+        #             quarters=True,
+        #             # fuse_counts=[2, 2, 1, 2, 3, 2, 2, 1, 4, 3, 2], split_at_measure_boundaries=True,
+        #         ),
+        #     ),
+        #     # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
+        #     evans.Callable(
+        #         rmakers.force_rest,
+        #         selector=lambda _: abjad.select.get(
+        #             abjad.select.notes(_), abjad.index([0, -1])
+        #         ),
+        #     ),
+        #     evans.loop([_ - 9 for _ in [0, 1, 2, 1, 3, 2, 0, 4, 3]], [1, 2, -1, 3, -1]),
+        #     lambda _: [
+        #         baca.slur(x)
+        #         for x in abjad.select.partition_by_counts(
+        #             abjad.select.notes(_), [9], cyclic=True, overhang=True
+        #         )
+        #     ],
+        #     # evans.text_span(
+        #     #     [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+        #     #     "=>",
+        #     #     [9],
+        #     #     padding=5,
+        #     #     id=1,
+        #     # ),
+        #     # evans.hairpin("p < f >", [9]),
+        #     evans.hairpin("p < mf > mp < f >", [9 ** 2]),
+        #     # alu.E_color,
+        # ),
         evans.MusicCommand(
             ("tenor trombone voice", alu.measure_numbers([33])),
             alu.exchanging_rhythms(
@@ -2042,44 +2121,46 @@ maker = evans.SegmentMaker(
             lambda _: evans.contour(
                 _,
                 # ([0, 1], evans.Lapidary("up", "previous alteration", "octave below")),
-                starting_range=abjad.TenorTrombone().pitch_range,
+                starting_range=abjad.PitchRange(range_string='[E2, Eb3]'),
             ),
             lambda _: alu.faberge_swells(_),
             # # alu.D_color,
         ),
-        evans.MusicCommand(
-            ("tenor trombone voice", alu.measure_numbers([34])),
-            evans.even_division(
-                [16],
-                extra_counts=[3, 4, 2, 1, 2],
-                preprocessor=evans.make_preprocessor(
-                    eighths=True, fuse_counts=[2, 2, 1, 2, 3, 2, 2, 1, 4, 3, 2]
-                ),
-            ),
-            # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
-            evans.Callable(
-                rmakers.force_rest,
-                selector=lambda _: abjad.select.get(
-                    abjad.select.notes(_), abjad.index([0, -1])
-                ),
-            ),
-            evans.loop([_ - 9 for _ in [0, 1, 2, 1, 3, 2, 0, 4, 3]], [1, 2, -1, 3, -1]),
-            lambda _: [
-                baca.slur(x)
-                for x in abjad.select.partition_by_counts(
-                    abjad.select.notes(_), [9], cyclic=True, overhang=True
-                )
-            ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [9],
-                padding=5,
-                id=1,
-            ),
-            evans.hairpin("p < f >", [9]),
-            # alu.E_color,
-        ),
+        # evans.MusicCommand(
+        #     ("tenor trombone voice", alu.measure_numbers([34])),
+        #     evans.even_division(
+        #         [16],
+        #         extra_counts=[3, 4, 2, 1, 2],
+        #         preprocessor=evans.make_preprocessor(
+        #             quarters=True,
+        #             # fuse_counts=[2, 2, 1, 2, 3, 2, 2, 1, 4, 3, 2], split_at_measure_boundaries=True,
+        #         ),
+        #     ),
+        #     # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
+        #     evans.Callable(
+        #         rmakers.force_rest,
+        #         selector=lambda _: abjad.select.get(
+        #             abjad.select.notes(_), abjad.index([0, -1])
+        #         ),
+        #     ),
+        #     evans.loop([_ - 9 for _ in [0, 1, 2, 1, 3, 2, 0, 4, 3]], [1, 2, -1, 3, -1]),
+        #     lambda _: [
+        #         baca.slur(x)
+        #         for x in abjad.select.partition_by_counts(
+        #             abjad.select.notes(_), [9], cyclic=True, overhang=True
+        #         )
+        #     ],
+        #     # evans.text_span(
+        #     #     [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+        #     #     "=>",
+        #     #     [9],
+        #     #     padding=5,
+        #     #     id=1,
+        #     # ),
+        #     # evans.hairpin("p < f >", [9]),
+        #     evans.hairpin("p < mf > mp < f >", [9 ** 2]),
+        #     # alu.E_color,
+        # ),
         evans.MusicCommand(
             ("tenor trombone voice", alu.measure_numbers([35])),
             alu.exchanging_rhythms(
@@ -2096,7 +2177,7 @@ maker = evans.SegmentMaker(
             lambda _: evans.contour(
                 _,
                 # ([0, 1], evans.Lapidary("up", "previous alteration", "octave below")),
-                starting_range=abjad.TenorTrombone().pitch_range,
+                starting_range=abjad.PitchRange(range_string='[E2, Eb3]'),
             ),
             lambda _: alu.faberge_swells(_),
             # # alu.D_color,
@@ -2157,41 +2238,41 @@ maker = evans.SegmentMaker(
             lambda _: alu.faberge_swells(_),
             # # alu.D_color,
         ),
-        evans.MusicCommand(
-            ("tuba voice", alu.measure_numbers([19, 20, 21])),
-            evans.even_division(
-                [16],
-                extra_counts=[4, 2, 1, 2, 3],
-                preprocessor=evans.make_preprocessor(
-                    eighths=True, fuse_counts=[2, 2, 2, 1, 2, 3, 2, 2, 1, 4, 3]
-                ),
-            ),
-            # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
-            evans.Callable(
-                rmakers.force_rest,
-                selector=lambda _: abjad.select.get(
-                    abjad.select.notes(_), abjad.index([0, -1])
-                ),
-            ),
-            evans.loop(
-                [_ - 13 for _ in [0, 1, 2, 1, 3, 2, 0, 4, 3, 2]], [1, 2, -1, 3, -1]
-            ),
-            lambda _: [
-                baca.slur(x)
-                for x in abjad.select.partition_by_counts(
-                    abjad.select.notes(_), [10], cyclic=True, overhang=True
-                )
-            ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [10],
-                padding=5,
-                id=1,
-            ),
-            evans.hairpin("p < f >", [10]),
-            # alu.E_color,
-        ),
+        # evans.MusicCommand(
+        #     ("tuba voice", alu.measure_numbers([19, 20, 21])),
+        #     evans.even_division(
+        #         [16],
+        #         extra_counts=[4, 2, 1, 2, 3],
+        #         preprocessor=evans.make_preprocessor(
+        #             eighths=True, fuse_counts=[2, 2, 2, 1, 2, 3, 2, 2, 1, 4, 3]
+        #         ),
+        #     ),
+        #     # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
+        #     evans.Callable(
+        #         rmakers.force_rest,
+        #         selector=lambda _: abjad.select.get(
+        #             abjad.select.notes(_), abjad.index([0, -1])
+        #         ),
+        #     ),
+        #     evans.loop(
+        #         [_ - 13 for _ in [0, 1, 2, 1, 3, 2, 0, 4, 3, 2]], [1, 2, -1, 3, -1]
+        #     ),
+        #     lambda _: [
+        #         baca.slur(x)
+        #         for x in abjad.select.partition_by_counts(
+        #             abjad.select.notes(_), [10], cyclic=True, overhang=True
+        #         )
+        #     ],
+        #     evans.text_span(
+        #         [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+        #         "=>",
+        #         [10],
+        #         padding=5,
+        #         id=1,
+        #     ),
+        #     evans.hairpin("p < f >", [10]),
+        #     # alu.E_color,
+        # ),
         evans.MusicCommand(
             ("tuba voice", alu.measure_numbers([22])),
             alu.exchanging_rhythms(
@@ -2213,41 +2294,41 @@ maker = evans.SegmentMaker(
             lambda _: alu.faberge_swells(_),
             # # alu.D_color,
         ),
-        evans.MusicCommand(
-            ("tuba voice", alu.measure_numbers([23])),
-            evans.even_division(
-                [16],
-                extra_counts=[4, 2, 1, 2, 3],
-                preprocessor=evans.make_preprocessor(
-                    eighths=True, fuse_counts=[2, 2, 2, 1, 2, 3, 2, 2, 1, 4, 3]
-                ),
-            ),
-            # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
-            evans.Callable(
-                rmakers.force_rest,
-                selector=lambda _: abjad.select.get(
-                    abjad.select.notes(_), abjad.index([0, -1])
-                ),
-            ),
-            evans.loop(
-                [_ - 13 for _ in [0, 1, 2, 1, 3, 2, 0, 4, 3, 2]], [1, 2, -1, 3, -1]
-            ),
-            lambda _: [
-                baca.slur(x)
-                for x in abjad.select.partition_by_counts(
-                    abjad.select.notes(_), [10], cyclic=True, overhang=True
-                )
-            ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [10],
-                padding=5,
-                id=1,
-            ),
-            evans.hairpin("p < f >", [10]),
-            # alu.E_color,
-        ),
+        # evans.MusicCommand(
+        #     ("tuba voice", alu.measure_numbers([23])),
+        #     evans.even_division(
+        #         [16],
+        #         extra_counts=[4, 2, 1, 2, 3],
+        #         preprocessor=evans.make_preprocessor(
+        #             eighths=True, fuse_counts=[2, 2, 2, 1, 2, 3, 2, 2, 1, 4, 3]
+        #         ),
+        #     ),
+        #     # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
+        #     evans.Callable(
+        #         rmakers.force_rest,
+        #         selector=lambda _: abjad.select.get(
+        #             abjad.select.notes(_), abjad.index([0, -1])
+        #         ),
+        #     ),
+        #     evans.loop(
+        #         [_ - 13 for _ in [0, 1, 2, 1, 3, 2, 0, 4, 3, 2]], [1, 2, -1, 3, -1]
+        #     ),
+        #     lambda _: [
+        #         baca.slur(x)
+        #         for x in abjad.select.partition_by_counts(
+        #             abjad.select.notes(_), [10], cyclic=True, overhang=True
+        #         )
+        #     ],
+        #     evans.text_span(
+        #         [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+        #         "=>",
+        #         [10],
+        #         padding=5,
+        #         id=1,
+        #     ),
+        #     evans.hairpin("p < f >", [10]),
+        #     # alu.E_color,
+        # ),
         evans.MusicCommand(
             ("tuba voice", alu.measure_numbers([24, 25])),
             evans.talea(
@@ -2326,41 +2407,41 @@ maker = evans.SegmentMaker(
             lambda _: alu.faberge_swells(_),
             # # alu.D_color,
         ),
-        evans.MusicCommand(
-            ("tuba voice", alu.measure_numbers([31, 32, 33])),
-            evans.even_division(
-                [16],
-                extra_counts=[4, 2, 1, 2, 3],
-                preprocessor=evans.make_preprocessor(
-                    eighths=True, fuse_counts=[2, 2, 2, 1, 2, 3, 2, 2, 1, 4, 3]
-                ),
-            ),
-            # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
-            evans.Callable(
-                rmakers.force_rest,
-                selector=lambda _: abjad.select.get(
-                    abjad.select.notes(_), abjad.index([0, -1])
-                ),
-            ),
-            evans.loop(
-                [_ - 13 for _ in [0, 1, 2, 1, 3, 2, 0, 4, 3, 2]], [1, 2, -1, 3, -1]
-            ),
-            lambda _: [
-                baca.slur(x)
-                for x in abjad.select.partition_by_counts(
-                    abjad.select.notes(_), [10], cyclic=True, overhang=True
-                )
-            ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [10],
-                padding=5,
-                id=1,
-            ),
-            evans.hairpin("p < f >", [10]),
-            # alu.E_color,
-        ),
+        # evans.MusicCommand(
+        #     ("tuba voice", alu.measure_numbers([31, 32, 33])),
+        #     evans.even_division(
+        #         [16],
+        #         extra_counts=[4, 2, 1, 2, 3],
+        #         preprocessor=evans.make_preprocessor(
+        #             eighths=True, fuse_counts=[2, 2, 2, 1, 2, 3, 2, 2, 1, 4, 3]
+        #         ),
+        #     ),
+        #     # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
+        #     evans.Callable(
+        #         rmakers.force_rest,
+        #         selector=lambda _: abjad.select.get(
+        #             abjad.select.notes(_), abjad.index([0, -1])
+        #         ),
+        #     ),
+        #     evans.loop(
+        #         [_ - 13 for _ in [0, 1, 2, 1, 3, 2, 0, 4, 3, 2]], [1, 2, -1, 3, -1]
+        #     ),
+        #     lambda _: [
+        #         baca.slur(x)
+        #         for x in abjad.select.partition_by_counts(
+        #             abjad.select.notes(_), [10], cyclic=True, overhang=True
+        #         )
+        #     ],
+        #     evans.text_span(
+        #         [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+        #         "=>",
+        #         [10],
+        #         padding=5,
+        #         id=1,
+        #     ),
+        #     evans.hairpin("p < f >", [10]),
+        #     # alu.E_color,
+        # ),
         evans.MusicCommand(
             ("tuba voice", alu.measure_numbers([34])),
             alu.exchanging_rhythms(
@@ -2382,41 +2463,41 @@ maker = evans.SegmentMaker(
             lambda _: alu.faberge_swells(_),
             # # alu.D_color,
         ),
-        evans.MusicCommand(
-            ("tuba voice", alu.measure_numbers([35])),
-            evans.even_division(
-                [16],
-                extra_counts=[4, 2, 1, 2, 3],
-                preprocessor=evans.make_preprocessor(
-                    eighths=True, fuse_counts=[2, 2, 2, 1, 2, 3, 2, 2, 1, 4, 3]
-                ),
-            ),
-            # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
-            evans.Callable(
-                rmakers.force_rest,
-                selector=lambda _: abjad.select.get(
-                    abjad.select.notes(_), abjad.index([0, -1])
-                ),
-            ),
-            evans.loop(
-                [_ - 13 for _ in [0, 1, 2, 1, 3, 2, 0, 4, 3, 2]], [1, 2, -1, 3, -1]
-            ),
-            lambda _: [
-                baca.slur(x)
-                for x in abjad.select.partition_by_counts(
-                    abjad.select.notes(_), [10], cyclic=True, overhang=True
-                )
-            ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [10],
-                padding=5,
-                id=1,
-            ),
-            evans.hairpin("p < f >", [10]),
-            # alu.E_color,
-        ),
+        # evans.MusicCommand(
+        #     ("tuba voice", alu.measure_numbers([35])),
+        #     evans.even_division(
+        #         [16],
+        #         extra_counts=[4, 2, 1, 2, 3],
+        #         preprocessor=evans.make_preprocessor(
+        #             eighths=True, fuse_counts=[2, 2, 2, 1, 2, 3, 2, 2, 1, 4, 3]
+        #         ),
+        #     ),
+        #     # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
+        #     evans.Callable(
+        #         rmakers.force_rest,
+        #         selector=lambda _: abjad.select.get(
+        #             abjad.select.notes(_), abjad.index([0, -1])
+        #         ),
+        #     ),
+        #     evans.loop(
+        #         [_ - 13 for _ in [0, 1, 2, 1, 3, 2, 0, 4, 3, 2]], [1, 2, -1, 3, -1]
+        #     ),
+        #     lambda _: [
+        #         baca.slur(x)
+        #         for x in abjad.select.partition_by_counts(
+        #             abjad.select.notes(_), [10], cyclic=True, overhang=True
+        #         )
+        #     ],
+        #     evans.text_span(
+        #         [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+        #         "=>",
+        #         [10],
+        #         padding=5,
+        #         id=1,
+        #     ),
+        #     evans.hairpin("p < f >", [10]),
+        #     # alu.E_color,
+        # ),
         # PERCUSSION 1
         # evans.MusicCommand(
         #     ("percussion 1 voice", alu.measure_numbers([_ for _ in range(1, 27)])),
@@ -2441,7 +2522,8 @@ maker = evans.SegmentMaker(
                 [16],
                 extra_counts=[2, 1, 2, 3, 4],
                 preprocessor=evans.make_preprocessor(
-                    eighths=True, fuse_counts=[3, 2, 2, 2, 1, 2, 3, 2, 2, 1, 4]
+                    quarters=True,
+                    # fuse_counts=[3, 2, 2, 2, 1, 2, 3, 2, 2, 1, 4], split_at_measure_boundaries=True,
                 ),
             ),
             # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
@@ -2490,7 +2572,8 @@ maker = evans.SegmentMaker(
                 [16],
                 extra_counts=[2, 1, 2, 3, 4],
                 preprocessor=evans.make_preprocessor(
-                    eighths=True, fuse_counts=[3, 2, 2, 2, 1, 2, 3, 2, 2, 1, 4]
+                    quarters=True,
+                    # fuse_counts=[3, 2, 2, 2, 1, 2, 3, 2, 2, 1, 4], split_at_measure_boundaries=True,
                 ),
             ),
             # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
@@ -2536,7 +2619,8 @@ maker = evans.SegmentMaker(
                 [16],
                 extra_counts=[2, 1, 2, 3, 4],
                 preprocessor=evans.make_preprocessor(
-                    eighths=True, fuse_counts=[3, 2, 2, 2, 1, 2, 3, 2, 2, 1, 4]
+                    quarters=True,
+                    # fuse_counts=[3, 2, 2, 2, 1, 2, 3, 2, 2, 1, 4], split_at_measure_boundaries=True,
                 ),
             ),
             # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
@@ -2595,7 +2679,8 @@ maker = evans.SegmentMaker(
                 [16],
                 extra_counts=[1, 2, 3, 4, 2],
                 preprocessor=evans.make_preprocessor(
-                    eighths=True, fuse_counts=[4, 3, 2, 2, 2, 1, 2, 3, 2, 2, 1]
+                    quarters=True,
+                    # fuse_counts=[4, 3, 2, 2, 2, 1, 2, 3, 2, 2, 1], split_at_measure_boundaries=True,
                 ),
             ),
             # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
@@ -2644,7 +2729,8 @@ maker = evans.SegmentMaker(
                 [16],
                 extra_counts=[1, 2, 3, 4, 2],
                 preprocessor=evans.make_preprocessor(
-                    eighths=True, fuse_counts=[4, 3, 2, 2, 2, 1, 2, 3, 2, 2, 1]
+                    quarters=True,
+                    # fuse_counts=[4, 3, 2, 2, 2, 1, 2, 3, 2, 2, 1], split_at_measure_boundaries=True,
                 ),
             ),
             # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
@@ -2690,7 +2776,8 @@ maker = evans.SegmentMaker(
                 [16],
                 extra_counts=[1, 2, 3, 4, 2],
                 preprocessor=evans.make_preprocessor(
-                    eighths=True, fuse_counts=[4, 3, 2, 2, 2, 1, 2, 3, 2, 2, 1]
+                    quarters=True,
+                    # fuse_counts=[4, 3, 2, 2, 2, 1, 2, 3, 2, 2, 1], split_at_measure_boundaries=True,
                 ),
             ),
             # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
@@ -2736,7 +2823,8 @@ maker = evans.SegmentMaker(
                 [16],
                 extra_counts=[1, 2, 3, 4, 2],
                 preprocessor=evans.make_preprocessor(
-                    eighths=True, fuse_counts=[4, 3, 2, 2, 2, 1, 2, 3, 2, 2, 1]
+                    quarters=True,
+                    # fuse_counts=[4, 3, 2, 2, 2, 1, 2, 3, 2, 2, 1], split_at_measure_boundaries=True,
                 ),
             ),
             # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
@@ -2859,6 +2947,22 @@ maker = evans.SegmentMaker(
             ),
             # lambda _: evans.label_logical_ties(_),
             # alu.F_color,
+            evans.Attachment(
+                abjad.Clef("treble"),
+                selector=lambda _: abjad.select.leaf(_, 52, pitched=True),
+            ),
+            evans.Attachment(
+                abjad.Clef("bass"),
+                selector=lambda _: abjad.select.leaf(_, 57, pitched=True),
+            ),
+            evans.Attachment(
+                abjad.Clef("treble"),
+                selector=lambda _: abjad.select.leaf(_, 67, pitched=True),
+            ),
+            evans.Attachment(
+                abjad.Clef("bass"),
+                selector=lambda _: abjad.select.leaf(_, 77, pitched=True),
+            ),
         ),
         # VIOLIN 1
         evans.MusicCommand(
@@ -2901,15 +3005,16 @@ maker = evans.SegmentMaker(
                 preprocessor=evans.make_preprocessor(quarters=True),
                 rewrite=-1,
             ),
-            evans.PitchHandler(
-                [evans.JIPitch("fqs,,", "7/1", with_quarter_tones=True)]
-            ),
+            # evans.PitchHandler(
+            #     [evans.JIPitch("fqs,,", "7/1", with_quarter_tones=True)]
+            # ),
+            evans.PitchHandler(["ef'"]),
             evans.Attachment(
                 abjad.Glissando(), selector=lambda _: abjad.select.leaf(_, -1)
             ),
             lambda _: baca.text_spanner(
                 _,
-                r"\trem-one-markup -> \trem-three-markup -> \trem-two-markup -> \trem-five-markup -> \trem-four-markup ->",
+                r"\trem-one-markup -> \trem-three-markup -> \trem-two-markup ->",
                 abjad.Tweak(r"\tweak staff-padding 4.5"),
                 abjad.Tweak(r"\tweak bound-details.right.padding 2"),
                 final_piece_spanner=r"\stopTextSpanOne",
@@ -2945,9 +3050,10 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("violin 2 voice", alu.measure_numbers([_ for _ in range(1, 36)])),
             evans.make_tied_notes(),
-            evans.PitchHandler(
-                [evans.JIPitch("fqs,,", "5/1", with_quarter_tones=True)]
-            ),
+            # evans.PitchHandler(
+            #     [evans.JIPitch("fqs,,", "5/1", with_quarter_tones=True)]
+            # ),
+            evans.PitchHandler(["d'"]),
             # lambda _: baca.text_spanner(
             #     _,
             #     r"norm. -> scr.",
@@ -2972,6 +3078,11 @@ maker = evans.SegmentMaker(
             #     lilypond_id=2,
             #     # pieces=lambda _: abjad.select.partition_by_counts(abjad.select.logical_ties(_), [2, 3, 2, 1], cyclic=True, overhang=True),
             # ),
+            evans.Attachment(
+                abjad.Markup(r"\markup {(normale)}"),
+                direction=abjad.UP,
+                selector=lambda _: abjad.select.note(_, 0),
+            ),
             evans.Attachment(
                 abjad.Markup(r"\markup {scratch poco a poco}"),
                 direction=abjad.UP,
@@ -2998,7 +3109,8 @@ maker = evans.SegmentMaker(
                 [16],
                 extra_counts=[2, 3, 4, 2, 1],
                 preprocessor=evans.make_preprocessor(
-                    eighths=True, fuse_counts=[1, 4, 3, 2, 2, 2, 1, 2, 3, 2, 2]
+                    quarters=True,
+                    # fuse_counts=[1, 4, 3, 2, 2, 2, 1, 2, 3, 2, 2], split_at_measure_boundaries=True,
                 ),
             ),
             # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
@@ -3017,15 +3129,15 @@ maker = evans.SegmentMaker(
                     abjad.select.notes(_), [11], cyclic=True, overhang=True
                 )
             ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [11],
-                padding=2 + 3,
-                id=1,
-            ),
-            evans.text_span([r"norm.", r"scr."], "=>", padding=4 + 3, id=2),
-            evans.text_span([r"clt."], "=|", padding=6 + 3, id=3),
+            # evans.text_span(
+            #     [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+            #     "=>",
+            #     [11],
+            #     padding=2 + 3,
+            #     id=1,
+            # ),
+            # evans.text_span([r"norm.", r"scr."], "=>", padding=4 + 3, id=2),
+            # evans.text_span([r"clt."], "=|", padding=6 + 3, id=3),
             evans.hairpin("p < f >", [11]),
             # alu.E_color,
         ),
@@ -3056,7 +3168,8 @@ maker = evans.SegmentMaker(
                 [16],
                 extra_counts=[2, 3, 4, 2, 1],
                 preprocessor=evans.make_preprocessor(
-                    eighths=True, fuse_counts=[1, 4, 3, 2, 2, 2, 1, 2, 3, 2, 2]
+                    quarters=True,
+                    # fuse_counts=[1, 4, 3, 2, 2, 2, 1, 2, 3, 2, 2], split_at_measure_boundaries=True,
                 ),
             ),
             # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
@@ -3075,15 +3188,15 @@ maker = evans.SegmentMaker(
                     abjad.select.notes(_), [11], cyclic=True, overhang=True
                 )
             ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [11],
-                padding=2 + 3,
-                id=1,
-            ),
-            evans.text_span([r"norm.", r"scr."], "=>", padding=4 + 3, id=2),
-            evans.text_span([r"clt."], "=|", padding=6 + 3, id=3),
+            # evans.text_span(
+            #     [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+            #     "=>",
+            #     [11],
+            #     padding=2 + 3,
+            #     id=1,
+            # ),
+            # evans.text_span([r"norm.", r"scr."], "=>", padding=4 + 3, id=2),
+            # evans.text_span([r"clt."], "=|", padding=6 + 3, id=3),
             evans.hairpin("p < f >", [11]),
             # alu.E_color,
         ),
@@ -3114,7 +3227,8 @@ maker = evans.SegmentMaker(
                 [16],
                 extra_counts=[2, 3, 4, 2, 1],
                 preprocessor=evans.make_preprocessor(
-                    eighths=True, fuse_counts=[1, 4, 3, 2, 2, 2, 1, 2, 3, 2, 2]
+                    quarters=True,
+                    # fuse_counts=[1, 4, 3, 2, 2, 2, 1, 2, 3, 2, 2], split_at_measure_boundaries=True,
                 ),
             ),
             # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
@@ -3133,15 +3247,15 @@ maker = evans.SegmentMaker(
                     abjad.select.notes(_), [11], cyclic=True, overhang=True
                 )
             ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [11],
-                padding=2 + 3,
-                id=1,
-            ),
-            evans.text_span([r"norm.", r"scr."], "=>", padding=4 + 3, id=2),
-            evans.text_span([r"clt."], "=|", padding=6 + 3, id=3),
+            # evans.text_span(
+            #     [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+            #     "=>",
+            #     [11],
+            #     padding=2 + 3,
+            #     id=1,
+            # ),
+            # evans.text_span([r"norm.", r"scr."], "=>", padding=4 + 3, id=2),
+            # evans.text_span([r"clt."], "=|", padding=6 + 3, id=3),
             evans.hairpin("p < f >", [11]),
             # alu.E_color,
         ),
@@ -3201,7 +3315,8 @@ maker = evans.SegmentMaker(
                 [16],
                 extra_counts=[2, 3, 4, 2, 1],
                 preprocessor=evans.make_preprocessor(
-                    eighths=True, fuse_counts=[1, 4, 3, 2, 2, 2, 1, 2, 3, 2, 2]
+                    quarters=True,
+                    # fuse_counts=[1, 4, 3, 2, 2, 2, 1, 2, 3, 2, 2], split_at_measure_boundaries=True,
                 ),
             ),
             # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
@@ -3220,15 +3335,15 @@ maker = evans.SegmentMaker(
                     abjad.select.notes(_), [11], cyclic=True, overhang=True
                 )
             ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [11],
-                padding=2 + 3,
-                id=1,
-            ),
-            evans.text_span([r"norm.", r"scr."], "=>", padding=4 + 3, id=2),
-            evans.text_span([r"clt."], "=|", padding=6 + 3, id=3),
+            # evans.text_span(
+            #     [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+            #     "=>",
+            #     [11],
+            #     padding=2 + 3,
+            #     id=1,
+            # ),
+            # evans.text_span([r"norm.", r"scr."], "=>", padding=4 + 3, id=2),
+            # evans.text_span([r"clt."], "=|", padding=6 + 3, id=3),
             evans.hairpin("p < f >", [11]),
             # alu.E_color,
         ),
@@ -3295,7 +3410,8 @@ maker = evans.SegmentMaker(
                 [16],
                 extra_counts=[1, 2, 3, 4, 2],
                 preprocessor=evans.make_preprocessor(
-                    eighths=True, fuse_counts=[2, 1, 4, 3, 2, 2, 2, 1, 2, 3, 2]
+                    quarters=True,
+                    # fuse_counts=[2, 1, 4, 3, 2, 2, 2, 1, 2, 3, 2], split_at_measure_boundaries=True,
                 ),
             ),
             # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
@@ -3315,15 +3431,15 @@ maker = evans.SegmentMaker(
                     abjad.select.notes(_), [12], cyclic=True, overhang=True
                 )
             ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [12],
-                padding=2 + 3,
-                id=1,
-            ),
-            evans.text_span([r"norm.", r"scr."], "=>", padding=4 + 3, id=2),
-            evans.text_span([r"clt."], "=|", padding=6 + 3, id=3),
+            # evans.text_span(
+            #     [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+            #     "=>",
+            #     [12],
+            #     padding=2 + 3,
+            #     id=1,
+            # ),
+            # evans.text_span([r"norm.", r"scr."], "=>", padding=4 + 3, id=2),
+            # evans.text_span([r"clt."], "=|", padding=6 + 3, id=3),
             evans.hairpin("p < f >", [12]),
             # alu.E_color,
         ),
@@ -3343,7 +3459,7 @@ maker = evans.SegmentMaker(
             lambda _: evans.contour(
                 _,
                 # ([0, 1], evans.Lapidary("up", "previous alteration", "octave below")),
-                starting_range=abjad.Cello().pitch_range,
+                starting_range=abjad.PitchRange(range_string='[C2, Eb4]'),
             ),
             lambda _: alu.faberge_swells(_),
             # # alu.D_color,
@@ -3354,7 +3470,8 @@ maker = evans.SegmentMaker(
                 [16],
                 extra_counts=[1, 2, 3, 4, 2],
                 preprocessor=evans.make_preprocessor(
-                    eighths=True, fuse_counts=[2, 1, 4, 3, 2, 2, 2, 1, 2, 3, 2]
+                    quarters=True,
+                    # fuse_counts=[2, 1, 4, 3, 2, 2, 2, 1, 2, 3, 2], split_at_measure_boundaries=True,
                 ),
             ),
             # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
@@ -3374,15 +3491,15 @@ maker = evans.SegmentMaker(
                     abjad.select.notes(_), [12], cyclic=True, overhang=True
                 )
             ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [12],
-                padding=2 + 3,
-                id=1,
-            ),
-            evans.text_span([r"norm.", r"scr."], "=>", padding=4 + 3, id=2),
-            evans.text_span([r"clt."], "=|", padding=6 + 3, id=3),
+            # evans.text_span(
+            #     [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+            #     "=>",
+            #     [12],
+            #     padding=2 + 3,
+            #     id=1,
+            # ),
+            # evans.text_span([r"norm.", r"scr."], "=>", padding=4 + 3, id=2),
+            # evans.text_span([r"clt."], "=|", padding=6 + 3, id=3),
             evans.hairpin("p < f >", [12]),
             # alu.E_color,
         ),
@@ -3402,7 +3519,7 @@ maker = evans.SegmentMaker(
             lambda _: evans.contour(
                 _,
                 # ([0, 1], evans.Lapidary("up", "previous alteration", "octave below")),
-                starting_range=abjad.Cello().pitch_range,
+                starting_range=abjad.PitchRange(range_string='[C2, Eb4]'),
             ),
             lambda _: alu.faberge_swells(_),
             # # alu.D_color,
@@ -3413,7 +3530,8 @@ maker = evans.SegmentMaker(
                 [16],
                 extra_counts=[1, 2, 3, 4, 2],
                 preprocessor=evans.make_preprocessor(
-                    eighths=True, fuse_counts=[2, 1, 4, 3, 2, 2, 2, 1, 2, 3, 2]
+                    quarters=True,
+                    # fuse_counts=[2, 1, 4, 3, 2, 2, 2, 1, 2, 3, 2], split_at_measure_boundaries=True,
                 ),
             ),
             # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
@@ -3433,15 +3551,15 @@ maker = evans.SegmentMaker(
                     abjad.select.notes(_), [12], cyclic=True, overhang=True
                 )
             ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [12],
-                padding=2 + 3,
-                id=1,
-            ),
-            evans.text_span([r"norm.", r"scr."], "=>", padding=4 + 3, id=2),
-            evans.text_span([r"clt."], "=|", padding=6 + 3, id=3),
+            # evans.text_span(
+            #     [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+            #     "=>",
+            #     [12],
+            #     padding=2 + 3,
+            #     id=1,
+            # ),
+            # evans.text_span([r"norm.", r"scr."], "=>", padding=4 + 3, id=2),
+            # evans.text_span([r"clt."], "=|", padding=6 + 3, id=3),
             evans.hairpin("p < f >", [12]),
             # alu.E_color,
         ),
@@ -3461,7 +3579,7 @@ maker = evans.SegmentMaker(
             lambda _: evans.contour(
                 _,
                 # ([0, 1], evans.Lapidary("up", "previous alteration", "octave below")),
-                starting_range=abjad.Cello().pitch_range,
+                starting_range=abjad.PitchRange(range_string='[C2, Eb4]'),
             ),
             lambda _: alu.faberge_swells(_),
             # # alu.D_color,
@@ -3472,7 +3590,8 @@ maker = evans.SegmentMaker(
                 [16],
                 extra_counts=[1, 2, 3, 4, 2],
                 preprocessor=evans.make_preprocessor(
-                    eighths=True, fuse_counts=[2, 1, 4, 3, 2, 2, 2, 1, 2, 3, 2]
+                    quarters=True,
+                    # fuse_counts=[2, 1, 4, 3, 2, 2, 2, 1, 2, 3, 2], split_at_measure_boundaries=True,
                 ),
             ),
             # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
@@ -3492,15 +3611,15 @@ maker = evans.SegmentMaker(
                     abjad.select.notes(_), [12], cyclic=True, overhang=True
                 )
             ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [12],
-                padding=2 + 3,
-                id=1,
-            ),
-            evans.text_span([r"norm.", r"scr."], "=>", padding=4 + 3, id=2),
-            evans.text_span([r"clt."], "=|", padding=6 + 3, id=3),
+            # evans.text_span(
+            #     [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+            #     "=>",
+            #     [12],
+            #     padding=2 + 3,
+            #     id=1,
+            # ),
+            # evans.text_span([r"norm.", r"scr."], "=>", padding=4 + 3, id=2),
+            # evans.text_span([r"clt."], "=|", padding=6 + 3, id=3),
             evans.hairpin("p < f >", [12]),
             # alu.E_color,
         ),
@@ -3527,7 +3646,8 @@ maker = evans.SegmentMaker(
                 [16],
                 extra_counts=[2, 1, 2, 3, 4],
                 preprocessor=evans.make_preprocessor(
-                    eighths=True, fuse_counts=[2, 2, 1, 4, 3, 2, 2, 2, 1, 2, 3]
+                    quarters=True,
+                    # fuse_counts=[2, 2, 1, 4, 3, 2, 2, 2, 1, 2, 3], split_at_measure_boundaries=True,
                 ),
             ),
             # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
@@ -3539,7 +3659,7 @@ maker = evans.SegmentMaker(
             ),
             evans.loop(
                 [_ - 18 for _ in [0, 1, 2, 1, 3, 2, 0, 4, 3, 2, 4, 1, 2]],
-                [1, 2, -1, 3, -1],
+                [1, 2, -1, 3, -1, -2, -1],
             ),
             lambda _: [
                 baca.slur(x)
@@ -3547,15 +3667,15 @@ maker = evans.SegmentMaker(
                     abjad.select.notes(_), [13], cyclic=True, overhang=True
                 )
             ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [13],
-                padding=2 + 3,
-                id=1,
-            ),
-            evans.text_span([r"norm.", r"scr."], "=>", padding=4 + 3, id=2),
-            evans.text_span([r"clt."], "=|", padding=6 + 3, id=3),
+            # evans.text_span(
+            #     [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+            #     "=>",
+            #     [13],
+            #     padding=2 + 3,
+            #     id=1,
+            # ),
+            # evans.text_span([r"norm.", r"scr."], "=>", padding=4 + 3, id=2),
+            # evans.text_span([r"clt."], "=|", padding=6 + 3, id=3),
             evans.hairpin("p < f >", [13]),
             # alu.E_color,
         ),
@@ -3574,7 +3694,7 @@ maker = evans.SegmentMaker(
             ),
             lambda _: evans.contour(
                 _,
-                # ([0, 1], evans.Lapidary("up", "previous alteration", "octave below")),
+                ([0, 1, 2], evans.Lapidary("down", "previous alteration", "centroid octave")),
                 starting_range=abjad.Contrabass().pitch_range,
             ),
             lambda _: alu.faberge_swells(_),
@@ -3586,7 +3706,8 @@ maker = evans.SegmentMaker(
                 [16],
                 extra_counts=[2, 1, 2, 3, 4],
                 preprocessor=evans.make_preprocessor(
-                    eighths=True, fuse_counts=[2, 2, 1, 4, 3, 2, 2, 2, 1, 2, 3]
+                    quarters=True,
+                    # fuse_counts=[2, 2, 1, 4, 3, 2, 2, 2, 1, 2, 3], split_at_measure_boundaries=True,
                 ),
             ),
             # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
@@ -3598,7 +3719,7 @@ maker = evans.SegmentMaker(
             ),
             evans.loop(
                 [_ - 18 for _ in [0, 1, 2, 1, 3, 2, 0, 4, 3, 2, 4, 1, 2]],
-                [1, 2, -1, 3, -1],
+                [1, 2, -1, 3, -1, -2, -1],
             ),
             lambda _: [
                 baca.slur(x)
@@ -3606,15 +3727,15 @@ maker = evans.SegmentMaker(
                     abjad.select.notes(_), [13], cyclic=True, overhang=True
                 )
             ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [13],
-                padding=2 + 3,
-                id=1,
-            ),
-            evans.text_span([r"norm.", r"scr."], "=>", padding=4 + 3, id=2),
-            evans.text_span([r"clt."], "=|", padding=6 + 3, id=3),
+            # evans.text_span(
+            #     [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+            #     "=>",
+            #     [13],
+            #     padding=2 + 3,
+            #     id=1,
+            # ),
+            # evans.text_span([r"norm.", r"scr."], "=>", padding=4 + 3, id=2),
+            # evans.text_span([r"clt."], "=|", padding=6 + 3, id=3),
             evans.hairpin("p < f >", [13]),
             # alu.E_color,
         ),
@@ -3633,7 +3754,7 @@ maker = evans.SegmentMaker(
             ),
             lambda _: evans.contour(
                 _,
-                # ([0, 1], evans.Lapidary("up", "previous alteration", "octave below")),
+                ([0, 1, 2], evans.Lapidary("down", "previous alteration", "centroid octave")),
                 starting_range=abjad.Contrabass().pitch_range,
             ),
             lambda _: alu.faberge_swells(_),
@@ -3645,7 +3766,8 @@ maker = evans.SegmentMaker(
                 [16],
                 extra_counts=[2, 1, 2, 3, 4],
                 preprocessor=evans.make_preprocessor(
-                    eighths=True, fuse_counts=[2, 2, 1, 4, 3, 2, 2, 2, 1, 2, 3]
+                    quarters=True,
+                    # fuse_counts=[2, 2, 1, 4, 3, 2, 2, 2, 1, 2, 3], split_at_measure_boundaries=True,
                 ),
             ),
             # evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
@@ -3657,7 +3779,7 @@ maker = evans.SegmentMaker(
             ),
             evans.loop(
                 [_ - 18 for _ in [0, 1, 2, 1, 3, 2, 0, 4, 3, 2, 4, 1, 2]],
-                [1, 2, -1, 3, -1],
+                [1, 2, -1, 3, -1, -2, -1],
             ),
             lambda _: [
                 baca.slur(x)
@@ -3665,15 +3787,15 @@ maker = evans.SegmentMaker(
                     abjad.select.notes(_), [13], cyclic=True, overhang=True
                 )
             ],
-            evans.text_span(
-                [r"\diamond-notehead-markup", r"\default-notehead-markup"],
-                "=>",
-                [13],
-                padding=2 + 3,
-                id=1,
-            ),
-            evans.text_span([r"norm.", r"scr."], "=>", padding=4 + 3, id=2),
-            evans.text_span([r"clt."], "=|", padding=6 + 3, id=3),
+            # evans.text_span(
+            #     [r"\diamond-notehead-markup", r"\default-notehead-markup"],
+            #     "=>",
+            #     [13],
+            #     padding=2 + 3,
+            #     id=1,
+            # ),
+            # evans.text_span([r"norm.", r"scr."], "=>", padding=4 + 3, id=2),
+            # evans.text_span([r"clt."], "=|", padding=6 + 3, id=3),
             evans.hairpin("p < f >", [13]),
             lambda _: abjad.detach(abjad.StartSlur(), abjad.select.note(_, -1)),
             # alu.E_color,
@@ -3693,8 +3815,8 @@ maker = evans.SegmentMaker(
             ),
             lambda _: evans.contour(
                 _,
-                # ([0, 1], evans.Lapidary("up", "previous alteration", "octave below")),
-                starting_range=abjad.Contrabass().pitch_range,
+                # ([0, 1], evans.Lapidary("down", "previous alteration", "centroid octave")),
+                starting_range=abjad.PitchRange("[C2, C3]"),
             ),
             lambda _: alu.faberge_swells(_),
             # # alu.D_color,
@@ -3705,7 +3827,7 @@ maker = evans.SegmentMaker(
                 alu.measure_numbers([24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35]),
             ),
             evans.make_tied_notes(),
-            evans.PitchHandler(["b"]),
+            evans.PitchHandler(["b,"]),
             lambda _: baca.hairpin(_, "ff -- niente"),
             # # alu.B_color,
         ),

@@ -68,6 +68,16 @@ maker = evans.SegmentMaker(
     commands=[
         # PREFIX
         evans.attach(
+            "Global Context",
+            abjad.RehearsalMark(number=17),
+            lambda _: abjad.select.leaf(_, 0),
+        ),
+        evans.attach(
+            "Global Context",
+            abjad.RehearsalMark(number=18),
+            lambda _: abjad.select.leaf(_, 5),
+        ),
+        evans.attach(
             "bassoon voice",
             abjad.Clef("bass"),
             lambda _: abjad.select.leaf(_, 0),
@@ -178,7 +188,12 @@ maker = evans.SegmentMaker(
             ("flute voice", alu.measure_numbers([_ for _ in range(12, 17)])),
             alu.C_rhythms(stage=2, rotation=0, extra_counts=[0, 1, 2, 3, 2, 1]),
             evans.loop([19], [-0.5, -1, -0.5, -1.5, 3]),
-            evans.downward_gliss,
+            lambda _: evans.downward_gliss(
+                _,
+                zero_padding=False,
+                # basic_glissando=True,
+            ),
+            lambda _: baca.hairpin(_, "p < f"),
             # alu.C_color,
         ),
         evans.MusicCommand(
@@ -262,7 +277,12 @@ maker = evans.SegmentMaker(
             ("oboe voice", alu.measure_numbers([_ for _ in range(13, 27)])),
             alu.C_rhythms(stage=2, rotation=0, extra_counts=[0, 1, 2, 3, 2, 1]),
             evans.loop([18], [-0.5, -1, -0.5, -1.5, 3]),
-            evans.downward_gliss,
+            lambda _: evans.downward_gliss(
+                _,
+                zero_padding=False,
+                # basic_glissando=True,
+            ),
+            lambda _: baca.hairpin(_, "p < f"),
             # alu.C_color,
         ),
         # CLARINET
@@ -278,7 +298,7 @@ maker = evans.SegmentMaker(
             evans.PitchHandler(
                 alu.constrained_random_walk_from_source(
                     source=alu.constructed_chord_5,
-                    instrument_range=abjad.BassClarinet().pitch_range,
+                    instrument_range=abjad.PitchRange(range_string='[C3, G4]'),
                     rotation=0,
                     random_seed=3,
                     step_list=[1],
@@ -308,7 +328,12 @@ maker = evans.SegmentMaker(
             ("bass clarinet voice", alu.measure_numbers([_ for _ in range(11, 18)])),
             alu.C_rhythms(stage=2, rotation=0, extra_counts=[0, 1, 2, 3, 2, 1]),
             evans.loop([6], [-0.5, -1, -0.5, -1.5, 3]),
-            evans.downward_gliss,
+            lambda _: evans.downward_gliss(
+                _,
+                zero_padding=False,
+                # basic_glissando=True,
+            ),
+            lambda _: baca.hairpin(_, "p < f"),
             # alu.C_color,
         ),
         evans.MusicCommand(
@@ -323,7 +348,7 @@ maker = evans.SegmentMaker(
             evans.PitchHandler(
                 alu.constrained_random_walk_from_source(
                     source=alu.constructed_chord_5,
-                    instrument_range=abjad.BassClarinet().pitch_range,
+                    instrument_range=abjad.PitchRange(range_string='[C3, G4]'),
                     rotation=0,
                     random_seed=4,
                     step_list=[1],
@@ -362,7 +387,7 @@ maker = evans.SegmentMaker(
             evans.PitchHandler(
                 alu.constrained_random_walk_from_source(
                     source=alu.constructed_chord_5,
-                    instrument_range=abjad.Bassoon().pitch_range,
+                    instrument_range=abjad.PitchRange(range_string='[Bb1, Eb3]'),
                     rotation=0,
                     random_seed=5,
                     step_list=[1],
@@ -392,7 +417,12 @@ maker = evans.SegmentMaker(
             ("bassoon voice", alu.measure_numbers([_ for _ in range(10, 23)])),
             alu.C_rhythms(stage=2, rotation=0, extra_counts=[0, 1, 2, 3, 2, 1]),
             evans.loop([5], [-0.5, -1, -0.5, -1.5, 3]),
-            evans.downward_gliss,
+            lambda _: evans.downward_gliss(
+                _,
+                zero_padding=False,
+                # basic_glissando=True,
+            ),
+            lambda _: baca.hairpin(_, "p < f"),
             # alu.C_color,
         ),
         evans.MusicCommand(
@@ -407,7 +437,7 @@ maker = evans.SegmentMaker(
             evans.PitchHandler(
                 alu.constrained_random_walk_from_source(
                     source=alu.constructed_chord_5,
-                    instrument_range=abjad.Bassoon().pitch_range,
+                    instrument_range=abjad.PitchRange(range_string='[Bb1, Eb3]'),
                     rotation=0,
                     random_seed=6,
                     step_list=[1],
@@ -446,7 +476,7 @@ maker = evans.SegmentMaker(
             evans.PitchHandler(
                 alu.constrained_random_walk_from_source(
                     source=alu.constructed_chord_5,
-                    instrument_range=abjad.FrenchHorn().pitch_range,
+                    instrument_range=abjad.PitchRange(range_string='[B2, Bb3]'),
                     rotation=0,
                     random_seed=7,
                     step_list=[1],
@@ -470,10 +500,10 @@ maker = evans.SegmentMaker(
                 ]
             ),
             abjad.Dynamic("ff"),
-            evans.Attachment(
-                abjad.Clef("bass"),
-                selector=lambda _: abjad.select.note(_, 0),
-            ),
+            # evans.Attachment(
+            #     abjad.Clef("bass"),
+            #     selector=lambda _: abjad.select.note(_, 0),
+            # ),
             evans.Attachment(
                 abjad.Clef("treble"),
                 selector=lambda _: abjad.select.note(_, 4),
@@ -482,9 +512,10 @@ maker = evans.SegmentMaker(
         ),
         evans.MusicCommand(
             ("french horn voice", alu.measure_numbers([_ for _ in range(8, 16)])),
-            alu.C_rhythms(stage=2, rotation=0, extra_counts=[0, 1, 2, 3, 2, 1]),
+            alu.C_rhythms(stage=2, rotation=0, extra_counts=[0, 1, 2, 3, 2, 1], slow=True),
             evans.loop([7], [-0.5, -1, -0.5, -1.5, 3]),
-            evans.downward_gliss,
+            lambda _: evans.downward_gliss(_, zero_padding=False, basic_glissando=True),
+            lambda _: baca.hairpin(_, "p < f"),
             # alu.C_color,
         ),
         evans.MusicCommand(
@@ -499,7 +530,7 @@ maker = evans.SegmentMaker(
             evans.PitchHandler(
                 alu.constrained_random_walk_from_source(
                     source=alu.constructed_chord_5,
-                    instrument_range=abjad.FrenchHorn().pitch_range,
+                    instrument_range=abjad.PitchRange(range_string='[B2, Bb3]'),
                     rotation=0,
                     random_seed=8,
                     step_list=[1],
@@ -523,18 +554,18 @@ maker = evans.SegmentMaker(
                 ]
             ),
             abjad.Dynamic("ff"),
-            evans.Attachment(
-                abjad.Clef("bass"),
-                selector=lambda _: abjad.select.note(_, 0),
-            ),
-            evans.Attachment(
-                abjad.Clef("treble"),
-                selector=lambda _: abjad.select.note(_, 32),
-            ),
-            evans.Attachment(
-                abjad.Clef("bass"),
-                selector=lambda _: abjad.select.note(_, 43),
-            ),
+            # evans.Attachment(
+            #     abjad.Clef("bass"),
+            #     selector=lambda _: abjad.select.note(_, 0),
+            # ),
+            # evans.Attachment(
+            #     abjad.Clef("treble"),
+            #     selector=lambda _: abjad.select.note(_, 32),
+            # ),
+            # evans.Attachment(
+            #     abjad.Clef("bass"),
+            #     selector=lambda _: abjad.select.note(_, 43),
+            # ),
             # alu.B_color,
         ),
         # TRUMPET
@@ -578,9 +609,14 @@ maker = evans.SegmentMaker(
         ),
         evans.MusicCommand(
             ("trumpet voice", alu.measure_numbers([_ for _ in range(9, 26)])),
-            alu.C_rhythms(stage=2, rotation=0, extra_counts=[0, 1, 2, 3, 2, 1]),
+            alu.C_rhythms(stage=2, rotation=0, extra_counts=[0, 1, 2, 3, 2, 1], slow=True),
             evans.loop([20], [-0.5, -1, -0.5, -1.5, 3]),
-            evans.downward_gliss,
+            lambda _: evans.downward_gliss(
+                _,
+                zero_padding=False,
+                basic_glissando=True,
+            ),
+            lambda _: baca.hairpin(_, "p < f"),
             # alu.C_color,
         ),
         evans.MusicCommand(
@@ -634,7 +670,7 @@ maker = evans.SegmentMaker(
             evans.PitchHandler(
                 alu.constrained_random_walk_from_source(
                     source=alu.constructed_chord_5,
-                    instrument_range=abjad.TenorTrombone().pitch_range,
+                    instrument_range=abjad.PitchRange(range_string='[E2, G3]'),
                     rotation=0,
                     random_seed=11,
                     step_list=[1],
@@ -664,7 +700,12 @@ maker = evans.SegmentMaker(
             ("tenor trombone voice", alu.measure_numbers([_ for _ in range(7, 20)])),
             alu.C_rhythms(stage=2, rotation=0, extra_counts=[0, 1, 2, 3, 2, 1]),
             evans.loop([4], [-0.5, -1, -0.5, -1.5, 3]),
-            evans.downward_gliss,
+            lambda _: evans.downward_gliss(
+                _,
+                zero_padding=False,
+                # basic_glissando=True,
+            ),
+            lambda _: baca.hairpin(_, "p < f"),
             # alu.C_color,
         ),
         evans.MusicCommand(
@@ -679,7 +720,7 @@ maker = evans.SegmentMaker(
             evans.PitchHandler(
                 alu.constrained_random_walk_from_source(
                     source=alu.constructed_chord_5,
-                    instrument_range=abjad.TenorTrombone().pitch_range,
+                    instrument_range=abjad.PitchRange(range_string='[E2, G3]'),
                     rotation=0,
                     random_seed=12,
                     step_list=[1],
@@ -746,9 +787,10 @@ maker = evans.SegmentMaker(
         ),
         evans.MusicCommand(
             ("tuba voice", alu.measure_numbers([_ for _ in range(6, 15)])),
-            alu.C_rhythms(stage=2, rotation=0, extra_counts=[0, 1, 2, 3, 2, 1]),
+            alu.C_rhythms(stage=2, rotation=0, extra_counts=[0, 1, 2, 3, 2, 1], slow=True),
             evans.loop([3], [-0.5, -1, -0.5, -1.5, 3]),
-            evans.downward_gliss,
+            lambda _: evans.downward_gliss(_, zero_padding=False, basic_glissando=True),
+            lambda _: baca.hairpin(_, "p < f"),
             # alu.C_color,
         ),
         evans.MusicCommand(
@@ -896,7 +938,7 @@ maker = evans.SegmentMaker(
             ),
             abjad.Dynamic("mp"),
             abjad.LilyPondLiteral(r"\staff-line-count #1"),
-            abjad.Markup(r'\boxed-markup "snare" #1'),
+            abjad.Markup(r'\boxed-markup "tam tam" #1'),
             abjad.Clef("percussion"),
             # alu.B_color,
         ),
@@ -945,7 +987,7 @@ maker = evans.SegmentMaker(
             ),
             abjad.Dynamic("mp"),
             abjad.LilyPondLiteral(r"\staff-line-count #1"),
-            abjad.Markup(r'\boxed-markup "snare" #1'),
+            abjad.Markup(r'\boxed-markup "tam tam" #1'),
             abjad.Clef("percussion"),
             # alu.B_color,
         ),
@@ -1046,7 +1088,12 @@ maker = evans.SegmentMaker(
             ("violin 1 voice", alu.measure_numbers([_ for _ in range(7, 12)])),
             alu.C_rhythms(stage=2, rotation=0, extra_counts=[0, 1, 2, 3, 2, 1]),
             evans.loop([10], [-0.5, -1, -0.5, -1.5, 3]),
-            evans.downward_gliss,
+            lambda _: evans.downward_gliss(
+                _,
+                zero_padding=False,
+                # basic_glissando=True,
+            ),
+            lambda _: baca.hairpin(_, "p < f"),
             # alu.C_color,
         ),
         evans.MusicCommand(
@@ -1130,7 +1177,12 @@ maker = evans.SegmentMaker(
             ("violin 2 voice", alu.measure_numbers([_ for _ in range(9, 21)])),
             alu.C_rhythms(stage=2, rotation=0, extra_counts=[0, 1, 2, 3, 2, 1]),
             evans.loop([16], [-0.5, -1, -0.5, -1.5, 3]),
-            evans.downward_gliss,
+            lambda _: evans.downward_gliss(
+                _,
+                zero_padding=False,
+                # basic_glissando=True,
+            ),
+            lambda _: baca.hairpin(_, "p < f"),
             # alu.C_color,
         ),
         evans.MusicCommand(
@@ -1214,7 +1266,12 @@ maker = evans.SegmentMaker(
             ("viola voice", alu.measure_numbers([_ for _ in range(10, 13)])),
             alu.C_rhythms(stage=2, rotation=0, extra_counts=[0, 1, 2, 3, 2, 1]),
             evans.loop([8], [-0.5, -1, -0.5, -1.5, 3]),
-            evans.downward_gliss,
+            lambda _: evans.downward_gliss(
+                _,
+                zero_padding=False,
+                # basic_glissando=True,
+            ),
+            lambda _: baca.hairpin(_, "p < f"),
             # alu.C_color,
         ),
         evans.MusicCommand(
@@ -1268,7 +1325,7 @@ maker = evans.SegmentMaker(
             evans.PitchHandler(
                 alu.constrained_random_walk_from_source(
                     source=alu.constructed_chord_5,
-                    instrument_range=abjad.Cello().pitch_range,
+                    instrument_range=abjad.PitchRange(range_string='[C2, Eb3]'),
                     rotation=0,
                     random_seed=21,
                     step_list=[1],
@@ -1298,7 +1355,12 @@ maker = evans.SegmentMaker(
             ("cello voice", alu.measure_numbers([_ for _ in range(12, 20)])),
             alu.C_rhythms(stage=2, rotation=0, extra_counts=[0, 1, 2, 3, 2, 1]),
             evans.loop([2], [-0.5, -1, -0.5, -1.5, 3]),
-            evans.downward_gliss,
+            lambda _: evans.downward_gliss(
+                _,
+                zero_padding=False,
+                # basic_glissando=True,
+            ),
+            lambda _: baca.hairpin(_, "p < f"),
             # alu.C_color,
         ),
         evans.MusicCommand(
@@ -1313,7 +1375,7 @@ maker = evans.SegmentMaker(
             evans.PitchHandler(
                 alu.constrained_random_walk_from_source(
                     source=alu.constructed_chord_5,
-                    instrument_range=abjad.Cello().pitch_range,
+                    instrument_range=abjad.PitchRange(range_string='[C2, Eb3]'),
                     rotation=0,
                     random_seed=22,
                     step_list=[1],
@@ -1382,7 +1444,12 @@ maker = evans.SegmentMaker(
             ("contrabass voice", alu.measure_numbers([_ for _ in range(11, 17)])),
             alu.C_rhythms(stage=2, rotation=0, extra_counts=[0, 1, 2, 3, 2, 1]),
             evans.loop([-11], [-0.5, -1, -0.5, -1.5, 3]),
-            evans.downward_gliss,
+            lambda _: evans.downward_gliss(
+                _,
+                zero_padding=False,
+                # basic_glissando=True,
+            ),
+            lambda _: baca.hairpin(_, "p < f"),
             # alu.C_color,
         ),
         evans.MusicCommand(

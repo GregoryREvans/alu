@@ -239,5 +239,14 @@ info = {
             site="before",
             directed=False,
         ),
+        Dynamic(
+            name="f",
+            command=None,
+            format_hairpin_stop=False,
+            hide=False,
+            leak=False,
+            name_is_textual=False,
+            ordinal=2,
+        ),
     ],
 }

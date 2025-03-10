@@ -76,9 +76,15 @@ maker = evans.SegmentMaker(
             abjad.LilyPondLiteral(r"\staff-line-count #4"),
             lambda _: abjad.select.leaf(_, 0),
         ),
-        evans.attach(
+        # evans.attach(
+        #     "percussion 1 voice",
+        #     abjad.Markup(r"\boxed-markup woodblocks #1"),
+        #     lambda _: abjad.select.leaf(_, 0),
+        #     direction=abjad.UP,
+        # ),
+        evans.attach( # revision
             "percussion 1 voice",
-            abjad.Markup(r"\boxed-markup woodblocks #1"),
+            abjad.Markup(r"\boxed-markup toms #1"),
             lambda _: abjad.select.leaf(_, 0),
             direction=abjad.UP,
         ),
@@ -92,9 +98,15 @@ maker = evans.SegmentMaker(
             abjad.LilyPondLiteral(r"\staff-line-count #4"),
             lambda _: abjad.select.leaf(_, 0),
         ),
-        evans.attach(
+        # evans.attach(
+        #     "percussion 2 voice",
+        #     abjad.Markup(r'\boxed-markup "slit drum" #1'),
+        #     lambda _: abjad.select.leaf(_, 0),
+        #     direction=abjad.UP,
+        # ),
+        evans.attach( # revision
             "percussion 2 voice",
-            abjad.Markup(r'\boxed-markup "slit drum" #1'),
+            abjad.Markup(r'\boxed-markup "toms" #1'),
             lambda _: abjad.select.leaf(_, 0),
             direction=abjad.UP,
         ),
@@ -168,10 +180,22 @@ maker = evans.SegmentMaker(
             # # alu.B_color,
         ),
         # HORN
-        evans.MusicCommand(
+        # evans.MusicCommand(
+        #     ("french horn voice", alu.measure_numbers([1, 2, 3, 4])),
+        #     evans.make_tied_notes(),
+        #     abjad.Dynamic("pp"),
+        #     # # alu.B_color,
+        # ),
+        evans.MusicCommand( # revision
             ("french horn voice", alu.measure_numbers([1, 2, 3, 4])),
-            evans.make_tied_notes(),
-            abjad.Dynamic("pp"),
+            evans.talea(evans.Sequence([2, 4, 3, 5]).rotate(0), 8),
+            evans.ArticulationHandler(["tremolo"]),
+            abjad.Dynamic("f"),
+            abjad.StartHairpin(">"),
+            evans.Attachment(
+                abjad.Dynamic("mp"),
+                selector=lambda _: abjad.select.leaf(_, -1),
+            ),
             # # alu.B_color,
         ),
         evans.MusicCommand(
@@ -186,10 +210,22 @@ maker = evans.SegmentMaker(
             # # alu.B_color,
         ),
         # TRUMPET
-        evans.MusicCommand(
+        # evans.MusicCommand(
+        #     ("trumpet voice", alu.measure_numbers([1, 2, 3, 4])),
+        #     evans.make_tied_notes(),
+        #     abjad.Dynamic("pp"),
+        #     # # alu.B_color,
+        # ),
+        evans.MusicCommand( # revision
             ("trumpet voice", alu.measure_numbers([1, 2, 3, 4])),
-            evans.make_tied_notes(),
-            abjad.Dynamic("pp"),
+            evans.talea(evans.Sequence([2, 4, 3, 5]).rotate(1), 8),
+            evans.ArticulationHandler(["tremolo"]),
+            abjad.Dynamic("f"),
+            abjad.StartHairpin(">"),
+            evans.Attachment(
+                abjad.Dynamic("mp"),
+                selector=lambda _: abjad.select.leaf(_, -1),
+            ),
             # # alu.B_color,
         ),
         evans.MusicCommand(
@@ -204,10 +240,22 @@ maker = evans.SegmentMaker(
             # # alu.B_color,
         ),
         # TROMBONE
-        evans.MusicCommand(
+        # evans.MusicCommand(
+        #     ("tenor trombone voice", alu.measure_numbers([1, 2, 3, 4])),
+        #     evans.make_tied_notes(),
+        #     abjad.Dynamic("pp"),
+        #     # # alu.B_color,
+        # ),
+        evans.MusicCommand( # revision
             ("tenor trombone voice", alu.measure_numbers([1, 2, 3, 4])),
-            evans.make_tied_notes(),
-            abjad.Dynamic("pp"),
+            evans.talea(evans.Sequence([2, 4, 3, 5]).rotate(2), 8),
+            evans.ArticulationHandler(["tremolo"]),
+            abjad.Dynamic("f"),
+            abjad.StartHairpin(">"),
+            evans.Attachment(
+                abjad.Dynamic("mp"),
+                selector=lambda _: abjad.select.leaf(_, -1),
+            ),
             # # alu.B_color,
         ),
         evans.MusicCommand(
@@ -222,10 +270,22 @@ maker = evans.SegmentMaker(
             # # alu.B_color,
         ),
         # TUBA
-        evans.MusicCommand(
+        # evans.MusicCommand(
+        #     ("tuba voice", alu.measure_numbers([1, 2, 3, 4])),
+        #     evans.make_tied_notes(),
+        #     abjad.Dynamic("pp"),
+        #     # # alu.B_color,
+        # ),
+        evans.MusicCommand( # revision
             ("tuba voice", alu.measure_numbers([1, 2, 3, 4])),
-            evans.make_tied_notes(),
-            abjad.Dynamic("pp"),
+            evans.talea(evans.Sequence([2, 4, 3, 5]).rotate(3), 8),
+            evans.ArticulationHandler(["tremolo"]),
+            abjad.Dynamic("f"),
+            abjad.StartHairpin(">"),
+            evans.Attachment(
+                abjad.Dynamic("mp"),
+                selector=lambda _: abjad.select.leaf(_, -1),
+            ),
             # # alu.B_color,
         ),
         evans.MusicCommand(
@@ -240,7 +300,23 @@ maker = evans.SegmentMaker(
             # # alu.B_color,
         ),
         # PERCUSSION 1
-        evans.MusicCommand(
+        # evans.MusicCommand(
+        #     ("percussion 1 voice", [_ - 1 for _ in [1, 2, 3, 4, 5, 6]]),
+        #     evans.accelerando(
+        #         [(1, 8), (1, 4), (1, 16)],
+        #         preprocessor=evans.make_preprocessor(fuse_counts=[2, 1, 1, 3, 2]),
+        #     ),
+        #     evans.Callable(
+        #         rmakers.force_rest,
+        #         selector=lambda _: abjad.select.get(
+        #             abjad.select.notes(_), ~abjad.index([0, 2, 3, 5, 6, 7], 9)
+        #         ),
+        #     ),
+        #     evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
+        #     abjad.Dynamic("mf"),
+        #     # # alu.A_color,
+        # ),
+        evans.MusicCommand( # revision
             ("percussion 1 voice", [_ - 1 for _ in [1, 2, 3, 4, 5, 6]]),
             evans.accelerando(
                 [(1, 8), (1, 4), (1, 16)],
@@ -253,7 +329,7 @@ maker = evans.SegmentMaker(
                 ),
             ),
             evans.PitchHandler([-1, 1, -1, 1, 3, -1, 1, -3], staff_positions=True),
-            abjad.Dynamic("mf"),
+            abjad.Dynamic("ff"),
             # # alu.A_color,
         ),
         evans.MusicCommand(  # modulation!
@@ -276,7 +352,27 @@ maker = evans.SegmentMaker(
             # # alu.A_color,
         ),
         # PERCUSSION 2
-        evans.MusicCommand(
+        # evans.MusicCommand(
+        #     ("percussion 2 voice", [_ - 1 for _ in [1, 2, 3, 4, 5, 6, 7]]),
+        #     evans.accelerando(
+        #         [(1, 4), (1, 8), (1, 16)],
+        #         [(1, 9), (1, 3), (1, 16)],
+        #         # preprocessor=None,
+        #     ),
+        #     evans.Callable(
+        #         rmakers.force_rest,
+        #         selector=lambda _: abjad.select.get(
+        #             abjad.select.notes(_), ~abjad.index([0, 2, 3, 5, 6, 7], 9)
+        #         ),
+        #     ),
+        #     evans.PitchHandler(
+        #         abjad.sequence.reverse([-1, 1, -1, 1, 3, -1, 1, -3]),
+        #         staff_positions=True,
+        #     ),
+        #     abjad.Dynamic("mf"),
+        #     # # alu.A_color,
+        # ),
+        evans.MusicCommand( # revision
             ("percussion 2 voice", [_ - 1 for _ in [1, 2, 3, 4, 5, 6, 7]]),
             evans.accelerando(
                 [(1, 4), (1, 8), (1, 16)],
@@ -293,175 +389,253 @@ maker = evans.SegmentMaker(
                 abjad.sequence.reverse([-1, 1, -1, 1, 3, -1, 1, -3]),
                 staff_positions=True,
             ),
-            abjad.Dynamic("mf"),
+            abjad.Dynamic("ff"),
             # # alu.A_color,
         ),
         # PIANO 1
         # PIANO 2
         # VIOLIN 1
-        evans.MusicCommand(
+        # evans.MusicCommand(
+        #     ("violin 1 voice", alu.measure_numbers([5, 6, 7])),
+        #     alu.C_rhythms(
+        #         stage=6,
+        #         rotation=0,
+        #         number_of_voices=5,
+        #         denominator=8,
+        #         extra_counts=None,
+        #     ),
+        #     evans.PitchHandler(
+        #         [
+        #             int(_)
+        #             for _ in evans.PitchSegment([0, 2, 0, 3, -1, 0, -1, -2])
+        #             .mod(9)
+        #             .transpose(-4)
+        #         ],
+        #         staff_positions=True,
+        #         clef="treble",
+        #     ),
+        #     alu.alternate_full_bows(0),
+        #     lambda _: abjad.glissando(_),
+        #     abjad.Dynamic("mp"),
+        #     abjad.StartHairpin("<"),
+        #     evans.Attachment(
+        #         abjad.Dynamic("fff"),
+        #         selector=lambda _: abjad.select.leaf(_, -1),
+        #     ),
+        #     # # alu.C_color,
+        # ),
+        evans.MusicCommand( # revision
             ("violin 1 voice", alu.measure_numbers([5, 6, 7])),
-            alu.C_rhythms(
-                stage=6,
-                rotation=0,
-                number_of_voices=5,
-                denominator=8,
-                extra_counts=None,
+            evans.talea(
+                evans.Sequence([1, 2, 3, 4]).random_sequence(total_length=150, random_seed=1),
+                16,
+                extra_counts=evans.Sequence([0, 2, 1, 3, 1, 2]).rotate(0),
+                preprocessor=evans.make_preprocessor(quarters=True),
             ),
             evans.PitchHandler(
-                [
-                    int(_)
-                    for _ in evans.PitchSegment([0, 2, 0, 3, -1, 0, -1, -2])
-                    .mod(9)
-                    .transpose(-4)
-                ],
-                staff_positions=True,
-                clef="treble",
+                evans.Sequence(["g", "gqs", "gs", "gtqs", "a"]).random_sequence(total_length=150, random_seed=0).remove_repeats(),
             ),
-            alu.alternate_full_bows(0),
-            lambda _: abjad.glissando(_),
-            abjad.Dynamic("mp"),
-            abjad.StartHairpin("<"),
-            evans.Attachment(
-                abjad.Dynamic("fff"),
-                selector=lambda _: abjad.select.leaf(_, -1),
-            ),
+            abjad.Dynamic("f"),
             # # alu.C_color,
         ),
         # VIOLIN 2
-        evans.MusicCommand(
+        # evans.MusicCommand(
+        #     ("violin 2 voice", alu.measure_numbers([5, 6, 7])),
+        #     alu.C_rhythms(
+        #         stage=6,
+        #         rotation=1,
+        #         number_of_voices=6,
+        #         denominator=8,
+        #         extra_counts=None,
+        #     ),
+        #     evans.PitchHandler(
+        #         [
+        #             int(_)
+        #             for _ in evans.PitchSegment([0, 2, 0, 3, -1, 0, -1, -2])
+        #             .invert(0)
+        #             .mod(9)
+        #             .transpose(-4)
+        #         ],
+        #         staff_positions=True,
+        #         clef="treble",
+        #     ),
+        #     alu.alternate_full_bows(1),
+        #     lambda _: abjad.glissando(_),
+        #     abjad.Dynamic("mp"),
+        #     abjad.StartHairpin("<"),
+        #     evans.Attachment(
+        #         abjad.Dynamic("fff"),
+        #         selector=lambda _: abjad.select.leaf(_, -1),
+        #     ),
+        #     # # alu.C_color,
+        # ),
+        evans.MusicCommand( # revision
             ("violin 2 voice", alu.measure_numbers([5, 6, 7])),
-            alu.C_rhythms(
-                stage=6,
-                rotation=1,
-                number_of_voices=6,
-                denominator=8,
-                extra_counts=None,
+            evans.talea(
+                evans.Sequence([1, 2, 3, 4]).random_sequence(total_length=150, random_seed=2),
+                16,
+                extra_counts=evans.Sequence([0, 2, 1, 3, 1, 2]).rotate(1),
+                preprocessor=evans.make_preprocessor(quarters=True),
             ),
             evans.PitchHandler(
-                [
-                    int(_)
-                    for _ in evans.PitchSegment([0, 2, 0, 3, -1, 0, -1, -2])
-                    .invert(0)
-                    .mod(9)
-                    .transpose(-4)
-                ],
-                staff_positions=True,
-                clef="treble",
+                evans.Sequence(["g", "gqs", "gs", "gtqs", "a"]).random_sequence(total_length=150, random_seed=1).remove_repeats(),
             ),
-            alu.alternate_full_bows(1),
-            lambda _: abjad.glissando(_),
-            abjad.Dynamic("mp"),
-            abjad.StartHairpin("<"),
-            evans.Attachment(
-                abjad.Dynamic("fff"),
-                selector=lambda _: abjad.select.leaf(_, -1),
-            ),
+            abjad.Dynamic("f"),
             # # alu.C_color,
         ),
         # VIOLA
-        evans.MusicCommand(
+        # evans.MusicCommand(
+        #     ("viola voice", alu.measure_numbers([7])),
+        #     alu.C_rhythms(
+        #         stage=6,
+        #         rotation=2,
+        #         number_of_voices=7,
+        #         denominator=8,
+        #         extra_counts=None,
+        #     ),
+        #     evans.PitchHandler(
+        #         [
+        #             int(_)
+        #             for _ in evans.PitchSegment([0, 2, 0, 3, -1, 0, -1, -2])
+        #             .invert(1)
+        #             .retrograde()
+        #             .mod(9)
+        #             .transpose(-4)
+        #         ],
+        #         staff_positions=True,
+        #         clef="alto",
+        #     ),
+        #     alu.alternate_full_bows(2),
+        #     lambda _: abjad.glissando(_),
+        #     abjad.Dynamic("mp"),
+        #     abjad.StartHairpin("<"),
+        #     evans.Attachment(
+        #         abjad.Dynamic("fff"),
+        #         selector=lambda _: abjad.select.leaf(_, -1),
+        #     ),
+        #     # # alu.C_color,
+        # ),
+        evans.MusicCommand( # revision
             ("viola voice", alu.measure_numbers([7])),
-            alu.C_rhythms(
-                stage=6,
-                rotation=2,
-                number_of_voices=7,
-                denominator=8,
-                extra_counts=None,
+            evans.talea(
+                evans.Sequence([1, 2, 3, 4]).random_sequence(total_length=150, random_seed=3),
+                16,
+                extra_counts=evans.Sequence([0, 2, 1, 3, 1, 2]).rotate(2),
+                preprocessor=evans.make_preprocessor(quarters=True),
             ),
             evans.PitchHandler(
-                [
-                    int(_)
-                    for _ in evans.PitchSegment([0, 2, 0, 3, -1, 0, -1, -2])
-                    .invert(1)
-                    .retrograde()
-                    .mod(9)
-                    .transpose(-4)
-                ],
-                staff_positions=True,
-                clef="alto",
+                evans.Sequence(["c", "cqs", "cs", "ctqs", "d"]).random_sequence(total_length=150, random_seed=2).remove_repeats(),
             ),
-            alu.alternate_full_bows(2),
-            lambda _: abjad.glissando(_),
-            abjad.Dynamic("mp"),
-            abjad.StartHairpin("<"),
-            evans.Attachment(
-                abjad.Dynamic("fff"),
-                selector=lambda _: abjad.select.leaf(_, -1),
-            ),
+            abjad.Dynamic("f"),
             # # alu.C_color,
         ),
         # CELLO
-        evans.MusicCommand(
+        # evans.MusicCommand(
+        #     ("cello voice", alu.measure_numbers([6, 7])),
+        #     alu.C_rhythms(
+        #         stage=6,
+        #         rotation=3,
+        #         number_of_voices=8,
+        #         denominator=8,
+        #         extra_counts=None,
+        #     ),
+        #     evans.PitchHandler(
+        #         [
+        #             int(_)
+        #             for _ in evans.PitchSegment([0, 2, 0, 3, -1, 0, -1, -2])
+        #             .invert(2)
+        #             .retrograde()
+        #             .multiply(2)
+        #             .mod(9)
+        #             .transpose(-4)
+        #         ],
+        #         staff_positions=True,
+        #         clef="bass",
+        #     ),
+        #     alu.alternate_full_bows(3),
+        #     lambda _: abjad.glissando(_),
+        #     abjad.Dynamic("mp"),
+        #     abjad.StartHairpin("<"),
+        #     evans.Attachment(
+        #         abjad.Dynamic("fff"),
+        #         selector=lambda _: abjad.select.leaf(_, -1),
+        #     ),
+        #     # # alu.C_color,
+        # ),
+        evans.MusicCommand( # revision
             ("cello voice", alu.measure_numbers([6, 7])),
-            alu.C_rhythms(
-                stage=6,
-                rotation=3,
-                number_of_voices=8,
-                denominator=8,
-                extra_counts=None,
+            evans.talea(
+                evans.Sequence([1, 2, 3, 4]).random_sequence(total_length=150, random_seed=4),
+                16,
+                extra_counts=evans.Sequence([0, 2, 1, 3, 1, 2]).rotate(3),
+                preprocessor=evans.make_preprocessor(quarters=True),
             ),
             evans.PitchHandler(
-                [
-                    int(_)
-                    for _ in evans.PitchSegment([0, 2, 0, 3, -1, 0, -1, -2])
-                    .invert(2)
-                    .retrograde()
-                    .multiply(2)
-                    .mod(9)
-                    .transpose(-4)
-                ],
-                staff_positions=True,
-                clef="bass",
+                evans.Sequence(["c,", "cqs,", "cs,", "ctqs,", "d,"]).random_sequence(total_length=150, random_seed=3).remove_repeats(),
             ),
-            alu.alternate_full_bows(3),
-            lambda _: abjad.glissando(_),
-            abjad.Dynamic("mp"),
-            abjad.StartHairpin("<"),
-            evans.Attachment(
-                abjad.Dynamic("fff"),
-                selector=lambda _: abjad.select.leaf(_, -1),
-            ),
+            abjad.Dynamic("f"),
             # # alu.C_color,
         ),
         # BASS
-        evans.MusicCommand(
+        # evans.MusicCommand(
+        #     ("contrabass voice", alu.measure_numbers([5, 6, 7])),
+        #     alu.C_rhythms(
+        #         stage=6,
+        #         rotation=4,
+        #         number_of_voices=9,
+        #         denominator=8,
+        #         extra_counts=None,
+        #     ),
+        #     evans.PitchHandler(
+        #         [
+        #             int(_)
+        #             for _ in evans.PitchSegment([0, 2, 0, 3, -1, 0, -1, -2])
+        #             .invert(2)
+        #             .retrograde()
+        #             .multiply(3)
+        #             .mod(9)
+        #             .transpose(-4)
+        #         ],
+        #         staff_positions=True,
+        #         clef="bass_8",
+        #     ),
+        #     alu.alternate_full_bows(4),
+        #     lambda _: abjad.glissando(_),
+        #     abjad.Dynamic("mp"),
+        #     abjad.StartHairpin("<"),
+        #     evans.Attachment(
+        #         abjad.Dynamic("fff"),
+        #         selector=lambda _: abjad.select.leaf(_, -1),
+        #     ),
+        #     # # alu.C_color,
+        # ),
+        evans.MusicCommand( # revision
             ("contrabass voice", alu.measure_numbers([5, 6, 7])),
-            alu.C_rhythms(
-                stage=6,
-                rotation=4,
-                number_of_voices=9,
-                denominator=8,
-                extra_counts=None,
+            evans.talea(
+                evans.Sequence([1, 2, 3, 4]).random_sequence(total_length=150, random_seed=5),
+                16,
+                extra_counts=evans.Sequence([0, 2, 1, 3, 1, 2]).rotate(4),
+                preprocessor=evans.make_preprocessor(quarters=True),
             ),
             evans.PitchHandler(
-                [
-                    int(_)
-                    for _ in evans.PitchSegment([0, 2, 0, 3, -1, 0, -1, -2])
-                    .invert(2)
-                    .retrograde()
-                    .multiply(3)
-                    .mod(9)
-                    .transpose(-4)
-                ],
-                staff_positions=True,
-                clef="bass_8",
+                evans.Sequence(["e,,", "eqs,,", "f,,", "fqs,,", "fs,,"]).random_sequence(total_length=150, random_seed=4).remove_repeats(),
             ),
-            alu.alternate_full_bows(4),
-            lambda _: abjad.glissando(_),
-            abjad.Dynamic("mp"),
-            abjad.StartHairpin("<"),
-            evans.Attachment(
-                abjad.Dynamic("fff"),
-                selector=lambda _: abjad.select.leaf(_, -1),
-            ),
+            abjad.Dynamic("f"),
             # # alu.C_color,
         ),
         # SUFFIX
         evans.call(
             "Staff Group",
+            # evans.PitchHandler(
+            #     evans.Sequence([11, 9, 4, 10, 2, 3, 1, 0, 6, 7, 5, 8])
+            #     .matrix()
+            #     .potamia()
+            #     .flatten(),
+            #     forget=False,
+            #     to_ties=False,
+            # ),
             evans.PitchHandler(
-                evans.Sequence([11, 9, 4, 10, 2, 3, 1, 0, 6, 7, 5, 8])
+                evans.Sequence([9, 10, 8, 11, 7, 0, 6, 1, 5, 2, 4, 3])
                 .matrix()
                 .potamia()
                 .flatten(),
@@ -512,9 +686,9 @@ maker = evans.SegmentMaker(
                 _,
                 (
                     [0, 1],
-                    evans.Lapidary("down", "previous alteration", "centroid octave"),
+                    evans.Lapidary("down", "previous alteration", "octave above"),
                 ),
-                starting_range=abjad.BassClarinet().pitch_range,
+                starting_range=abjad.PitchRange("[C3, C4]"),
             ),
             evans.select_measures([3, 4, 5, 6]),
         ),
@@ -526,7 +700,7 @@ maker = evans.SegmentMaker(
                     [0, 1],
                     evans.Lapidary("down", "previous alteration", "centroid octave"),
                 ),
-                starting_range=abjad.Bassoon().pitch_range,
+                starting_range=abjad.PitchRange("[C3, C4]"),
             ),
             evans.select_measures([3, 4, 5, 6]),
         ),
@@ -560,9 +734,9 @@ maker = evans.SegmentMaker(
                 _,
                 (
                     [0, 1],
-                    evans.Lapidary("down", "previous alteration", "centroid octave"),
+                    evans.Lapidary("down", "previous alteration", "octave below"),
                 ),
-                starting_range=abjad.TenorTrombone().pitch_range,
+                starting_range=abjad.PitchRange("[C3, C4]"),
             ),
             evans.select_measures([0, 1, 2, 3, 4, 5, 6]),
         ),

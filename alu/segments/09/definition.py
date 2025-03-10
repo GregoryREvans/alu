@@ -52,6 +52,21 @@ maker = evans.SegmentMaker(
     commands=[
         # PREFIX
         evans.attach(
+            "Global Context",
+            abjad.RehearsalMark(number=21),
+            lambda _: abjad.select.leaf(_, 0),
+        ),
+        evans.attach(
+            "Global Context",
+            abjad.RehearsalMark(number=22),
+            lambda _: abjad.select.leaf(_, 10),
+        ),
+        evans.attach(
+            "Global Context",
+            abjad.RehearsalMark(number=23),
+            lambda _: abjad.select.leaf(_, 20),
+        ),
+        evans.attach(
             "bassoon voice",
             abjad.Clef("bass"),
             lambda _: abjad.select.leaf(_, 0),

@@ -7,6 +7,7 @@
                   %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 1]
                 \tempo 4=70
+                \mark #39
                 \mark \markup \bold {  }
                   %! scaling time signatures
                 \time 4/4
@@ -78,6 +79,7 @@
                   %! COMMENT_MEASURE_NUMBERS
                   %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 11]
+                \mark #40
                   %! scaling time signatures
                 \time 4/4
                 s1 * 1
@@ -141,6 +143,7 @@
                   %! COMMENT_MEASURE_NUMBERS
                   %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 20]
+                \mark #41
                   %! scaling time signatures
                 \time 4/4
                 s1 * 1
@@ -253,7 +256,7 @@
                     \tag #'group2
                     {
 
-                        \context PianoStaff = "sub group 1"
+                        \context StaffGroup = "sub group 1"
                         <<
 
                             \tag #'voice1
@@ -2075,7 +2078,7 @@
                     \tag #'group3
                     {
 
-                        \context PianoStaff = "sub group 2"
+                        \context StaffGroup = "sub group 2"
                         <<
 
                             \tag #'voice6
@@ -3247,50 +3250,132 @@
 
                                         r4
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [percussion 1 voice measure 15]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        \times 2/3
+                                        {
 
-                                        R1 * 3/8
+                                              %! COMMENT_MEASURE_NUMBERS
+                                              %! evans.SegmentMaker.comment_measure_numbers()
+                                            % [percussion 1 voice measure 15]
+                                            r16
+
+                                            c'4
+                                            - \tweak circled-tip ##t
+                                            \<
+                                            ~
+
+                                            c'16
+                                            ~
+
+                                        }
+
+                                        \times 4/5
+                                        {
+
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            c'16
+
+                                            \revert Staff.Stem.stemlet-length
+                                            r4
+                                            \f
+
+                                        }
+
+                                        r4
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 1 voice measure 16]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        r2.
 
-                                        R1 * 1/2
+                                        c'4
+                                        - \tweak circled-tip ##t
+                                        \<
+                                        ~
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [percussion 1 voice measure 17]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        \times 4/5
+                                        {
 
-                                        R1 * 1/2
+                                              %! COMMENT_MEASURE_NUMBERS
+                                              %! evans.SegmentMaker.comment_measure_numbers()
+                                            % [percussion 1 voice measure 17]
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            c'16
+
+                                            \revert Staff.Stem.stemlet-length
+                                            r4
+                                            \f
+
+                                        }
+
+                                        r4
+
+                                        \times 4/5
+                                        {
+
+                                            c'4
+                                            - \tweak circled-tip ##t
+                                            \<
+
+                                            r16
+                                            \f
+
+                                        }
+
+                                        r4
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 1 voice measure 18]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 5/8
+                                        r2.
 
-                                        R1 * 5/8
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        r8.
+                                        [
+
+                                        \revert Staff.Stem.stemlet-length
+                                        c'16
+                                        ]
+                                        - \tweak circled-tip ##t
+                                        \<
+                                        ~
+
+                                        \times 4/5
+                                        {
+
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            c'8.
+                                            [
+
+                                            \revert Staff.Stem.stemlet-length
+                                            r8
+                                            \f
+                                            ]
+
+                                        }
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 1 voice measure 19]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        r2
 
-                                        R1 * 1/2
+                                        c'4
+                                        - \tweak circled-tip ##t
+                                        \<
+                                        ~
+
+                                        \times 4/5
+                                        {
+
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            c'8
+                                            [
+
+                                            \revert Staff.Stem.stemlet-length
+                                            r8.
+                                            \f
+                                            ]
+
+                                        }
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
@@ -3635,55 +3720,131 @@
                                             ]
                                             - \tweak circled-tip ##t
                                             \<
+                                            ~
 
                                         }
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [percussion 2 voice measure 15]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
-                                          %! applying indicators
-                                        \f
+                                        \times 4/5
+                                        {
 
-                                        R1 * 3/8
+                                              %! COMMENT_MEASURE_NUMBERS
+                                              %! evans.SegmentMaker.comment_measure_numbers()
+                                            % [percussion 2 voice measure 15]
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            c'8.
+                                            [
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [percussion 2 voice measure 16]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                            \revert Staff.Stem.stemlet-length
+                                            r8
+                                            \f
+                                            ]
 
-                                        R1 * 1/2
+                                        }
+
+                                        r2
+
+                                        \times 2/3
+                                        {
+
+                                              %! COMMENT_MEASURE_NUMBERS
+                                              %! evans.SegmentMaker.comment_measure_numbers()
+                                            % [percussion 2 voice measure 16]
+                                            r8
+
+                                            c'4
+                                            - \tweak circled-tip ##t
+                                            \<
+                                            ~
+
+                                        }
+
+                                        \times 4/5
+                                        {
+
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            c'16
+
+                                            \revert Staff.Stem.stemlet-length
+                                            r4
+                                            \f
+
+                                        }
+
+                                        r2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 2 voice measure 17]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        r4
 
-                                        R1 * 1/2
+                                        \times 4/5
+                                        {
+
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            r4
+
+                                            \revert Staff.Stem.stemlet-length
+                                            c'16
+                                            - \tweak circled-tip ##t
+                                            \<
+                                            ~
+
+                                        }
+
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        c'8.
+                                        [
+
+                                        \revert Staff.Stem.stemlet-length
+                                        r16
+                                        \f
+                                        ]
+
+                                        r4
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 2 voice measure 18]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 5/8
+                                        r4
 
-                                        R1 * 5/8
+                                        \times 4/5
+                                        {
+
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            r8.
+                                            [
+
+                                            \revert Staff.Stem.stemlet-length
+                                            c'8
+                                            ]
+                                            - \tweak circled-tip ##t
+                                            \<
+                                            ~
+
+                                        }
+
+                                        c'4
+
+                                        r2
+                                        \f
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [percussion 2 voice measure 19]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        r2.
 
-                                        R1 * 1/2
+                                        \times 2/3
+                                        {
+
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            r4
+
+                                            \revert Staff.Stem.stemlet-length
+                                            c'8
+                                            - \tweak circled-tip ##t
+                                            \<
+
+                                        }
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
@@ -3691,6 +3852,8 @@
                                           %! applying invisibility
                                         \once \override Rest.transparent = ##t
                                         r1 * 1/2
+                                          %! applying indicators
+                                        \f
 
                                         R1 * 1/2
 
@@ -4470,7 +4633,7 @@
                     \tag #'group6
                     {
 
-                        \context PianoStaff = "sub group 5"
+                        \context StaffGroup = "sub group 5"
                         <<
 
                             \tag #'voice13
@@ -4551,7 +4714,7 @@
                                           %! SPANNER_START
                                           %! baca.PiecewiseCommand._call(2)
                                           %! baca.text_spanner()
-                                        - \tweak staff-padding 10
+                                        - \tweak staff-padding 11
                                           %! SPANNER_START
                                           %! baca.PiecewiseCommand._call(2)
                                           %! baca.text_spanner()
@@ -4568,34 +4731,6 @@
                                           %! baca.PiecewiseCommand._call(2)
                                           %! baca.text_spanner()
                                         \startTextSpanTwo
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \tweak bound-details.right.padding 0.5
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \tweak bound-details.right.stencil-align-dir-y #center
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \tweak staff-padding 12
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \abjad-dashed-line-with-arrow
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \baca-text-spanner-left-markup \diamond-notehead-markup
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \baca-text-spanner-right-markup \default-notehead-markup
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        \startTextSpanThree
                                           %! baca.bcps(2)
                                         - \tweak staff-padding 5
                                           %! baca.bcps(2)
@@ -4740,10 +4875,6 @@
                                             - \upbow
                                               %! baca.bcps(3)
                                             \bacaStopTextSpanBCP
-                                              %! SPANNER_STOP
-                                              %! baca.PiecewiseCommand._call(3)
-                                              %! baca.text_spanner()
-                                            \stopTextSpanThree
                                               %! abjad.glissando(7)
                                             - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
@@ -4819,34 +4950,6 @@
                                         - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \tweak bound-details.right.padding 0.5
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \tweak bound-details.right.stencil-align-dir-y #center
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \tweak staff-padding 12
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \abjad-dashed-line-with-arrow
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \baca-text-spanner-left-markup \half-diamond-notehead-markup
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \baca-text-spanner-right-markup \diamond-notehead-markup
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        \startTextSpanThree
                                           %! baca.bcps(2)
                                         - \tweak staff-padding 5
                                           %! baca.bcps(2)
@@ -4931,7 +5034,7 @@
                                               %! SPANNER_START
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
-                                            - \tweak staff-padding 10
+                                            - \tweak staff-padding 11
                                               %! SPANNER_START
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
@@ -5015,10 +5118,6 @@
                                             g'16
                                               %! baca.bcps(3)
                                             \bacaStopTextSpanBCP
-                                              %! SPANNER_STOP
-                                              %! baca.PiecewiseCommand._call(3)
-                                              %! baca.text_spanner()
-                                            \stopTextSpanThree
                                               %! abjad.glissando(7)
                                             - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
@@ -5171,34 +5270,6 @@
                                             - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \tweak bound-details.right.padding 0.5
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \tweak bound-details.right.stencil-align-dir-y #center
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \tweak staff-padding 12
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \abjad-dashed-line-with-arrow
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \baca-text-spanner-left-markup \default-notehead-markup
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \baca-text-spanner-right-markup \half-diamond-notehead-markup
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            \startTextSpanThree
                                               %! baca.bcps(2)
                                             - \tweak staff-padding 5
                                               %! baca.bcps(2)
@@ -5332,7 +5403,7 @@
                                               %! SPANNER_START
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
-                                            - \tweak staff-padding 10
+                                            - \tweak staff-padding 11
                                               %! SPANNER_START
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
@@ -5365,10 +5436,6 @@
                                             ef'16
                                               %! baca.bcps(3)
                                             \bacaStopTextSpanBCP
-                                              %! SPANNER_STOP
-                                              %! baca.PiecewiseCommand._call(3)
-                                              %! baca.text_spanner()
-                                            \stopTextSpanThree
                                             ]
                                               %! abjad.glissando(7)
                                             - \abjad-zero-padding-glissando
@@ -5528,34 +5595,6 @@
                                         - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \tweak bound-details.right.padding 0.5
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \tweak bound-details.right.stencil-align-dir-y #center
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \tweak staff-padding 12
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \abjad-dashed-line-with-arrow
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \baca-text-spanner-left-markup \diamond-notehead-markup
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \baca-text-spanner-right-markup \default-notehead-markup
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        \startTextSpanThree
                                           %! baca.bcps(2)
                                         - \tweak staff-padding 5
                                           %! baca.bcps(2)
@@ -5692,7 +5731,7 @@
                                               %! SPANNER_START
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
-                                            - \tweak staff-padding 10
+                                            - \tweak staff-padding 11
                                               %! SPANNER_START
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
@@ -5730,10 +5769,6 @@
                                             - \downbow
                                               %! baca.bcps(3)
                                             \bacaStopTextSpanBCP
-                                              %! SPANNER_STOP
-                                              %! baca.PiecewiseCommand._call(3)
-                                              %! baca.text_spanner()
-                                            \stopTextSpanThree
                                               %! abjad.glissando(7)
                                             - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
@@ -5857,34 +5892,6 @@
                                             - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \tweak bound-details.right.padding 0.5
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \tweak bound-details.right.stencil-align-dir-y #center
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \tweak staff-padding 12
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \abjad-dashed-line-with-arrow
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \baca-text-spanner-left-markup \half-diamond-notehead-markup
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \baca-text-spanner-right-markup \diamond-notehead-markup
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            \startTextSpanThree
                                               %! baca.bcps(2)
                                             - \tweak staff-padding 5
                                               %! baca.bcps(2)
@@ -6037,10 +6044,6 @@
                                             bf4
                                               %! baca.bcps(3)
                                             \bacaStopTextSpanBCP
-                                              %! SPANNER_STOP
-                                              %! baca.PiecewiseCommand._call(3)
-                                              %! baca.text_spanner()
-                                            \stopTextSpanThree
                                               %! abjad.glissando(7)
                                             - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
@@ -6075,7 +6078,7 @@
                                               %! SPANNER_START
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
-                                            - \tweak staff-padding 10
+                                            - \tweak staff-padding 11
                                               %! SPANNER_START
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
@@ -6189,34 +6192,6 @@
                                             - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \tweak bound-details.right.padding 0.5
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \tweak bound-details.right.stencil-align-dir-y #center
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \tweak staff-padding 12
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \abjad-dashed-line-with-arrow
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \baca-text-spanner-left-markup \default-notehead-markup
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \baca-text-spanner-right-markup \half-diamond-notehead-markup
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            \startTextSpanThree
                                               %! baca.bcps(2)
                                             - \tweak staff-padding 5
                                               %! baca.bcps(2)
@@ -6363,10 +6338,6 @@
                                             - \downbow
                                               %! baca.bcps(3)
                                             \bacaStopTextSpanBCP
-                                              %! SPANNER_STOP
-                                              %! baca.PiecewiseCommand._call(3)
-                                              %! baca.text_spanner()
-                                            \stopTextSpanThree
                                               %! abjad.glissando(7)
                                             - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
@@ -6479,7 +6450,7 @@
                                           %! SPANNER_START
                                           %! baca.PiecewiseCommand._call(2)
                                           %! baca.text_spanner()
-                                        - \tweak staff-padding 10
+                                        - \tweak staff-padding 11
                                           %! SPANNER_START
                                           %! baca.PiecewiseCommand._call(2)
                                           %! baca.text_spanner()
@@ -6541,34 +6512,6 @@
                                             - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \tweak bound-details.right.padding 0.5
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \tweak bound-details.right.stencil-align-dir-y #center
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \tweak staff-padding 12
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \abjad-dashed-line-with-arrow
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \baca-text-spanner-left-markup \diamond-notehead-markup
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \baca-text-spanner-right-markup \default-notehead-markup
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            \startTextSpanThree
                                               %! baca.bcps(2)
                                             - \tweak staff-padding 5
                                               %! baca.bcps(2)
@@ -6635,10 +6578,6 @@
                                         - \downbow
                                           %! baca.bcps(3)
                                         \bacaStopTextSpanBCP
-                                          %! SPANNER_STOP
-                                          %! baca.PiecewiseCommand._call(3)
-                                          %! baca.text_spanner()
-                                        \stopTextSpanThree
                                           %! SPANNER_STOP
                                           %! baca.PiecewiseCommand._call(3)
                                           %! baca.text_spanner()
@@ -7466,7 +7405,7 @@
                                           %! SPANNER_START
                                           %! baca.PiecewiseCommand._call(2)
                                           %! baca.text_spanner()
-                                        - \tweak staff-padding 10
+                                        - \tweak staff-padding 11
                                           %! SPANNER_START
                                           %! baca.PiecewiseCommand._call(2)
                                           %! baca.text_spanner()
@@ -7483,34 +7422,6 @@
                                           %! baca.PiecewiseCommand._call(2)
                                           %! baca.text_spanner()
                                         \startTextSpanTwo
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \tweak bound-details.right.padding 0.5
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \tweak bound-details.right.stencil-align-dir-y #center
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \tweak staff-padding 12
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \abjad-dashed-line-with-arrow
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \baca-text-spanner-left-markup \diamond-notehead-markup
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \baca-text-spanner-right-markup \default-notehead-markup
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        \startTextSpanThree
                                           %! baca.bcps(2)
                                         - \tweak staff-padding 5
                                           %! baca.bcps(2)
@@ -7672,10 +7583,6 @@
                                             a8
                                               %! baca.bcps(3)
                                             \bacaStopTextSpanBCP
-                                              %! SPANNER_STOP
-                                              %! baca.PiecewiseCommand._call(3)
-                                              %! baca.text_spanner()
-                                            \stopTextSpanThree
                                               %! SPANNER_STOP
                                               %! baca.PiecewiseCommand._call(3)
                                               %! baca.text_spanner()
@@ -7858,7 +7765,7 @@
                                               %! SPANNER_START
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
-                                            - \tweak staff-padding 10
+                                            - \tweak staff-padding 11
                                               %! SPANNER_START
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
@@ -7875,34 +7782,6 @@
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
                                             \startTextSpanTwo
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \tweak bound-details.right.padding 0.5
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \tweak bound-details.right.stencil-align-dir-y #center
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \tweak staff-padding 12
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \abjad-dashed-line-with-arrow
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \baca-text-spanner-left-markup \half-diamond-notehead-markup
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \baca-text-spanner-right-markup \diamond-notehead-markup
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            \startTextSpanThree
                                               %! baca.bcps(2)
                                             - \tweak staff-padding 5
                                               %! baca.bcps(2)
@@ -8075,10 +7954,6 @@
                                               %! SPANNER_STOP
                                               %! baca.PiecewiseCommand._call(3)
                                               %! baca.text_spanner()
-                                            \stopTextSpanThree
-                                              %! SPANNER_STOP
-                                              %! baca.PiecewiseCommand._call(3)
-                                              %! baca.text_spanner()
                                             \stopTextSpanTwo
                                             ]
                                               %! abjad.glissando(7)
@@ -8223,7 +8098,7 @@
                                               %! SPANNER_START
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
-                                            - \tweak staff-padding 10
+                                            - \tweak staff-padding 11
                                               %! SPANNER_START
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
@@ -8240,34 +8115,6 @@
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
                                             \startTextSpanTwo
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \tweak bound-details.right.padding 0.5
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \tweak bound-details.right.stencil-align-dir-y #center
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \tweak staff-padding 12
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \abjad-dashed-line-with-arrow
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \baca-text-spanner-left-markup \default-notehead-markup
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \baca-text-spanner-right-markup \half-diamond-notehead-markup
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            \startTextSpanThree
                                               %! baca.bcps(2)
                                             - \tweak staff-padding 5
                                               %! baca.bcps(2)
@@ -8427,10 +8274,6 @@
                                             d'8
                                               %! baca.bcps(3)
                                             \bacaStopTextSpanBCP
-                                              %! SPANNER_STOP
-                                              %! baca.PiecewiseCommand._call(3)
-                                              %! baca.text_spanner()
-                                            \stopTextSpanThree
                                               %! SPANNER_STOP
                                               %! baca.PiecewiseCommand._call(3)
                                               %! baca.text_spanner()
@@ -8599,7 +8442,7 @@
                                               %! SPANNER_START
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
-                                            - \tweak staff-padding 10
+                                            - \tweak staff-padding 11
                                               %! SPANNER_START
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
@@ -8616,34 +8459,6 @@
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
                                             \startTextSpanTwo
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \tweak bound-details.right.padding 0.5
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \tweak bound-details.right.stencil-align-dir-y #center
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \tweak staff-padding 12
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \abjad-dashed-line-with-arrow
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \baca-text-spanner-left-markup \diamond-notehead-markup
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \baca-text-spanner-right-markup \default-notehead-markup
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            \startTextSpanThree
                                               %! baca.bcps(2)
                                             - \tweak staff-padding 5
                                               %! baca.bcps(2)
@@ -8804,10 +8619,6 @@
                                             e'16
                                               %! baca.bcps(3)
                                             \bacaStopTextSpanBCP
-                                              %! SPANNER_STOP
-                                              %! baca.PiecewiseCommand._call(3)
-                                              %! baca.text_spanner()
-                                            \stopTextSpanThree
                                               %! SPANNER_STOP
                                               %! baca.PiecewiseCommand._call(3)
                                               %! baca.text_spanner()
@@ -8995,7 +8806,7 @@
                                           %! SPANNER_START
                                           %! baca.PiecewiseCommand._call(2)
                                           %! baca.text_spanner()
-                                        - \tweak staff-padding 10
+                                        - \tweak staff-padding 11
                                           %! SPANNER_START
                                           %! baca.PiecewiseCommand._call(2)
                                           %! baca.text_spanner()
@@ -9012,34 +8823,6 @@
                                           %! baca.PiecewiseCommand._call(2)
                                           %! baca.text_spanner()
                                         \startTextSpanTwo
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \tweak bound-details.right.padding 0.5
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \tweak bound-details.right.stencil-align-dir-y #center
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \tweak staff-padding 12
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \abjad-dashed-line-with-arrow
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \baca-text-spanner-left-markup \half-diamond-notehead-markup
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \baca-text-spanner-right-markup \diamond-notehead-markup
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        \startTextSpanThree
                                           %! baca.bcps(2)
                                         - \tweak staff-padding 5
                                           %! baca.bcps(2)
@@ -9209,10 +8992,6 @@
                                               %! SPANNER_STOP
                                               %! baca.PiecewiseCommand._call(3)
                                               %! baca.text_spanner()
-                                            \stopTextSpanThree
-                                              %! SPANNER_STOP
-                                              %! baca.PiecewiseCommand._call(3)
-                                              %! baca.text_spanner()
                                             \stopTextSpanTwo
                                             ]
                                               %! abjad.glissando(7)
@@ -9374,7 +9153,7 @@
                                               %! SPANNER_START
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
-                                            - \tweak staff-padding 10
+                                            - \tweak staff-padding 11
                                               %! SPANNER_START
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
@@ -9391,34 +9170,6 @@
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
                                             \startTextSpanTwo
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \tweak bound-details.right.padding 0.5
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \tweak bound-details.right.stencil-align-dir-y #center
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \tweak staff-padding 12
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \abjad-dashed-line-with-arrow
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \baca-text-spanner-left-markup \default-notehead-markup
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \baca-text-spanner-right-markup \half-diamond-notehead-markup
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            \startTextSpanThree
                                               %! baca.bcps(2)
                                             - \tweak staff-padding 5
                                               %! baca.bcps(2)
@@ -9476,10 +9227,6 @@
                                             \!
                                               %! baca.bcps(1)
                                             \bacaStopTextSpanBCP
-                                              %! SPANNER_STOP
-                                              %! baca.PiecewiseCommand._call(3)
-                                              %! baca.text_spanner()
-                                            \stopTextSpanThree
                                               %! SPANNER_STOP
                                               %! baca.PiecewiseCommand._call(3)
                                               %! baca.text_spanner()
@@ -10237,7 +9984,7 @@
                                           %! SPANNER_START
                                           %! baca.PiecewiseCommand._call(2)
                                           %! baca.text_spanner()
-                                        - \tweak staff-padding 10
+                                        - \tweak staff-padding 11
                                           %! SPANNER_START
                                           %! baca.PiecewiseCommand._call(2)
                                           %! baca.text_spanner()
@@ -10254,34 +10001,6 @@
                                           %! baca.PiecewiseCommand._call(2)
                                           %! baca.text_spanner()
                                         \startTextSpanTwo
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \tweak bound-details.right.padding 0.5
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \tweak bound-details.right.stencil-align-dir-y #center
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \tweak staff-padding 12
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \abjad-dashed-line-with-arrow
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \baca-text-spanner-left-markup \diamond-notehead-markup
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \baca-text-spanner-right-markup \default-notehead-markup
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        \startTextSpanThree
                                           %! baca.bcps(2)
                                         - \tweak staff-padding 5
                                           %! baca.bcps(2)
@@ -10471,10 +10190,6 @@
                                             ef'8
                                               %! baca.bcps(3)
                                             \bacaStopTextSpanBCP
-                                              %! SPANNER_STOP
-                                              %! baca.PiecewiseCommand._call(3)
-                                              %! baca.text_spanner()
-                                            \stopTextSpanThree
                                               %! abjad.glissando(7)
                                             - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
@@ -10617,7 +10332,7 @@
                                               %! SPANNER_START
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
-                                            - \tweak staff-padding 10
+                                            - \tweak staff-padding 11
                                               %! SPANNER_START
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
@@ -10679,34 +10394,6 @@
                                             - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \tweak bound-details.right.padding 0.5
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \tweak bound-details.right.stencil-align-dir-y #center
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \tweak staff-padding 12
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \abjad-dashed-line-with-arrow
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \baca-text-spanner-left-markup \half-diamond-notehead-markup
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \baca-text-spanner-right-markup \diamond-notehead-markup
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            \startTextSpanThree
                                               %! baca.bcps(2)
                                             - \tweak staff-padding 5
                                               %! baca.bcps(2)
@@ -10906,10 +10593,6 @@
                                             - \upbow
                                               %! baca.bcps(3)
                                             \bacaStopTextSpanBCP
-                                              %! SPANNER_STOP
-                                              %! baca.PiecewiseCommand._call(3)
-                                              %! baca.text_spanner()
-                                            \stopTextSpanThree
                                               %! abjad.glissando(7)
                                             - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
@@ -11034,7 +10717,7 @@
                                           %! SPANNER_START
                                           %! baca.PiecewiseCommand._call(2)
                                           %! baca.text_spanner()
-                                        - \tweak staff-padding 10
+                                        - \tweak staff-padding 11
                                           %! SPANNER_START
                                           %! baca.PiecewiseCommand._call(2)
                                           %! baca.text_spanner()
@@ -11109,34 +10792,6 @@
                                             - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \tweak bound-details.right.padding 0.5
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \tweak bound-details.right.stencil-align-dir-y #center
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \tweak staff-padding 12
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \abjad-dashed-line-with-arrow
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \baca-text-spanner-left-markup \default-notehead-markup
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \baca-text-spanner-right-markup \half-diamond-notehead-markup
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            \startTextSpanThree
                                               %! baca.bcps(2)
                                             - \tweak staff-padding 5
                                               %! baca.bcps(2)
@@ -11327,10 +10982,6 @@
                                         a2
                                           %! baca.bcps(3)
                                         \bacaStopTextSpanBCP
-                                          %! SPANNER_STOP
-                                          %! baca.PiecewiseCommand._call(3)
-                                          %! baca.text_spanner()
-                                        \stopTextSpanThree
                                           %! abjad.glissando(7)
                                         - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
@@ -11396,7 +11047,7 @@
                                               %! SPANNER_START
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
-                                            - \tweak staff-padding 10
+                                            - \tweak staff-padding 11
                                               %! SPANNER_START
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
@@ -11489,34 +11140,6 @@
                                         - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \tweak bound-details.right.padding 0.5
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \tweak bound-details.right.stencil-align-dir-y #center
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \tweak staff-padding 12
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \abjad-dashed-line-with-arrow
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \baca-text-spanner-left-markup \diamond-notehead-markup
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \baca-text-spanner-right-markup \default-notehead-markup
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        \startTextSpanThree
                                           %! baca.bcps(2)
                                         - \tweak staff-padding 5
                                           %! baca.bcps(2)
@@ -11709,10 +11332,6 @@
                                         g2
                                           %! baca.bcps(3)
                                         \bacaStopTextSpanBCP
-                                          %! SPANNER_STOP
-                                          %! baca.PiecewiseCommand._call(3)
-                                          %! baca.text_spanner()
-                                        \stopTextSpanThree
                                           %! abjad.glissando(7)
                                         - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
@@ -11775,7 +11394,7 @@
                                               %! SPANNER_START
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
-                                            - \tweak staff-padding 10
+                                            - \tweak staff-padding 11
                                               %! SPANNER_START
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
@@ -11994,34 +11613,6 @@
                                         - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \tweak bound-details.right.padding 0.5
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \tweak bound-details.right.stencil-align-dir-y #center
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \tweak staff-padding 12
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \abjad-dashed-line-with-arrow
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \baca-text-spanner-left-markup \half-diamond-notehead-markup
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \baca-text-spanner-right-markup \diamond-notehead-markup
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        \startTextSpanThree
                                           %! baca.bcps(2)
                                         - \tweak staff-padding 5
                                           %! baca.bcps(2)
@@ -12099,10 +11690,6 @@
                                             f16
                                               %! baca.bcps(3)
                                             \bacaStopTextSpanBCP
-                                              %! SPANNER_STOP
-                                              %! baca.PiecewiseCommand._call(3)
-                                              %! baca.text_spanner()
-                                            \stopTextSpanThree
                                             ]
                                               %! abjad.glissando(7)
                                             - \abjad-zero-padding-glissando
@@ -12757,7 +12344,7 @@
                                           %! SPANNER_START
                                           %! baca.PiecewiseCommand._call(2)
                                           %! baca.text_spanner()
-                                        - \tweak staff-padding 10
+                                        - \tweak staff-padding 11.5
                                           %! SPANNER_START
                                           %! baca.PiecewiseCommand._call(2)
                                           %! baca.text_spanner()
@@ -12774,34 +12361,6 @@
                                           %! baca.PiecewiseCommand._call(2)
                                           %! baca.text_spanner()
                                         \startTextSpanTwo
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \tweak bound-details.right.padding 0.5
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \tweak bound-details.right.stencil-align-dir-y #center
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \tweak staff-padding 12
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \abjad-dashed-line-with-arrow
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \baca-text-spanner-left-markup \diamond-notehead-markup
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        - \baca-text-spanner-right-markup \default-notehead-markup
-                                          %! SPANNER_START
-                                          %! baca.PiecewiseCommand._call(2)
-                                          %! baca.text_spanner()
-                                        \startTextSpanThree
                                           %! baca.bcps(2)
                                         - \tweak staff-padding 5
                                           %! baca.bcps(2)
@@ -13023,10 +12582,6 @@
                                             - \downbow
                                               %! baca.bcps(3)
                                             \bacaStopTextSpanBCP
-                                              %! SPANNER_STOP
-                                              %! baca.PiecewiseCommand._call(3)
-                                              %! baca.text_spanner()
-                                            \stopTextSpanThree
                                             ]
                                               %! abjad.glissando(7)
                                             - \abjad-zero-padding-glissando
@@ -13117,7 +12672,7 @@
                                               %! SPANNER_START
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
-                                            - \tweak staff-padding 10
+                                            - \tweak staff-padding 11.5
                                               %! SPANNER_START
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
@@ -13178,34 +12733,6 @@
                                             - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \tweak bound-details.right.padding 0.5
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \tweak bound-details.right.stencil-align-dir-y #center
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \tweak staff-padding 12
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \abjad-dashed-line-with-arrow
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \baca-text-spanner-left-markup \half-diamond-notehead-markup
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \baca-text-spanner-right-markup \diamond-notehead-markup
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            \startTextSpanThree
                                               %! baca.bcps(2)
                                             - \tweak staff-padding 5
                                               %! baca.bcps(2)
@@ -13434,10 +12961,6 @@
                                             - \upbow
                                               %! baca.bcps(3)
                                             \bacaStopTextSpanBCP
-                                              %! SPANNER_STOP
-                                              %! baca.PiecewiseCommand._call(3)
-                                              %! baca.text_spanner()
-                                            \stopTextSpanThree
                                             [
                                               %! abjad.glissando(7)
                                             - \abjad-zero-padding-glissando
@@ -13473,7 +12996,7 @@
                                               %! SPANNER_START
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
-                                            - \tweak staff-padding 10
+                                            - \tweak staff-padding 11.5
                                               %! SPANNER_START
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
@@ -13660,34 +13183,6 @@
                                             - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \tweak bound-details.right.padding 0.5
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \tweak bound-details.right.stencil-align-dir-y #center
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \tweak staff-padding 12
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \abjad-dashed-line-with-arrow
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \baca-text-spanner-left-markup \default-notehead-markup
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \baca-text-spanner-right-markup \half-diamond-notehead-markup
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            \startTextSpanThree
                                               %! baca.bcps(2)
                                             - \tweak staff-padding 5
                                               %! baca.bcps(2)
@@ -13847,7 +13342,7 @@
                                               %! SPANNER_START
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
-                                            - \tweak staff-padding 10
+                                            - \tweak staff-padding 11.5
                                               %! SPANNER_START
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
@@ -13931,10 +13426,6 @@
                                             bf,16
                                               %! baca.bcps(3)
                                             \bacaStopTextSpanBCP
-                                              %! SPANNER_STOP
-                                              %! baca.PiecewiseCommand._call(3)
-                                              %! baca.text_spanner()
-                                            \stopTextSpanThree
                                               %! abjad.glissando(7)
                                             - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
@@ -14089,34 +13580,6 @@
                                             - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \tweak bound-details.right.padding 0.5
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \tweak bound-details.right.stencil-align-dir-y #center
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \tweak staff-padding 12
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \abjad-dashed-line-with-arrow
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \baca-text-spanner-left-markup \diamond-notehead-markup
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \baca-text-spanner-right-markup \default-notehead-markup
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            \startTextSpanThree
                                               %! baca.bcps(2)
                                             - \tweak staff-padding 5
                                               %! baca.bcps(2)
@@ -14166,10 +13629,6 @@
                                             \p
                                               %! baca.bcps(3)
                                             \bacaStopTextSpanBCP
-                                              %! SPANNER_STOP
-                                              %! baca.PiecewiseCommand._call(3)
-                                              %! baca.text_spanner()
-                                            \stopTextSpanThree
                                               %! abjad.glissando(7)
                                             - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
@@ -14211,34 +13670,6 @@
                                             - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \tweak bound-details.right.padding 0.5
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \tweak bound-details.right.stencil-align-dir-y #center
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \tweak staff-padding 12
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \abjad-invisible-line
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \baca-text-spanner-left-markup \default-notehead-markup
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \baca-text-spanner-right-markup \diamond-notehead-markup
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            \startTextSpanThree
                                               %! baca.bcps(2)
                                             - \tweak staff-padding 5
                                               %! baca.bcps(2)
@@ -14303,10 +13734,6 @@
                                             \!
                                               %! baca.bcps(1)
                                             \bacaStopTextSpanBCP
-                                              %! SPANNER_STOP
-                                              %! baca.PiecewiseCommand._call(3)
-                                              %! baca.text_spanner()
-                                            \stopTextSpanThree
                                             ]
 
                                         }
@@ -14992,34 +14419,6 @@
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
                                             \startTextSpanTwo
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \tweak bound-details.right.padding 0.5
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \tweak bound-details.right.stencil-align-dir-y #center
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \tweak staff-padding 12
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \abjad-dashed-line-with-arrow
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \baca-text-spanner-left-markup \diamond-notehead-markup
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \baca-text-spanner-right-markup \default-notehead-markup
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            \startTextSpanThree
                                               %! baca.bcps(2)
                                             - \tweak staff-padding 5
                                               %! baca.bcps(2)
@@ -15234,10 +14633,6 @@
                                         - \downbow
                                           %! baca.bcps(3)
                                         \bacaStopTextSpanBCP
-                                          %! SPANNER_STOP
-                                          %! baca.PiecewiseCommand._call(3)
-                                          %! baca.text_spanner()
-                                        \stopTextSpanThree
                                         ]
                                           %! abjad.glissando(7)
                                         - \abjad-zero-padding-glissando
@@ -15414,34 +14809,6 @@
                                             - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \tweak bound-details.right.padding 0.5
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \tweak bound-details.right.stencil-align-dir-y #center
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \tweak staff-padding 12
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \abjad-dashed-line-with-arrow
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \baca-text-spanner-left-markup \half-diamond-notehead-markup
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \baca-text-spanner-right-markup \diamond-notehead-markup
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            \startTextSpanThree
                                               %! baca.bcps(2)
                                             - \tweak staff-padding 5
                                               %! baca.bcps(2)
@@ -15661,10 +15028,6 @@
                                         ef'8
                                           %! baca.bcps(3)
                                         \bacaStopTextSpanBCP
-                                          %! SPANNER_STOP
-                                          %! baca.PiecewiseCommand._call(3)
-                                          %! baca.text_spanner()
-                                        \stopTextSpanThree
                                         [
                                           %! abjad.glissando(7)
                                         - \abjad-zero-padding-glissando
@@ -15869,34 +15232,6 @@
                                             - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \tweak bound-details.right.padding 0.5
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \tweak bound-details.right.stencil-align-dir-y #center
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \tweak staff-padding 12
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \abjad-dashed-line-with-arrow
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \baca-text-spanner-left-markup \default-notehead-markup
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            - \baca-text-spanner-right-markup \half-diamond-notehead-markup
-                                              %! SPANNER_START
-                                              %! baca.PiecewiseCommand._call(2)
-                                              %! baca.text_spanner()
-                                            \startTextSpanThree
                                               %! baca.bcps(2)
                                             - \tweak staff-padding 5
                                               %! baca.bcps(2)
@@ -16129,10 +15464,6 @@
                                             - \downbow
                                               %! baca.bcps(3)
                                             \bacaStopTextSpanBCP
-                                              %! SPANNER_STOP
-                                              %! baca.PiecewiseCommand._call(3)
-                                              %! baca.text_spanner()
-                                            \stopTextSpanThree
                                             [
                                               %! abjad.glissando(7)
                                             - \abjad-zero-padding-glissando

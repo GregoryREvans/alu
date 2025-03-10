@@ -52,6 +52,26 @@ maker = evans.SegmentMaker(
     commands=[
         # PREFIX
         evans.attach(
+            "Global Context",
+            abjad.RehearsalMark(number=13),
+            lambda _: abjad.select.leaf(_, 0),
+        ),
+        evans.attach(
+            "Global Context",
+            abjad.RehearsalMark(number=14),
+            lambda _: abjad.select.leaf(_, 12),
+        ),
+        evans.attach(
+            "Global Context",
+            abjad.RehearsalMark(number=15),
+            lambda _: abjad.select.leaf(_, 21),
+        ),
+        evans.attach(
+            "Global Context",
+            abjad.RehearsalMark(number=16),
+            lambda _: abjad.select.leaf(_, 34),
+        ),
+        evans.attach(
             "bassoon voice",
             abjad.Clef("bass"),
             lambda _: abjad.select.leaf(_, 0),
@@ -124,8 +144,13 @@ maker = evans.SegmentMaker(
             ("flute voice", alu.measure_numbers([1, 2, 3, 4, 5, 6])),
             alu.C_rhythms(stage=1, rotation=0, extra_counts=[0, 1, 2, 3, 2, 1]),
             evans.loop([0], [0.5, 1, 0.5, 1.5, -3]),
-            evans.upward_gliss,
+            lambda _: evans.upward_gliss(_, zero_padding=False, basic_glissando=True),
             abjad.Dynamic("fff"),
+            abjad.StartHairpin(">"),
+            evans.Attachment(
+                abjad.Dynamic("mf"),
+                selector=lambda _: abjad.select.note(_, -1),
+            ),
             # alu.C_color,
         ),
         # OBOE
@@ -133,8 +158,13 @@ maker = evans.SegmentMaker(
             ("oboe voice", alu.measure_numbers([1, 2, 3, 4, 5, 6, 7])),
             alu.C_rhythms(stage=1, rotation=1, extra_counts=[-1, 0, 1, 2, 3, 2, 1, 0]),
             evans.loop([1], [0.5, 1, 0.5, 1.5, -2.5]),
-            evans.upward_gliss,
+            lambda _: evans.upward_gliss(_, zero_padding=False, basic_glissando=True),
             abjad.Dynamic("fff"),
+            abjad.StartHairpin(">"),
+            evans.Attachment(
+                abjad.Dynamic("mf"),
+                selector=lambda _: abjad.select.note(_, -1),
+            ),
             # alu.C_color,
         ),
         # CLARINET
@@ -144,8 +174,13 @@ maker = evans.SegmentMaker(
                 stage=1, rotation=2, extra_counts=[-2, -1, 0, 1, 2, 3, 2, 1, 0, -1]
             ),
             evans.loop([-15], [1, 1, 0.5, 1.5, -3.5]),
-            evans.upward_gliss,
+            lambda _: evans.upward_gliss(_, zero_padding=False, basic_glissando=True),
             abjad.Dynamic("fff"),
+            abjad.StartHairpin(">"),
+            evans.Attachment(
+                abjad.Dynamic("mf"),
+                selector=lambda _: abjad.select.note(_, -1),
+            ),
             # alu.C_color,
         ),
         evans.MusicCommand(
@@ -165,8 +200,8 @@ maker = evans.SegmentMaker(
             abjad.Dynamic("p"),
             lambda _: baca.text_spanner(
                 _,
-                [r"\half-air-tone-markup", "->", r"\default-notehead-markup"],
-                abjad.Tweak(r"\tweak staff-padding 1"),
+                [r"airy", "->", r"tone"],
+                abjad.Tweak(r"\tweak staff-padding 3.5"),
                 abjad.Tweak(r"\tweak color #safe-red"),
                 final_piece_spanner=r"\stopTextSpanOne",
                 autodetect_right_padding=False,
@@ -219,8 +254,8 @@ maker = evans.SegmentMaker(
             abjad.Dynamic("p"),
             lambda _: baca.text_spanner(
                 _,
-                [r"\half-air-tone-markup", "->", r"\default-notehead-markup"],
-                abjad.Tweak(r"\tweak staff-padding 1"),
+                [r"airy", "->", r"tone"],
+                abjad.Tweak(r"\tweak staff-padding 8.5"),
                 abjad.Tweak(r"\tweak color #safe-red"),
                 final_piece_spanner=r"\stopTextSpanOne",
                 autodetect_right_padding=False,
@@ -273,8 +308,8 @@ maker = evans.SegmentMaker(
             abjad.Dynamic("p"),
             lambda _: baca.text_spanner(
                 _,
-                [r"\half-air-tone-markup", "->", r"\default-notehead-markup"],
-                abjad.Tweak(r"\tweak staff-padding 1"),
+                [r"airy", "->", r"tone"],
+                abjad.Tweak(r"\tweak staff-padding 3.5"),
                 abjad.Tweak(r"\tweak color #safe-red"),
                 final_piece_spanner=r"\stopTextSpanOne",
                 autodetect_right_padding=False,
@@ -327,8 +362,8 @@ maker = evans.SegmentMaker(
             abjad.Dynamic("p"),
             lambda _: baca.text_spanner(
                 _,
-                [r"\half-air-tone-markup", "->", r"\default-notehead-markup"],
-                abjad.Tweak(r"\tweak staff-padding 1"),
+                [r"airy", "->", r"tone"],
+                abjad.Tweak(r"\tweak staff-padding 3.5"),
                 abjad.Tweak(r"\tweak color #safe-red"),
                 final_piece_spanner=r"\stopTextSpanOne",
                 autodetect_right_padding=False,
@@ -373,8 +408,13 @@ maker = evans.SegmentMaker(
                 extra_counts=[-3, -2, -1, 0, 1, 2, 3, 2, 1, 0, -1, -2],
             ),
             evans.loop([-14], [1, 1, 1.5, 1.5, -4.5]),
-            evans.upward_gliss,
+            lambda _: evans.upward_gliss(_, zero_padding=False, basic_glissando=True),
             abjad.Dynamic("fff"),
+            abjad.StartHairpin(">"),
+            evans.Attachment(
+                abjad.Dynamic("mf"),
+                selector=lambda _: abjad.select.note(_, -1),
+            ),
             # alu.C_color,
         ),
         # HORN
@@ -385,9 +425,14 @@ maker = evans.SegmentMaker(
                 rotation=4,
                 extra_counts=[-4, -3, -2, -1, 0, 1, 2, 3, 2, 1, 0, -1, -2, -3],
             ),
-            evans.loop([-11], [1, 1, 1.5, 1.5, -4]),
-            evans.upward_gliss,
+            evans.loop([11], [-1, -1, -1.5, -1.5, 4]),
+            # lambda _: evans.upward_gliss(_, zero_padding=False, basic_glissando=True),
             abjad.Dynamic("fff"),
+            abjad.StartHairpin(">"),
+            evans.Attachment(
+                abjad.Dynamic("mf"),
+                selector=lambda _: abjad.select.note(_, -1),
+            ),
             # alu.C_color,
         ),
         # TRUMPET
@@ -398,9 +443,14 @@ maker = evans.SegmentMaker(
                 rotation=5,
                 extra_counts=[-3, -4, -3, -2, -1, 0, 1, 2, 3, 2, 1, 0, -1, -2, -3, -4],
             ),
-            evans.loop([-1], [1, 1, 1.5, 2, -4]),
-            evans.upward_gliss,
+            evans.loop([9+6], [-1, -1, -1.5, -2, 4]),
+            # lambda _: evans.upward_gliss(_, zero_padding=False, basic_glissando=True),
             abjad.Dynamic("fff"),
+            abjad.StartHairpin(">"),
+            evans.Attachment(
+                abjad.Dynamic("mf"),
+                selector=lambda _: abjad.select.note(_, -1),
+            ),
             # alu.C_color,
         ),
         # TROMBONE
@@ -431,8 +481,13 @@ maker = evans.SegmentMaker(
                 ],
             ),
             evans.loop([-12], [1, 1, 1.5, 2, -3.5]),
-            evans.upward_gliss,
+            lambda _: evans.upward_gliss(_, zero_padding=False, basic_glissando=True),
             abjad.Dynamic("fff"),
+            abjad.StartHairpin(">"),
+            evans.Attachment(
+                abjad.Dynamic("mf"),
+                selector=lambda _: abjad.select.note(_, -1),
+            ),
             # alu.C_color,
         ),
         # TUBA
@@ -464,9 +519,14 @@ maker = evans.SegmentMaker(
                     -2,
                 ],
             ),
-            evans.loop([-13], [1, 1, 1.5, 2, -4]),
-            evans.upward_gliss,
+            evans.loop([13-12], [-1, -1, -1.5, -2, 4]),
+            # lambda _: evans.upward_gliss(_, zero_padding=False, basic_glissando=True),
             abjad.Dynamic("fff"),
+            abjad.StartHairpin(">"),
+            evans.Attachment(
+                abjad.Dynamic("mf"),
+                selector=lambda _: abjad.select.note(_, -1),
+            ),
             # alu.C_color,
         ),
         # # PERCUSSION 1 # pli selon pli arpeggio?
@@ -555,8 +615,13 @@ maker = evans.SegmentMaker(
                 ],
             ),
             evans.loop([-1], [1, 1, 1.5, 2, -5]),
-            evans.upward_gliss,
+            lambda _: evans.upward_gliss(_, zero_padding=False, basic_glissando=True),
             abjad.Dynamic("fff"),
+            abjad.StartHairpin(">"),
+            evans.Attachment(
+                abjad.Dynamic("mf"),
+                selector=lambda _: abjad.select.note(_, -1),
+            ),
             # alu.C_color,
         ),
         evans.MusicCommand(  #
@@ -603,8 +668,13 @@ maker = evans.SegmentMaker(
                 ],
             ),
             evans.loop([-2], [1, 1, 1.5, 2, -5]),
-            evans.upward_gliss,
+            lambda _: evans.upward_gliss(_, zero_padding=False, basic_glissando=True),
             abjad.Dynamic("fff"),
+            abjad.StartHairpin(">"),
+            evans.Attachment(
+                abjad.Dynamic("mf"),
+                selector=lambda _: abjad.select.note(_, -1),
+            ),
             # alu.C_color,
         ),
         evans.MusicCommand(
@@ -651,8 +721,13 @@ maker = evans.SegmentMaker(
                 ],
             ),
             evans.loop([-3], [1, 1, 1.5, 2, -5]),
-            evans.upward_gliss,
+            lambda _: evans.upward_gliss(_, zero_padding=False, basic_glissando=True),
             abjad.Dynamic("fff"),
+            abjad.StartHairpin(">"),
+            evans.Attachment(
+                abjad.Dynamic("mf"),
+                selector=lambda _: abjad.select.note(_, -1),
+            ),
             # alu.C_color,
         ),
         evans.MusicCommand(
@@ -702,8 +777,13 @@ maker = evans.SegmentMaker(
                 ],
             ),
             evans.loop([-4], [1, 1, 1.5, 2, -5]),
-            evans.upward_gliss,
+            lambda _: evans.upward_gliss(_, zero_padding=False, basic_glissando=True),
             abjad.Dynamic("fff"),
+            abjad.StartHairpin(">"),
+            evans.Attachment(
+                abjad.Dynamic("mf"),
+                selector=lambda _: abjad.select.note(_, -1),
+            ),
             # alu.C_color,
         ),
         evans.MusicCommand(
@@ -753,8 +833,13 @@ maker = evans.SegmentMaker(
                 ],
             ),
             evans.loop([1], [1, 1, 1.5, 2.5, -5]),
-            evans.upward_gliss,
+            lambda _: evans.upward_gliss(_, zero_padding=False, basic_glissando=True),
             abjad.Dynamic("fff"),
+            abjad.StartHairpin(">"),
+            evans.Attachment(
+                abjad.Dynamic("mf"),
+                selector=lambda _: abjad.select.note(_, -1),
+            ),
             # alu.C_color,
         ),
         evans.MusicCommand(  #
@@ -803,8 +888,13 @@ maker = evans.SegmentMaker(
                 ],
             ),
             evans.loop([0], [1, 1, 1.5, 2.5, -5]),
-            evans.upward_gliss,
+            lambda _: evans.upward_gliss(_, zero_padding=False, basic_glissando=True),
             abjad.Dynamic("fff"),
+            abjad.StartHairpin(">"),
+            evans.Attachment(
+                abjad.Dynamic("mf"),
+                selector=lambda _: abjad.select.note(_, -1),
+            ),
             # alu.C_color,
         ),
         evans.MusicCommand(
@@ -853,8 +943,13 @@ maker = evans.SegmentMaker(
                 ],
             ),
             evans.loop([-1], [1, 1, 1.5, 2.5, -5]),
-            evans.upward_gliss,
+            lambda _: evans.upward_gliss(_, zero_padding=False, basic_glissando=True),
             abjad.Dynamic("fff"),
+            abjad.StartHairpin(">"),
+            evans.Attachment(
+                abjad.Dynamic("mf"),
+                selector=lambda _: abjad.select.note(_, -1),
+            ),
             # alu.C_color,
         ),
         evans.MusicCommand(
@@ -906,8 +1001,13 @@ maker = evans.SegmentMaker(
                 ],
             ),
             evans.loop([-2], [1, 1, 1.5, 2.5, -5]),
-            evans.upward_gliss,
+            lambda _: evans.upward_gliss(_, zero_padding=False, basic_glissando=True),
             abjad.Dynamic("fff"),
+            abjad.StartHairpin(">"),
+            evans.Attachment(
+                abjad.Dynamic("mf"),
+                selector=lambda _: abjad.select.note(_, -1),
+            ),
             # alu.C_color,
         ),
         evans.MusicCommand(
@@ -959,8 +1059,13 @@ maker = evans.SegmentMaker(
                 ],
             ),
             evans.loop([-7], [1, 1.5, 1.5, 2.5, -5]),
-            evans.upward_gliss,
+            lambda _: evans.upward_gliss(_, zero_padding=False, basic_glissando=True),
             abjad.Dynamic("fff"),
+            abjad.StartHairpin(">"),
+            evans.Attachment(
+                abjad.Dynamic("mf"),
+                selector=lambda _: abjad.select.note(_, -1),
+            ),
             # alu.C_color,
         ),
         evans.MusicCommand(  #
@@ -1011,8 +1116,13 @@ maker = evans.SegmentMaker(
                 ],
             ),
             evans.loop([-8], [1, 1.5, 1.5, 2.5, -5]),
-            evans.upward_gliss,
+            lambda _: evans.upward_gliss(_, zero_padding=False, basic_glissando=True),
             abjad.Dynamic("fff"),
+            abjad.StartHairpin(">"),
+            evans.Attachment(
+                abjad.Dynamic("mf"),
+                selector=lambda _: abjad.select.note(_, -1),
+            ),
             # alu.C_color,
         ),
         evans.MusicCommand(
@@ -1063,8 +1173,13 @@ maker = evans.SegmentMaker(
                 ],
             ),
             evans.loop([-9], [1, 1.5, 1.5, 2.5, -5]),
-            evans.upward_gliss,
+            lambda _: evans.upward_gliss(_, zero_padding=False, basic_glissando=True),
             abjad.Dynamic("fff"),
+            abjad.StartHairpin(">"),
+            evans.Attachment(
+                abjad.Dynamic("mf"),
+                selector=lambda _: abjad.select.note(_, -1),
+            ),
             # alu.C_color,
         ),
         evans.MusicCommand(
@@ -1115,8 +1230,13 @@ maker = evans.SegmentMaker(
                 ],
             ),
             evans.loop([-10], [1, 1.5, 1.5, 2.5, -5]),
-            evans.upward_gliss,
+            lambda _: evans.upward_gliss(_, zero_padding=False, basic_glissando=True),
             abjad.Dynamic("fff"),
+            abjad.StartHairpin(">"),
+            evans.Attachment(
+                abjad.Dynamic("mf"),
+                selector=lambda _: abjad.select.note(_, -1),
+            ),
             # alu.C_color,
         ),
         evans.MusicCommand(
@@ -1170,8 +1290,13 @@ maker = evans.SegmentMaker(
                 ],
             ),
             evans.loop([-20], [1, 1.5, 2.5, 2.5, -7]),
-            evans.upward_gliss,
+            lambda _: evans.upward_gliss(_, zero_padding=False, basic_glissando=True),
             abjad.Dynamic("fff"),
+            abjad.StartHairpin(">"),
+            evans.Attachment(
+                abjad.Dynamic("mf"),
+                selector=lambda _: abjad.select.note(_, -1),
+            ),
             # alu.C_color,
         ),
         evans.MusicCommand(  #
@@ -1226,8 +1351,13 @@ maker = evans.SegmentMaker(
                 ],
             ),
             evans.loop([-21], [1, 1.5, 2.5, 2.5, -7]),
-            evans.upward_gliss,
+            lambda _: evans.upward_gliss(_, zero_padding=False, basic_glissando=True),
             abjad.Dynamic("fff"),
+            abjad.StartHairpin(">"),
+            evans.Attachment(
+                abjad.Dynamic("mf"),
+                selector=lambda _: abjad.select.note(_, -1),
+            ),
             # alu.C_color,
         ),
         evans.MusicCommand(
@@ -1282,8 +1412,13 @@ maker = evans.SegmentMaker(
                 ],
             ),
             evans.loop([-22], [1, 1.5, 2.5, 2.5, -7]),
-            evans.upward_gliss,
+            lambda _: evans.upward_gliss(_, zero_padding=False, basic_glissando=True),
             abjad.Dynamic("fff"),
+            abjad.StartHairpin(">"),
+            evans.Attachment(
+                abjad.Dynamic("mf"),
+                selector=lambda _: abjad.select.note(_, -1),
+            ),
             # alu.C_color,
         ),
         evans.MusicCommand(
@@ -1338,8 +1473,13 @@ maker = evans.SegmentMaker(
                 ],
             ),
             evans.loop([-23], [1, 1.5, 2.5, 2.5, -7]),
-            evans.upward_gliss,
+            lambda _: evans.upward_gliss(_, zero_padding=False, basic_glissando=True),
             abjad.Dynamic("fff"),
+            abjad.StartHairpin(">"),
+            evans.Attachment(
+                abjad.Dynamic("mf"),
+                selector=lambda _: abjad.select.note(_, -1),
+            ),
             # alu.C_color,
         ),
         evans.MusicCommand(
@@ -1397,8 +1537,13 @@ maker = evans.SegmentMaker(
                 ],
             ),
             evans.loop([-17 - 12], [1, 2, 2.5, 2.5, -7]),
-            evans.upward_gliss,
+            lambda _: evans.upward_gliss(_, zero_padding=False, basic_glissando=True),
             abjad.Dynamic("fff"),
+            abjad.StartHairpin(">"),
+            evans.Attachment(
+                abjad.Dynamic("mf"),
+                selector=lambda _: abjad.select.note(_, -1),
+            ),
             # alu.C_color,
         ),
         evans.MusicCommand(  #
@@ -1463,8 +1608,13 @@ maker = evans.SegmentMaker(
                 ],
             ),
             evans.loop([-18], [1, 2, 2.5, 2.5, -7]),
-            evans.upward_gliss,
+            lambda _: evans.upward_gliss(_, zero_padding=False, basic_glissando=True),
             abjad.Dynamic("fff"),
+            abjad.StartHairpin(">"),
+            evans.Attachment(
+                abjad.Dynamic("mf"),
+                selector=lambda _: abjad.select.note(_, -1),
+            ),
             # alu.C_color,
         ),
         evans.MusicCommand(
@@ -1529,8 +1679,13 @@ maker = evans.SegmentMaker(
                 ],
             ),
             evans.loop([-19], [1, 2, 2.5, 2.5, -7]),
-            evans.upward_gliss,
+            lambda _: evans.upward_gliss(_, zero_padding=False, basic_glissando=True),
             abjad.Dynamic("fff"),
+            abjad.StartHairpin(">"),
+            evans.Attachment(
+                abjad.Dynamic("mf"),
+                selector=lambda _: abjad.select.note(_, -1),
+            ),
             # alu.C_color,
         ),
         evans.MusicCommand(
@@ -1598,8 +1753,13 @@ maker = evans.SegmentMaker(
                 ],
             ),
             evans.loop([-20], [1, 2, 2.5, 2.5, -7]),
-            evans.upward_gliss,
+            lambda _: evans.upward_gliss(_, zero_padding=False, basic_glissando=True),
             abjad.Dynamic("fff"),
+            abjad.StartHairpin(">"),
+            evans.Attachment(
+                abjad.Dynamic("mf"),
+                selector=lambda _: abjad.select.note(_, -1),
+            ),
             # alu.C_color,
         ),
         evans.MusicCommand(

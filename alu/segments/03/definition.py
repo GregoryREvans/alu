@@ -52,6 +52,21 @@ maker = evans.SegmentMaker(
     commands=[
         # PREFIX
         evans.attach(
+            "Global Context",
+            abjad.RehearsalMark(number=6),
+            lambda _: abjad.select.leaf(_, 0),
+        ),
+        evans.attach(
+            "Global Context",
+            abjad.RehearsalMark(number=7),
+            lambda _: abjad.select.leaf(_, 9),
+        ),
+        evans.attach(
+            "Global Context",
+            abjad.RehearsalMark(number=8),
+            lambda _: abjad.select.leaf(_, 23),
+        ),
+        evans.attach(
             "bassoon voice",
             abjad.Clef("bass"),
             lambda _: abjad.select.leaf(_, 0),
@@ -225,356 +240,548 @@ maker = evans.SegmentMaker(
         # HORN
         evans.MusicCommand(
             ("french horn voice", alu.measure_numbers([_ for _ in range(7, 10)])),
-            alu.exchanging_rhythms(
-                number_of_voices=4,
-                voice_number=0,
+            # alu.exchanging_rhythms(
+            #     number_of_voices=4,
+            #     voice_number=0,
+            #     extra_counts=[0, 1, 2, 1],
+            #     basic_rest_period=4,
+            #     rewrite=-1,
+            #     preprocessor=evans.make_preprocessor(quarters=True, fuse_counts=None),
+            # ),
+            evans.talea(
+                abjad.sequence.flatten(abjad.sequence.rotate(baca.sequence.helianthate([[4, 4, 5], [4, 5, 6], [4, 6, 7]], -1, 1), 0), depth=-1),
+                16,
                 extra_counts=[0, 1, 2, 1],
-                basic_rest_period=4,
                 rewrite=-1,
                 preprocessor=evans.make_preprocessor(quarters=True, fuse_counts=None),
+                pre_commands=[
+                    lambda _: rmakers.force_rest(abjad.select.get(abjad.select.logical_ties(_), ~abjad.index([0, 1], 4))),
+                ],
             ),
-            alu.barraque_potamia(
-                transposition=13, rotation=-13, columns=False, retrograde=False
-            ),
-            lambda _: evans.contour(
-                _,
-                ([0, 1], evans.Lapidary("down", "previous alteration", "octave below")),
-                starting_range=abjad.FrenchHorn().pitch_range,
-            ),
-            lambda _: alu.faberge_swells(_),
+            # alu.barraque_potamia(
+            #     transposition=13, rotation=-13, columns=False, retrograde=False
+            # ),
+            evans.PitchHandler(["e'"]),
+            # lambda _: evans.contour(
+            #     _,
+            #     ([0, 1], evans.Lapidary("down", "previous alteration", "octave below")),
+            #     starting_range=abjad.FrenchHorn().pitch_range,
+            # ),
+            # lambda _: alu.faberge_swells(_),
+            abjad.Dynamic("ff"),
             evans.ArticulationHandler(["tremolo"], forget=False),
             # # alu.D_color,
         ),
         evans.MusicCommand(
             ("french horn voice", alu.measure_numbers([_ for _ in range(14, 18)])),
-            alu.exchanging_rhythms(
-                number_of_voices=4,
-                voice_number=0,
+            # alu.exchanging_rhythms(
+            #     number_of_voices=4,
+            #     voice_number=0,
+            #     extra_counts=[0, 1, 2, 1],
+            #     basic_rest_period=4,
+            #     rewrite=-1,
+            #     preprocessor=evans.make_preprocessor(quarters=True, fuse_counts=None),
+            # ),
+            evans.talea(
+                abjad.sequence.flatten(abjad.sequence.rotate(baca.sequence.helianthate([[4, 4, 5], [4, 5, 6], [4, 6, 7]], -1, 1), 0), depth=-1),
+                16,
                 extra_counts=[0, 1, 2, 1],
-                basic_rest_period=4,
                 rewrite=-1,
                 preprocessor=evans.make_preprocessor(quarters=True, fuse_counts=None),
+                pre_commands=[
+                    lambda _: rmakers.force_rest(abjad.select.get(abjad.select.logical_ties(_), ~abjad.index([0, 1], 4))),
+                ],
             ),
-            alu.barraque_potamia(
-                transposition=14, rotation=-14, columns=False, retrograde=False
-            ),
-            lambda _: evans.contour(
-                _,
-                ([0, 1], evans.Lapidary("down", "previous alteration", "octave below")),
-                starting_range=abjad.FrenchHorn().pitch_range,
-            ),
-            lambda _: alu.faberge_swells(_),
+            # alu.barraque_potamia(
+            #     transposition=14, rotation=-14, columns=False, retrograde=False
+            # ),
+            evans.PitchHandler(["eqs'"]),
+            # lambda _: evans.contour(
+            #     _,
+            #     ([0, 1], evans.Lapidary("down", "previous alteration", "octave below")),
+            #     starting_range=abjad.FrenchHorn().pitch_range,
+            # ),
+            # lambda _: alu.faberge_swells(_),
+            abjad.Dynamic("ff"),
             evans.ArticulationHandler(["tremolo"], forget=False),
             # # alu.D_color,
         ),
         evans.MusicCommand(
             ("french horn voice", alu.measure_numbers([_ for _ in range(24, 27)])),
-            alu.exchanging_rhythms(
-                number_of_voices=4,
-                voice_number=0,
+            # alu.exchanging_rhythms(
+            #     number_of_voices=4,
+            #     voice_number=0,
+            #     extra_counts=[0, 1, 2, 1],
+            #     basic_rest_period=4,
+            #     rewrite=-1,
+            #     preprocessor=evans.make_preprocessor(quarters=True, fuse_counts=None),
+            # ),
+            evans.talea(
+                abjad.sequence.flatten(abjad.sequence.rotate(baca.sequence.helianthate([[4, 4, 5], [4, 5, 6], [4, 6, 7]], -1, 1), 0), depth=-1),
+                16,
                 extra_counts=[0, 1, 2, 1],
-                basic_rest_period=4,
                 rewrite=-1,
                 preprocessor=evans.make_preprocessor(quarters=True, fuse_counts=None),
+                pre_commands=[
+                    lambda _: rmakers.force_rest(abjad.select.get(abjad.select.logical_ties(_), ~abjad.index([0, 1], 4))),
+                ],
             ),
-            alu.barraque_potamia(
-                transposition=15, rotation=-15, columns=False, retrograde=False
-            ),
-            lambda _: evans.contour(
-                _,
-                ([0, 1], evans.Lapidary("down", "previous alteration", "octave below")),
-                starting_range=abjad.FrenchHorn().pitch_range,
-            ),
-            lambda _: alu.faberge_swells(_),
+            # alu.barraque_potamia(
+            #     transposition=15, rotation=-15, columns=False, retrograde=False
+            # ),
+            evans.PitchHandler(["e'"]),
+            # lambda _: evans.contour(
+            #     _,
+            #     ([0, 1], evans.Lapidary("down", "previous alteration", "octave below")),
+            #     starting_range=abjad.FrenchHorn().pitch_range,
+            # ),
+            # lambda _: alu.faberge_swells(_),
+            abjad.Dynamic("ff"),
             evans.ArticulationHandler(["tremolo"], forget=False),
             # # alu.D_color,
         ),
         evans.MusicCommand(
             ("french horn voice", alu.measure_numbers([_ for _ in range(30, 39)])),
-            alu.exchanging_rhythms(
-                number_of_voices=4,
-                voice_number=0,
+            # alu.exchanging_rhythms(
+            #     number_of_voices=4,
+            #     voice_number=0,
+            #     extra_counts=[0, 1, 2, 1],
+            #     basic_rest_period=4,
+            #     rewrite=-1,
+            #     preprocessor=evans.make_preprocessor(quarters=True, fuse_counts=None),
+            # ),
+            evans.talea(
+                abjad.sequence.flatten(abjad.sequence.rotate(baca.sequence.helianthate([[4, 4, 5], [4, 5, 6], [4, 6, 7]], -1, 1), 0), depth=-1),
+                16,
                 extra_counts=[0, 1, 2, 1],
-                basic_rest_period=4,
                 rewrite=-1,
                 preprocessor=evans.make_preprocessor(quarters=True, fuse_counts=None),
+                pre_commands=[
+                    lambda _: rmakers.force_rest(abjad.select.get(abjad.select.logical_ties(_), ~abjad.index([0, 1], 4))),
+                ],
             ),
-            alu.barraque_potamia(
-                transposition=16, rotation=-16, columns=False, retrograde=False
-            ),
-            lambda _: evans.contour(
-                _,
-                ([0, 1], evans.Lapidary("down", "previous alteration", "octave below")),
-                starting_range=abjad.FrenchHorn().pitch_range,
-            ),
-            lambda _: alu.faberge_swells(_),
+            # alu.barraque_potamia(
+            #     transposition=16, rotation=-16, columns=False, retrograde=False
+            # ),
+            evans.PitchHandler(["eqf'"]),
+            # lambda _: evans.contour(
+            #     _,
+            #     ([0, 1], evans.Lapidary("down", "previous alteration", "octave below")),
+            #     starting_range=abjad.FrenchHorn().pitch_range,
+            # ),
+            # lambda _: alu.faberge_swells(_),
+            abjad.Dynamic("ff"),
             evans.ArticulationHandler(["tremolo"], forget=False),
             # # alu.D_color,
         ),
         # TRUMPET
         evans.MusicCommand(
             ("trumpet voice", alu.measure_numbers([_ for _ in range(7, 10)])),
-            alu.exchanging_rhythms(
-                number_of_voices=4,
-                voice_number=1,
+            # alu.exchanging_rhythms(
+            #     number_of_voices=4,
+            #     voice_number=1,
+            #     extra_counts=[1, 2, 1, 0],
+            #     basic_rest_period=4,
+            #     rewrite=-1,
+            #     preprocessor=evans.make_preprocessor(quarters=True, fuse_counts=None),
+            # ),
+            evans.talea(
+                abjad.sequence.flatten(abjad.sequence.rotate(baca.sequence.helianthate([[4, 4, 5], [4, 5, 6], [4, 6, 7]], -1, 1), -1), depth=-1),
+                16,
                 extra_counts=[1, 2, 1, 0],
-                basic_rest_period=4,
                 rewrite=-1,
                 preprocessor=evans.make_preprocessor(quarters=True, fuse_counts=None),
+                pre_commands=[
+                    lambda _: rmakers.force_rest(abjad.select.get(abjad.select.logical_ties(_), ~abjad.index([1, 2], 4))),
+                ],
             ),
-            alu.barraque_potamia(
-                transposition=17, rotation=-17, columns=True, retrograde=False
-            ),
-            lambda _: evans.contour(
-                _,
-                ([0, 1], evans.Lapidary("up", "previous alteration", "octave above")),
-                starting_range=abjad.Trumpet().pitch_range,
-            ),
-            lambda _: alu.faberge_swells(_),
+            # alu.barraque_potamia(
+            #     transposition=17, rotation=-17, columns=True, retrograde=False
+            # ),
+            evans.PitchHandler(["eqs'"]),
+            # lambda _: evans.contour(
+            #     _,
+            #     ([0, 1], evans.Lapidary("up", "previous alteration", "octave above")),
+            #     starting_range=abjad.Trumpet().pitch_range,
+            # ),
+            # lambda _: alu.faberge_swells(_),
+            abjad.Dynamic("ff"),
             evans.ArticulationHandler(["tremolo"], forget=False),
             # # alu.D_color,
         ),
         evans.MusicCommand(
             ("trumpet voice", alu.measure_numbers([_ for _ in range(14, 18)])),
-            alu.exchanging_rhythms(
-                number_of_voices=4,
-                voice_number=1,
+            # alu.exchanging_rhythms(
+            #     number_of_voices=4,
+            #     voice_number=1,
+            #     extra_counts=[1, 2, 1, 0],
+            #     basic_rest_period=4,
+            #     rewrite=-1,
+            #     preprocessor=evans.make_preprocessor(quarters=True, fuse_counts=None),
+            # ),
+            evans.talea(
+                abjad.sequence.flatten(abjad.sequence.rotate(baca.sequence.helianthate([[4, 4, 5], [4, 5, 6], [4, 6, 7]], -1, 1), -1), depth=-1),
+                16,
                 extra_counts=[1, 2, 1, 0],
-                basic_rest_period=4,
                 rewrite=-1,
                 preprocessor=evans.make_preprocessor(quarters=True, fuse_counts=None),
+                pre_commands=[
+                    lambda _: rmakers.force_rest(abjad.select.get(abjad.select.logical_ties(_), ~abjad.index([1, 2], 4))),
+                ],
             ),
-            alu.barraque_potamia(
-                transposition=18, rotation=-18, columns=True, retrograde=False
-            ),
-            lambda _: evans.contour(
-                _,
-                ([0, 1], evans.Lapidary("up", "previous alteration", "octave above")),
-                starting_range=abjad.Trumpet().pitch_range,
-            ),
-            lambda _: alu.faberge_swells(_),
+            # alu.barraque_potamia(
+            #     transposition=18, rotation=-18, columns=True, retrograde=False
+            # ),
+            evans.PitchHandler(["f'"]),
+            # lambda _: evans.contour(
+            #     _,
+            #     ([0, 1], evans.Lapidary("up", "previous alteration", "octave above")),
+            #     starting_range=abjad.Trumpet().pitch_range,
+            # ),
+            # lambda _: alu.faberge_swells(_),
+            abjad.Dynamic("ff"),
             evans.ArticulationHandler(["tremolo"], forget=False),
             # # alu.D_color,
         ),
         evans.MusicCommand(
             ("trumpet voice", alu.measure_numbers([_ for _ in range(24, 27)])),
-            alu.exchanging_rhythms(
-                number_of_voices=4,
-                voice_number=1,
+            # alu.exchanging_rhythms(
+            #     number_of_voices=4,
+            #     voice_number=1,
+            #     extra_counts=[1, 2, 1, 0],
+            #     basic_rest_period=4,
+            #     rewrite=-1,
+            #     preprocessor=evans.make_preprocessor(quarters=True, fuse_counts=None),
+            # ),
+            evans.talea(
+                abjad.sequence.flatten(abjad.sequence.rotate(baca.sequence.helianthate([[4, 4, 5], [4, 5, 6], [4, 6, 7]], -1, 1), -1), depth=-1),
+                16,
                 extra_counts=[1, 2, 1, 0],
-                basic_rest_period=4,
                 rewrite=-1,
                 preprocessor=evans.make_preprocessor(quarters=True, fuse_counts=None),
+                pre_commands=[
+                    lambda _: rmakers.force_rest(abjad.select.get(abjad.select.logical_ties(_), ~abjad.index([1, 2], 4))),
+                ],
             ),
-            alu.barraque_potamia(
-                transposition=19, rotation=-19, columns=True, retrograde=False
-            ),
-            lambda _: evans.contour(
-                _,
-                ([0, 1], evans.Lapidary("up", "previous alteration", "octave above")),
-                starting_range=abjad.Trumpet().pitch_range,
-            ),
-            lambda _: alu.faberge_swells(_),
+            # alu.barraque_potamia(
+            #     transposition=19, rotation=-19, columns=True, retrograde=False
+            # ),
+            evans.PitchHandler(["fqs'"]),
+            # lambda _: evans.contour(
+            #     _,
+            #     ([0, 1], evans.Lapidary("up", "previous alteration", "octave above")),
+            #     starting_range=abjad.Trumpet().pitch_range,
+            # ),
+            # lambda _: alu.faberge_swells(_),
+            abjad.Dynamic("ff"),
             evans.ArticulationHandler(["tremolo"], forget=False),
             # # alu.D_color,
         ),
         evans.MusicCommand(
             ("trumpet voice", alu.measure_numbers([_ for _ in range(30, 39)])),
-            alu.exchanging_rhythms(
-                number_of_voices=4,
-                voice_number=1,
+            # alu.exchanging_rhythms(
+            #     number_of_voices=4,
+            #     voice_number=1,
+            #     extra_counts=[1, 2, 1, 0],
+            #     basic_rest_period=4,
+            #     rewrite=-1,
+            #     preprocessor=evans.make_preprocessor(quarters=True, fuse_counts=None),
+            # ),
+            evans.talea(
+                abjad.sequence.flatten(abjad.sequence.rotate(baca.sequence.helianthate([[4, 4, 5], [4, 5, 6], [4, 6, 7]], -1, 1), -1), depth=-1),
+                16,
                 extra_counts=[1, 2, 1, 0],
-                basic_rest_period=4,
                 rewrite=-1,
                 preprocessor=evans.make_preprocessor(quarters=True, fuse_counts=None),
+                pre_commands=[
+                    lambda _: rmakers.force_rest(abjad.select.get(abjad.select.logical_ties(_), ~abjad.index([1, 2], 4))),
+                ],
             ),
-            alu.barraque_potamia(
-                transposition=20, rotation=-20, columns=True, retrograde=False
-            ),
-            lambda _: evans.contour(
-                _,
-                ([0, 1], evans.Lapidary("up", "previous alteration", "octave above")),
-                starting_range=abjad.Trumpet().pitch_range,
-            ),
-            lambda _: alu.faberge_swells(_),
+            # alu.barraque_potamia(
+            #     transposition=20, rotation=-20, columns=True, retrograde=False
+            # ),
+            evans.PitchHandler(["fs'"]),
+            # lambda _: evans.contour(
+            #     _,
+            #     ([0, 1], evans.Lapidary("up", "previous alteration", "octave above")),
+            #     starting_range=abjad.Trumpet().pitch_range,
+            # ),
+            # lambda _: alu.faberge_swells(_),
+            abjad.Dynamic("ff"),
             evans.ArticulationHandler(["tremolo"], forget=False),
             # # alu.D_color,
         ),
         # TROMBONE
         evans.MusicCommand(
             ("tenor trombone voice", alu.measure_numbers([_ for _ in range(7, 10)])),
-            alu.exchanging_rhythms(
-                number_of_voices=4,
-                voice_number=2,
+            # alu.exchanging_rhythms(
+            #     number_of_voices=4,
+            #     voice_number=2,
+            #     extra_counts=[2, 1, 0, 1],
+            #     basic_rest_period=4,
+            #     rewrite=-1,
+            #     preprocessor=evans.make_preprocessor(quarters=True, fuse_counts=None),
+            # ),
+            evans.talea(
+                abjad.sequence.flatten(abjad.sequence.rotate(baca.sequence.helianthate([[4, 4, 5], [4, 5, 6], [4, 6, 7]], -1, 1), -2), depth=-1),
+                16,
                 extra_counts=[2, 1, 0, 1],
-                basic_rest_period=4,
                 rewrite=-1,
                 preprocessor=evans.make_preprocessor(quarters=True, fuse_counts=None),
+                pre_commands=[
+                    lambda _: rmakers.force_rest(abjad.select.get(abjad.select.logical_ties(_), ~abjad.index([2, 3], 4))),
+                ],
             ),
-            alu.barraque_potamia(
-                transposition=21, rotation=-21, columns=False, retrograde=True
-            ),
-            lambda _: evans.contour(
-                _,
-                ([0, 1], evans.Lapidary("down", "previous alteration", "octave below")),
-                starting_range=abjad.TenorTrombone().pitch_range,
-            ),
-            lambda _: alu.faberge_swells(_),
+            # alu.barraque_potamia(
+            #     transposition=21, rotation=-21, columns=False, retrograde=True
+            # ),
+            evans.PitchHandler(["eqf"]),
+            # lambda _: evans.contour(
+            #     _,
+            #     ([0, 1], evans.Lapidary("down", "previous alteration", "octave below")),
+            #     starting_range=abjad.TenorTrombone().pitch_range,
+            # ),
+            # lambda _: alu.faberge_swells(_),
+            abjad.Dynamic("ff"),
             evans.ArticulationHandler(["tremolo"], forget=False),
             # # alu.D_color,
         ),
         evans.MusicCommand(
             ("tenor trombone voice", alu.measure_numbers([_ for _ in range(14, 18)])),
-            alu.exchanging_rhythms(
-                number_of_voices=4,
-                voice_number=2,
+            # alu.exchanging_rhythms(
+            #     number_of_voices=4,
+            #     voice_number=2,
+            #     extra_counts=[2, 1, 0, 1],
+            #     basic_rest_period=4,
+            #     rewrite=-1,
+            #     preprocessor=evans.make_preprocessor(quarters=True, fuse_counts=None),
+            # ),
+            evans.talea(
+                abjad.sequence.flatten(abjad.sequence.rotate(baca.sequence.helianthate([[4, 4, 5], [4, 5, 6], [4, 6, 7]], -1, 1), -2), depth=-1),
+                16,
                 extra_counts=[2, 1, 0, 1],
-                basic_rest_period=4,
                 rewrite=-1,
                 preprocessor=evans.make_preprocessor(quarters=True, fuse_counts=None),
+                pre_commands=[
+                    lambda _: rmakers.force_rest(abjad.select.get(abjad.select.logical_ties(_), ~abjad.index([2, 3], 4))),
+                ],
             ),
-            alu.barraque_potamia(
-                transposition=22, rotation=-22, columns=False, retrograde=True
-            ),
-            lambda _: evans.contour(
-                _,
-                ([0, 1], evans.Lapidary("down", "previous alteration", "octave below")),
-                starting_range=abjad.TenorTrombone().pitch_range,
-            ),
-            lambda _: alu.faberge_swells(_),
+            # alu.barraque_potamia(
+            #     transposition=22, rotation=-22, columns=False, retrograde=True
+            # ),
+            evans.PitchHandler(["ef"]),
+            # lambda _: evans.contour(
+            #     _,
+            #     ([0, 1], evans.Lapidary("down", "previous alteration", "octave below")),
+            #     starting_range=abjad.TenorTrombone().pitch_range,
+            # ),
+            # lambda _: alu.faberge_swells(_),
+            abjad.Dynamic("ff"),
             evans.ArticulationHandler(["tremolo"], forget=False),
             # # alu.D_color,
         ),
         evans.MusicCommand(
             ("tenor trombone voice", alu.measure_numbers([_ for _ in range(24, 27)])),
-            alu.exchanging_rhythms(
-                number_of_voices=4,
-                voice_number=2,
+            # alu.exchanging_rhythms(
+            #     number_of_voices=4,
+            #     voice_number=2,
+            #     extra_counts=[2, 1, 0, 1],
+            #     basic_rest_period=4,
+            #     rewrite=-1,
+            #     preprocessor=evans.make_preprocessor(quarters=True, fuse_counts=None),
+            # ),
+            evans.talea(
+                abjad.sequence.flatten(abjad.sequence.rotate(baca.sequence.helianthate([[4, 4, 5], [4, 5, 6], [4, 6, 7]], -1, 1), -2), depth=-1),
+                16,
                 extra_counts=[2, 1, 0, 1],
-                basic_rest_period=4,
                 rewrite=-1,
                 preprocessor=evans.make_preprocessor(quarters=True, fuse_counts=None),
+                pre_commands=[
+                    lambda _: rmakers.force_rest(abjad.select.get(abjad.select.logical_ties(_), ~abjad.index([2, 3], 4))),
+                ],
             ),
-            alu.barraque_potamia(
-                transposition=23, rotation=-23, columns=False, retrograde=True
-            ),
-            lambda _: evans.contour(
-                _,
-                ([0, 1], evans.Lapidary("down", "previous alteration", "octave below")),
-                starting_range=abjad.TenorTrombone().pitch_range,
-            ),
-            lambda _: alu.faberge_swells(_),
+            # alu.barraque_potamia(
+            #     transposition=23, rotation=-23, columns=False, retrograde=True
+            # ),
+            evans.PitchHandler(["eqf"]),
+            # lambda _: evans.contour(
+            #     _,
+            #     ([0, 1], evans.Lapidary("down", "previous alteration", "octave below")),
+            #     starting_range=abjad.TenorTrombone().pitch_range,
+            # ),
+            # lambda _: alu.faberge_swells(_),
+            abjad.Dynamic("ff"),
             evans.ArticulationHandler(["tremolo"], forget=False),
             # # alu.D_color,
         ),
         evans.MusicCommand(
             ("tenor trombone voice", alu.measure_numbers([_ for _ in range(30, 39)])),
-            alu.exchanging_rhythms(
-                number_of_voices=4,
-                voice_number=2,
+            # alu.exchanging_rhythms(
+            #     number_of_voices=4,
+            #     voice_number=2,
+            #     extra_counts=[2, 1, 0, 1],
+            #     basic_rest_period=4,
+            #     rewrite=-1,
+            #     preprocessor=evans.make_preprocessor(quarters=True, fuse_counts=None),
+            # ),
+            evans.talea(
+                abjad.sequence.flatten(abjad.sequence.rotate(baca.sequence.helianthate([[4, 4, 5], [4, 5, 6], [4, 6, 7]], -1, 1), -2), depth=-1),
+                16,
                 extra_counts=[2, 1, 0, 1],
-                basic_rest_period=4,
                 rewrite=-1,
                 preprocessor=evans.make_preprocessor(quarters=True, fuse_counts=None),
+                pre_commands=[
+                    lambda _: rmakers.force_rest(abjad.select.get(abjad.select.logical_ties(_), ~abjad.index([2, 3], 4))),
+                ],
             ),
-            alu.barraque_potamia(
-                transposition=24, rotation=-24, columns=False, retrograde=True
-            ),
-            lambda _: evans.contour(
-                _,
-                ([0, 1], evans.Lapidary("down", "previous alteration", "octave below")),
-                starting_range=abjad.TenorTrombone().pitch_range,
-            ),
-            lambda _: alu.faberge_swells(_),
+            # alu.barraque_potamia(
+            #     transposition=24, rotation=-24, columns=False, retrograde=True
+            # ),
+            evans.PitchHandler(["etqf"]),
+            # lambda _: evans.contour(
+            #     _,
+            #     ([0, 1], evans.Lapidary("down", "previous alteration", "octave below")),
+            #     starting_range=abjad.TenorTrombone().pitch_range,
+            # ),
+            # lambda _: alu.faberge_swells(_),
+            abjad.Dynamic("ff"),
             evans.ArticulationHandler(["tremolo"], forget=False),
             # # alu.D_color,
         ),
         # TUBA
         evans.MusicCommand(
             ("tuba voice", alu.measure_numbers([_ for _ in range(7, 10)])),
-            alu.exchanging_rhythms(
-                number_of_voices=4,
-                voice_number=3,
+            # alu.exchanging_rhythms(
+            #     number_of_voices=4,
+            #     voice_number=3,
+            #     extra_counts=[1, 0, 1, 2],
+            #     basic_rest_period=4,
+            #     rewrite=-1,
+            #     preprocessor=evans.make_preprocessor(quarters=True, fuse_counts=None),
+            # ),
+            evans.talea(
+                abjad.sequence.flatten(abjad.sequence.rotate(baca.sequence.helianthate([[4, 4, 5], [4, 5, 6], [4, 6, 7]], -1, 1), -3), depth=-1),
+                16,
                 extra_counts=[1, 0, 1, 2],
-                basic_rest_period=4,
                 rewrite=-1,
                 preprocessor=evans.make_preprocessor(quarters=True, fuse_counts=None),
+                pre_commands=[
+                    lambda _: rmakers.force_rest(abjad.select.get(abjad.select.logical_ties(_), ~abjad.index([3, 4], 4))),
+                ],
             ),
-            alu.barraque_potamia(
-                transposition=25, rotation=-25, columns=True, retrograde=True
-            ),
-            lambda _: evans.contour(
-                _,
-                ([0, 1], evans.Lapidary("down", "previous alteration", "octave below")),
-                starting_range=abjad.Tuba().pitch_range,
-            ),
-            lambda _: alu.faberge_swells(_),
+            # alu.barraque_potamia(
+            #     transposition=25, rotation=-25, columns=True, retrograde=True
+            # ),
+            evans.PitchHandler(["d"]),
+            # lambda _: evans.contour(
+            #     _,
+            #     ([0, 1], evans.Lapidary("down", "previous alteration", "octave below")),
+            #     starting_range=abjad.Tuba().pitch_range,
+            # ),
+            # lambda _: alu.faberge_swells(_),
+            abjad.Dynamic("ff"),
             evans.ArticulationHandler(["tremolo"], forget=False),
             # # alu.D_color,
         ),
         evans.MusicCommand(
             ("tuba voice", alu.measure_numbers([_ for _ in range(14, 18)])),
-            alu.exchanging_rhythms(
-                number_of_voices=4,
-                voice_number=3,
+            # alu.exchanging_rhythms(
+            #     number_of_voices=4,
+            #     voice_number=3,
+            #     extra_counts=[1, 0, 1, 2],
+            #     basic_rest_period=4,
+            #     rewrite=-1,
+            #     preprocessor=evans.make_preprocessor(quarters=True, fuse_counts=None),
+            # ),
+            evans.talea(
+                abjad.sequence.flatten(abjad.sequence.rotate(baca.sequence.helianthate([[4, 4, 5], [4, 5, 6], [4, 6, 7]], -1, 1), -3), depth=-1),
+                16,
                 extra_counts=[1, 0, 1, 2],
-                basic_rest_period=4,
                 rewrite=-1,
                 preprocessor=evans.make_preprocessor(quarters=True, fuse_counts=None),
+                pre_commands=[
+                    lambda _: rmakers.force_rest(abjad.select.get(abjad.select.logical_ties(_), ~abjad.index([3, 4], 4))),
+                ],
             ),
-            alu.barraque_potamia(
-                transposition=26, rotation=-26, columns=True, retrograde=True
-            ),
-            lambda _: evans.contour(
-                _,
-                ([0, 1], evans.Lapidary("down", "previous alteration", "octave below")),
-                starting_range=abjad.Tuba().pitch_range,
-            ),
-            lambda _: alu.faberge_swells(_),
+            # alu.barraque_potamia(
+            #     transposition=26, rotation=-26, columns=True, retrograde=True
+            # ),
+            evans.PitchHandler(["dqf"]),
+            # lambda _: evans.contour(
+            #     _,
+            #     ([0, 1], evans.Lapidary("down", "previous alteration", "octave below")),
+            #     starting_range=abjad.Tuba().pitch_range,
+            # ),
+            # lambda _: alu.faberge_swells(_),
+            abjad.Dynamic("ff"),
             evans.ArticulationHandler(["tremolo"], forget=False),
             # # alu.D_color,
         ),
         evans.MusicCommand(
             ("tuba voice", alu.measure_numbers([_ for _ in range(24, 27)])),
-            alu.exchanging_rhythms(
-                number_of_voices=4,
-                voice_number=3,
+            # alu.exchanging_rhythms(
+            #     number_of_voices=4,
+            #     voice_number=3,
+            #     extra_counts=[1, 0, 1, 2],
+            #     basic_rest_period=4,
+            #     rewrite=-1,
+            #     preprocessor=evans.make_preprocessor(quarters=True, fuse_counts=None),
+            # ),
+            evans.talea(
+                abjad.sequence.flatten(abjad.sequence.rotate(baca.sequence.helianthate([[4, 4, 5], [4, 5, 6], [4, 6, 7]], -1, 1), -3), depth=-1),
+                16,
                 extra_counts=[1, 0, 1, 2],
-                basic_rest_period=4,
                 rewrite=-1,
                 preprocessor=evans.make_preprocessor(quarters=True, fuse_counts=None),
+                pre_commands=[
+                    lambda _: rmakers.force_rest(abjad.select.get(abjad.select.logical_ties(_), ~abjad.index([3, 4], 4))),
+                ],
             ),
-            alu.barraque_potamia(
-                transposition=27, rotation=-27, columns=True, retrograde=True
-            ),
-            lambda _: evans.contour(
-                _,
-                ([0, 1], evans.Lapidary("down", "previous alteration", "octave below")),
-                starting_range=abjad.Tuba().pitch_range,
-            ),
-            lambda _: alu.faberge_swells(_),
+            # alu.barraque_potamia(
+            #     transposition=27, rotation=-27, columns=True, retrograde=True
+            # ),
+            evans.PitchHandler(["d"]),
+            # lambda _: evans.contour(
+            #     _,
+            #     ([0, 1], evans.Lapidary("down", "previous alteration", "octave below")),
+            #     starting_range=abjad.Tuba().pitch_range,
+            # ),
+            # lambda _: alu.faberge_swells(_),
+            abjad.Dynamic("ff"),
             evans.ArticulationHandler(["tremolo"], forget=False),
             # # alu.D_color,
         ),
         evans.MusicCommand(
             ("tuba voice", alu.measure_numbers([_ for _ in range(30, 39)])),
-            alu.exchanging_rhythms(
-                number_of_voices=4,
-                voice_number=3,
+            # alu.exchanging_rhythms(
+            #     number_of_voices=4,
+            #     voice_number=3,
+            #     extra_counts=[1, 0, 1, 2],
+            #     basic_rest_period=4,
+            #     rewrite=-1,
+            #     preprocessor=evans.make_preprocessor(quarters=True, fuse_counts=None),
+            # ),
+            evans.talea(
+                abjad.sequence.flatten(abjad.sequence.rotate(baca.sequence.helianthate([[4, 4, 5], [4, 5, 6], [4, 6, 7]], -1, 1), -3), depth=-1),
+                16,
                 extra_counts=[1, 0, 1, 2],
-                basic_rest_period=4,
                 rewrite=-1,
                 preprocessor=evans.make_preprocessor(quarters=True, fuse_counts=None),
+                pre_commands=[
+                    lambda _: rmakers.force_rest(abjad.select.get(abjad.select.logical_ties(_), ~abjad.index([3, 4], 4))),
+                ],
             ),
-            alu.barraque_potamia(
-                transposition=28, rotation=-28, columns=True, retrograde=True
-            ),
-            lambda _: evans.contour(
-                _,
-                ([0, 1], evans.Lapidary("down", "previous alteration", "octave below")),
-                starting_range=abjad.Tuba().pitch_range,
-            ),
-            lambda _: alu.faberge_swells(_),
+            # alu.barraque_potamia(
+            #     transposition=28, rotation=-28, columns=True, retrograde=True
+            # ),
+            evans.PitchHandler(["cs"]),
+            # lambda _: evans.contour(
+            #     _,
+            #     ([0, 1], evans.Lapidary("down", "previous alteration", "octave below")),
+            #     starting_range=abjad.Tuba().pitch_range,
+            # ),
+            # lambda _: alu.faberge_swells(_),
+            abjad.Dynamic("ff"),
             evans.ArticulationHandler(["tremolo"], forget=False),
             # # alu.D_color,
         ),
@@ -807,7 +1014,7 @@ maker = evans.SegmentMaker(
             ),
             lambda _: baca.text_spanner(
                 _,
-                r"\trem-one-markup -> \trem-three-markup -> \trem-two-markup -> \trem-five-markup -> \trem-four-markup ->",
+                r"\trem-one-markup -> \trem-three-markup -> \trem-two-markup ->",
                 abjad.Tweak(r"\tweak staff-padding 4.5"),
                 abjad.Tweak(r"\tweak bound-details.right.padding 2"),
                 final_piece_spanner=r"\stopTextSpanOne",
@@ -843,7 +1050,7 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("violin 2 voice", alu.measure_numbers([_ for _ in range(1, 39)])),
             evans.make_tied_notes(),
-            evans.PitchHandler([evans.JIPitch("f,,", "5/1", with_quarter_tones=True)]),
+            evans.PitchHandler(["d'"]),
             # lambda _: baca.text_spanner(
             #     _,
             #     r"norm. -> scr.",

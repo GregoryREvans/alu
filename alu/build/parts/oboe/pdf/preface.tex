@@ -1,0 +1,48 @@
+\documentclass[11pt]{article}
+\usepackage{fontspec}
+\usepackage[utf8]{inputenc}
+\usepackage{xunicode}
+\setmainfont{Bell MT}
+\usepackage[paperwidth=8.5in,paperheight=11in,margin=1in,headheight=0.0in,footskip=0.5in,includehead,includefoot,portrait]{geometry}
+\usepackage[absolute]{textpos}
+\TPGrid[0.5in, 0.25in]{23}{24}
+\parindent=0pt
+\parskip=12pt
+\usepackage{nopageno}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{amsmath}
+\usepackage{tikz}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
+
+\begin{document}
+
+\begin{center}
+\huge PERFORMANCE NOTES
+\end{center}
+\begingroup
+\begin{center}
+
+\leftskip0.25in
+\pmb{Accidentals} : After temporary accidentals, cancellation marks are printed also in the following measure (for notes in the same octave) and, in the same measure, for notes in other octaves, but they are printed again if the same note appears later in the same measure, except if the note is immediately repeated.
+\rightskip\leftskip
+\phantom{text} \hfill \phantom{()}
+
+
+\end{center}
+\endgroup
+
+\vspace*{9\baselineskip}
+
+\begin{center}
+\textit{Alu} was composed in partial fulfillment of the requirements for the degree of Doctor of Philosophy in the subject of Music Composition at the University of Iowa.
+\end{center}
+
+\vspace*{23\baselineskip}
+
+\begin{center}
+duration: c. 20'
+\end{center}
+
+\end{document}

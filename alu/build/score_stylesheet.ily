@@ -1,6 +1,7 @@
 \version "2.22.1" %2.23.6
 \language "english"
-#(set-default-paper-size "11x17portrait")
+%{ #(set-default-paper-size "11x17portrait") %}
+#(set-default-paper-size '(cons (* 10 in) (* 13 in)))
 #(set-global-staff-size 11) % was 13
 
 %{ \include "/Users/gregoryevans/ekmelily/ly/ekmel-24.ily" % just trying this out %}
@@ -89,7 +90,7 @@ afterGraceFraction = #(cons 15 16)
         \consists Axis_group_engraver
 		\consists Bar_number_engraver
         \consists Time_signature_engraver
-		%{ \consists Mark_engraver %}
+		\consists Mark_engraver
 		%{ \consists Metronome_mark_engraver %}
 		\consists "Measure_grouping_engraver"
 		\consists Text_engraver
@@ -103,7 +104,7 @@ afterGraceFraction = #(cons 15 16)
 		\override RehearsalMark.break-align-symbols = #'(time-signature)
 		\override RehearsalMark.break-visibility = #end-of-line-invisible
 		\override RehearsalMark.font-name = "Bell MT"
-		\override RehearsalMark.font-size = 3
+		\override RehearsalMark.font-size = 7
 		\override RehearsalMark.outside-staff-priority = 500
 		\override RehearsalMark.self-alignment-X = #center
 		\override TextScript.font-size = 6
@@ -210,6 +211,7 @@ afterGraceFraction = #(cons 15 16)
 		pedalSustainStyle = #'mixed
 		barNumberFormatter = #oval-bar-numbers
 		tupletFullLength = ##t
+		rehearsalMarkFormatter = #format-mark-box-alphabet
 		%{ tupletFullLengthNote = ##t % makes grace notes stand out %}
 		%{ subdivideBeams = ##t % just trying this out %}
 

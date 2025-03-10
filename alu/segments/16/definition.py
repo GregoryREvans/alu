@@ -76,6 +76,21 @@ maker = evans.SegmentMaker(
     commands=[
         # PREFIX
         evans.attach(
+            "Global Context",
+            abjad.RehearsalMark(number=39),
+            lambda _: abjad.select.leaf(_, 0),
+        ),
+        evans.attach(
+            "Global Context",
+            abjad.RehearsalMark(number=40),
+            lambda _: abjad.select.leaf(_, 10),
+        ),
+        evans.attach(
+            "Global Context",
+            abjad.RehearsalMark(number=41),
+            lambda _: abjad.select.leaf(_, 19),
+        ),
+        evans.attach(
             "bassoon voice",
             abjad.Clef("bass"),
             lambda _: abjad.select.leaf(_, 0),
@@ -287,7 +302,7 @@ maker = evans.SegmentMaker(
         # TUBA
         # PERCUSSION 1
         evans.MusicCommand(
-            ("percussion 1 voice", alu.measure_numbers([_ for _ in range(11, 15)])),
+            ("percussion 1 voice", alu.measure_numbers([_ for _ in range(11, 20)])),
             alu.exchanging_rhythms(
                 number_of_voices=6,
                 voice_number=0,
@@ -303,7 +318,7 @@ maker = evans.SegmentMaker(
         ),
         # PERCUSSION 2
         evans.MusicCommand(
-            ("percussion 2 voice", alu.measure_numbers([_ for _ in range(11, 15)])),
+            ("percussion 2 voice", alu.measure_numbers([_ for _ in range(11, 20)])),
             alu.exchanging_rhythms(
                 number_of_voices=6,
                 voice_number=1,
@@ -343,19 +358,19 @@ maker = evans.SegmentMaker(
             ),
             evans.loop([8, 7, 9, 5], [-1]),
             evans.text_span(
-                ["P", "1/2 P", "T", "1/2 T", "T", "XT"], "=>", [8], padding=10, id=2
+                ["P", "1/2 P", "T", "1/2 T", "T", "XT"], "=>", [8], padding=11, id=2
             ),
-            evans.text_span(
-                [
-                    r"\diamond-notehead-markup",
-                    r"\default-notehead-markup",
-                    r"\half-diamond-notehead-markup",
-                ],
-                "=>",
-                [7],
-                padding=12,
-                id=3,
-            ),
+            # evans.text_span(
+            #     [
+            #         r"\diamond-notehead-markup",
+            #         r"\default-notehead-markup",
+            #         r"\half-diamond-notehead-markup",
+            #     ],
+            #     "=>",
+            #     [7],
+            #     padding=12,
+            #     id=3,
+            # ),
             evans.zero_padding_glissando,
             evans.bcp(
                 [
@@ -424,19 +439,19 @@ maker = evans.SegmentMaker(
             ),
             evans.loop([_ - 12 for _ in [8, 9, 7, 11]], [1]),
             evans.text_span(
-                ["P", "1/2 P", "T", "1/2 T", "T", "XT"], "=>", [8], padding=10, id=2
+                ["P", "1/2 P", "T", "1/2 T", "T", "XT"], "=>", [8], padding=11, id=2
             ),
-            evans.text_span(
-                [
-                    r"\diamond-notehead-markup",
-                    r"\default-notehead-markup",
-                    r"\half-diamond-notehead-markup",
-                ],
-                "=>",
-                [8],
-                padding=12,
-                id=3,
-            ),
+            # evans.text_span(
+            #     [
+            #         r"\diamond-notehead-markup",
+            #         r"\default-notehead-markup",
+            #         r"\half-diamond-notehead-markup",
+            #     ],
+            #     "=>",
+            #     [8],
+            #     padding=12,
+            #     id=3,
+            # ),
             evans.zero_padding_glissando,
             evans.bcp(
                 [
@@ -505,19 +520,19 @@ maker = evans.SegmentMaker(
             ),
             evans.loop([5, 4, 6, 2], [-1]),
             evans.text_span(
-                ["P", "1/2 P", "T", "1/2 T", "T", "XT"], "=>", [8], padding=10, id=2
+                ["P", "1/2 P", "T", "1/2 T", "T", "XT"], "=>", [8], padding=11, id=2
             ),
-            evans.text_span(
-                [
-                    r"\diamond-notehead-markup",
-                    r"\default-notehead-markup",
-                    r"\half-diamond-notehead-markup",
-                ],
-                "=>",
-                [9],
-                padding=12,
-                id=3,
-            ),
+            # evans.text_span(
+            #     [
+            #         r"\diamond-notehead-markup",
+            #         r"\default-notehead-markup",
+            #         r"\half-diamond-notehead-markup",
+            #     ],
+            #     "=>",
+            #     [9],
+            #     padding=12,
+            #     id=3,
+            # ),
             evans.zero_padding_glissando,
             evans.bcp(
                 [
@@ -587,19 +602,19 @@ maker = evans.SegmentMaker(
             ),
             evans.loop([_ - 24 for _ in [5, 6, 4, 8]], [1]),
             evans.text_span(
-                ["P", "1/2 P", "T", "1/2 T", "T", "XT"], "=>", [8], padding=10, id=2
+                ["P", "1/2 P", "T", "1/2 T", "T", "XT"], "=>", [8], padding=11.5, id=2
             ),
-            evans.text_span(
-                [
-                    r"\diamond-notehead-markup",
-                    r"\default-notehead-markup",
-                    r"\half-diamond-notehead-markup",
-                ],
-                "=>",
-                [10],
-                padding=12,
-                id=3,
-            ),
+            # evans.text_span(
+            #     [
+            #         r"\diamond-notehead-markup",
+            #         r"\default-notehead-markup",
+            #         r"\half-diamond-notehead-markup",
+            #     ],
+            #     "=>",
+            #     [10],
+            #     padding=12,
+            #     id=3,
+            # ),
             evans.zero_padding_glissando,
             evans.bcp(
                 [
@@ -671,17 +686,17 @@ maker = evans.SegmentMaker(
             evans.text_span(
                 ["P", "1/2 P", "T", "1/2 T", "T", "XT"], "=>", [8], padding=10, id=2
             ),
-            evans.text_span(
-                [
-                    r"\diamond-notehead-markup",
-                    r"\default-notehead-markup",
-                    r"\half-diamond-notehead-markup",
-                ],
-                "=>",
-                [10],
-                padding=12,
-                id=3,
-            ),
+            # evans.text_span(
+            #     [
+            #         r"\diamond-notehead-markup",
+            #         r"\default-notehead-markup",
+            #         r"\half-diamond-notehead-markup",
+            #     ],
+            #     "=>",
+            #     [10],
+            #     padding=12,
+            #     id=3,
+            # ),
             evans.zero_padding_glissando,
             evans.bcp(
                 [

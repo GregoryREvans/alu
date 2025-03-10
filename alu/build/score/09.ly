@@ -7,6 +7,7 @@
                   %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 1]
                 \tempo 4=105
+                \mark #21
                 \mark \markup \bold {  }
                   %! scaling time signatures
                 \time 2/4
@@ -89,6 +90,7 @@
                   %! COMMENT_MEASURE_NUMBERS
                   %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 11]
+                \mark #22
                   %! scaling time signatures
                 \time 4/4
                 s1 * 1
@@ -159,6 +161,7 @@
                   %! COMMENT_MEASURE_NUMBERS
                   %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 21]
+                \mark #23
                   %! scaling time signatures
                 \time 4/4
                 s1 * 1
@@ -195,7 +198,7 @@
                     \tag #'group2
                     {
 
-                        \context PianoStaff = "sub group 1"
+                        \context StaffGroup = "sub group 1"
                         <<
 
                             \tag #'voice1
@@ -1483,7 +1486,7 @@
                     \tag #'group3
                     {
 
-                        \context PianoStaff = "sub group 2"
+                        \context StaffGroup = "sub group 2"
                         <<
 
                             \tag #'voice6
@@ -3172,7 +3175,7 @@
                     \tag #'group6
                     {
 
-                        \context PianoStaff = "sub group 5"
+                        \context StaffGroup = "sub group 5"
                         <<
 
                             \tag #'voice13

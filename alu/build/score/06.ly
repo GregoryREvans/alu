@@ -7,6 +7,7 @@
                   %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 1]
                 \tempo 4=105
+                \mark #13
                 \mark \markup \bold {  }
                   %! scaling time signatures
                 \time 5/4
@@ -103,6 +104,7 @@
                   %! COMMENT_MEASURE_NUMBERS
                   %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 13]
+                \mark #14
                   %! scaling time signatures
                 \time 4/4
                 s1 * 1
@@ -166,6 +168,7 @@
                   %! COMMENT_MEASURE_NUMBERS
                   %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 22]
+                \mark #15
                   %! scaling time signatures
                 \time 3/4
                 s1 * 3/4
@@ -257,6 +260,7 @@
                   %! COMMENT_MEASURE_NUMBERS
                   %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 35]
+                \mark #16
                   %! scaling time signatures
                 \time 4/4
                 s1 * 1
@@ -293,7 +297,7 @@
                     \tag #'group2
                     {
 
-                        \context PianoStaff = "sub group 1"
+                        \context StaffGroup = "sub group 1"
                         <<
 
                             \tag #'voice1
@@ -314,8 +318,7 @@
                                         \set Staff.shortInstrumentName = \markup { \hcenter-in #12 "fl" }
                                         c'4
                                         \fff
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
+                                        \>
                                           %! abjad.glissando(7)
                                         \glissando
 
@@ -323,49 +326,27 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             cqs'8.
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             dqf'8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         \times 2/3
                                         {
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             dqf'8
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             d'4
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -374,24 +355,13 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             d'16
                                             [
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             eqf'8
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                             \revert Staff.Stem.stemlet-length
                                             eqf'32
@@ -404,18 +374,10 @@
 
                                             cqs'4
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             cs'8
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -425,47 +387,26 @@
                                               %! COMMENT_MEASURE_NUMBERS
                                               %! evans.SegmentMaker.comment_measure_numbers()
                                             % [flute voice measure 2]
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             cs'16
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             d'4
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         dqs'8
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         e'8
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \times 4/5
                                         {
@@ -476,20 +417,12 @@
 
                                             cs'8
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             dqf'8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -499,32 +432,16 @@
                                               %! COMMENT_MEASURE_NUMBERS
                                               %! evans.SegmentMaker.comment_measure_numbers()
                                             % [flute voice measure 3]
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             dqf'16
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             dqs'4
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             ef'16
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -533,13 +450,8 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             ef'16
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
@@ -555,84 +467,46 @@
                                         \times 2/3
                                         {
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             dqf'8
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             d'4
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                         }
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         ef'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [flute voice measure 4]
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         ef'16
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         eqf'8.
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \times 4/5
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             eqf'8
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             f'8.
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -645,20 +519,12 @@
 
                                             d'8.
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             dqs'8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -667,33 +533,18 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             dqs'16
                                             [
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             eqf'16
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             e'16.
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
@@ -711,20 +562,12 @@
 
                                             dqs'8.
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             ef'16
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -732,62 +575,35 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             ef'8.
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             e'8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         e'16
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         eqs'8.
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \times 4/5
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             eqs'16
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
@@ -801,26 +617,15 @@
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         ef'8
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         eqf'8
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \tweak text #tuplet-number::calc-fraction-text
                                         \times 8/7
@@ -830,58 +635,31 @@
                                               %! evans.SegmentMaker.comment_measure_numbers()
                                             % [flute voice measure 6]
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             eqf'16.
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             eqs'8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         \times 2/3
                                         {
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             eqs'16
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             f'4
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             gqf'16
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -900,27 +678,18 @@
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         eqf'16
                                         [
                                           %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
                                         \glissando
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         e'8
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
                                         f'16
+                                        \mf
                                         ]
 
                                           %! COMMENT_MEASURE_NUMBERS
@@ -1236,17 +1005,11 @@
                                         \set Staff.shortInstrumentName = \markup { \hcenter-in #12 "ob" }
                                         cs'4
                                         \fff
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
+                                        \>
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         dqf'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
@@ -1254,49 +1017,27 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             dqs'8.
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             ef'8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         \times 2/3
                                         {
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             ef'8
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             eqs'4
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -1312,13 +1053,8 @@
                                             ~
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             d'32
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
@@ -1330,44 +1066,23 @@
                                               %! COMMENT_MEASURE_NUMBERS
                                               %! evans.SegmentMaker.comment_measure_numbers()
                                             % [oboe voice measure 2]
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             dqs'4
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             eqf'8
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         \times 4/5
                                         {
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             eqf'16
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             e'4
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
@@ -1390,75 +1105,43 @@
                                               %! evans.SegmentMaker.comment_measure_numbers()
                                             % [oboe voice measure 3]
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             ef'16
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             eqf'8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         eqs'8.
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         f'16
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \times 4/5
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             f'8.
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             gqf'8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -1469,18 +1152,10 @@
 
                                             e'4
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             eqs'16
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -1492,71 +1167,38 @@
                                               %! evans.SegmentMaker.comment_measure_numbers()
                                             % [oboe voice measure 4]
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             eqs'16
                                             [
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             fqs'8
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             fs'32
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         \times 2/3
                                         {
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             fs'4
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             fs'16
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             gqs'16
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -1571,26 +1213,15 @@
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         f'8.
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         fqs'16
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \tweak text #tuplet-number::calc-fraction-text
                                         \times 4/3
@@ -1600,62 +1231,35 @@
                                               %! evans.SegmentMaker.comment_measure_numbers()
                                             % [oboe voice measure 5]
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             fqs'8
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             gqf'16
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         gqf'8.
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         g'16
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \times 4/5
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             g'16
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
@@ -1672,35 +1276,19 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             fs'16
                                             [
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             gqf'8.
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             gqs'8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -1709,35 +1297,19 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             gqs'16
                                             [
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             af'16.
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             aqs'16
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -1753,20 +1325,12 @@
 
                                             g'8.
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             gqs'16
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -1774,71 +1338,38 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             gqs'8.
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             aqf'8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         aqf'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         a'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [oboe voice measure 7]
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         a'8
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         bqf'8
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \times 4/5
                                         {
@@ -1851,8 +1382,6 @@
                                             af'8.
                                             ]
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
                                         }
@@ -1860,21 +1389,11 @@
                                         \times 2/3
                                         {
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             aqf'4
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             aqs'8
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
@@ -1885,13 +1404,8 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             bf'16.
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
@@ -1899,6 +1413,7 @@
 
                                             \revert Staff.Stem.stemlet-length
                                             a'16
+                                            \mf
                                             ]
 
                                         }
@@ -2207,6 +1722,7 @@
                                         \set Staff.shortInstrumentName = \markup { \hcenter-in #12 "bcl" }
                                         b4
                                         \fff
+                                        \>
                                         ~
 
                                         \tweak text #tuplet-number::calc-fraction-text
@@ -2214,73 +1730,41 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             b8
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             c'16
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         c'8
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         cs'8
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \times 4/5
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             cs'8
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             ctqs'8.
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
@@ -2304,47 +1788,26 @@
                                               %! evans.SegmentMaker.comment_measure_numbers()
                                             % [bass clarinet voice measure 2]
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             bqs8
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             cqs'16.
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         \times 2/3
                                         {
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             cqs'8
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             ctqs'4
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
@@ -2354,26 +1817,15 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             d'8.
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             eqf'8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -2388,34 +1840,17 @@
                                         c'8
                                         ]
                                           %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
                                         \glissando
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         cs'4
                                           %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
                                         \glissando
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         d'4
                                           %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
                                         \glissando
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         dqs'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
@@ -2431,20 +1866,12 @@
                                             cqs'8.
                                             [
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             ctqs'8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -2452,35 +1879,19 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             ctqs'8
                                             [
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             dqs'8.
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             ds'16
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -2489,26 +1900,15 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             ds'16.
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             eqs'8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -2528,54 +1928,28 @@
                                         \times 4/5
                                         {
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             cs'16
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             d'4
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         ds'8.
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         eqf'16
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         eqf'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
@@ -2586,50 +1960,27 @@
                                         % [bass clarinet voice measure 6]
                                         ctqs'4
                                           %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
                                         \glissando
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         dqs'8
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         eqf'8
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \times 4/5
                                         {
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             eqf'16
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             e'4
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
@@ -2652,90 +2003,46 @@
                                               %! evans.SegmentMaker.comment_measure_numbers()
                                             % [bass clarinet voice measure 7]
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             d'32
                                             [
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             ds'16.
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             e'16.
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         \times 2/3
                                         {
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             e'16
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             eqs'4
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             eqs'16
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         \times 4/5
                                         {
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             eqs'16
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             fs'4
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -2745,6 +2052,7 @@
 
                                         \revert Staff.Stem.stemlet-length
                                         dqs'8.
+                                        \mf
                                         ]
 
                                           %! COMMENT_MEASURE_NUMBERS
@@ -2770,7 +2078,7 @@
                                           %! SPANNER_START
                                           %! baca.PiecewiseCommand._call(2)
                                           %! baca.text_spanner()
-                                        \tweak staff-padding 1
+                                        \tweak staff-padding 3.5
                                           %! SPANNER_START
                                           %! baca.PiecewiseCommand._call(2)
                                           %! baca.text_spanner()
@@ -2778,11 +2086,11 @@
                                           %! SPANNER_START
                                           %! baca.PiecewiseCommand._call(2)
                                           %! baca.text_spanner()
-                                        - \baca-text-spanner-left-markup \half-air-tone-markup
+                                        - \baca-text-spanner-left-text "airy"
                                           %! SPANNER_START
                                           %! baca.PiecewiseCommand._call(2)
                                           %! baca.text_spanner()
-                                        - \baca-text-spanner-right-markup \default-notehead-markup
+                                        - \baca-text-spanner-right-text "tone"
                                           %! SPANNER_START
                                           %! baca.PiecewiseCommand._call(2)
                                           %! baca.text_spanner()
@@ -3111,7 +2419,7 @@
                                               %! SPANNER_START
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
-                                            \tweak staff-padding 1
+                                            \tweak staff-padding 8.5
                                               %! SPANNER_START
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
@@ -3119,11 +2427,11 @@
                                               %! SPANNER_START
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
-                                            - \baca-text-spanner-left-markup \half-air-tone-markup
+                                            - \baca-text-spanner-left-text "airy"
                                               %! SPANNER_START
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
-                                            - \baca-text-spanner-right-markup \default-notehead-markup
+                                            - \baca-text-spanner-right-text "tone"
                                               %! SPANNER_START
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
@@ -3575,7 +2883,7 @@
                                           %! SPANNER_START
                                           %! baca.PiecewiseCommand._call(2)
                                           %! baca.text_spanner()
-                                        \tweak staff-padding 1
+                                        \tweak staff-padding 3.5
                                           %! SPANNER_START
                                           %! baca.PiecewiseCommand._call(2)
                                           %! baca.text_spanner()
@@ -3583,11 +2891,11 @@
                                           %! SPANNER_START
                                           %! baca.PiecewiseCommand._call(2)
                                           %! baca.text_spanner()
-                                        - \baca-text-spanner-left-markup \half-air-tone-markup
+                                        - \baca-text-spanner-left-text "airy"
                                           %! SPANNER_START
                                           %! baca.PiecewiseCommand._call(2)
                                           %! baca.text_spanner()
-                                        - \baca-text-spanner-right-markup \default-notehead-markup
+                                        - \baca-text-spanner-right-text "tone"
                                           %! SPANNER_START
                                           %! baca.PiecewiseCommand._call(2)
                                           %! baca.text_spanner()
@@ -3980,7 +3288,7 @@
                                               %! SPANNER_START
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
-                                            \tweak staff-padding 1
+                                            \tweak staff-padding 3.5
                                               %! SPANNER_START
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
@@ -3988,11 +3296,11 @@
                                               %! SPANNER_START
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
-                                            - \baca-text-spanner-left-markup \half-air-tone-markup
+                                            - \baca-text-spanner-left-text "airy"
                                               %! SPANNER_START
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
-                                            - \baca-text-spanner-right-markup \default-notehead-markup
+                                            - \baca-text-spanner-right-text "tone"
                                               %! SPANNER_START
                                               %! baca.PiecewiseCommand._call(2)
                                               %! baca.text_spanner()
@@ -4275,68 +3583,37 @@
                                         \clef "bass"
                                         bf,4
                                         \fff
+                                        \>
                                         ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         bf,4
                                           %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
                                         \glissando
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         b,4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         b,16
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         c8.
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \times 4/5
                                         {
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             dqf4
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             ef16
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -4350,8 +3627,6 @@
 
                                             bqf,4
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
                                         }
@@ -4361,49 +3636,27 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             bqs,8.
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             cqs32
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         \times 2/3
                                         {
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             cqs4
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             d8
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -4414,13 +3667,8 @@
                                               %! evans.SegmentMaker.comment_measure_numbers()
                                             % [bassoon voice measure 3]
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             d8
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
@@ -4432,8 +3680,6 @@
 
                                         b,4
                                           %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
                                         \glissando
 
                                         \tweak text #tuplet-number::calc-fraction-text
@@ -4441,71 +3687,38 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             c8
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             cs16
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         cs4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [bassoon voice measure 4]
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         dqs4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         dqs8
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         e8
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \tweak text #tuplet-number::calc-fraction-text
                                         \times 4/3
@@ -4523,26 +3736,15 @@
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         bqs,8.
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         cqs16
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \times 4/5
                                         {
@@ -4551,26 +3753,15 @@
                                               %! evans.SegmentMaker.comment_measure_numbers()
                                             % [bassoon voice measure 5]
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             cqs8
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             dqf8.
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -4578,35 +3769,19 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             dqf16
                                             [
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             ef8.
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             eqs8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -4622,45 +3797,23 @@
                                             ~
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             c32
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         \times 2/3
                                         {
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             c16
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             cs4
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             cs16
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
@@ -4669,23 +3822,12 @@
                                         \times 4/5
                                         {
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             d4
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             eqf16
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -4693,26 +3835,15 @@
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [bassoon voice measure 6]
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         eqf8
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         f8
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \tweak text #tuplet-number::calc-fraction-text
                                         \times 4/3
@@ -4730,110 +3861,60 @@
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         cqs8
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         dqf8
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         dqf4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [bassoon voice measure 7]
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         dqf8
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         dqs8
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \tweak text #tuplet-number::calc-fraction-text
                                         \times 4/3
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             dqs16
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             e8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         e16
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         fqs8.
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \times 4/5
                                         {
@@ -4844,12 +3925,11 @@
 
                                             cs8.
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
                                             d16
+                                            \mf
                                             ]
 
                                         }
@@ -5157,92 +4237,44 @@
                                           %! applying staff names and clefs
                                         \set Staff.shortInstrumentName = \markup { \hcenter-in #12 "hn" }
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        gs8
+                                        fs''8
                                         \fff
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        \>
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        a8
+                                        f''8
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        a4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        f''4
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        bf4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        e''4
+                                        ~
 
                                         \tweak text #tuplet-number::calc-fraction-text
                                         \times 4/3
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
-                                            bf8
+                                            e''8
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
-                                            bqs16
+                                            dqs''16
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        bqs8
+                                        dqs''8
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        cs'8
+                                        cs''8
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \times 4/5
                                         {
@@ -5251,39 +4283,22 @@
                                               %! evans.SegmentMaker.comment_measure_numbers()
                                             % [french horn voice measure 2]
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            cs'8
+                                            cs''8
                                             [
 
                                             \revert Staff.Stem.stemlet-length
-                                            a8.
+                                            f''8.
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
 
                                         }
 
                                         \times 2/3
                                         {
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
-                                            bf4
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            e''4
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
-                                            b8
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ef''8
+                                            ~
 
                                         }
 
@@ -5292,26 +4307,13 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
-                                            b8
+                                            ef''8
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
-                                            cqs'16.
+                                            dqf''16.
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -5321,16 +4323,9 @@
                                               %! COMMENT_MEASURE_NUMBERS
                                               %! evans.SegmentMaker.comment_measure_numbers()
                                             % [french horn voice measure 3]
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
-                                            cqs'8
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            dqf''8
 
-                                            d'4
+                                            c''4
 
                                         }
 
@@ -5338,180 +4333,91 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            bf8.
+                                            e''8.
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
-                                            b8
+                                            ef''8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        b8
+                                        ef''8
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        c'8
+                                        d''8
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        dqf'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        cqs''4
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [french horn voice measure 4]
-                                        ef'4
+                                        b'4
 
-                                        b4
+                                        ef''4
                                         ~
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        b8
+                                        ef''8
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        c'8
+                                        d''8
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        c'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        d''4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [french horn voice measure 5]
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        c'8
+                                        d''8
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        cs'8
+                                        cs''8
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \tweak text #tuplet-number::calc-fraction-text
                                         \times 4/3
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
-                                            cs'8
+                                            cs''8
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
-                                            dqs'16
+                                            bqs'16
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        dqs'8.
+                                        bqs'8.
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        e'16
+                                        bf'16
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \times 4/5
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            e'8
+                                            bf'8
                                             [
 
                                             \revert Staff.Stem.stemlet-length
-                                            c'8.
+                                            d''8.
                                             ]
                                             ~
 
@@ -5520,32 +4426,13 @@
                                         \times 2/3
                                         {
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
-                                            c'16
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            d''16
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
-                                            cs'4
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            cs''4
+                                            ~
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
-                                            cs'16
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            cs''16
+                                            ~
 
                                         }
 
@@ -5557,103 +4444,46 @@
                                               %! evans.SegmentMaker.comment_measure_numbers()
                                             % [french horn voice measure 6]
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
-                                            cs'32
+                                            cs''32
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
-                                            d'8
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            c''8
+                                            ~
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
-                                            d'32
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            c''32
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
-                                            eqf'32
+                                            bqf'32
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        eqf'8
+                                        bqf'8
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        f'8
+                                        a'8
                                         ]
 
                                         \times 4/5
                                         {
 
-                                            cs'4
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            cs''4
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
-                                            d'16
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            c''16
+                                            ~
 
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        d'16
+                                        c''16
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        ef'8.
+                                        b'8.
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
 
                                         \tweak text #tuplet-number::calc-fraction-text
                                         \times 4/3
@@ -5663,120 +4493,55 @@
                                               %! evans.SegmentMaker.comment_measure_numbers()
                                             % [french horn voice measure 7]
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
-                                            eqs'8
+                                            aqs'8
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
-                                            fs'16
+                                            gs'16
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
-                                        fs'4
+                                        gs'4
 
-                                        d'4
+                                        c''4
                                         ~
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        d'8.
+                                        c''8.
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        ef'16
+                                        b'16
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [french horn voice measure 8]
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        ef'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        b'4
+                                        ~
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        ef'8
+                                        b'8
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        e'8
+                                        bf'8
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        e'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        bf'4
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        fqs'8.
+                                        aqf'8.
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         g'16
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \times 4/5
                                         {
@@ -5786,7 +4551,8 @@
                                             [
 
                                             \revert Staff.Stem.stemlet-length
-                                            ef'8
+                                            b'8
+                                            \mf
                                             ]
 
                                         }
@@ -6075,7 +4841,7 @@
                     \tag #'group3
                     {
 
-                        \context PianoStaff = "sub group 2"
+                        \context StaffGroup = "sub group 2"
                         <<
 
                             \tag #'voice6
@@ -6094,117 +4860,54 @@
                                         \set Staff.instrumentName = \markup { \hcenter-in #14 "Trumpet" }
                                           %! applying staff names and clefs
                                         \set Staff.shortInstrumentName = \markup { \hcenter-in #12 "tp" }
-                                        b4
+                                        ef''4
                                         \fff
+                                        \>
                                         ~
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        b8
+                                        ef''8
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        c'8
+                                        d''8
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        cs'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        cs''4
+                                        ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        cs'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        cs''4
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        dqs'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        bqs'4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [trumpet voice measure 2]
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        dqs'16
+                                        bqs'16
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        eqs'8.
+                                        aqs'8.
                                         ]
 
                                         \times 4/5
                                         {
 
-                                            cqs'4
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            dqf''4
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
-                                            dqf'16
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            cqs''16
+                                            ~
 
                                         }
 
                                         \times 2/3
                                         {
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
-                                            dqf'8
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            cqs''8
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
-                                            dqs'4
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            bqs'4
 
                                         }
 
@@ -6216,35 +4919,22 @@
                                               %! evans.SegmentMaker.comment_measure_numbers()
                                             % [trumpet voice measure 3]
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
-                                            e'8.
+                                            bf'8.
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
-                                            fs'32
+                                            af'32
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         \times 2/3
                                         {
 
-                                            fs'4
+                                            af'4
 
-                                            d'8
+                                            c''8
                                             ~
 
                                         }
@@ -6253,37 +4943,16 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
-                                            d'8
+                                            c''8
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
-                                            ef'8.
+                                            b'8.
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
 
                                         }
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        e'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        bf'4
 
                                         \tweak text #tuplet-number::calc-fraction-text
                                         \times 4/3
@@ -6293,192 +4962,91 @@
                                               %! evans.SegmentMaker.comment_measure_numbers()
                                             % [trumpet voice measure 4]
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
-                                            fqs'8
+                                            aqf'8
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
-                                            gqs'16
+                                            gqf'16
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
-                                        gqs'4
+                                        gqf'4
 
-                                        eqf'4
+                                        bqf'4
                                         ~
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        eqf'16
+                                        bqf'16
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        eqs'8.
+                                        aqs'8.
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [trumpet voice measure 5]
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        fqs'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        aqf'4
+                                        ~
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        fqs'8.
+                                        aqf'8.
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         g'16
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         g'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         g'8
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        a'8
+                                        f'8
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
-                                        a'4
+                                        f'4
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [trumpet voice measure 6]
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        f'8.
+                                        a'8.
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        fs'16
+                                        af'16
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \times 4/5
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
-                                            fs'8.
+                                            af'8.
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             g'8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         \times 2/3
                                         {
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             g'4
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
-                                            aqf'8
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            fqs'8
+                                            ~
 
                                         }
 
@@ -6487,18 +5055,11 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
-                                            aqf'16.
+                                            fqs'16.
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            bqf'8
+                                            eqf'8
                                             ]
 
                                         }
@@ -6507,75 +5068,38 @@
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [trumpet voice measure 7]
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        gqf'8
+                                        gqs'8
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        gqs'8
+                                        gqf'8
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \times 4/5
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
-                                            gqs'16
+                                            gqf'16
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
-                                            aqf'8
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            fqs'8
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
-                                            bf'8
+                                            e'8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        bf'16
+                                        e'16
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
 
-                                        c''8
+                                        d'8
 
                                         \revert Staff.Stem.stemlet-length
-                                        af'16
+                                        fs'16
                                         ]
                                         ~
 
@@ -6584,94 +5108,43 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
-                                            af'8
+                                            fs'8
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
-                                            a'16
+                                            f'16
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [trumpet voice measure 8]
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        a'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        f'4
+                                        ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        a'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        f'4
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        bf'8.
+                                        e'8.
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        bqs'16
+                                        dqs'16
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        bqs'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        dqs'4
+                                        ~
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        bqs'8
+                                        dqs'8
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        dqf''8
+                                        cqs'8
+                                        \mf
                                         ]
 
                                           %! COMMENT_MEASURE_NUMBERS
@@ -6970,71 +5443,37 @@
                                         \clef "bass"
                                         c4
                                         \fff
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
+                                        \>
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         cs4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         cs8
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         d8
                                         ]
                                           %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
                                         \glissando
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         eqf4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         eqf4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tenor trombone voice measure 2]
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         fqs4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \override Staff.Stem.stemlet-length = 0.75
                                         fqs16
@@ -7044,30 +5483,17 @@
                                         d8.
                                         ]
                                           %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
                                         \glissando
 
                                         \times 4/5
                                         {
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             ef4
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             e16
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -7077,21 +5503,11 @@
                                               %! COMMENT_MEASURE_NUMBERS
                                               %! evans.SegmentMaker.comment_measure_numbers()
                                             % [tenor trombone voice measure 3]
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             e8
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             fqs4
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
@@ -7115,23 +5531,12 @@
                                         \times 2/3
                                         {
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             e4
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             f8
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -7139,24 +5544,14 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             f8
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             fs8.
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
@@ -7165,12 +5560,7 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tenor trombone voice measure 4]
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         gqs4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
@@ -7189,73 +5579,35 @@
 
                                         }
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         fs4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         g4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tenor trombone voice measure 5]
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         g16
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         af8.
                                         ]
                                           %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
                                         \glissando
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         aqs4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         aqs4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         aqs4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
@@ -7271,74 +5623,36 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tenor trombone voice measure 6]
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         af4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
+                                        ~
+
+                                        af4
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        af4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
-
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         a4
                                           %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
                                         \glissando
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         bf4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tenor trombone voice measure 7]
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         bqs4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \times 2/3
                                         {
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             bqs16
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             dqf'4
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                             dqf'16
 
@@ -7352,18 +5666,11 @@
                                             bf8
                                             [
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             b16.
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
@@ -7372,21 +5679,11 @@
                                         \times 2/3
                                         {
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             c'4
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             dqf'8
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
@@ -7406,53 +5703,30 @@
                                             c'8
                                             ]
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         cs'8.
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         d'16
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         d'4
                                           %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
-
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        eqf'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
                                         \glissando
 
                                         eqf'4
+                                        ~
+
+                                        eqf'4
+                                        \mf
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
@@ -7748,274 +6022,38 @@
                                           %! applying staff names and clefs
                                         \set Staff.shortInstrumentName = \markup { \hcenter-in #12 "tba" }
                                         \clef "bass"
-                                        b,4
+                                        cs'4
                                         \fff
+                                        \>
                                         ~
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        b,8
+                                        cs'8
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        c8
+                                        c'8
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        c4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        c'4
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        cs8.
+                                        b8.
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        dqs16
+                                        aqs16
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        dqs4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        aqs4
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tuba voice measure 2]
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        eqs4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
-
-                                        \tweak text #tuplet-number::calc-fraction-text
-                                        \times 4/3
-                                        {
-
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            eqs16
-                                            [
-
-                                            \revert Staff.Stem.stemlet-length
-                                            cqs8
-                                            ]
-                                            ~
-
-                                        }
-
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        cqs8
-                                        [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
-
-                                        \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        dqf8
-                                        ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
-
-                                        \times 4/5
-                                        {
-
-                                              %! COMMENT_MEASURE_NUMBERS
-                                              %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [tuba voice measure 3]
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
-                                            dqf16
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
-
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
-                                            dqs4
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
-
-                                        }
-
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        e8
-                                        [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
-
-                                        \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        fs8
-                                        ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
-
-                                        \tweak text #tuplet-number::calc-fraction-text
-                                        \times 8/7
-                                        {
-
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            fs32
-                                            [
-
-                                            \revert Staff.Stem.stemlet-length
-                                            d8.
-                                            ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
-
-                                        }
-
-                                        \times 2/3
-                                        {
-
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
-                                            ef4
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
-
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
-                                            ef16
-                                            [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
-
-                                            \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
-                                            e16
-                                            ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
-
-                                        }
-
-                                        \times 4/5
-                                        {
-
-                                              %! COMMENT_MEASURE_NUMBERS
-                                              %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [tuba voice measure 4]
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
-                                            e8.
-                                            [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
-
-                                            \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
-                                            fqs8
-                                            ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
-
-                                        }
-
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        fqs16
-                                        [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
-
-                                        \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        gqs8.
-                                        ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        gqs4
+                                        ~
 
                                         \tweak text #tuplet-number::calc-fraction-text
                                         \times 4/3
@@ -8026,86 +6064,145 @@
                                             [
 
                                             \revert Staff.Stem.stemlet-length
-                                            eqf8
+                                            bqs8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        eqs4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [tuba voice measure 5]
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        eqs4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
-
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        fqs8
+                                        bqs8
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        g8
+                                        bqf8
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        g4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        \times 4/5
+                                        {
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        a4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                              %! COMMENT_MEASURE_NUMBERS
+                                              %! evans.SegmentMaker.comment_measure_numbers()
+                                            % [tuba voice measure 3]
+                                            bqf16
+
+                                            aqs4
+
+                                        }
+
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        af8
+                                        [
+
+                                        \revert Staff.Stem.stemlet-length
+                                        fs8
+                                        ]
+                                        ~
+
+                                        \tweak text #tuplet-number::calc-fraction-text
+                                        \times 8/7
+                                        {
+
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            fs32
+                                            [
+
+                                            \revert Staff.Stem.stemlet-length
+                                            bf8.
+                                            ]
+
+                                        }
+
+                                        \times 2/3
+                                        {
+
+                                            a4
+                                            ~
+
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            a16
+                                            [
+
+                                            \revert Staff.Stem.stemlet-length
+                                            af16
+                                            ]
+                                            ~
+
+                                        }
+
+                                        \times 4/5
+                                        {
+
+                                              %! COMMENT_MEASURE_NUMBERS
+                                              %! evans.SegmentMaker.comment_measure_numbers()
+                                            % [tuba voice measure 4]
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            af8.
+                                            [
+
+                                            \revert Staff.Stem.stemlet-length
+                                            gqf8
+                                            ]
+                                            ~
+
+                                        }
+
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        gqf16
+                                        [
+
+                                        \revert Staff.Stem.stemlet-length
+                                        eqs8.
+                                        ]
+                                        ~
 
                                         \tweak text #tuplet-number::calc-fraction-text
                                         \times 4/3
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            a8
+                                            eqs16
                                             [
 
                                             \revert Staff.Stem.stemlet-length
-                                            f16
+                                            aqf8
+                                            ]
+
+                                        }
+
+                                        gqs4
+                                        ~
+
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [tuba voice measure 5]
+                                        gqs4
+
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        gqf8
+                                        [
+
+                                        \revert Staff.Stem.stemlet-length
+                                        f8
+                                        ]
+                                        ~
+
+                                        f4
+
+                                        ef4
+                                        ~
+
+                                        \tweak text #tuplet-number::calc-fraction-text
+                                        \times 4/3
+                                        {
+
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            ef8
+                                            [
+
+                                            \revert Staff.Stem.stemlet-length
+                                            g16
                                             ]
                                             ~
 
@@ -8114,107 +6211,49 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tuba voice measure 6]
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        f4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        g4
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         fs4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         fs8.
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        g16
+                                        f16
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        g4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        f4
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tuba voice measure 7]
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        g8
+                                        f8
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        aqf8
+                                        eqf8
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        aqf4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        eqf4
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        bqf4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        dqf4
+                                        ~
 
                                         \times 4/5
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            bqf8
+                                            dqf8
                                             [
 
                                             \revert Staff.Stem.stemlet-length
-                                            gqf8.
+                                            fqs8.
                                             ]
                                             ~
 
@@ -8226,23 +6265,9 @@
                                               %! COMMENT_MEASURE_NUMBERS
                                               %! evans.SegmentMaker.comment_measure_numbers()
                                             % [tuba voice measure 8]
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
-                                            gqf8
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            fqs8
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
-                                            gqs4
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            eqs4
 
                                         }
 
@@ -8251,26 +6276,12 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
-                                            aqf16.
+                                            eqf16.
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
-                                            bf8
+                                            d8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
 
                                         }
 
@@ -8278,25 +6289,15 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            c'8
+                                            c8
                                             [
 
-                                            af8.
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            e8.
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
-                                            a16
+                                            ef16
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -8304,51 +6305,25 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
-                                            a16
+                                            ef16
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
-                                            bf8.
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            d8.
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
-                                            bqs16
+                                            cqs16
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        bqs8.
+                                        cqs8.
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        dqf'16
+                                        bqf,16
+                                        \mf
                                         ]
 
                                           %! COMMENT_MEASURE_NUMBERS
@@ -10114,7 +8089,7 @@
                     \tag #'group6
                     {
 
-                        \context PianoStaff = "sub group 5"
+                        \context StaffGroup = "sub group 5"
                         <<
 
                             \tag #'voice13
@@ -10137,57 +8112,29 @@
                                         b8.
                                         \fff
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
+                                        \>
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         c'16
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         c'4
                                           %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
                                         \glissando
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         cs'4
                                           %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
                                         \glissando
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         dqs'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         dqs'8
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
@@ -10201,69 +8148,37 @@
                                         bqs4
                                         ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         bqs4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         cqs'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 1 voice measure 3]
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         cqs'16
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         dqf'8.
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \times 4/5
                                         {
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             ef'4
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             f'16
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -10274,8 +8189,6 @@
 
                                             c'4
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
                                         }
@@ -10285,26 +8198,15 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             cs'8.
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             d'32
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -10314,23 +8216,12 @@
                                               %! COMMENT_MEASURE_NUMBERS
                                               %! evans.SegmentMaker.comment_measure_numbers()
                                             % [violin 1 voice measure 4]
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             d'4
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             eqf'8
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -10338,13 +8229,8 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             eqf'8
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
@@ -10356,8 +8242,6 @@
 
                                         cqs'4
                                           %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
                                         \glissando
 
                                         \tweak text #tuplet-number::calc-fraction-text
@@ -10365,58 +8249,31 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             dqf'8
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             dqs'16
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 1 voice measure 5]
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         dqs'4
                                           %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
                                         \glissando
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         e'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         e'16
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
@@ -10427,14 +8284,8 @@
                                         cs'4
                                         ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         cs'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \tweak text #tuplet-number::calc-fraction-text
                                         \times 4/3
@@ -10444,112 +8295,62 @@
                                               %! evans.SegmentMaker.comment_measure_numbers()
                                             % [violin 1 voice measure 6]
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             cs'16
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             d'8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         d'16
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         ef'8.
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \tweak text #tuplet-number::calc-fraction-text
                                         \times 4/3
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             ef'16
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             eqs'8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         eqs'8
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         gqf'8
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 1 voice measure 7]
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         gqf'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \override Staff.Stem.stemlet-length = 0.75
                                         gqf'8
@@ -10564,6 +8365,7 @@
                                         ~
 
                                         dqf'4
+                                        \mf
 
                                         \tweak text #tuplet-number::calc-fraction-text
                                         \times 5/6
@@ -10669,80 +8471,40 @@
                                         bf4
                                         \fff
                                         \stopTrillSpan
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
+                                        \>
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         b4
                                           %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
                                         \glissando
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         c'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         c'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 1 voice measure 14]
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         c'16
                                         [
                                           %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
                                         \glissando
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         dqf'8
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         eqf'16
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         eqf'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \override Staff.Stem.stemlet-length = 0.75
                                         eqf'8
@@ -10758,26 +8520,15 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             bqf16
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             bqs8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -10785,60 +8536,33 @@
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 1 voice measure 15]
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         bqs16
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         cqs'8.
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \times 4/5
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             cqs'16
                                             [
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             d'8.
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             e'16
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -10850,8 +8574,6 @@
                                         b8
                                         ]
                                           %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
                                         \glissando
 
                                         \tweak text #tuplet-number::calc-fraction-text
@@ -10859,42 +8581,27 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             c'8
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             cs'16.
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         cs'8
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
                                         dqs'8
+                                        \mf
                                         ]
 
                                           %! COMMENT_MEASURE_NUMBERS
@@ -10944,6 +8651,7 @@
                                         a4
                                         \fff
                                         \stopTrillSpan
+                                        \>
                                         ~
 
                                         \tweak text #tuplet-number::calc-fraction-text
@@ -10951,102 +8659,52 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             a16
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             bf8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         bf4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         b4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 1 voice measure 19]
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         b8
                                         [
                                           %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         cqs'8
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         cqs'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         cqs'8
                                         [
                                           %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         dqs'8
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \tweak text #tuplet-number::calc-fraction-text
                                         \times 4/3
@@ -11067,60 +8725,33 @@
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 1 voice measure 20]
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         aqs16
                                         [
                                           %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
                                         \glissando
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         bqf8
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         bqs16
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \times 4/5
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             bqs8
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             cs'8.
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -11128,13 +8759,8 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             cs'16
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
@@ -11152,35 +8778,19 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             bf16
                                             [
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             b16.
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             c'16
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -11190,23 +8800,12 @@
                                               %! COMMENT_MEASURE_NUMBERS
                                               %! evans.SegmentMaker.comment_measure_numbers()
                                             % [violin 1 voice measure 21]
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             c'8
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             dqf'4
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -11214,26 +8813,15 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             dqf'8
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             eqf'8.
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -11251,30 +8839,20 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             bqf8
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             bqs16
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         bqs4
+                                        \mf
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
@@ -11440,6 +9018,7 @@
                                         af4
                                         \fff
                                         \stopTrillSpan
+                                        \>
                                         ~
 
                                         \tweak text #tuplet-number::calc-fraction-text
@@ -11447,115 +9026,59 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             af8
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             a16
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         a4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         a4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 1 voice measure 32]
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         a16
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         bf8.
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         bf4
                                           %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
                                         \glissando
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         bqs4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \tweak text #tuplet-number::calc-fraction-text
                                         \times 4/3
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             bqs16
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             dqf'8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -11567,8 +9090,6 @@
                                         aqf8
                                         ]
                                           %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
                                         \glissando
 
                                         \times 4/5
@@ -11578,50 +9099,29 @@
                                               %! evans.SegmentMaker.comment_measure_numbers()
                                             % [violin 1 voice measure 33]
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             aqs8.
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             bqf8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         c'8
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         d'8
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \tweak text #tuplet-number::calc-fraction-text
                                         \times 8/7
@@ -11633,20 +9133,12 @@
 
                                             a16.
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             bf16.
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -11654,35 +9146,19 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             bf16
                                             [
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             b8.
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             cqs'8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -11693,26 +9169,15 @@
                                               %! evans.SegmentMaker.comment_measure_numbers()
                                             % [violin 1 voice measure 34]
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             cqs'8
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             dqs'8.
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -11725,28 +9190,18 @@
                                         ]
                                         ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         aqs4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         aqs8
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
                                         bqf8
+                                        \mf
                                         ]
 
                                           %! COMMENT_MEASURE_NUMBERS
@@ -11855,97 +9310,51 @@
                                             \set Staff.shortInstrumentName = \markup { \hcenter-in #12 "vn II" }
                                             cs'4
                                             \fff
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
+                                            \>
                                               %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             d'16
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         d'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \tweak text #tuplet-number::calc-fraction-text
                                         \times 4/3
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             d'16
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             ef'8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         ef'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         ef'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 2 voice measure 2]
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         eqs'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         g'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         g'4
 
@@ -11956,69 +9365,37 @@
                                         ~
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         d'16
                                         [
                                           %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
                                         \glissando
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         ef'8
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         e'16
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \times 4/5
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             e'8
                                             [
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             fqs'8
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             af'16
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -12028,8 +9405,6 @@
                                             af'8
 
                                             ef'4
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
@@ -12043,50 +9418,29 @@
                                               %! evans.SegmentMaker.comment_measure_numbers()
                                             % [violin 2 voice measure 4]
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             e'16.
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             f'8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         gqf'8
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         a'8
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \times 4/5
                                         {
@@ -12099,99 +9453,49 @@
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         e'8
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         f'8
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 2 voice measure 5]
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         f'4
                                           %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
                                         \glissando
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         fs'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         fs'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         fs'16
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         gqs'8.
                                         ]
                                           %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
                                         \glissando
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         bf'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 2 voice measure 6]
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         bf'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \tweak text #tuplet-number::calc-fraction-text
                                         \times 4/3
@@ -12205,67 +9509,38 @@
                                             f'8
                                             ]
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         fs'8.
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         g'16
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \times 4/5
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             g'16
                                             [
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             aqf'8.
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             b'16
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -12286,39 +9561,23 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             fs'8
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             g'16
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         g'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         g'4
+                                        \mf
 
                                         \tweak text #tuplet-number::calc-fraction-text
                                         \times 5/6
@@ -12434,119 +9693,61 @@
                                             \fff
                                             \stopTrillSpan
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
+                                            \>
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             cs'8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         cs'8
                                         [
                                           %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         d'8
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         d'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         d'8
                                         [
                                           %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         eqf'8
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 2 voice measure 14]
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         eqf'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         eqf'8.
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         fs'16
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         fs'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         fs'4
 
@@ -12555,16 +9756,9 @@
                                         % [violin 2 voice measure 15]
                                         cs'4
                                           %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
                                         \glissando
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         d'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
@@ -12572,24 +9766,14 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             ef'8
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             eqs'8.
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
@@ -12604,20 +9788,12 @@
 
                                             d'8.
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             ef'16
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -12626,27 +9802,18 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             ef'16.
                                             [
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             e'16.
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
                                             fqs'32
+                                            \mf
                                             ]
 
                                         }
@@ -12701,123 +9868,65 @@
                                             b4
                                             \fff
                                             \stopTrillSpan
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
+                                            \>
                                               %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             c'16
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         c'8
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         cs'8
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \tweak text #tuplet-number::calc-fraction-text
                                         \times 4/3
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             cs'8
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             dqs'16
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         dqs'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 2 voice measure 19]
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         dqs'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         dqs'8
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         f'8
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         f'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         f'4
 
@@ -12828,47 +9937,26 @@
                                         ~
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         c'16
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         cs'8.
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \times 4/5
                                         {
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             d'4
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             eqf'16
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -12876,13 +9964,8 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             eqf'16
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
@@ -12891,8 +9974,6 @@
                                             \revert Staff.Stem.stemlet-length
                                             cs'8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
@@ -12906,50 +9987,29 @@
                                               %! evans.SegmentMaker.comment_measure_numbers()
                                             % [violin 2 voice measure 21]
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             d'16.
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             ef'8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         eqs'8
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         g'8
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \times 4/5
                                         {
@@ -12960,46 +10020,28 @@
 
                                             d'8.
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             ef'16
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         ef'8.
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         e'16
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         e'4
+                                        \mf
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
@@ -13180,127 +10222,71 @@
                                             \fff
                                             \stopTrillSpan
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
+                                            \>
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             b8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         b8
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         c'8
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \tweak text #tuplet-number::calc-fraction-text
                                         \times 4/3
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             c'16
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             dqf'8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         dqf'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 2 voice measure 32]
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         e'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         e'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         e'4
 
                                         b4
                                         ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         b4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 2 voice measure 33]
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         c'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
@@ -13308,26 +10294,15 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             cs'8.
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             dqs'8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -13335,13 +10310,8 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             dqs'8
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
@@ -13359,44 +10329,23 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             c'32
                                             [
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             cs'16
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             d'16.
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             eqf'32
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -13404,13 +10353,8 @@
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 2 voice measure 34]
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         eqf'8
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
@@ -13423,60 +10367,37 @@
 
                                             cs'4
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             d'16
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         d'8
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         ef'8
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \tweak text #tuplet-number::calc-fraction-text
                                         \times 4/3
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             ef'8
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
                                             eqs'16
+                                            \mf
                                             ]
 
                                         }
@@ -13593,66 +10514,38 @@
                                             \clef "alto"
                                             f4
                                             \fff
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
+                                            \>
                                               %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             fs8
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         \times 4/5
                                         {
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             fs16
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             gqs4
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         a8.
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         bqs16
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         bqs4
 
@@ -13662,117 +10555,61 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [viola voice measure 2]
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         gqf4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         gqf8.
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         gqs16
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         gqs4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [viola voice measure 3]
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         gqs4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \tweak text #tuplet-number::calc-fraction-text
                                         \times 4/3
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             gqs16
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             a8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         a8
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         bqf8
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \times 4/5
                                         {
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             bqf16
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
@@ -13790,29 +10627,16 @@
                                             af8
                                             [
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             a8.
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             bqf16
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -13821,35 +10645,19 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             bqf32
                                             [
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             c'16.
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             dqs'16.
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -13862,20 +10670,12 @@
 
                                             aqs8.
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             bqf8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -13883,24 +10683,14 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             bqf8
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             c'8.
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
@@ -13909,32 +10699,15 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [viola voice measure 5]
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         dqf'4
                                           %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
                                         \glissando
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         e'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         e'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         e'4
 
@@ -13944,65 +10717,39 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [viola voice measure 6]
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         b4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         c'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \tweak text #tuplet-number::calc-fraction-text
                                         \times 4/3
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             c'8
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             dqf'16
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         dqf'8
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
                                         ef'8
+                                        \mf
                                         ]
 
                                           %! COMMENT_MEASURE_NUMBERS
@@ -14113,79 +10860,45 @@
                                         \fff
                                         \stopTrillSpan
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
+                                        \>
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         f8
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \times 4/5
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             f16
                                             [
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             gqf8.
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             af16
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         af8.
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         bqf16
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \tweak text #tuplet-number::calc-fraction-text
                                         \times 4/3
@@ -14205,109 +10918,53 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [viola voice measure 14]
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
+                                        fqs4
+                                        ~
+
                                         fqs4
                                           %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
                                         \glissando
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        fqs4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
-
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         gqf4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         gqf4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [viola voice measure 15]
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         gqf8
                                         [
                                           %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         af8
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         af4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         af16
                                         [
                                           %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         aqs8.
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \times 4/5
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             aqs16
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
@@ -14324,27 +10981,18 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             g8.
                                             [
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             af8
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
                                             aqs16
+                                            \mf
                                             ]
 
                                         }
@@ -14397,30 +11045,18 @@
                                             \fff
                                             \stopTrillSpan
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
+                                            \>
                                               %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             e8.
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             fqs16
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -14428,50 +11064,28 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             fqs8.
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             g8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         g16
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         aqs8.
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \tweak text #tuplet-number::calc-fraction-text
                                         \times 4/3
@@ -14492,128 +11106,66 @@
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [viola voice measure 19]
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         eqs8
                                         [
                                           %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         fqs8
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         fqs4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         fqs8
                                         [
                                           %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         g8
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         g4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [viola voice measure 20]
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         g4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \tweak text #tuplet-number::calc-fraction-text
                                         \times 4/3
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             g16
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             aqf8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         aqf8.
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         b16
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \times 4/5
                                         {
@@ -14635,32 +11187,16 @@
                                               %! COMMENT_MEASURE_NUMBERS
                                               %! evans.SegmentMaker.comment_measure_numbers()
                                             % [viola voice measure 21]
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             fs16
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             g4
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             aqf16
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -14669,22 +11205,12 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             aqf32
                                             [
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             bf16.
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
@@ -14700,21 +11226,11 @@
                                         \times 2/3
                                         {
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             gqs8
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             aqf4
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
@@ -14724,42 +11240,27 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             bf8.
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             bqs8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         bqs8
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
                                         d'8
+                                        \mf
                                         ]
 
                                           %! COMMENT_MEASURE_NUMBERS
@@ -14928,30 +11429,18 @@
                                             \fff
                                             \stopTrillSpan
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
+                                            \>
                                               %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             ef8
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             eqs16
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -14959,37 +11448,21 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             eqs8
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             fs8.
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         fs16
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
@@ -15004,109 +11477,53 @@
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [viola voice measure 32]
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         eqf8
                                         [
                                           %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         eqs8
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         eqs4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         eqs16
                                         [
                                           %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         fs8.
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         fs4
                                           %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
                                         \glissando
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         gqs4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [viola voice measure 33]
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         gqs4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         gqs16
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         bf8.
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \times 4/5
                                         {
@@ -15126,35 +11543,19 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             f16
                                             [
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             fs8.
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             gqs8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -15166,22 +11567,12 @@
                                               %! evans.SegmentMaker.comment_measure_numbers()
                                             % [viola voice measure 34]
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             gqs16
                                             [
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             a16
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
@@ -15198,29 +11589,16 @@
                                             gqf8
                                             [
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             gqs8.
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             a16
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -15228,42 +11606,27 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             a8.
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             bqf8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         bqf16
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
                                         cs'8.
+                                        \mf
                                         ]
 
                                           %! COMMENT_MEASURE_NUMBERS
@@ -15373,54 +11736,32 @@
                                             e,16
                                             \fff
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
+                                            \>
                                               %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             f,16.
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             gqf,16
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         a,8
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         bqs,8
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \times 4/5
                                         {
@@ -15431,114 +11772,61 @@
 
                                             eqs,8.
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             fqs,16
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         fqs,8.
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         g,16
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \tweak text #tuplet-number::calc-fraction-text
                                         \times 4/3
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             g,8
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             aqs,16
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [cello voice measure 2]
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         aqs,4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
+                                        ~
+
+                                        aqs,4
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        aqs,4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
-
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         c4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [cello voice measure 3]
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         c4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \override Staff.Stem.stemlet-length = 0.75
                                         c8
@@ -15549,36 +11837,19 @@
                                         ]
                                         ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         f,4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         f,16
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         fs,8.
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \times 4/5
                                         {
@@ -15587,35 +11858,19 @@
                                               %! evans.SegmentMaker.comment_measure_numbers()
                                             % [cello voice measure 4]
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             fs,16
                                             [
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             gqs,8.
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             bf,16
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -15623,13 +11878,8 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             bf,8.
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
@@ -15647,33 +11897,18 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             fqs,16
                                             [
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             gqf,16
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             af,16.
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
@@ -15682,23 +11917,12 @@
                                         \times 2/3
                                         {
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             bqf,4
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             cs8
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -15712,103 +11936,50 @@
 
                                             fs,4
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         g,8.
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         aqf,16
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         aqf,4
                                           %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
                                         \glissando
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         b,4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         b,4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [cello voice measure 6]
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         b,8.
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         dqf16
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         dqf4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         dqf4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \tweak text #tuplet-number::calc-fraction-text
                                         \times 4/3
@@ -15820,6 +11991,7 @@
 
                                             \revert Staff.Stem.stemlet-length
                                             gqf,8
+                                            \mf
                                             ]
 
                                         }
@@ -15948,30 +12120,18 @@
                                             \fff
                                             \stopTrillSpan
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
+                                            \>
                                               %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             e,16
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             fqs,32
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -15979,35 +12139,19 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             fqs,8
                                             [
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             af,8
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             bqf,8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -16018,61 +12162,32 @@
 
                                             eqf,4
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         eqs,8.
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         fs,16
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [cello voice measure 14]
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         fs,4
                                           %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
                                         \glissando
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         aqf,4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         aqf,4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
@@ -16084,46 +12199,25 @@
                                         e,4
                                         ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         e,4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
+                                        ~
+
+                                        e,4
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
-                                        e,4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
-
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         f,4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \times 4/5
                                         {
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             f,16
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             gqf,4
+                                            \mf
 
                                         }
 
@@ -16180,81 +12274,47 @@
                                             \fff
                                             \stopTrillSpan
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
+                                            \>
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             ef,16.
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         ef,8
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         eqs,8
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \times 4/5
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             eqs,8
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             g,8.
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         g,16
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
@@ -16269,78 +12329,40 @@
                                         ~
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         dqs,8
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         eqf,8
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         eqf,4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         f,8.
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         gqs,16
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [cello voice measure 20]
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         gqs,4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         bf,4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \tweak text #tuplet-number::calc-fraction-text
                                         \times 4/3
@@ -16358,26 +12380,15 @@
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         ef,8
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         e,8
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \times 4/5
                                         {
@@ -16385,47 +12396,26 @@
                                               %! COMMENT_MEASURE_NUMBERS
                                               %! evans.SegmentMaker.comment_measure_numbers()
                                             % [cello voice measure 21]
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             e,16
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             fqs,4
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         af,8
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         bqf,8
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \tweak text #tuplet-number::calc-fraction-text
                                         \times 8/7
@@ -16439,8 +12429,6 @@
                                             eqf,8.
                                             ]
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
                                         }
@@ -16448,36 +12436,19 @@
                                         \times 2/3
                                         {
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             eqs,4
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             eqs,16
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             fs,16
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -16485,18 +12456,14 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             fs,8.
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
                                             aqf,8
+                                            \mf
                                             ]
 
                                         }
@@ -16686,19 +12653,13 @@
                                             \fff
                                             \stopTrillSpan
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
+                                            \>
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             d,16.
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
@@ -16707,21 +12668,11 @@
                                         \times 2/3
                                         {
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             eqf,4
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             fs,8
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
@@ -16738,61 +12689,32 @@
                                             dqf,8
                                             ]
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         dqs,8.
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         e,16
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [cello voice measure 32]
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         e,4
                                           %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
                                         \glissando
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         gqf,4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         gqf,4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
@@ -16804,70 +12726,37 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [cello voice measure 33]
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         d,4
                                           %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
                                         \glissando
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         ef,4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         ef,16
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         eqs,8.
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \times 4/5
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             eqs,8.
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             g,8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -16875,26 +12764,15 @@
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [cello voice measure 34]
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         g,8
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         aqs,8
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \tweak text #tuplet-number::calc-fraction-text
                                         \times 8/7
@@ -16906,20 +12784,12 @@
 
                                             dqs,16.
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             eqf,16.
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -16927,33 +12797,18 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             eqf,16
                                             [
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             f,8
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             gqs,8.
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
@@ -16968,6 +12823,7 @@
 
                                             \revert Staff.Stem.stemlet-length
                                             ef,8.
+                                            \mf
                                             ]
 
                                         }
@@ -17081,6 +12937,7 @@
                                         \clef "bass"
                                         g,4
                                         \fff
+                                        \>
                                         ~
 
                                         \tweak text #tuplet-number::calc-fraction-text
@@ -17088,67 +12945,35 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             g,32
                                             [
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             af,8
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             bf,16
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         \times 2/3
                                         {
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             bf,16
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             cqs4
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             ef16
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -17161,87 +12986,46 @@
 
                                             af,8.
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             a,16
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         a,16
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         b,8.
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [contrabass voice measure 2]
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         dqf4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         dqf8
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         e8
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         e4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
@@ -17255,49 +13039,27 @@
                                         ]
                                         ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         a,4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         bf,4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \tweak text #tuplet-number::calc-fraction-text
                                         \times 4/3
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             bf,16
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             c8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -17305,47 +13067,25 @@
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [contrabass voice measure 4]
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         c8
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         dqs8
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \times 4/5
                                         {
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             dqs4
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             f16
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -17364,35 +13104,19 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             bf,16
                                             [
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             b,16.
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             cs16
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -17403,35 +13127,19 @@
                                               %! evans.SegmentMaker.comment_measure_numbers()
                                             % [contrabass voice measure 5]
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             cs8
                                             [
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             eqf8
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             fs8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -17444,86 +13152,52 @@
 
                                             b,8
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             c8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         c16
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         d8.
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \tweak text #tuplet-number::calc-fraction-text
                                         \times 4/3
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             d16
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             eqs8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         eqs8
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
                                         g8
+                                        \mf
                                         ]
 
                                           %! COMMENT_MEASURE_NUMBERS
@@ -17675,6 +13349,7 @@
                                         fs4
                                         \fff
                                         \stopTrillSpan
+                                        \>
                                         ~
 
                                         \tweak text #tuplet-number::calc-fraction-text
@@ -17682,33 +13357,17 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             fs16
                                             [
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             g8
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             g32
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
@@ -17717,35 +13376,19 @@
                                         \times 2/3
                                         {
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             a4
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             bqs8
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         \times 4/5
                                         {
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             bqs16
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
@@ -17760,64 +13403,35 @@
                                         g8
                                         [
                                           %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         af8
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \tweak text #tuplet-number::calc-fraction-text
                                         \times 4/3
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             af16
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             bf8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                         }
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         cqs'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         cqs'4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
@@ -17829,37 +13443,22 @@
                                         af4
                                         ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         af4
                                           %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
                                         \glissando
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         a4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         a16
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
                                         b8.
+                                        \mf
                                         ]
 
                                           %! COMMENT_MEASURE_NUMBERS
@@ -17909,8 +13508,7 @@
                                         f4
                                         \fff
                                         \stopTrillSpan
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
+                                        \>
                                           %! abjad.glissando(7)
                                         \glissando
 
@@ -17919,49 +13517,27 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             fs8.
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             af32
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         \times 2/3
                                         {
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             af4
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             bqf8
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -17969,13 +13545,8 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             bqf8
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
@@ -17990,8 +13561,6 @@
                                         % [contrabass voice measure 19]
                                         fs4
                                           %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
                                         \glissando
 
                                         \tweak text #tuplet-number::calc-fraction-text
@@ -17999,58 +13568,31 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             g8
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             a16
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         a4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         bqs4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [contrabass voice measure 20]
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         bqs16
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
@@ -18061,40 +13603,23 @@
                                         g4
                                         ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         g4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \tweak text #tuplet-number::calc-fraction-text
                                         \times 4/3
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             g16
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             af8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -18102,60 +13627,33 @@
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [contrabass voice measure 21]
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         af16
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         bf8.
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \times 4/5
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             bf16
                                             [
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             cqs'8.
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             ef'16
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -18173,51 +13671,31 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             af16.
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             a8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         \times 2/3
                                         {
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             a16
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             b4
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             dqf'16
+                                            \mf
 
                                         }
 
@@ -18408,82 +13886,48 @@
                                         \fff
                                         \stopTrillSpan
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
+                                        \>
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         f16
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \tweak text #tuplet-number::calc-fraction-text
                                         \times 8/7
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             f16.
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             g8
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         \times 2/3
                                         {
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             g8
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             aqs4
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         \times 4/5
                                         {
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             aqs16
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
@@ -18498,56 +13942,27 @@
                                         f8.
                                         [
                                           %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         fs16
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         fs4
                                           %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
                                         \glissando
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         af4
                                           %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
                                         \glissando
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         bqf4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         bqf8
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
@@ -18561,43 +13976,22 @@
                                         fs4
                                         ~
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         fs4
                                           %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
                                         \glissando
 
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         g4
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         g16
                                         [
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        \tweak Accidental.stencil ##f
-                                        \tweak X-extent #'(0 . 0)
-                                        \tweak transparent ##t
                                         a8.
                                         ]
-                                          %! abjad.glissando(7)
-                                        - \abjad-zero-padding-glissando
                                           %! abjad.glissando(7)
                                         \glissando
 
@@ -18607,23 +14001,12 @@
                                               %! COMMENT_MEASURE_NUMBERS
                                               %! evans.SegmentMaker.comment_measure_numbers()
                                             % [contrabass voice measure 34]
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             bqs4
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             d'16
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
@@ -18634,8 +14017,6 @@
 
                                             g4
                                               %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
                                             \glissando
 
                                         }
@@ -18645,42 +14026,27 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             af8.
                                             [
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             \revert Staff.Stem.stemlet-length
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             bf32
                                             ]
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
-                                              %! abjad.glissando(7)
-                                            \glissando
+                                            ~
 
                                         }
 
                                         \times 2/3
                                         {
 
-                                            \tweak Accidental.stencil ##f
-                                            \tweak X-extent #'(0 . 0)
-                                            \tweak transparent ##t
                                             bf4
-                                              %! abjad.glissando(7)
-                                            - \abjad-zero-padding-glissando
                                               %! abjad.glissando(7)
                                             \glissando
 
                                             cqs'8
+                                            \mf
 
                                         }
 

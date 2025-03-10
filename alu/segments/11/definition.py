@@ -8,6 +8,23 @@ from abjadext import rmakers
 import alu
 
 
+def treat_tuplets(container):
+    command_target = abjad.select.tuplets(container)
+    rmakers.trivialize(command_target)
+    command_target = abjad.select.tuplets(container)
+    rmakers.rewrite_rest_filled(command_target)
+    command_target = abjad.select.tuplets(container)
+    rmakers.rewrite_sustained(command_target)
+    rmakers.extract_trivial(container)
+
+
+def get_tuplets(selections, abjad_index):
+    leaves = abjad.select.leaves(selections)
+    top_level = evans.get_top_level_components_from_leaves(leaves)
+    tuplets = abjad.select.tuplets(top_level)
+    return abjad.select.get(tuplets, abjad_index)
+
+
 def dynamic_runs(selections, rotation, percussion=False):
     sequence = abjad.sequence.rotate(
         [
@@ -110,6 +127,26 @@ maker = evans.SegmentMaker(
     commands=[
         # PREFIX
         evans.attach(
+            "Global Context",
+            abjad.RehearsalMark(number=25),
+            lambda _: abjad.select.leaf(_, 0),
+        ),
+        evans.attach(
+            "Global Context",
+            abjad.RehearsalMark(number=26),
+            lambda _: abjad.select.leaf(_, 9),
+        ),
+        evans.attach(
+            "Global Context",
+            abjad.RehearsalMark(number=27),
+            lambda _: abjad.select.leaf(_, 21),
+        ),
+        evans.attach(
+            "Global Context",
+            abjad.RehearsalMark(number=28),
+            lambda _: abjad.select.leaf(_, 31),
+        ),
+        evans.attach(
             "bassoon voice",
             abjad.Clef("bass"),
             lambda _: abjad.select.leaf(_, 0),
@@ -181,16 +218,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("flute voice", alu.measure_numbers([1, 2, 3, 4, 5, 6])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(17),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-17),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-17),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -213,9 +250,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([0, 4, 9], 10)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 - 0, 24 - 0)])
                 .mirror(sequential_duplicates=False)
@@ -245,16 +282,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(  #
             ("flute voice", alu.measure_numbers([10, 11, 12])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(17),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-17),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-17),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -277,9 +314,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([1, 5, 10], 11)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 + 1, 24 + 1)])
                 .mirror(sequential_duplicates=False)
@@ -331,16 +368,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("flute voice", alu.measure_numbers([15, 16, 17, 18])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(17),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-17),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-17),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -363,9 +400,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([2, 6, 11], 12)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 + 2, 24 + 2)])
                 .mirror(sequential_duplicates=False)
@@ -417,16 +454,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("flute voice", alu.measure_numbers([28, 29, 30, 31])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(17),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-17),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-17),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -449,9 +486,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([3, 7, 12], 13)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 + 3, 24 + 3)])
                 .mirror(sequential_duplicates=False)
@@ -495,7 +532,7 @@ maker = evans.SegmentMaker(
             alu.potamia_pitches(transposition=0, columns=True, retrograde=True),
             lambda _: evans.contour(
                 _,
-                starting_range=abjad.PitchRange("[C6, B6]"),
+                starting_range=abjad.PitchRange("[C5, B5]"),
             ),
             lambda _: dynamic_runs(_, 0),
             # alu.E_color,
@@ -504,16 +541,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("oboe voice", alu.measure_numbers([1, 2, 3, 4, 5, 6, 7])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(18),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-18),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-18),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -536,9 +573,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([4, 8, 13], 14)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 - 1, 24 - 1)])
                 .mirror(sequential_duplicates=False)
@@ -568,16 +605,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(  #
             ("oboe voice", alu.measure_numbers([10, 11, 12])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(18),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-18),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-18),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -600,9 +637,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([5, 9, 14], 15)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 - 0, 24 - 0)])
                 .mirror(sequential_duplicates=False)
@@ -654,16 +691,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("oboe voice", alu.measure_numbers([15, 16, 17, 18])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(18),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-18),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-18),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -686,9 +723,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([6, 10, 15], 16)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 + 1, 24 + 1)])
                 .mirror(sequential_duplicates=False)
@@ -740,16 +777,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("oboe voice", alu.measure_numbers([28, 29, 30, 31])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(18),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-18),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-18),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -772,9 +809,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([7, 11, 16], 17)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 + 2, 24 + 2)])
                 .mirror(sequential_duplicates=False)
@@ -827,16 +864,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("bass clarinet voice", alu.measure_numbers([1, 2, 3, 4, 5, 6, 7])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(19),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-19),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-19),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -859,9 +896,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([6, 10, 15], 16)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 - 1, 24 - 1)])
                 .mirror(sequential_duplicates=False)
@@ -925,16 +962,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("bassoon voice", alu.measure_numbers([1, 2, 3, 4, 5, 6, 7])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(20),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-20),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-20),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -957,9 +994,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([5, 9, 14], 15)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 - 20, 24 - 20)])
                 .mirror(sequential_duplicates=False)
@@ -989,16 +1026,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(  #
             ("bassoon voice", alu.measure_numbers([10, 11, 12])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(20),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-20),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-20),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -1021,9 +1058,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([4, 8, 13], 14)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 - 20 + 1, 24 - 20 + 1)])
                 .mirror(sequential_duplicates=False)
@@ -1075,16 +1112,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("bassoon voice", alu.measure_numbers([15, 16, 17, 18])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(20),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-20),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-20),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -1107,9 +1144,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([3, 7, 12], 13)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 - 20 + 2, 24 - 20 + 2)])
                 .mirror(sequential_duplicates=False)
@@ -1164,16 +1201,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("bassoon voice", alu.measure_numbers([28, 29, 30, 31])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(20),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-20),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-20),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -1196,9 +1233,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([2, 6, 11], 12)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 - 20 + 3, 24 - 20 + 3)])
                 .mirror(sequential_duplicates=False)
@@ -1242,7 +1279,7 @@ maker = evans.SegmentMaker(
             alu.potamia_pitches(transposition=-1, columns=True, retrograde=False),
             lambda _: evans.contour(
                 _,
-                starting_range=abjad.PitchRange("[C4, B4]"),
+                starting_range=abjad.PitchRange("[C3, B3]"),
             ),
             lambda _: dynamic_runs(_, 0),
             # alu.E_color,
@@ -1251,16 +1288,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("french horn voice", alu.measure_numbers([1, 2, 3, 4, 5, 6, 7, 8])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(21),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-21),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-21),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -1283,9 +1320,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([1, 5, 10], 11)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 - 8, 24 - 8)])
                 .mirror(sequential_duplicates=False)
@@ -1337,16 +1374,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("french horn voice", alu.measure_numbers([16, 17])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(21),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-21),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-21),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -1369,9 +1406,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([0, 4, 9], 10)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 - 8 + 1, 24 - 8 + 1)])
                 .mirror(sequential_duplicates=False)
@@ -1415,7 +1452,7 @@ maker = evans.SegmentMaker(
             alu.potamia_pitches(transposition=-4, columns=True, retrograde=False),
             lambda _: evans.contour(
                 _,
-                starting_range=abjad.PitchRange("[C3, B3]"),
+                starting_range=abjad.PitchRange("[C4, B4]"),
             ),
             lambda _: dynamic_runs(_, 0),
             # alu.E_color,
@@ -1426,16 +1463,16 @@ maker = evans.SegmentMaker(
                 alu.measure_numbers([22, 23, 24, 25, 26, 27, 28, 29, 30]),
             ),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(21),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-21),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-21),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -1458,9 +1495,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([1, 5, 10], 11)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 - 8 + 2, 24 - 8 + 2)])
                 .mirror(sequential_duplicates=False)
@@ -1504,7 +1541,7 @@ maker = evans.SegmentMaker(
             alu.potamia_pitches(transposition=-4, columns=True, retrograde=False),
             lambda _: evans.contour(
                 _,
-                starting_range=abjad.PitchRange("[C3, B3]"),
+                starting_range=abjad.PitchRange("[C4, B4]"),
             ),
             lambda _: dynamic_runs(_, 0),
             # alu.E_color,
@@ -1512,16 +1549,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("french horn voice", alu.measure_numbers([35, 36, 37, 38])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(21),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-21),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-21),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -1544,9 +1581,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([2, 6, 11], 12)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 - 8 + 3, 24 - 8 + 3)])
                 .mirror(sequential_duplicates=False)
@@ -1577,16 +1614,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("trumpet voice", alu.measure_numbers([1, 2, 3, 4, 5, 6, 7, 8])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(22),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-22),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-22),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -1609,9 +1646,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([3, 7, 12], 13)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 + 2, 24 + 2)])
                 .mirror(sequential_duplicates=False)
@@ -1663,16 +1700,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("trumpet voice", alu.measure_numbers([16, 17])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(22),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-22),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-22),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -1695,9 +1732,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([4, 8, 13], 14)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 + 2 + 1, 24 + 2 + 1)])
                 .mirror(sequential_duplicates=False)
@@ -1752,16 +1789,16 @@ maker = evans.SegmentMaker(
                 alu.measure_numbers([22, 23, 24, 25, 26, 27, 28, 29, 30]),
             ),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(22),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-22),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-22),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -1784,9 +1821,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([5, 9, 14], 15)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 + 2 + 3, 24 + 2 + 3)])
                 .mirror(sequential_duplicates=False)
@@ -1838,16 +1875,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("trumpet voice", alu.measure_numbers([35, 36, 37, 38])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(22),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-22),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-22),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -1870,9 +1907,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([6, 10, 15], 16)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 + 2 + 4, 24 + 2 + 4)])
                 .mirror(sequential_duplicates=False)
@@ -1903,16 +1940,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("tenor trombone voice", alu.measure_numbers([1, 2, 3, 4, 5, 6, 7, 8])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(23),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-23),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-23),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -1935,9 +1972,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([7, 11, 16], 17)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 - 6, 24 - 6)])
                 .mirror(sequential_duplicates=False)
@@ -1989,16 +2026,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("tenor trombone voice", alu.measure_numbers([16, 17])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(23),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-23),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-23),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -2021,9 +2058,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([8, 12, 17], 18)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 - 6 + 1, 24 - 6 + 1)])
                 .mirror(sequential_duplicates=False)
@@ -2078,16 +2115,16 @@ maker = evans.SegmentMaker(
                 alu.measure_numbers([22, 23, 24, 25, 26, 27, 28, 29, 30]),
             ),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(23),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-23),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-23),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -2110,9 +2147,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([7, 11, 16], 17)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 - 6 + 2, 24 - 6 + 2)])
                 .mirror(sequential_duplicates=False)
@@ -2164,16 +2201,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("tenor trombone voice", alu.measure_numbers([35, 36, 37, 38])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(23),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-23),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-23),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -2196,9 +2233,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([6, 10, 15], 16)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 - 6 + 3, 24 - 6 + 3)])
                 .mirror(sequential_duplicates=False)
@@ -2229,16 +2266,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("tuba voice", alu.measure_numbers([1, 2, 3, 4, 5, 6, 7, 8])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(24),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-24),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-24),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -2261,9 +2298,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([5, 9, 14], 15)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 - 22, 24 - 22)])
                 .mirror(sequential_duplicates=False)
@@ -2315,16 +2352,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("tuba voice", alu.measure_numbers([16, 17])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(24),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-24),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-24),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -2347,9 +2384,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([4, 8, 13], 14)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 - 22 + 1, 24 - 22 + 1)])
                 .mirror(sequential_duplicates=False)
@@ -2401,16 +2438,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("tuba voice", alu.measure_numbers([22, 23, 24, 25, 26, 27, 28, 29, 30])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(24),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-24),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-24),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -2433,9 +2470,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([3, 7, 12], 13)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 - 22 + 2, 24 - 22 + 2)])
                 .mirror(sequential_duplicates=False)
@@ -2487,16 +2524,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("tuba voice", alu.measure_numbers([35, 36, 37, 38])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(24),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-24),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-24),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -2519,9 +2556,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([2, 6, 11], 12)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 - 22 + 3, 24 - 22 + 3)])
                 .mirror(sequential_duplicates=False)
@@ -2552,16 +2589,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("percussion 1 voice", alu.measure_numbers([1, 2, 3, 4, 5, 6, 7, 8])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(25),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-25),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-25),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -2584,9 +2621,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([1, 5, 10], 11)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([-3, -1, 1, 3])
                 .mirror(sequential_duplicates=False)
@@ -2644,16 +2681,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("percussion 1 voice", alu.measure_numbers([14, 15])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(25),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-25),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-25),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -2676,9 +2713,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([0, 4, 9], 10)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([-3, -1, 1, 3])
                 .mirror(sequential_duplicates=False)
@@ -2739,16 +2776,16 @@ maker = evans.SegmentMaker(
                 alu.measure_numbers([20, 21, 22, 23, 24, 25, 26, 27, 28]),
             ),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(25),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-25),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-25),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -2771,9 +2808,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([1, 5, 10], 11)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([-3, -1, 1, 3])
                 .mirror(sequential_duplicates=False)
@@ -2831,16 +2868,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("percussion 1 voice", alu.measure_numbers([33, 34, 35, 36, 37])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(25),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-25),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-25),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -2863,9 +2900,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([2, 6, 11], 12)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([-3, -1, 1, 3])
                 .mirror(sequential_duplicates=False)
@@ -2899,16 +2936,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("percussion 2 voice", alu.measure_numbers([1, 2, 3, 4, 5, 6, 7])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(26),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-26),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-26),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -2931,9 +2968,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([3, 7, 12], 13)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([-3, -1, 1, 3])
                 .mirror(sequential_duplicates=False)
@@ -2991,16 +3028,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("percussion 2 voice", alu.measure_numbers([14, 15])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(26),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-26),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-26),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -3023,9 +3060,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([4, 8, 13], 14)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([-3, -1, 1, 3])
                 .mirror(sequential_duplicates=False)
@@ -3086,16 +3123,16 @@ maker = evans.SegmentMaker(
                 alu.measure_numbers([20, 21, 22, 23, 24, 25, 26, 27, 28]),
             ),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(26),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-26),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-26),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -3118,9 +3155,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([5, 9, 14], 15)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([-3, -1, 1, 3])
                 .mirror(sequential_duplicates=False)
@@ -3178,16 +3215,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("percussion 2 voice", alu.measure_numbers([33, 34, 35, 36, 37])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(26),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-26),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-26),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -3210,9 +3247,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([6, 10, 15], 16)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([-3, -1, 1, 3])
                 .mirror(sequential_duplicates=False)
@@ -3246,16 +3283,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("piano 1 voice", alu.measure_numbers([1, 2, 3, 4, 5, 6, 7])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(27),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-27),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-27),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -3278,9 +3315,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([7, 11, 16], 17)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 + 7, 24 + 7)])
                 .mirror(sequential_duplicates=False)
@@ -3323,16 +3360,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("piano 1 voice", alu.measure_numbers([15, 16])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(27),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-27),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-27),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -3355,9 +3392,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([8, 12, 17], 18)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 + 7 + 1, 24 + 7 + 1)])
                 .mirror(sequential_duplicates=False)
@@ -3403,16 +3440,16 @@ maker = evans.SegmentMaker(
                 alu.measure_numbers([21, 22, 23, 24, 25, 26, 27, 28, 29]),
             ),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(27),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-27),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-27),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -3435,9 +3472,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([9, 13, 18], 19)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 + 7 + 2, 24 + 7 + 2)])
                 .mirror(sequential_duplicates=False)
@@ -3480,16 +3517,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("piano 1 voice", alu.measure_numbers([34, 35, 36, 37, 38])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(27),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-27),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-27),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -3512,9 +3549,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([8, 12, 17], 18)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 + 7 + 3, 24 + 7 + 3)])
                 .mirror(sequential_duplicates=False)
@@ -3545,16 +3582,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("piano 2 voice", alu.measure_numbers([1, 2, 3, 4, 5, 6, 7])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(28),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-28),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-28),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -3577,9 +3614,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([7, 11, 16], 17)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 - 15, 24 - 15)])
                 .mirror(sequential_duplicates=False)
@@ -3622,16 +3659,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("piano 2 voice", alu.measure_numbers([15, 16])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(28),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-28),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-28),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -3654,9 +3691,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([6, 10, 15], 16)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 - 15 - 1, 24 - 15 - 1)])
                 .mirror(sequential_duplicates=False)
@@ -3702,16 +3739,16 @@ maker = evans.SegmentMaker(
                 alu.measure_numbers([21, 22, 23, 24, 25, 26, 27, 28, 29]),
             ),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(28),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-28),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-28),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -3734,9 +3771,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([5, 9, 14], 15)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 - 15 - 2, 24 - 15 - 2)])
                 .mirror(sequential_duplicates=False)
@@ -3779,16 +3816,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("piano 2 voice", alu.measure_numbers([34, 35, 36, 37, 38])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(28),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-28),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-28),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -3811,9 +3848,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([4, 8, 13], 14)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 - 15 - 3, 24 - 15 - 3)])
                 .mirror(sequential_duplicates=False)
@@ -3844,16 +3881,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("violin 1 voice", alu.measure_numbers([1, 2, 3, 4, 5, 6, 7])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(29),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-29),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-29),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -3876,9 +3913,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([3, 7, 12], 13)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 + 10, 24 + 10)])
                 .mirror(sequential_duplicates=False)
@@ -3930,16 +3967,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("violin 1 voice", alu.measure_numbers([13, 14, 15])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(29),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-29),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-29),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -3962,9 +3999,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([2, 6, 11], 12)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 + 10 + 1, 24 + 10 + 1)])
                 .mirror(sequential_duplicates=False)
@@ -4016,16 +4053,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("violin 1 voice", alu.measure_numbers([18, 19, 20, 21])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(29),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-29),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-29),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -4048,9 +4085,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([1, 5, 10], 11)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 + 10 + 2, 24 + 10 + 2)])
                 .mirror(sequential_duplicates=False)
@@ -4105,16 +4142,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("violin 1 voice", alu.measure_numbers([31, 32, 33, 34])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(29),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-29),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-29),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -4137,9 +4174,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([0, 4, 9], 10)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 + 10 + 3, 24 + 10 + 3)])
                 .mirror(sequential_duplicates=False)
@@ -4195,16 +4232,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("violin 2 voice", alu.measure_numbers([1, 2, 3, 4, 5, 6, 7])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(30),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-30),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-30),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -4227,9 +4264,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([1, 5, 10], 11)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 + 9, 24 + 9)])
                 .mirror(sequential_duplicates=False)
@@ -4281,16 +4318,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("violin 2 voice", alu.measure_numbers([13, 14, 15])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(30),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-30),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-30),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -4313,9 +4350,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([2, 6, 11], 12)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 + 9 - 1, 24 + 9 - 1)])
                 .mirror(sequential_duplicates=False)
@@ -4367,16 +4404,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("violin 2 voice", alu.measure_numbers([18, 19, 20, 21])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(30),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-30),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-30),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -4399,9 +4436,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([3, 7, 12], 13)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 + 9 - 2, 24 + 9 - 2)])
                 .mirror(sequential_duplicates=False)
@@ -4456,16 +4493,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("violin 2 voice", alu.measure_numbers([31, 32, 33, 34])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(30),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-30),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-30),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -4488,9 +4525,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([4, 8, 13], 14)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 + 9 - 3, 24 + 9 - 3)])
                 .mirror(sequential_duplicates=False)
@@ -4546,16 +4583,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("viola voice", alu.measure_numbers([1, 2, 3, 4, 5, 6])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(31),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-31),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-31),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -4578,9 +4615,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([5, 9, 14], 15)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 + 4, 24 + 4)])
                 .mirror(sequential_duplicates=False)
@@ -4624,7 +4661,7 @@ maker = evans.SegmentMaker(
             alu.potamia_pitches(transposition=-8, columns=False, retrograde=False),
             lambda _: evans.contour(
                 _,
-                starting_range=abjad.PitchRange("[C3, B3]"),
+                starting_range=abjad.PitchRange("[C4, B4]"),
             ),
             lambda _: dynamic_runs(_, -1),
             # alu.E_color,
@@ -4632,16 +4669,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("viola voice", alu.measure_numbers([13, 14, 15])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(31),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-31),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-31),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -4664,9 +4701,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([6, 10, 15], 16)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 + 4 + 1, 24 + 4 + 1)])
                 .mirror(sequential_duplicates=False)
@@ -4718,16 +4755,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("viola voice", alu.measure_numbers([18, 19, 20, 21])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(31),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-31),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-31),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -4750,9 +4787,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([7, 11, 16], 17)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 + 4 + 2, 24 + 4 + 2)])
                 .mirror(sequential_duplicates=False)
@@ -4804,16 +4841,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("viola voice", alu.measure_numbers([31, 32, 33, 34])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(31),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-31),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-31),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -4836,9 +4873,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([8, 12, 17], 18)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 + 4 + 3, 24 + 4 + 3)])
                 .mirror(sequential_duplicates=False)
@@ -4894,16 +4931,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("cello voice", alu.measure_numbers([1, 2, 3, 4, 5, 6])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(32),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-32),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-32),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -4926,9 +4963,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([9, 13, 18], 19)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 - 13, 24 - 13)])
                 .mirror(sequential_duplicates=False)
@@ -4980,16 +5017,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("cello voice", alu.measure_numbers([13, 14, 15])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(32),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-32),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-32),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -5012,9 +5049,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([8, 12, 17], 18)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 - 13 + 1, 24 - 13 + 1)])
                 .mirror(sequential_duplicates=False)
@@ -5066,16 +5103,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("cello voice", alu.measure_numbers([18, 19, 20, 21])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(32),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-32),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-32),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -5098,9 +5135,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([7, 11, 16], 17)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 - 13 + 2, 24 - 13 + 2)])
                 .mirror(sequential_duplicates=False)
@@ -5153,16 +5190,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("cello voice", alu.measure_numbers([31, 32, 33, 34])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(32),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-32),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-32),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -5185,9 +5222,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([6, 10, 15], 16)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 - 13 + 3, 24 - 13 + 3)])
                 .mirror(sequential_duplicates=False)
@@ -5242,16 +5279,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("contrabass voice", alu.measure_numbers([1, 2, 3, 4, 5])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(33),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-33),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-33),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -5274,9 +5311,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([5, 9, 14], 15)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 - 14 - 12, 24 - 14 - 12)])
                 .mirror(sequential_duplicates=False)
@@ -5328,16 +5365,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("contrabass voice", alu.measure_numbers([13, 14, 15])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(33),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-33),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-33),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -5360,9 +5397,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([4, 8, 13], 14)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 - 14 - 1 - 12, 24 - 14 - 1 - 12)])
                 .mirror(sequential_duplicates=False)
@@ -5414,16 +5451,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("contrabass voice", alu.measure_numbers([18, 19, 20, 21])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(33),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-33),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-33),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -5446,9 +5483,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([3, 7, 12], 13)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 - 14 - 2 - 12, 24 - 14 - 2 - 12)])
                 .mirror(sequential_duplicates=False)
@@ -5503,16 +5540,16 @@ maker = evans.SegmentMaker(
         evans.MusicCommand(
             ("contrabass voice", alu.measure_numbers([31, 32, 33, 34])),
             evans.even_division(
-                [32],
-                extra_counts=evans.Sequence([-4, -3, -2, -1, 0, 1, 2, 3, 4])
+                [16],
+                extra_counts=evans.Sequence([0, 1, 2, 3, 4])
                 .mirror(sequential_duplicates=False)
                 .rotate(33),
                 preprocessor=evans.make_preprocessor(
                     quarters=True,
-                    fuse_counts=evans.Sequence(
-                        [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
-                    ).rotate(-33),
-                    split_at_measure_boundaries=True,
+                    # fuse_counts=evans.Sequence(
+                    #     [1, 1, 2, 1, 1, 1, 3, 1, 1, 1, 1, 4]
+                    # ).rotate(-33),
+                    # split_at_measure_boundaries=True,
                 ),
                 treat_tuplets=False,
             ),
@@ -5535,9 +5572,9 @@ maker = evans.SegmentMaker(
             ),
             evans.Callable(
                 rmakers.force_rest,
-                selector=lambda _: alu.get_tuplets(_),
+                selector=lambda _: get_tuplets(_, abjad.index([2, 6, 11], 12)),
             ),
-            lambda _: evans.treat_tuplets(alu.get_all_tuplets(_)),
+            lambda _: treat_tuplets(alu.get_all_tuplets(_)),
             evans.PitchHandler(
                 evans.Sequence([_ for _ in range(0 - 14 - 3 - 12, 24 - 14 - 3 - 12)])
                 .mirror(sequential_duplicates=False)

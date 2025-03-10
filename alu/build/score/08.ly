@@ -7,6 +7,7 @@
                   %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 1]
                 \tempo 4=70
+                \mark #19
                 \mark \markup \bold {  }
                   %! scaling time signatures
                 \time 4/4
@@ -82,6 +83,7 @@
                   %! COMMENT_MEASURE_NUMBERS
                   %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 10]
+                \mark #20
                   %! scaling time signatures
                 \time 4/4
                 s1 * 1
@@ -174,7 +176,7 @@
                     \tag #'group2
                     {
 
-                        \context PianoStaff = "sub group 1"
+                        \context StaffGroup = "sub group 1"
                         <<
 
                             \tag #'voice1
@@ -202,106 +204,125 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [flute voice measure 2]
-                                        b'4
-                                        - \bendAfter #'1
-                                        \f
-
-                                        \times 4/5
-                                        {
-
-                                            a'4
-                                            - \bendAfter #'1
-
-                                            e'16
-                                            ~
-
-                                        }
-
-                                        \times 2/3
-                                        {
-
-                                            e'8
-                                            - \bendAfter #'-1
-
-                                            bf'4
-                                            - \bendAfter #'1
-
-                                        }
-
-                                        \tweak text #tuplet-number::calc-fraction-text
-                                        \times 8/7
-                                        {
-
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            d'16
-                                            - \bendAfter #'-1
-                                            [
-
-                                            ef'16
-                                            - \bendAfter #'1
-
-                                            cs'16
-                                            - \bendAfter #'1
-
-                                            \revert Staff.Stem.stemlet-length
-                                            c'32
-                                            - \bendAfter #'-1
-                                            ]
-
-                                        }
-
-                                        \times 2/3
-                                        {
-
-                                            fs'8
-                                            - \bendAfter #'-1
-
-                                            g'4
-                                            - \bendAfter #'-1
-
-                                        }
-
-                                        \times 4/5
-                                        {
-
-                                              %! COMMENT_MEASURE_NUMBERS
-                                              %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [flute voice measure 3]
-                                            f'4
-                                            - \bendAfter #'1
-
-                                            af'16
-                                            ~
-
-                                        }
-
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        af'8
-                                        - \bendAfter #'-1
+                                        r16
                                         [
 
+                                        r16
+
+                                        b'16
+                                        \p
+                                        (
+
                                         \revert Staff.Stem.stemlet-length
-                                        c''8
+                                        bf'16
                                         ]
-                                        ~
 
-                                        \times 4/5
-                                        {
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        a'16
+                                        )
+                                        [
 
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            c''8
-                                            - \bendAfter #'-1
-                                            [
+                                        b'16
+                                        (
 
-                                            bf'8
-                                            - \bendAfter #'1
+                                        bf'16
 
-                                            \revert Staff.Stem.stemlet-length
-                                            f'16
-                                            - \bendAfter #'1
-                                            ]
+                                        \revert Staff.Stem.stemlet-length
+                                        a'16
+                                        )
+                                        ]
 
-                                        }
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        b'16
+                                        [
+                                        (
+
+                                        bf'16
+
+                                        a'16
+                                        )
+
+                                        \revert Staff.Stem.stemlet-length
+                                        b'16
+                                        ]
+                                        (
+
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        bf'16
+                                        [
+
+                                        a'16
+                                        )
+
+                                        b'16
+                                        (
+
+                                        \revert Staff.Stem.stemlet-length
+                                        bf'16
+                                        ]
+
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        a'16
+                                        )
+                                        [
+
+                                        b'16
+                                        (
+
+                                        bf'16
+
+                                        \revert Staff.Stem.stemlet-length
+                                        a'16
+                                        )
+                                        ]
+
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [flute voice measure 3]
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        b'16
+                                        [
+                                        (
+
+                                        bf'16
+
+                                        a'16
+                                        )
+
+                                        \revert Staff.Stem.stemlet-length
+                                        b'16
+                                        ]
+                                        (
+
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        bf'16
+                                        [
+
+                                        a'16
+                                        )
+
+                                        b'16
+                                        (
+
+                                        \revert Staff.Stem.stemlet-length
+                                        bf'16
+                                        ]
+
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        a'16
+                                        )
+                                        [
+
+                                        b'16
+                                        (
+
+                                        bf'16
+                                        )
+
+                                        \revert Staff.Stem.stemlet-length
+                                        r16
+                                        ]
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
@@ -396,11 +417,74 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [flute voice measure 14]
-                                        c'''2.
-                                        \mp
-                                        ~
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        r16
+                                        [
 
-                                        c'''2
+                                        r16
+
+                                        b'16
+                                        \p
+                                        (
+
+                                        \revert Staff.Stem.stemlet-length
+                                        bf'16
+                                        ]
+
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        a'16
+                                        [
+
+                                        af'16
+                                        )
+
+                                        b'16
+                                        (
+
+                                        \revert Staff.Stem.stemlet-length
+                                        bf'16
+                                        ]
+
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        a'16
+                                        [
+
+                                        af'16
+                                        )
+
+                                        b'16
+                                        (
+
+                                        \revert Staff.Stem.stemlet-length
+                                        bf'16
+                                        ]
+
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        a'16
+                                        [
+
+                                        af'16
+                                        )
+
+                                        b'16
+                                        (
+
+                                        \revert Staff.Stem.stemlet-length
+                                        bf'16
+                                        ]
+
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        a'16
+                                        [
+
+                                        af'16
+                                        )
+
+                                        b'16
+
+                                        \revert Staff.Stem.stemlet-length
+                                        r16
+                                        ]
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
@@ -460,8 +544,60 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [flute voice measure 16]
-                                        bf'''1
-                                        \mp
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        r16
+                                        [
+
+                                        r16
+
+                                        b'16
+                                        \p
+                                        (
+
+                                        \revert Staff.Stem.stemlet-length
+                                        bf'16
+                                        ]
+
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        a'16
+                                        [
+
+                                        af'16
+
+                                        g'16
+                                        )
+
+                                        \revert Staff.Stem.stemlet-length
+                                        b'16
+                                        ]
+                                        (
+
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        bf'16
+                                        [
+
+                                        a'16
+
+                                        af'16
+
+                                        \revert Staff.Stem.stemlet-length
+                                        g'16
+                                        )
+                                        ]
+
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        b'16
+                                        [
+                                        (
+
+                                        bf'16
+
+                                        a'16
+                                        )
+
+                                        \revert Staff.Stem.stemlet-length
+                                        r16
+                                        ]
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
@@ -576,76 +712,113 @@
 
                                         R1 * 1/2
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [oboe voice measure 2]
-                                        b'4
-                                        - \bendAfter #'1
-                                        \f
+                                        \times 4/5
+                                        {
+
+                                              %! COMMENT_MEASURE_NUMBERS
+                                              %! evans.SegmentMaker.comment_measure_numbers()
+                                            % [oboe voice measure 2]
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            r16
+                                            [
+
+                                            r16
+
+                                            fs'16
+                                            \p
+                                            (
+
+                                            g'16
+
+                                            \revert Staff.Stem.stemlet-length
+                                            gs'16
+                                            ]
+
+                                        }
 
                                         \times 4/5
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            a'8.
-                                            - \bendAfter #'1
+                                            a'16
+                                            )
                                             [
 
-                                            \revert Staff.Stem.stemlet-length
-                                            e'8
-                                            ]
-                                            ~
+                                            fs'16
+                                            (
 
-                                        }
+                                            g'16
 
-                                        \times 2/3
-                                        {
-
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            e'8
-                                            - \bendAfter #'-1
-                                            [
-
-                                            bf'8
-                                            - \bendAfter #'1
+                                            gs'16
 
                                             \revert Staff.Stem.stemlet-length
-                                            d'8
-                                            - \bendAfter #'-1
+                                            a'16
+                                            )
                                             ]
 
                                         }
 
-                                        \tweak text #tuplet-number::calc-fraction-text
-                                        \times 8/7
+                                        \times 4/5
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            ef'16
-                                            - \bendAfter #'1
+                                            fs'16
                                             [
+                                            (
 
-                                            cs'32
-                                            - \bendAfter #'1
+                                            g'16
 
-                                            c'16
-                                            - \bendAfter #'-1
+                                            gs'16
+
+                                            a'16
+                                            )
 
                                             \revert Staff.Stem.stemlet-length
                                             fs'16
                                             ]
-                                            ~
+                                            (
 
                                         }
 
-                                        \times 2/3
+                                        \times 4/5
                                         {
 
-                                            fs'8
-                                            - \bendAfter #'-1
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            g'16
+                                            [
 
-                                            g'4
-                                            - \bendAfter #'-1
+                                            gs'16
+
+                                            a'16
+                                            )
+
+                                            fs'16
+                                            (
+
+                                            \revert Staff.Stem.stemlet-length
+                                            g'16
+                                            ]
+
+                                        }
+
+                                        \times 4/5
+                                        {
+
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            gs'16
+                                            [
+
+                                            a'16
+                                            )
+
+                                            fs'16
+                                            (
+
+                                            g'16
+
+                                            \revert Staff.Stem.stemlet-length
+                                            gs'16
+                                            ]
 
                                         }
 
@@ -656,41 +829,62 @@
                                               %! evans.SegmentMaker.comment_measure_numbers()
                                             % [oboe voice measure 3]
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            f'8.
-                                            - \bendAfter #'1
+                                            a'16
+                                            )
                                             [
 
+                                            fs'16
+                                            (
+
+                                            g'16
+
+                                            gs'16
+
                                             \revert Staff.Stem.stemlet-length
-                                            af'8
+                                            a'16
+                                            )
                                             ]
-                                            ~
 
                                         }
-
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        af'8
-                                        - \bendAfter #'-1
-                                        [
-
-                                        \revert Staff.Stem.stemlet-length
-                                        c''8
-                                        - \bendAfter #'-1
-                                        ]
 
                                         \times 4/5
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            bf'8
-                                            - \bendAfter #'1
+                                            fs'16
                                             [
+                                            (
 
-                                            f'8
-                                            - \bendAfter #'1
+                                            g'16
+
+                                            gs'16
+
+                                            a'16
+                                            )
 
                                             \revert Staff.Stem.stemlet-length
-                                            b'16
-                                            - \bendAfter #'1
+                                            fs'16
+                                            ]
+                                            (
+
+                                        }
+
+                                        \times 4/5
+                                        {
+
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            g'16
+                                            [
+
+                                            gs'16
+
+                                            a'16
+                                            )
+
+                                            fs'16
+
+                                            \revert Staff.Stem.stemlet-length
+                                            r16
                                             ]
 
                                         }
@@ -837,14 +1031,114 @@
 
                                         }
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [oboe voice measure 14]
-                                        f''2.
-                                        \mp
-                                        ~
+                                        \times 4/5
+                                        {
 
-                                        f''2
+                                              %! COMMENT_MEASURE_NUMBERS
+                                              %! evans.SegmentMaker.comment_measure_numbers()
+                                            % [oboe voice measure 14]
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            r16
+                                            [
+
+                                            r16
+
+                                            fs'16
+                                            \p
+                                            (
+
+                                            g'16
+
+                                            \revert Staff.Stem.stemlet-length
+                                            gs'16
+                                            ]
+
+                                        }
+
+                                        \times 4/5
+                                        {
+
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            a'16
+                                            [
+
+                                            as'16
+                                            )
+
+                                            fs'16
+                                            (
+
+                                            g'16
+
+                                            \revert Staff.Stem.stemlet-length
+                                            gs'16
+                                            ]
+
+                                        }
+
+                                        \times 4/5
+                                        {
+
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            a'16
+                                            [
+
+                                            as'16
+                                            )
+
+                                            fs'16
+                                            (
+
+                                            g'16
+
+                                            \revert Staff.Stem.stemlet-length
+                                            gs'16
+                                            ]
+
+                                        }
+
+                                        \times 4/5
+                                        {
+
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            a'16
+                                            [
+
+                                            as'16
+                                            )
+
+                                            fs'16
+                                            (
+
+                                            g'16
+
+                                            \revert Staff.Stem.stemlet-length
+                                            gs'16
+                                            ]
+
+                                        }
+
+                                        \times 4/5
+                                        {
+
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            a'16
+                                            [
+
+                                            as'16
+                                            )
+
+                                            fs'16
+                                            (
+
+                                            g'16
+                                            )
+
+                                            \revert Staff.Stem.stemlet-length
+                                            r16
+                                            ]
+
+                                        }
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
@@ -855,11 +1149,91 @@
 
                                         R1 * 1/2
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [oboe voice measure 16]
-                                        fs'1
-                                        \mp
+                                        \times 4/5
+                                        {
+
+                                              %! COMMENT_MEASURE_NUMBERS
+                                              %! evans.SegmentMaker.comment_measure_numbers()
+                                            % [oboe voice measure 16]
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            r16
+                                            [
+
+                                            r16
+
+                                            fs'16
+                                            \p
+                                            (
+
+                                            g'16
+
+                                            \revert Staff.Stem.stemlet-length
+                                            gs'16
+                                            ]
+
+                                        }
+
+                                        \times 4/5
+                                        {
+
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            a'16
+                                            [
+
+                                            as'16
+
+                                            b'16
+                                            )
+
+                                            fs'16
+                                            (
+
+                                            \revert Staff.Stem.stemlet-length
+                                            g'16
+                                            ]
+
+                                        }
+
+                                        \times 4/5
+                                        {
+
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            gs'16
+                                            [
+
+                                            a'16
+
+                                            as'16
+
+                                            b'16
+                                            )
+
+                                            \revert Staff.Stem.stemlet-length
+                                            fs'16
+                                            ]
+                                            (
+
+                                        }
+
+                                        \times 4/5
+                                        {
+
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            g'16
+                                            [
+
+                                            gs'16
+
+                                            a'16
+
+                                            as'16
+                                            )
+
+                                            \revert Staff.Stem.stemlet-length
+                                            r16
+                                            ]
+
+                                        }
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
@@ -999,31 +1373,28 @@
 
                                         }
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [bass clarinet voice measure 2]
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        cs'8.
-                                        - \bendAfter #'1
-                                        \f
-                                        [
-
-                                        \revert Staff.Stem.stemlet-length
-                                        b'16
-                                        ]
-                                        ~
-
-                                        \times 4/5
+                                        \times 2/3
                                         {
 
+                                              %! COMMENT_MEASURE_NUMBERS
+                                              %! evans.SegmentMaker.comment_measure_numbers()
+                                            % [bass clarinet voice measure 2]
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            b'8.
-                                            - \bendAfter #'1
+                                            r16
                                             [
 
+                                            r16
+
+                                            cs''16
+                                            \p
+                                            (
+
+                                            c''16
+
+                                            b'16
+
                                             \revert Staff.Stem.stemlet-length
-                                            fs'8
-                                            - \bendAfter #'-1
+                                            cs''16
                                             ]
 
                                         }
@@ -1032,39 +1403,23 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            c''8
-                                            - \bendAfter #'1
+                                            d''16
+                                            )
                                             [
 
-                                            e'8
-                                            - \bendAfter #'-1
+                                            cs''16
+                                            (
 
-                                            f'16
-                                            - \bendAfter #'1
+                                            c''16
 
-                                            \revert Staff.Stem.stemlet-length
-                                            ds'16
-                                            ]
-                                            ~
+                                            b'16
 
-                                        }
-
-                                        \tweak text #tuplet-number::calc-fraction-text
-                                        \times 8/7
-                                        {
-
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            ds'32
-                                            - \bendAfter #'1
-                                            [
-
-                                            d'8
-                                            - \bendAfter #'-1
+                                            cs''16
 
                                             \revert Staff.Stem.stemlet-length
-                                            gs'16
+                                            d''16
+                                            )
                                             ]
-                                            ~
 
                                         }
 
@@ -1072,62 +1427,141 @@
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            gs'8
-                                            - \bendAfter #'-1
+                                            cs''16
                                             [
+                                            (
 
-                                            a'8.
-                                            - \bendAfter #'-1
+                                            c''16
+
+                                            b'16
+
+                                            cs''16
+
+                                            d''16
+                                            )
 
                                             \revert Staff.Stem.stemlet-length
-                                            g'16
+                                            cs''16
                                             ]
-                                            ~
+                                            (
 
                                         }
 
-                                        \times 4/5
+                                        \times 2/3
+                                        {
+
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            c''16
+                                            [
+
+                                            b'16
+
+                                            cs''16
+
+                                            d''16
+                                            )
+
+                                            cs''16
+                                            (
+
+                                            \revert Staff.Stem.stemlet-length
+                                            c''16
+                                            ]
+
+                                        }
+
+                                        \times 2/3
+                                        {
+
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            b'16
+                                            [
+
+                                            cs''16
+
+                                            d''16
+                                            )
+
+                                            cs''16
+                                            (
+
+                                            c''16
+
+                                            \revert Staff.Stem.stemlet-length
+                                            b'16
+                                            ]
+
+                                        }
+
+                                        \times 2/3
                                         {
 
                                               %! COMMENT_MEASURE_NUMBERS
                                               %! evans.SegmentMaker.comment_measure_numbers()
                                             % [bass clarinet voice measure 3]
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            g'8.
-                                            - \bendAfter #'1
+                                            cs''16
                                             [
 
+                                            d''16
+                                            )
+
+                                            cs''16
+                                            (
+
+                                            c''16
+
+                                            b'16
+
                                             \revert Staff.Stem.stemlet-length
-                                            bf'8
-                                            - \bendAfter #'-1
+                                            cs''16
                                             ]
 
                                         }
 
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        d'8
-                                        - \bendAfter #'-1
-                                        [
-
-                                        \revert Staff.Stem.stemlet-length
-                                        c''8
-                                        - \bendAfter #'1
-                                        ]
-
-                                        \times 4/5
+                                        \times 2/3
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            g'16
-                                            - \bendAfter #'1
+                                            d''16
+                                            )
                                             [
 
-                                            cs'8
-                                            - \bendAfter #'1
+                                            cs''16
+                                            (
+
+                                            c''16
+
+                                            b'16
+
+                                            cs''16
 
                                             \revert Staff.Stem.stemlet-length
-                                            f'8
-                                            - \bendAfter #'1
+                                            d''16
+                                            )
+                                            ]
+
+                                        }
+
+                                        \times 2/3
+                                        {
+
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            cs''16
+                                            [
+                                            (
+
+                                            c''16
+
+                                            b'16
+
+                                            cs''16
+
+                                            d''16
+                                            )
+
+                                            \revert Staff.Stem.stemlet-length
+                                            r16
                                             ]
 
                                         }
@@ -1222,14 +1656,124 @@
 
                                         R1 * 3/8
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [bass clarinet voice measure 14]
-                                        bf'2.
-                                        \mp
-                                        ~
+                                        \times 2/3
+                                        {
 
-                                        bf'2
+                                              %! COMMENT_MEASURE_NUMBERS
+                                              %! evans.SegmentMaker.comment_measure_numbers()
+                                            % [bass clarinet voice measure 14]
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            r16
+                                            [
+
+                                            r16
+
+                                            cs''16
+                                            \p
+                                            (
+
+                                            c''16
+
+                                            b'16
+
+                                            \revert Staff.Stem.stemlet-length
+                                            cs''16
+                                            ]
+
+                                        }
+
+                                        \times 2/3
+                                        {
+
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            d''16
+                                            [
+
+                                            bf'16
+                                            )
+
+                                            cs''16
+                                            (
+
+                                            c''16
+
+                                            b'16
+
+                                            \revert Staff.Stem.stemlet-length
+                                            cs''16
+                                            ]
+
+                                        }
+
+                                        \times 2/3
+                                        {
+
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            d''16
+                                            [
+
+                                            bf'16
+                                            )
+
+                                            cs''16
+                                            (
+
+                                            c''16
+
+                                            b'16
+
+                                            \revert Staff.Stem.stemlet-length
+                                            cs''16
+                                            ]
+
+                                        }
+
+                                        \times 2/3
+                                        {
+
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            d''16
+                                            [
+
+                                            bf'16
+                                            )
+
+                                            cs''16
+                                            (
+
+                                            c''16
+
+                                            b'16
+
+                                            \revert Staff.Stem.stemlet-length
+                                            cs''16
+                                            ]
+
+                                        }
+
+                                        \times 2/3
+                                        {
+
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            d''16
+                                            [
+
+                                            bf'16
+                                            )
+
+                                            cs''16
+                                            (
+
+                                            c''16
+
+                                            b'16
+                                            )
+
+                                            \revert Staff.Stem.stemlet-length
+                                            r16
+                                            ]
+
+                                        }
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
@@ -1240,11 +1784,99 @@
 
                                         R1 * 1/2
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [bass clarinet voice measure 16]
-                                        a'1
-                                        \mp
+                                        \times 2/3
+                                        {
+
+                                              %! COMMENT_MEASURE_NUMBERS
+                                              %! evans.SegmentMaker.comment_measure_numbers()
+                                            % [bass clarinet voice measure 16]
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            r16
+                                            [
+
+                                            r16
+
+                                            cs''16
+                                            \p
+                                            (
+
+                                            c''16
+
+                                            b'16
+
+                                            \revert Staff.Stem.stemlet-length
+                                            cs''16
+                                            ]
+
+                                        }
+
+                                        \times 2/3
+                                        {
+
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            d''16
+                                            [
+
+                                            bf'16
+
+                                            a'16
+                                            )
+
+                                            cs''16
+                                            (
+
+                                            c''16
+
+                                            \revert Staff.Stem.stemlet-length
+                                            b'16
+                                            ]
+
+                                        }
+
+                                        \times 2/3
+                                        {
+
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            cs''16
+                                            [
+
+                                            d''16
+
+                                            bf'16
+
+                                            a'16
+                                            )
+
+                                            cs''16
+                                            (
+
+                                            \revert Staff.Stem.stemlet-length
+                                            c''16
+                                            ]
+
+                                        }
+
+                                        \times 2/3
+                                        {
+
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            b'16
+                                            [
+
+                                            cs''16
+
+                                            d''16
+
+                                            bf'16
+
+                                            a'16
+                                            )
+
+                                            \revert Staff.Stem.stemlet-length
+                                            r16
+                                            ]
+
+                                        }
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
@@ -1390,123 +2022,17 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [bassoon voice measure 2]
-                                        b4
-                                        - \bendAfter #'1
-                                        \f
+                                        bf2.
+                                        \p
+                                        ~
 
-                                        \times 4/5
-                                        {
+                                        bf2
+                                        ~
 
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            a8
-                                            - \bendAfter #'1
-                                            [
-
-                                            e8
-                                            - \bendAfter #'-1
-
-                                            \revert Staff.Stem.stemlet-length
-                                            bf16
-                                            ]
-                                            ~
-
-                                        }
-
-                                        \times 2/3
-                                        {
-
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            bf16
-                                            - \bendAfter #'1
-                                            [
-
-                                            d16
-                                            - \bendAfter #'-1
-
-                                            ef8
-                                            - \bendAfter #'1
-
-                                            \revert Staff.Stem.stemlet-length
-                                            cs8
-                                            ]
-                                            ~
-
-                                        }
-
-                                        \tweak text #tuplet-number::calc-fraction-text
-                                        \times 8/7
-                                        {
-
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            cs16
-                                            - \bendAfter #'1
-                                            [
-
-                                            c'8
-                                            - \bendAfter #'-1
-
-                                            \revert Staff.Stem.stemlet-length
-                                            fs32
-                                            ]
-                                            ~
-
-                                        }
-
-                                        \times 2/3
-                                        {
-
-                                            fs8
-                                            - \bendAfter #'-1
-
-                                            g4
-                                            - \bendAfter #'-1
-
-                                        }
-
-                                        \times 4/5
-                                        {
-
-                                              %! COMMENT_MEASURE_NUMBERS
-                                              %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [bassoon voice measure 3]
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            f8
-                                            - \bendAfter #'1
-                                            [
-
-                                            af8
-                                            - \bendAfter #'-1
-
-                                            \revert Staff.Stem.stemlet-length
-                                            c'16
-                                            ]
-                                            ~
-
-                                        }
-
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        c'16
-                                        - \bendAfter #'-1
-                                        [
-
-                                        bf16
-                                        - \bendAfter #'1
-
-                                        \revert Staff.Stem.stemlet-length
-                                        f8
-                                        - \bendAfter #'1
-                                        ]
-
-                                        \times 4/5
-                                        {
-
-                                            b4
-                                            - \bendAfter #'1
-
-                                            ef16
-                                            - \bendAfter #'1
-
-                                        }
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [bassoon voice measure 3]
+                                        bf2.
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
@@ -1601,11 +2127,11 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [bassoon voice measure 14]
-                                        af2.
-                                        \mp
+                                        btqf2.
+                                        \p
                                         ~
 
-                                        af2
+                                        btqf2
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
@@ -1619,8 +2145,8 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [bassoon voice measure 16]
-                                        a,1
-                                        \mp
+                                        a1
+                                        \p
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
@@ -2030,7 +2556,7 @@
                     \tag #'group3
                     {
 
-                        \context PianoStaff = "sub group 2"
+                        \context StaffGroup = "sub group 2"
                         <<
 
                             \tag #'voice6
@@ -4574,7 +5100,7 @@
                     \tag #'group6
                     {
 
-                        \context PianoStaff = "sub group 5"
+                        \context StaffGroup = "sub group 5"
                         <<
 
                             \tag #'voice13
@@ -4589,153 +5115,41 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 1 voice measure 1]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
                                           %! applying staff names and clefs
                                         \set Staff.instrumentName = \markup { \hcenter-in #14 "Violin I" }
                                           %! applying staff names and clefs
                                         \set Staff.shortInstrumentName = \markup { \hcenter-in #12 "vn I" }
-                                        r1 * 1/2
+                                        r2
 
-                                        R1 * 1/2
+                                        r8
+
+                                        a'4.
+                                        \mp
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 1 voice measure 2]
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        b''16
-                                        - \bendAfter #'1
-                                        \f
-                                        [
-
-                                        a''8
-                                        - \bendAfter #'1
-
-                                        \revert Staff.Stem.stemlet-length
-                                        e''16
-                                        ]
+                                        a'1
                                         ~
 
-                                        \times 4/5
-                                        {
-
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            e''8.
-                                            - \bendAfter #'-1
-                                            [
-
-                                            \revert Staff.Stem.stemlet-length
-                                            bf''8
-                                            ]
-                                            ~
-
-                                        }
-
-                                        \times 2/3
-                                        {
-
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            bf''8
-                                            - \bendAfter #'1
-                                            [
-
-                                            d''8.
-                                            - \bendAfter #'-1
-
-                                            \revert Staff.Stem.stemlet-length
-                                            ef''16
-                                            ]
-                                            ~
-
-                                        }
-
-                                        \tweak text #tuplet-number::calc-fraction-text
-                                        \times 8/7
-                                        {
-
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            ef''16.
-                                            - \bendAfter #'1
-                                            [
-
-                                            cs''16
-                                            - \bendAfter #'1
-
-                                            \revert Staff.Stem.stemlet-length
-                                            c''16
-                                            - \bendAfter #'-1
-                                            ]
-
-                                        }
-
-                                        \times 2/3
-                                        {
-
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            fs''8
-                                            - \bendAfter #'-1
-                                            [
-
-                                            g''16
-                                            - \bendAfter #'-1
-
-                                            f''8
-                                            - \bendAfter #'1
-
-                                            \revert Staff.Stem.stemlet-length
-                                            af''16
-                                            ]
-                                            ~
-
-                                        }
-
-                                        \times 4/5
-                                        {
-
-                                              %! COMMENT_MEASURE_NUMBERS
-                                              %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [violin 1 voice measure 3]
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            af''8.
-                                            - \bendAfter #'-1
-                                            [
-
-                                            \revert Staff.Stem.stemlet-length
-                                            c''8
-                                            ]
-                                            ~
-
-                                        }
-
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        c''8
-                                        - \bendAfter #'-1
-                                        [
-
-                                        \revert Staff.Stem.stemlet-length
-                                        bf''8
-                                        ]
+                                        a'4
                                         ~
 
-                                        \times 4/5
-                                        {
-
-                                            bf''16
-                                            - \bendAfter #'1
-
-                                            f''4
-                                            - \bendAfter #'1
-
-                                        }
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [violin 1 voice measure 3]
+                                        a'2.
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 1 voice measure 4]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        a'4.
 
-                                        R1 * 1/2
+                                        r2
+
+                                        r8
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
@@ -4832,20 +5246,17 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 1 voice measure 13]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
-
-                                        R1 * 3/8
+                                        <gs' eqs''>2.
+                                        \mp
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 1 voice measure 14]
-                                        c'''2.
-                                        \mp
+                                        <gs' eqs''>2.
                                         ~
 
-                                        c'''2
+                                        <gs' eqs''>2
 
                                         \times 4/5
                                         {
@@ -4927,26 +5338,20 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 1 voice measure 16]
-                                        b''1
+                                        <gs' c''>1
                                         \mp
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 1 voice measure 17]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
-
-                                        R1 * 1/2
+                                        <gs' c''>1
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 1 voice measure 18]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
-
-                                        R1 * 1/2
+                                        <gs' c''>1
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
@@ -4994,153 +5399,39 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 2 voice measure 1]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
                                           %! applying staff names and clefs
                                         \set Staff.instrumentName = \markup { \hcenter-in #14 "Violin II" }
                                           %! applying staff names and clefs
                                         \set Staff.shortInstrumentName = \markup { \hcenter-in #12 "vn II" }
-                                        r1 * 1/2
+                                        r2.
 
-                                        R1 * 1/2
+                                        bqs'4
+                                        \mp
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 2 voice measure 2]
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        b'8
-                                        - \bendAfter #'1
-                                        \f
-                                        [
-
-                                        \revert Staff.Stem.stemlet-length
-                                        a'8
-                                        ]
+                                        bqs'1
                                         ~
 
-                                        \times 4/5
-                                        {
+                                        bqs'4
+                                        ~
 
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            a'8
-                                            - \bendAfter #'1
-                                            [
-
-                                            \revert Staff.Stem.stemlet-length
-                                            e'8.
-                                            ]
-                                            ~
-
-                                        }
-
-                                        \times 2/3
-                                        {
-
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            e'16
-                                            - \bendAfter #'-1
-                                            [
-
-                                            bf'8.
-                                            - \bendAfter #'1
-
-                                            \revert Staff.Stem.stemlet-length
-                                            d'8
-                                            ]
-                                            ~
-
-                                        }
-
-                                        \tweak text #tuplet-number::calc-fraction-text
-                                        \times 8/7
-                                        {
-
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            d'16
-                                            - \bendAfter #'-1
-                                            [
-
-                                            ef'16
-                                            - \bendAfter #'1
-
-                                            cs'16
-                                            - \bendAfter #'1
-
-                                            \revert Staff.Stem.stemlet-length
-                                            c'32
-                                            ]
-                                            ~
-
-                                        }
-
-                                        \times 2/3
-                                        {
-
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            c'16
-                                            - \bendAfter #'-1
-                                            [
-
-                                            fs'16
-                                            - \bendAfter #'-1
-
-                                            g'8
-                                            - \bendAfter #'-1
-
-                                            \revert Staff.Stem.stemlet-length
-                                            f'8
-                                            ]
-                                            ~
-
-                                        }
-
-                                        \times 4/5
-                                        {
-
-                                              %! COMMENT_MEASURE_NUMBERS
-                                              %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [violin 2 voice measure 3]
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            f'8
-                                            - \bendAfter #'1
-                                            [
-
-                                            \revert Staff.Stem.stemlet-length
-                                            af'8.
-                                            ]
-                                            ~
-
-                                        }
-
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        af'16
-                                        - \bendAfter #'-1
-                                        [
-
-                                        \revert Staff.Stem.stemlet-length
-                                        c''8.
-                                        - \bendAfter #'-1
-                                        ]
-
-                                        \times 4/5
-                                        {
-
-                                            bf'4
-                                            - \bendAfter #'1
-
-                                            f'16
-                                            - \bendAfter #'1
-
-                                        }
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [violin 2 voice measure 3]
+                                        bqs'2.
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 2 voice measure 4]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        bqs'4.
 
-                                        R1 * 1/2
+                                        r2
+
+                                        r8
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
@@ -5237,20 +5528,17 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 2 voice measure 13]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
-
-                                        R1 * 3/8
+                                        <bqs ds''>2.
+                                        \mp
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 2 voice measure 14]
-                                        f''2.
-                                        \mp
+                                        <bqs ds''>2.
                                         ~
 
-                                        f''2
+                                        <bqs ds''>2
 
                                         \times 4/5
                                         {
@@ -5329,26 +5617,20 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 2 voice measure 16]
-                                        fs'1
+                                        ds'1
                                         \mp
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 2 voice measure 17]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
-
-                                        R1 * 1/2
+                                        ds'1
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 2 voice measure 18]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
-
-                                        R1 * 1/2
+                                        ds'1
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
@@ -5396,130 +5678,38 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [viola voice measure 1]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
                                           %! applying staff names and clefs
                                         \set Staff.instrumentName = \markup { \hcenter-in #14 "Viola" }
                                           %! applying staff names and clefs
                                         \set Staff.shortInstrumentName = \markup { \hcenter-in #12 "va" }
-                                          %! applying indicators
                                         \clef "alto"
-                                        r1 * 1/2
+                                        r2
 
-                                        R1 * 1/2
+                                        atqs'2
+                                        \mp
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [viola voice measure 2]
-                                        b4
-                                        - \bendAfter #'1
-                                        \f
-
-                                        \times 4/5
-                                        {
-
-                                            a4
-                                            - \bendAfter #'1
-
-                                            e16
-                                            ~
-
-                                        }
-
-                                        \times 2/3
-                                        {
-
-                                            e8
-                                            - \bendAfter #'-1
-
-                                            bf4
-                                            - \bendAfter #'1
-
-                                        }
-
-                                        \tweak text #tuplet-number::calc-fraction-text
-                                        \times 8/7
-                                        {
-
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            d16
-                                            - \bendAfter #'-1
-                                            [
-
-                                            ef16
-                                            - \bendAfter #'1
-
-                                            cs16
-                                            - \bendAfter #'1
-
-                                            \revert Staff.Stem.stemlet-length
-                                            c'32
-                                            - \bendAfter #'-1
-                                            ]
-
-                                        }
-
-                                        \times 2/3
-                                        {
-
-                                            fs8
-                                            - \bendAfter #'-1
-
-                                            g4
-                                            - \bendAfter #'-1
-
-                                        }
-
-                                        \times 4/5
-                                        {
-
-                                              %! COMMENT_MEASURE_NUMBERS
-                                              %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [viola voice measure 3]
-                                            f4
-                                            - \bendAfter #'1
-
-                                            af16
-                                            ~
-
-                                        }
-
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        af8
-                                        - \bendAfter #'-1
-                                        [
-
-                                        \revert Staff.Stem.stemlet-length
-                                        c'8
-                                        ]
+                                        atqs'1
                                         ~
 
-                                        \times 4/5
-                                        {
+                                        atqs'4
+                                        ~
 
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            c'8
-                                            - \bendAfter #'-1
-                                            [
-
-                                            bf8
-                                            - \bendAfter #'1
-
-                                            \revert Staff.Stem.stemlet-length
-                                            f16
-                                            - \bendAfter #'1
-                                            ]
-
-                                        }
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [viola voice measure 3]
+                                        atqs'2.
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [viola voice measure 4]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        atqs'4
 
-                                        R1 * 1/2
+                                        r2.
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
@@ -5688,44 +5878,35 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [viola voice measure 14]
-                                        af2.
+                                        <cs g>2.
                                         \mp
                                         ~
 
-                                        af2
+                                        <cs g>2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [viola voice measure 15]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
-
-                                        R1 * 1/2
+                                        <cs g>1
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [viola voice measure 16]
-                                        g1
+                                        <cqs g>1
                                         \mp
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [viola voice measure 17]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
-
-                                        R1 * 1/2
+                                        <cqs g>1
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [viola voice measure 18]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
-
-                                        R1 * 1/2
+                                        <cqs g>1
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
@@ -5849,115 +6030,24 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [cello voice measure 2]
-                                        b4
-                                        - \bendAfter #'1
-                                        \f
+                                        r4
 
-                                        \times 4/5
-                                        {
-
-                                            a4
-                                            - \bendAfter #'1
-
-                                            e16
-                                            ~
-
-                                        }
-
-                                        \times 2/3
-                                        {
-
-                                            e8
-                                            - \bendAfter #'-1
-
-                                            bf4
-                                            - \bendAfter #'1
-
-                                        }
-
-                                        \tweak text #tuplet-number::calc-fraction-text
-                                        \times 8/7
-                                        {
-
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            d16
-                                            - \bendAfter #'-1
-                                            [
-
-                                            ef16
-                                            - \bendAfter #'1
-
-                                            cs16
-                                            - \bendAfter #'1
-
-                                            \revert Staff.Stem.stemlet-length
-                                            c'32
-                                            - \bendAfter #'-1
-                                            ]
-
-                                        }
-
-                                        \times 2/3
-                                        {
-
-                                            fs8
-                                            - \bendAfter #'-1
-
-                                            g4
-                                            - \bendAfter #'-1
-
-                                        }
-
-                                        \times 4/5
-                                        {
-
-                                              %! COMMENT_MEASURE_NUMBERS
-                                              %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [cello voice measure 3]
-                                            f4
-                                            - \bendAfter #'1
-
-                                            af16
-                                            ~
-
-                                        }
-
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        af8
-                                        - \bendAfter #'-1
-                                        [
-
-                                        \revert Staff.Stem.stemlet-length
-                                        c'8
-                                        ]
+                                        b1
+                                        \mp
                                         ~
 
-                                        \times 4/5
-                                        {
-
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            c'8
-                                            - \bendAfter #'-1
-                                            [
-
-                                            bf8
-                                            - \bendAfter #'1
-
-                                            \revert Staff.Stem.stemlet-length
-                                            f16
-                                            - \bendAfter #'1
-                                            ]
-
-                                        }
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [cello voice measure 3]
+                                        b2.
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [cello voice measure 4]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
+                                        b2..
 
-                                        R1 * 1/2
+                                        r8
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
@@ -5978,6 +6068,7 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [cello voice measure 6]
+                                        \clef "treble"
                                         fs''4
                                           %! abjad.glissando(7)
                                         \glissando
@@ -5990,6 +6081,7 @@
                                           %! abjad.glissando(7)
                                         \glissando
 
+                                        \clef "bass"
                                         c'4
 
                                           %! COMMENT_MEASURE_NUMBERS
@@ -6027,6 +6119,7 @@
                                           %! abjad.glissando(7)
                                         \glissando
 
+                                        \clef "treble"
                                         fs''4
                                           %! abjad.glissando(7)
                                         \glissando
@@ -6054,34 +6147,29 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [cello voice measure 13]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
-
-                                        R1 * 3/8
+                                        \clef "bass"
+                                        <c, gqs,>2.
+                                        \mp
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [cello voice measure 14]
-                                        ef2.
-                                        \mp
+                                        <c, gqs,>2.
                                         ~
 
-                                        ef2
+                                        <c, gqs,>2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [cello voice measure 15]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
-
-                                        R1 * 1/2
+                                        <c, gqs,>1
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [cello voice measure 16]
-                                        a,1
+                                        <cs, gqs,>1
                                         \mp
 
                                         \times 4/5
@@ -6090,6 +6178,7 @@
                                               %! COMMENT_MEASURE_NUMBERS
                                               %! evans.SegmentMaker.comment_measure_numbers()
                                             % [cello voice measure 17]
+                                            \clef "tenor"
                                             \override Staff.Stem.stemlet-length = 0.75
                                             a,16
                                             \p
@@ -6203,136 +6292,32 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [contrabass voice measure 1]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
                                           %! applying staff names and clefs
                                         \set Staff.instrumentName = \markup { \hcenter-in #14 "Contrabass" }
                                           %! applying staff names and clefs
                                         \set Staff.shortInstrumentName = \markup { \hcenter-in #12 "cb" }
-                                          %! applying indicators
                                         \clef "bass"
-                                        r1 * 1/2
+                                        r4
 
-                                        R1 * 1/2
+                                        cs'2.
+                                        \mp
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [contrabass voice measure 2]
-                                        b4
-                                        - \bendAfter #'1
-                                        \f
+                                        cs'1
+                                        ~
 
-                                        \times 4/5
-                                        {
+                                        cs'4
+                                        ~
 
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            a8.
-                                            - \bendAfter #'1
-                                            [
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [contrabass voice measure 3]
+                                        cs'4.
 
-                                            \revert Staff.Stem.stemlet-length
-                                            e8
-                                            ]
-                                            ~
-
-                                        }
-
-                                        \times 2/3
-                                        {
-
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            e8
-                                            - \bendAfter #'-1
-                                            [
-
-                                            bf8
-                                            - \bendAfter #'1
-
-                                            \revert Staff.Stem.stemlet-length
-                                            d8
-                                            - \bendAfter #'-1
-                                            ]
-
-                                        }
-
-                                        \tweak text #tuplet-number::calc-fraction-text
-                                        \times 8/7
-                                        {
-
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            ef16
-                                            - \bendAfter #'1
-                                            [
-
-                                            cs32
-                                            - \bendAfter #'1
-
-                                            c'16
-                                            - \bendAfter #'-1
-
-                                            \revert Staff.Stem.stemlet-length
-                                            fs16
-                                            ]
-                                            ~
-
-                                        }
-
-                                        \times 2/3
-                                        {
-
-                                            fs8
-                                            - \bendAfter #'-1
-
-                                            g4
-                                            - \bendAfter #'-1
-
-                                        }
-
-                                        \times 4/5
-                                        {
-
-                                              %! COMMENT_MEASURE_NUMBERS
-                                              %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [contrabass voice measure 3]
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            f8.
-                                            - \bendAfter #'1
-                                            [
-
-                                            \revert Staff.Stem.stemlet-length
-                                            af8
-                                            ]
-                                            ~
-
-                                        }
-
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        af8
-                                        - \bendAfter #'-1
-                                        [
-
-                                        \revert Staff.Stem.stemlet-length
-                                        c'8
-                                        - \bendAfter #'-1
-                                        ]
-
-                                        \times 4/5
-                                        {
-
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            bf8
-                                            - \bendAfter #'1
-                                            [
-
-                                            f8
-                                            - \bendAfter #'1
-
-                                            \revert Staff.Stem.stemlet-length
-                                            b16
-                                            - \bendAfter #'1
-                                            ]
-
-                                        }
+                                        r4.
 
                                         \times 4/5
                                         {
@@ -6492,53 +6477,41 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [contrabass voice measure 13]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
-
-                                        R1 * 3/8
+                                        as,2.
+                                        \mp
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [contrabass voice measure 14]
-                                        d2.
-                                        \mp
+                                        as,2.
                                         ~
 
-                                        d2
+                                        as,2
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [contrabass voice measure 15]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
-
-                                        R1 * 1/2
+                                        as,1
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [contrabass voice measure 16]
-                                        e,1
+                                        ftqs1
                                         \mp
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [contrabass voice measure 17]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
-
-                                        R1 * 1/2
+                                        ftqs1
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [contrabass voice measure 18]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 1/2
-
-                                        R1 * 1/2
+                                        ftqs1
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()

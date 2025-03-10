@@ -1057,14 +1057,11 @@ def center_swell(selections, random_seed=0, niente=True):
     )
 
 
-def get_tuplets(selections):
+def get_tuplets(selections, abjad_index):
     leaves = abjad.select.leaves(selections)
     top_level = evans.get_top_level_components_from_leaves(leaves)
     tuplets = abjad.select.tuplets(top_level)
-    indices = abjad.index(
-        [3, 3 + 5, 3 + 5 + 7, 3 + 5 + 7 + 6, 3 + 5 + 7 + 6 + 4], 3 + 5 + 7 + 6 + 4 + 1
-    )
-    return abjad.select.get(tuplets, indices)
+    return abjad.select.get(tuplets, abjad_index)
 
 
 def get_all_tuplets(selections):

@@ -1,0 +1,82 @@
+\documentclass[11pt]{article}
+\usepackage{fontspec}
+\usepackage[utf8]{inputenc}
+\setmainfont{Bell MT}
+\usepackage[paperwidth=8.5in,paperheight=11in,margin=1in,headheight=0.0in,footskip=0.5in,includehead,includefoot,portrait]{geometry}
+\usepackage[absolute]{textpos}
+\TPGrid[0.5in, 0.25in]{23}{24}
+\parindent=0pt
+\parskip=12pt
+\usepackage{nopageno}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{eurosym}
+\usepackage{paracol}
+\usetikzlibrary{calc}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
+
+\begin{document}
+
+        \begin{tikzpicture}[remember picture, overlay]
+            \draw[line width = 2.5pt]
+                ($(current page.north west) + (0.25in,-0.25in)$)
+                rectangle
+                ($(current page.south east) + (-0.25in,0.25in)$);
+        \end{tikzpicture}
+
+\begin{center}
+\fontsize{.6cm}{1em}\selectfont Other scores from Gregory Rowland Evans include: \hfill
+\end{center}
+\vspace*{4\baselineskip}
+{
+\begin{center}
+\setcolumnwidth{2.2\textwidth, 2.2\textwidth, 2.2\textwidth, 2.2\textwidth}
+\setlength{\columnseprule}{1pt}
+\setlength{\columnsep}{6em}
+
+\begin{paracol}{3}
+\fontsize{.3cm}{1em}\selectfont UNACCOMPANIED
+\switchcolumn[1]
+\fontsize{.3cm}{1em}\selectfont CHAMBER
+\switchcolumn[2]
+\fontsize{.3cm}{1em}\selectfont LARGE ENSEMBLE
+\switchcolumn[0]
+\fontsize{.1cm}{0.5em} \pmb{Onkos} (contrabass) 2019
+\switchcolumn[0]
+\fontsize{.1cm}{0.5em} \pmb{Simbelmyn\"e} (piano) 2019-20
+\switchcolumn[0]
+\fontsize{.1cm}{0.5em} \pmb{Chalk Line} (flute) 2020
+\switchcolumn[0]
+\fontsize{.1cm}{0.5em} \pmb{redbud blossom, blueberry bee} (cello) 2020
+\switchcolumn[0]
+\fontsize{.1cm}{0.5em} \pmb{Birdless, Cloudless, Colourless} (alto saxophone) 2021
+\switchcolumn[1]
+\fontsize{.1cm}{0.5em} \pmb{Hamonshu} (string quartet) 2018-20
+\switchcolumn[1]
+\fontsize{.1cm}{0.5em} \pmb{Adumbration} (string quartet) 2020
+\switchcolumn[1]
+\fontsize{.1cm}{0.5em} \pmb{Zahrat Alearear} (bass flute, guitar) 2021
+\switchcolumn[1]
+\fontsize{.1cm}{0.5em} \pmb{Nagual} (mixed quartet) 2021
+\switchcolumn[2]
+\fontsize{.1cm}{0.5em} \pmb{Metamorphoses} (orchestra) 2018
+\switchcolumn[2]
+\fontsize{.1cm}{0.5em} \pmb{GUERRERO} (21 saxophones) 2018
+\switchcolumn[2]
+\fontsize{.1cm}{0.5em} \pmb{Tourbillon} (string ensemble) 2019-20
+
+
+\end{paracol}
+\end{center}
+}
+
+\begin{textblock}{23}(0, 23.5)
+\textcopyright 03-2024 \hfill
+Scores available for purchase at www.gregoryrowlandevans.com \hfill
+\$30
+\end{textblock}
+
+\end{document}

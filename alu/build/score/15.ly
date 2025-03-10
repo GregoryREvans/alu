@@ -7,6 +7,7 @@
                   %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 1]
                 \tempo 4=70
+                \mark #36
                 \mark \markup \bold {  }
                   %! scaling time signatures
                 \time 3/4
@@ -75,6 +76,7 @@
                   %! COMMENT_MEASURE_NUMBERS
                   %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 9]
+                \mark #37
                   %! scaling time signatures
                 \time 4/4
                 s1 * 1
@@ -173,6 +175,7 @@
                   %! COMMENT_MEASURE_NUMBERS
                   %! evans.SegmentMaker.comment_measure_numbers()
                 % [Global Context measure 23]
+                \mark #38
                   %! scaling time signatures
                 \time 4/4
                 s1 * 1
@@ -258,7 +261,7 @@
                     \tag #'group2
                     {
 
-                        \context PianoStaff = "sub group 1"
+                        \context StaffGroup = "sub group 1"
                         <<
 
                             \tag #'voice1
@@ -1742,7 +1745,8 @@
 
                                         R1 * 3/8
 
-                                        \times 8/9
+                                        \tweak text #tuplet-number::calc-fraction-text
+                                        \times 8/7
                                         {
 
                                               %! COMMENT_MEASURE_NUMBERS
@@ -1780,157 +1784,99 @@
                                             \once \override NoteHead.transparent = ##t
                                             c'32
 
-                                            r32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            c'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
                                             \revert Staff.Stem.stemlet-length
-                                            c'32
-                                            \stopGroup
+                                            r32
                                             ]
 
                                         }
 
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        cs'32
-                                        [
-                                        - \tweak HorizontalBracket.direction #DOWN
-                                        - \tweak HorizontalBracket.staff-padding #5
-                                        - \tweak HorizontalBracketText.text "2"
-                                        \startGroup
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        cs'32
-                                        \stopGroup
-
-                                        c'32
-                                        - \tweak HorizontalBracket.direction #DOWN
-                                        - \tweak HorizontalBracket.staff-padding #5
-                                        - \tweak HorizontalBracketText.text "3"
-                                        \startGroup
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        c'32
-
-                                        r32
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        c'32
-                                        \stopGroup
-
-                                        cs'32
-                                        - \tweak HorizontalBracket.direction #DOWN
-                                        - \tweak HorizontalBracket.staff-padding #5
-                                        - \tweak HorizontalBracketText.text "4"
-                                        \startGroup
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        \revert Staff.Stem.stemlet-length
-                                        cs'32
-                                        ]
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        cs'32
-                                        [
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        cs'32
-                                        \stopGroup
-
-                                        c'32
-                                        - \tweak HorizontalBracket.direction #DOWN
-                                        - \tweak HorizontalBracket.staff-padding #5
-                                        - \tweak HorizontalBracketText.text "5"
-                                        \startGroup
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        c'32
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        c'32
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        c'32
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        c'32
-                                        \stopGroup
-
-                                        \revert Staff.Stem.stemlet-length
-                                        r32
-                                        ]
+                                        r4
 
                                         \tweak text #tuplet-number::calc-fraction-text
                                         \times 8/7
                                         {
 
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            cs'32
+                                            c'32
                                             [
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            c'32
+                                            \stopGroup
+
+                                            r32
+
+                                            cs'32
                                             - \tweak HorizontalBracket.direction #DOWN
                                             - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "6"
+                                            - \tweak HorizontalBracketText.text "2"
                                             \startGroup
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
                                             cs'32
+                                            \stopGroup
+
+                                            c'32
+                                            - \tweak HorizontalBracket.direction #DOWN
+                                            - \tweak HorizontalBracket.staff-padding #5
+                                            - \tweak HorizontalBracketText.text "3"
+                                            \startGroup
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            cs'32
+                                            \revert Staff.Stem.stemlet-length
+                                            c'32
+                                            ]
+
+                                        }
+
+                                        \times 2/3
+                                        {
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            cs'32
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            c'16
+                                            \stopGroup
+                                            [
+
+                                            cs'16
+                                            - \tweak HorizontalBracket.direction #DOWN
+                                            - \tweak HorizontalBracket.staff-padding #5
+                                            - \tweak HorizontalBracketText.text "4"
+                                            \startGroup
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            cs'32
+                                            cs'16
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            cs'32
+                                            cs'16
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            cs'16
                                             \stopGroup
 
                                             \revert Staff.Stem.stemlet-length
-                                            d'32
+                                            c'16
                                             ]
                                             - \tweak HorizontalBracket.direction #DOWN
                                             - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "7"
+                                            - \tweak HorizontalBracketText.text "5"
                                             \startGroup
 
                                         }
@@ -1940,477 +1886,36 @@
                                         % [french horn voice measure 24]
                                         r4
 
-                                        \times 4/5
-                                        {
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            d'16
-                                            [
-
-                                            r16
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            d'16
-
-                                            r16
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \revert Staff.Stem.stemlet-length
-                                            d'16
-                                            ]
-
-                                        }
-
-                                        \tweak text #tuplet-number::calc-fraction-text
-                                        \times 4/3
-                                        {
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            d'32
-                                            [
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            d'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            d'32
-                                            \stopGroup
-
-                                            r32
-
-                                            ef'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "2"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            ef'32
-                                            \stopGroup
-
-                                            d'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "3"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            d'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            d'32
-                                            \stopGroup
-
-                                            ef'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "4"
-                                            \startGroup
-
-                                            r32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \revert Staff.Stem.stemlet-length
-                                            ef'32
-                                            ]
-
-                                        }
-
-                                        \times 4/5
-                                        {
-
-                                              %! COMMENT_MEASURE_NUMBERS
-                                              %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [french horn voice measure 25]
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            ef'16
-                                            [
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            ef'16
-                                            \stopGroup
-
-                                            d'16
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "5"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            d'16
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \revert Staff.Stem.stemlet-length
-                                            d'16
-                                            ]
-
-                                        }
-
-                                        \tweak text #tuplet-number::calc-fraction-text
-                                        \times 4/3
-                                        {
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            d'32
-                                            [
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            d'32
-                                            \stopGroup
-
-                                            ef'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "7"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            ef'32
-
-                                            r32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \revert Staff.Stem.stemlet-length
-                                            ef'32
-                                            ]
-
-                                        }
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [french horn voice measure 26]
                                         r4
 
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        r32
-                                        [
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        ef'32
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        ef'32
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        ef'32
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        ef'32
-                                        \stopGroup
-
-                                        e'32
-                                        - \tweak HorizontalBracket.direction #DOWN
-                                        - \tweak HorizontalBracket.staff-padding #5
-                                        - \tweak HorizontalBracketText.text "2"
-                                        \startGroup
-
-                                        r32
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        \revert Staff.Stem.stemlet-length
-                                        e'32
-                                        \stopGroup
-                                        ]
-
-                                        \times 8/9
-                                        {
-
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            r32
-                                            [
-
-                                            f'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "3"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f'32
-                                            \stopGroup
-
-                                            fs'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "4"
-                                            \startGroup
-
-                                            r32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            fs'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            fs'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \revert Staff.Stem.stemlet-length
-                                            fs'32
-                                            \stopGroup
-                                            ]
-
-                                        }
-
                                         \times 4/5
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            f'32
+                                            r16
                                             [
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "7"
-                                            \startGroup
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            f'32
+                                            c'16
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            f'32
-
-                                            r32
+                                            c'16
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            f'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f'32
-                                            \stopGroup
-
-                                            fs'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "2"
-                                            \startGroup
+                                            c'16
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
                                             \revert Staff.Stem.stemlet-length
-                                            fs'32
+                                            c'16
                                             \stopGroup
-                                            ]
-
-                                        }
-
-                                        \times 8/9
-                                        {
-
-                                              %! COMMENT_MEASURE_NUMBERS
-                                              %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [french horn voice measure 27]
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            g'32
-                                            [
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "3"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            g'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            g'32
-                                            \stopGroup
-
-                                            gs'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "7"
-                                            \startGroup
-
-                                            r32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            gs'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            gs'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            gs'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            gs'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            gs'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            gs'32
-                                            \stopGroup
-
-                                            a'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "2"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            a'32
-                                            \stopGroup
-
-                                            r32
-
-                                            gs'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "7"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            gs'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            gs'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            gs'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            gs'32
-
-                                            r32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            gs'32
-
-                                            r32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            gs'32
-                                            \stopGroup
-
-                                            a'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "7"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            a'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            a'32
-
-                                            \revert Staff.Stem.stemlet-length
-                                            r32
                                             ]
 
                                         }
@@ -2418,229 +1923,130 @@
                                         \times 2/3
                                         {
 
-                                              %! COMMENT_MEASURE_NUMBERS
-                                              %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [french horn voice measure 28]
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            a'32
+                                            cs'16
                                             [
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            a'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            a'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            a'32
-                                            \stopGroup
-
-                                            bf'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "2"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            bf'32
-                                            \ff
-                                            \stopGroup
-                                            \>
-
-                                            r32
-
-                                            a'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "3"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            a'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            a'32
-                                            \stopGroup
-
-                                            gs'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "4"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \revert Staff.Stem.stemlet-length
-                                            gs'32
-                                            ]
-
-                                        }
-
-                                        \times 8/11
-                                        {
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            gs'32
-                                            [
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            gs'32
-                                            \stopGroup
-
-                                            a'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "5"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            a'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            a'32
-
-                                            r32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            a'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            a'32
-                                            \stopGroup
-
-                                            bf'32
                                             - \tweak HorizontalBracket.direction #DOWN
                                             - \tweak HorizontalBracket.staff-padding #5
                                             - \tweak HorizontalBracketText.text "6"
                                             \startGroup
 
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            bf'32
+                                            r16
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            \revert Staff.Stem.stemlet-length
-                                            bf'32
-                                            ]
+                                            cs'16
 
-                                        }
-
-                                        r2
-
-                                        \times 8/9
-                                        {
-
-                                              %! COMMENT_MEASURE_NUMBERS
-                                              %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [french horn voice measure 29]
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            bf'32
-                                            [
+                                            r16
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            bf'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            bf'32
-                                            \stopGroup
-
-                                            b'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "7"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            b'32
-
-                                            r32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            b'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            b'32
+                                            cs'16
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
                                             \revert Staff.Stem.stemlet-length
-                                            b'32
+                                            cs'16
                                             ]
 
                                         }
+
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [french horn voice measure 25]
+                                        r4
 
                                         \once \override Accidental.stencil = ##f
                                         \once \override NoteHead.no-ledgers = ##t
                                         \once \override NoteHead.transparent = ##t
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        b'32
+                                        cs'16
                                         [
 
                                         \once \override Accidental.stencil = ##f
                                         \once \override NoteHead.no-ledgers = ##t
                                         \once \override NoteHead.transparent = ##t
-                                        b'32
+                                        cs'16
                                         \stopGroup
 
-                                        bf'32
+                                        r16
+
+                                        \revert Staff.Stem.stemlet-length
+                                        d'16
+                                        ]
                                         - \tweak HorizontalBracket.direction #DOWN
                                         - \tweak HorizontalBracket.staff-padding #5
-                                        - \tweak HorizontalBracketText.text "2"
+                                        - \tweak HorizontalBracketText.text "7"
                                         \startGroup
+
+                                        \tweak text #tuplet-number::calc-fraction-text
+                                        \times 8/7
+                                        {
+
+                                              %! COMMENT_MEASURE_NUMBERS
+                                              %! evans.SegmentMaker.comment_measure_numbers()
+                                            % [french horn voice measure 26]
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            d'32
+                                            [
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            d'32
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            d'32
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            d'32
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            d'32
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            d'32
+                                            \stopGroup
+
+                                            \revert Staff.Stem.stemlet-length
+                                            ef'32
+                                            ]
+                                            - \tweak HorizontalBracket.direction #DOWN
+                                            - \tweak HorizontalBracket.staff-padding #5
+                                            - \tweak HorizontalBracketText.text "2"
+                                            \startGroup
+
+                                        }
+
+                                        r4
+
+                                        r4
+
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        r16
+                                        [
 
                                         \once \override Accidental.stencil = ##f
                                         \once \override NoteHead.no-ledgers = ##t
                                         \once \override NoteHead.transparent = ##t
-                                        bf'32
+                                        ef'16
                                         \stopGroup
 
-                                        a'32
+                                        d'16
                                         - \tweak HorizontalBracket.direction #DOWN
                                         - \tweak HorizontalBracket.staff-padding #5
                                         - \tweak HorizontalBracketText.text "3"
@@ -2649,47 +2055,63 @@
                                         \once \override Accidental.stencil = ##f
                                         \once \override NoteHead.no-ledgers = ##t
                                         \once \override NoteHead.transparent = ##t
-                                        a'32
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        a'32
-                                        \stopGroup
-
                                         \revert Staff.Stem.stemlet-length
-                                        r32
+                                        d'16
                                         ]
 
-                                        \tweak text #tuplet-number::calc-fraction-text
-                                        \times 8/7
+                                        \times 4/5
                                         {
 
+                                              %! COMMENT_MEASURE_NUMBERS
+                                              %! evans.SegmentMaker.comment_measure_numbers()
+                                            % [french horn voice measure 27]
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            bf'32
+                                            d'16
+                                            \stopGroup
                                             [
+
+                                            ef'16
                                             - \tweak HorizontalBracket.direction #DOWN
                                             - \tweak HorizontalBracket.staff-padding #5
                                             - \tweak HorizontalBracketText.text "4"
                                             \startGroup
 
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            bf'32
+                                            r16
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            bf'32
+                                            ef'16
+
+                                            \revert Staff.Stem.stemlet-length
+                                            r16
+                                            ]
+
+                                        }
+
+                                        r4
+
+                                        \tweak text #tuplet-number::calc-fraction-text
+                                        \times 8/7
+                                        {
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            bf'32
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            ef'32
+                                            [
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            ef'32
                                             \stopGroup
 
-                                            b'32
+                                            d'32
                                             - \tweak HorizontalBracket.direction #DOWN
                                             - \tweak HorizontalBracket.staff-padding #5
                                             - \tweak HorizontalBracketText.text "5"
@@ -2698,13 +2120,154 @@
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            b'32
+                                            d'32
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            d'32
+
+                                            r32
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
                                             \revert Staff.Stem.stemlet-length
-                                            b'32
+                                            d'32
+                                            ]
+
+                                        }
+
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [french horn voice measure 28]
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.transparent = ##t
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        d'16
+                                        \stopGroup
+                                        [
+
+                                        ef'16
+                                        - \tweak HorizontalBracket.direction #DOWN
+                                        - \tweak HorizontalBracket.staff-padding #5
+                                        - \tweak HorizontalBracketText.text "7"
+                                        \startGroup
+
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.transparent = ##t
+                                        ef'16
+                                        \ff
+                                        \>
+
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.transparent = ##t
+                                        \revert Staff.Stem.stemlet-length
+                                        ef'16
+                                        ]
+
+                                        r4
+
+                                        r4
+
+                                        \times 4/5
+                                        {
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            ef'16
+                                            [
+
+                                            r16
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            ef'16
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            ef'16
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            \revert Staff.Stem.stemlet-length
+                                            ef'16
+                                            \stopGroup
+                                            ]
+
+                                        }
+
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [french horn voice measure 29]
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        e'16
+                                        [
+                                        - \tweak HorizontalBracket.direction #DOWN
+                                        - \tweak HorizontalBracket.staff-padding #5
+                                        - \tweak HorizontalBracketText.text "2"
+                                        \startGroup
+
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.transparent = ##t
+                                        e'16
+                                        \stopGroup
+
+                                        r16
+
+                                        \revert Staff.Stem.stemlet-length
+                                        f'16
+                                        ]
+                                        - \tweak HorizontalBracket.direction #DOWN
+                                        - \tweak HorizontalBracket.staff-padding #5
+                                        - \tweak HorizontalBracketText.text "3"
+                                        \startGroup
+
+                                        r4
+
+                                        \times 2/3
+                                        {
+
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            r16
+                                            [
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            f'16
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            f'16
+                                            \stopGroup
+
+                                            fs'16
+                                            - \tweak HorizontalBracket.direction #DOWN
+                                            - \tweak HorizontalBracket.staff-padding #5
+                                            - \tweak HorizontalBracketText.text "4"
+                                            \startGroup
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            fs'16
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            \revert Staff.Stem.stemlet-length
+                                            fs'16
                                             ]
 
                                         }
@@ -2720,18 +2283,13 @@
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            b'32
+                                            fs'32
+                                            \stopGroup
                                             [
 
                                             r32
 
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            b'32
-                                            \stopGroup
-
-                                            c''32
+                                            f'32
                                             - \tweak HorizontalBracket.direction #DOWN
                                             - \tweak HorizontalBracket.staff-padding #5
                                             - \tweak HorizontalBracketText.text "7"
@@ -2740,88 +2298,104 @@
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            c''32
+                                            f'32
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            c''32
+                                            f'32
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            c''32
-
-                                            r32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            c''32
-
-                                            r32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            c''32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            c''32
-                                            \stopGroup
-
-                                            b'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "2"
-                                            \startGroup
+                                            f'32
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
                                             \revert Staff.Stem.stemlet-length
-                                            b'32
-                                            \stopGroup
+                                            f'32
                                             ]
+
+                                        }
+
+                                        r4
+
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [french horn voice measure 31]
+                                        r4
+
+                                        \times 2/3
+                                        {
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            f'16
+                                            [
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            f'16
+                                            \stopGroup
+
+                                            fs'16
+                                            - \tweak HorizontalBracket.direction #DOWN
+                                            - \tweak HorizontalBracket.staff-padding #5
+                                            - \tweak HorizontalBracketText.text "2"
+                                            \startGroup
+
+                                            r16
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            fs'16
+                                            \stopGroup
+
+                                            \revert Staff.Stem.stemlet-length
+                                            g'16
+                                            ]
+                                            - \tweak HorizontalBracket.direction #DOWN
+                                            - \tweak HorizontalBracket.staff-padding #5
+                                            - \tweak HorizontalBracketText.text "3"
+                                            \startGroup
 
                                         }
 
                                         \times 4/5
                                         {
 
-                                              %! COMMENT_MEASURE_NUMBERS
-                                              %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [french horn voice measure 31]
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            r16
+                                            g'16
                                             [
 
-                                            bf'16
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "3"
-                                            \startGroup
-
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            bf'16
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            bf'16
+                                            g'16
                                             \stopGroup
 
-                                            \revert Staff.Stem.stemlet-length
-                                            a'16
-                                            ]
+                                            gs'16
                                             - \tweak HorizontalBracket.direction #DOWN
                                             - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "4"
+                                            - \tweak HorizontalBracketText.text "7"
                                             \startGroup
+
+                                            r16
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            \revert Staff.Stem.stemlet-length
+                                            gs'16
+                                            ]
 
                                         }
 
@@ -2830,23 +2404,61 @@
                                         \times 4/5
                                         {
 
+                                              %! COMMENT_MEASURE_NUMBERS
+                                              %! evans.SegmentMaker.comment_measure_numbers()
+                                            % [french horn voice measure 32]
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            a'16
+                                            gs'16
                                             [
+
+                                            r16
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
+                                            gs'16
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            gs'16
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            \revert Staff.Stem.stemlet-length
+                                            gs'16
+                                            ]
+
+                                        }
+
+                                        \times 2/3
+                                        {
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            gs'16
+                                            \stopGroup
+                                            [
+
                                             a'16
+                                            - \tweak HorizontalBracket.direction #DOWN
+                                            - \tweak HorizontalBracket.staff-padding #5
+                                            - \tweak HorizontalBracketText.text "2"
+                                            \startGroup
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
                                             a'16
                                             \stopGroup
+
+                                            r16
 
                                             gs'16
                                             - \tweak HorizontalBracket.direction #DOWN
@@ -2863,142 +2475,38 @@
 
                                         }
 
-                                        \tweak text #tuplet-number::calc-fraction-text
-                                        \times 4/3
-                                        {
+                                        r4
 
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            r32
-                                            [
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            gs'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            gs'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            gs'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            gs'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \revert Staff.Stem.stemlet-length
-                                            gs'32
-                                            \stopGroup
-                                            ]
-
-                                        }
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [french horn voice measure 33]
+                                        r4
 
                                         \tweak text #tuplet-number::calc-fraction-text
                                         \times 8/7
                                         {
 
-                                              %! COMMENT_MEASURE_NUMBERS
-                                              %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [french horn voice measure 32]
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            a'32
-                                            [
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "2"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            a'32
-                                            \stopGroup
-
                                             gs'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "3"
-                                            \startGroup
-
-                                            r32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            gs'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            gs'32
-                                            \stopGroup
-
-                                            \revert Staff.Stem.stemlet-length
-                                            a'32
-                                            ]
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "7"
-                                            \startGroup
-
-                                        }
-
-                                        r2
-
-                                        \times 16/17
-                                        {
-
-                                              %! COMMENT_MEASURE_NUMBERS
-                                              %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [french horn voice measure 33]
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            r32
                                             [
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            a'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            a'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            a'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            a'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            a'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            a'32
-                                            \stopGroup
-
                                             gs'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "2"
-                                            \startGroup
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            gs'32
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            gs'32
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
@@ -3009,94 +2517,7 @@
                                             a'32
                                             - \tweak HorizontalBracket.direction #DOWN
                                             - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "7"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            a'32
-
-                                            r32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            a'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            a'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            a'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            a'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \revert Staff.Stem.stemlet-length
-                                            a'32
-                                            \stopGroup
-                                            ]
-
-                                        }
-
-                                        \times 4/5
-                                        {
-
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            bf'32
-                                            [
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "7"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            bf'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            bf'32
-
-                                            r32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            bf'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            bf'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            bf'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            bf'32
-                                            \stopGroup
-
-                                            a'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "2"
+                                            - \tweak HorizontalBracketText.text "6"
                                             \startGroup
 
                                             \revert Staff.Stem.stemlet-length
@@ -3105,72 +2526,46 @@
 
                                         }
 
-                                        \times 8/11
+                                        \times 2/3
                                         {
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            a'32
-                                            \stopGroup
+                                            a'16
                                             [
 
-                                            r32
-
-                                            gs'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "3"
-                                            \startGroup
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            a'16
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            gs'32
+                                            a'16
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            gs'32
-                                            \stopGroup
-
-                                            a'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "4"
-                                            \startGroup
-
-                                            r32
+                                            a'16
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            a'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            a'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            a'32
-                                            \stopGroup
-
-                                            \revert Staff.Stem.stemlet-length
-                                            bf'32
+                                            a'16
                                             \pp
                                             \stopGroup
+
+                                            \revert Staff.Stem.stemlet-length
+                                            r16
                                             ]
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "1"
-                                            \startGroup
-                                            \bar "||"
 
                                         }
+
+                                        r4
+                                        \bar "||"
 
                                     }
 
@@ -3185,7 +2580,7 @@
                     \tag #'group3
                     {
 
-                        \context PianoStaff = "sub group 2"
+                        \context StaffGroup = "sub group 2"
                         <<
 
                             \tag #'voice6
@@ -3403,7 +2798,7 @@
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [trumpet voice measure 23]
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        e'32
+                                        e'16
                                         \pp
                                         [
                                         - \tweak HorizontalBracket.direction #DOWN
@@ -3412,39 +2807,20 @@
                                         \startGroup
                                         \<
 
-                                        r32
+                                        r16
 
                                         \once \override Accidental.stencil = ##f
                                         \once \override NoteHead.no-ledgers = ##t
                                         \once \override NoteHead.transparent = ##t
-                                        e'32
+                                        e'16
                                         \stopGroup
-
-                                        f'32
-                                        - \tweak HorizontalBracket.direction #DOWN
-                                        - \tweak HorizontalBracket.staff-padding #5
-                                        - \tweak HorizontalBracketText.text "3"
-                                        \startGroup
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        f'32
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        f'32
-                                        \stopGroup
-
-                                        r32
 
                                         \revert Staff.Stem.stemlet-length
-                                        e'32
+                                        f'16
                                         ]
                                         - \tweak HorizontalBracket.direction #DOWN
                                         - \tweak HorizontalBracket.staff-padding #5
-                                        - \tweak HorizontalBracketText.text "4"
+                                        - \tweak HorizontalBracketText.text "3"
                                         \startGroup
 
                                         \tweak text #tuplet-number::calc-fraction-text
@@ -3455,21 +2831,51 @@
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            e'32
+                                            f'32
                                             [
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
+                                            f'32
+                                            \stopGroup
+
+                                            r32
+
+                                            e'32
+                                            - \tweak HorizontalBracket.direction #DOWN
+                                            - \tweak HorizontalBracket.staff-padding #5
+                                            - \tweak HorizontalBracketText.text "4"
+                                            \startGroup
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
                                             e'32
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
                                             e'32
-                                            \stopGroup
 
-                                            f'32
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            \revert Staff.Stem.stemlet-length
+                                            e'32
+                                            \stopGroup
+                                            ]
+
+                                        }
+
+                                        r4
+
+                                        \times 4/5
+                                        {
+
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            f'16
+                                            [
                                             - \tweak HorizontalBracket.direction #DOWN
                                             - \tweak HorizontalBracket.staff-padding #5
                                             - \tweak HorizontalBracketText.text "5"
@@ -3478,18 +2884,56 @@
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            f'32
+                                            f'16
 
-                                            r32
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            f'16
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            f'16
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
                                             \revert Staff.Stem.stemlet-length
-                                            f'32
+                                            f'16
+                                            \stopGroup
                                             ]
 
                                         }
+
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [trumpet voice measure 24]
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        e'16
+                                        [
+                                        - \tweak HorizontalBracket.direction #DOWN
+                                        - \tweak HorizontalBracket.staff-padding #5
+                                        - \tweak HorizontalBracketText.text "6"
+                                        \startGroup
+
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.transparent = ##t
+                                        e'16
+
+                                        r16
+
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.transparent = ##t
+                                        \revert Staff.Stem.stemlet-length
+                                        e'16
+                                        ]
+
+                                        r4
+
+                                        r4
 
                                         \tweak text #tuplet-number::calc-fraction-text
                                         \times 8/7
@@ -3499,69 +2943,29 @@
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            f'32
+                                            e'32
                                             [
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            f'32
-                                            \stopGroup
-
                                             e'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "6"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            e'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            e'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            e'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            e'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            e'32
-                                            \stopGroup
-
-                                            f'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "7"
-                                            \startGroup
 
                                             r32
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            f'32
+                                            e'32
+                                            \stopGroup
 
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f'32
+                                            r32
 
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
                                             f'32
+                                            - \tweak HorizontalBracket.direction #DOWN
+                                            - \tweak HorizontalBracket.staff-padding #5
+                                            - \tweak HorizontalBracketText.text "7"
+                                            \startGroup
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
@@ -3574,171 +2978,46 @@
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [trumpet voice measure 24]
-                                        r4
-
+                                        % [trumpet voice measure 25]
                                         \once \override Accidental.stencil = ##f
                                         \once \override NoteHead.no-ledgers = ##t
                                         \once \override NoteHead.transparent = ##t
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        f'32
+                                        f'16
                                         [
 
                                         \once \override Accidental.stencil = ##f
                                         \once \override NoteHead.no-ledgers = ##t
                                         \once \override NoteHead.transparent = ##t
-                                        f'32
-                                        \stopGroup
+                                        f'16
 
-                                        fs'32
-                                        - \tweak HorizontalBracket.direction #DOWN
-                                        - \tweak HorizontalBracket.staff-padding #5
-                                        - \tweak HorizontalBracketText.text "2"
-                                        \startGroup
+                                        r16
 
                                         \once \override Accidental.stencil = ##f
                                         \once \override NoteHead.no-ledgers = ##t
                                         \once \override NoteHead.transparent = ##t
-                                        fs'32
-                                        \stopGroup
-
-                                        f'32
-                                        - \tweak HorizontalBracket.direction #DOWN
-                                        - \tweak HorizontalBracket.staff-padding #5
-                                        - \tweak HorizontalBracketText.text "3"
-                                        \startGroup
-
-                                        r32
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        f'32
-
                                         \revert Staff.Stem.stemlet-length
-                                        r32
+                                        f'16
                                         ]
 
-                                        \times 4/5
-                                        {
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            f'16
-                                            \stopGroup
-                                            [
-
-                                            e'16
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "4"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            e'16
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            e'16
-
-                                            \revert Staff.Stem.stemlet-length
-                                            r16
-                                            ]
-
-                                        }
-
                                         \tweak text #tuplet-number::calc-fraction-text
-                                        \times 4/3
+                                        \times 8/7
                                         {
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            e'32
-                                            \stopGroup
+                                            f'32
                                             [
 
-                                            f'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "5"
-                                            \startGroup
-
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            f'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \revert Staff.Stem.stemlet-length
                                             f'32
                                             \stopGroup
-                                            ]
-
-                                        }
-
-                                        \tweak text #tuplet-number::calc-fraction-text
-                                        \times 16/15
-                                        {
-
-                                              %! COMMENT_MEASURE_NUMBERS
-                                              %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [trumpet voice measure 25]
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            r32
-                                            [
 
                                             fs'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "6"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            fs'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            fs'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            fs'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            fs'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            fs'32
-                                            \stopGroup
-
-                                            f'32
                                             - \tweak HorizontalBracket.direction #DOWN
                                             - \tweak HorizontalBracket.staff-padding #5
                                             - \tweak HorizontalBracketText.text "2"
@@ -3747,33 +3026,16 @@
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            f'32
+                                            fs'32
                                             \stopGroup
 
-                                            e'32
+                                            f'32
                                             - \tweak HorizontalBracket.direction #DOWN
                                             - \tweak HorizontalBracket.staff-padding #5
                                             - \tweak HorizontalBracketText.text "3"
                                             \startGroup
 
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            e'32
-
                                             r32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            e'32
-                                            \stopGroup
-
-                                            f'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "4"
-                                            \startGroup
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
@@ -3789,94 +3051,18 @@
                                         % [trumpet voice measure 26]
                                         r4
 
-                                        \times 8/9
-                                        {
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            f'32
-                                            [
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f'32
-                                            \stopGroup
-
-                                            e'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "5"
-                                            \startGroup
-
-                                            r32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            e'32
-
-                                            r32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            e'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            e'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \revert Staff.Stem.stemlet-length
-                                            e'32
-                                            \stopGroup
-                                            ]
-
-                                        }
-
                                         \times 4/5
                                         {
 
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            f'32
+                                            f'16
+                                            \stopGroup
                                             [
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "2"
-                                            \startGroup
 
-                                            r32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f'32
-                                            \stopGroup
-
-                                            e'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "3"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            e'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            e'32
-                                            \stopGroup
-
-                                            f'32
+                                            e'16
                                             - \tweak HorizontalBracket.direction #DOWN
                                             - \tweak HorizontalBracket.staff-padding #5
                                             - \tweak HorizontalBracketText.text "4"
@@ -3885,203 +3071,516 @@
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            f'32
+                                            e'16
 
-                                            r32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \revert Staff.Stem.stemlet-length
-                                            f'32
-                                            ]
-
-                                        }
-
-                                        \times 8/11
-                                        {
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            f'32
-                                            \stopGroup
-                                            [
-
-                                            fs'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "2"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            fs'32
-                                            \stopGroup
-
-                                            f'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "3"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f'32
-                                            \stopGroup
-
-                                            e'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "2"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            e'32
-                                            \stopGroup
-
-                                            f'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "2"
-                                            \startGroup
-
-                                            r32
+                                            r16
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
                                             \revert Staff.Stem.stemlet-length
-                                            f'32
-                                            \stopGroup
+                                            e'16
                                             ]
 
                                         }
+
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.transparent = ##t
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        e'16
+                                        \stopGroup
+                                        [
+
+                                        f'16
+                                        - \tweak HorizontalBracket.direction #DOWN
+                                        - \tweak HorizontalBracket.staff-padding #5
+                                        - \tweak HorizontalBracketText.text "5"
+                                        \startGroup
+
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.transparent = ##t
+                                        f'16
+
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.transparent = ##t
+                                        \revert Staff.Stem.stemlet-length
+                                        f'16
+                                        ]
+
+                                        r4
+
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [trumpet voice measure 27]
+                                        r4
 
                                         \tweak text #tuplet-number::calc-fraction-text
-                                        \times 6/7
+                                        \times 8/7
                                         {
 
-                                              %! COMMENT_MEASURE_NUMBERS
-                                              %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [trumpet voice measure 27]
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            fs'32
+                                            r32
                                             [
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "3"
-                                            \startGroup
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
+                                            f'32
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            f'32
+                                            \stopGroup
+
                                             fs'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            fs'32
-                                            \stopGroup
-
-                                            g'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "4"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            g'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            g'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            g'32
-                                            \stopGroup
-
-                                            r32
-
-                                            af'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "5"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            af'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            af'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            af'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            af'32
-                                            \stopGroup
-
-                                            r32
-
-                                            g'32
                                             - \tweak HorizontalBracket.direction #DOWN
                                             - \tweak HorizontalBracket.staff-padding #5
                                             - \tweak HorizontalBracketText.text "6"
                                             \startGroup
 
-                                            r32
-
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            g'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            g'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            g'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            g'32
+                                            fs'32
 
                                             r32
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
+                                            \revert Staff.Stem.stemlet-length
+                                            fs'32
+                                            ]
+
+                                        }
+
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.transparent = ##t
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        fs'16
+                                        [
+
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.transparent = ##t
+                                        fs'16
+
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.transparent = ##t
+                                        fs'16
+                                        \stopGroup
+
+                                        \revert Staff.Stem.stemlet-length
+                                        f'16
+                                        ]
+                                        - \tweak HorizontalBracket.direction #DOWN
+                                        - \tweak HorizontalBracket.staff-padding #5
+                                        - \tweak HorizontalBracketText.text "2"
+                                        \startGroup
+
+                                        \tweak text #tuplet-number::calc-fraction-text
+                                        \times 8/7
+                                        {
+
+                                              %! COMMENT_MEASURE_NUMBERS
+                                              %! evans.SegmentMaker.comment_measure_numbers()
+                                            % [trumpet voice measure 28]
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            f'32
+                                            \stopGroup
+                                            [
+
+                                            r32
+
+                                            e'32
+                                            - \tweak HorizontalBracket.direction #DOWN
+                                            - \tweak HorizontalBracket.staff-padding #5
+                                            - \tweak HorizontalBracketText.text "3"
+                                            \startGroup
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            e'32
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            e'32
+                                            \stopGroup
+
+                                            f'32
+                                            - \tweak HorizontalBracket.direction #DOWN
+                                            - \tweak HorizontalBracket.staff-padding #5
+                                            - \tweak HorizontalBracketText.text "4"
+                                            \startGroup
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            \revert Staff.Stem.stemlet-length
+                                            f'32
+                                            ]
+
+                                        }
+
+                                        r4
+
+                                        \times 4/5
+                                        {
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            f'16
+                                            \mf
+                                            [
+                                            \>
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            f'16
+                                            \stopGroup
+
+                                            e'16
+                                            - \tweak HorizontalBracket.direction #DOWN
+                                            - \tweak HorizontalBracket.staff-padding #5
+                                            - \tweak HorizontalBracketText.text "5"
+                                            \startGroup
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            e'16
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            \revert Staff.Stem.stemlet-length
+                                            e'16
+                                            ]
+
+                                        }
+
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.transparent = ##t
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        e'16
+                                        [
+
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.transparent = ##t
+                                        e'16
+                                        \stopGroup
+
+                                        f'16
+                                        - \tweak HorizontalBracket.direction #DOWN
+                                        - \tweak HorizontalBracket.staff-padding #5
+                                        - \tweak HorizontalBracketText.text "2"
+                                        \startGroup
+
+                                        \revert Staff.Stem.stemlet-length
+                                        r16
+                                        ]
+
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [trumpet voice measure 29]
+                                        r4
+
+                                        r4
+
+                                        \tweak text #tuplet-number::calc-fraction-text
+                                        \times 8/7
+                                        {
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            f'32
+                                            \stopGroup
+                                            [
+
+                                            r32
+
+                                            e'32
+                                            - \tweak HorizontalBracket.direction #DOWN
+                                            - \tweak HorizontalBracket.staff-padding #5
+                                            - \tweak HorizontalBracketText.text "3"
+                                            \startGroup
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            e'32
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            e'32
+                                            \stopGroup
+
+                                            f'32
+                                            - \tweak HorizontalBracket.direction #DOWN
+                                            - \tweak HorizontalBracket.staff-padding #5
+                                            - \tweak HorizontalBracketText.text "4"
+                                            \startGroup
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            \revert Staff.Stem.stemlet-length
+                                            f'32
+                                            ]
+
+                                        }
+
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [trumpet voice measure 30]
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.transparent = ##t
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        f'16
+                                        [
+
+                                        r16
+
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.transparent = ##t
+                                        f'16
+                                        \stopGroup
+
+                                        \revert Staff.Stem.stemlet-length
+                                        fs'16
+                                        ]
+                                        - \tweak HorizontalBracket.direction #DOWN
+                                        - \tweak HorizontalBracket.staff-padding #5
+                                        - \tweak HorizontalBracketText.text "2"
+                                        \startGroup
+
+                                        \tweak text #tuplet-number::calc-fraction-text
+                                        \times 8/7
+                                        {
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            fs'32
+                                            \stopGroup
+                                            [
+
+                                            f'32
+                                            - \tweak HorizontalBracket.direction #DOWN
+                                            - \tweak HorizontalBracket.staff-padding #5
+                                            - \tweak HorizontalBracketText.text "3"
+                                            \startGroup
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            f'32
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            f'32
+                                            \stopGroup
+
+                                            e'32
+                                            - \tweak HorizontalBracket.direction #DOWN
+                                            - \tweak HorizontalBracket.staff-padding #5
+                                            - \tweak HorizontalBracketText.text "2"
+                                            \startGroup
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            e'32
+                                            \stopGroup
+
+                                            \revert Staff.Stem.stemlet-length
+                                            f'32
+                                            ]
+                                            - \tweak HorizontalBracket.direction #DOWN
+                                            - \tweak HorizontalBracket.staff-padding #5
+                                            - \tweak HorizontalBracketText.text "2"
+                                            \startGroup
+
+                                        }
+
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [trumpet voice measure 31]
+                                        r4
+
+                                        \times 4/5
+                                        {
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            f'16
+                                            \stopGroup
+                                            [
+
+                                            fs'16
+                                            - \tweak HorizontalBracket.direction #DOWN
+                                            - \tweak HorizontalBracket.staff-padding #5
+                                            - \tweak HorizontalBracketText.text "3"
+                                            \startGroup
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            fs'16
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            fs'16
+                                            \stopGroup
+
+                                            \revert Staff.Stem.stemlet-length
+                                            r16
+                                            ]
+
+                                        }
+
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        g'16
+                                        [
+                                        - \tweak HorizontalBracket.direction #DOWN
+                                        - \tweak HorizontalBracket.staff-padding #5
+                                        - \tweak HorizontalBracketText.text "4"
+                                        \startGroup
+
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.transparent = ##t
+                                        g'16
+
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.transparent = ##t
+                                        g'16
+
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.transparent = ##t
+                                        \revert Staff.Stem.stemlet-length
+                                        g'16
+                                        \stopGroup
+                                        ]
+
+                                        r4
+
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [trumpet voice measure 32]
+                                        r4
+
+                                        \tweak text #tuplet-number::calc-fraction-text
+                                        \times 8/7
+                                        {
+
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            af'32
+                                            [
+                                            - \tweak HorizontalBracket.direction #DOWN
+                                            - \tweak HorizontalBracket.staff-padding #5
+                                            - \tweak HorizontalBracketText.text "5"
+                                            \startGroup
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            af'32
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            af'32
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            af'32
+
+                                            r32
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            af'32
+                                            \stopGroup
+
+                                            \revert Staff.Stem.stemlet-length
+                                            g'32
+                                            ]
+                                            - \tweak HorizontalBracket.direction #DOWN
+                                            - \tweak HorizontalBracket.staff-padding #5
+                                            - \tweak HorizontalBracketText.text "6"
+                                            \startGroup
+
+                                        }
+
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.transparent = ##t
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        g'16
+                                        [
+
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.transparent = ##t
+                                        g'16
+
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.transparent = ##t
+                                        g'16
+
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.transparent = ##t
+                                        \revert Staff.Stem.stemlet-length
+                                        g'16
+                                        ]
+
+                                        \tweak text #tuplet-number::calc-fraction-text
+                                        \times 8/7
+                                        {
+
+                                              %! COMMENT_MEASURE_NUMBERS
+                                              %! evans.SegmentMaker.comment_measure_numbers()
+                                            % [trumpet voice measure 33]
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            \override Staff.Stem.stemlet-length = 0.75
                                             g'32
                                             \stopGroup
+                                            [
 
                                             fs'32
                                             - \tweak HorizontalBracket.direction #DOWN
@@ -4099,42 +3598,43 @@
                                             \once \override NoteHead.transparent = ##t
                                             fs'32
 
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            fs'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            fs'32
-
-                                            \revert Staff.Stem.stemlet-length
                                             r32
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            fs'32
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            \revert Staff.Stem.stemlet-length
+                                            fs'32
                                             ]
 
                                         }
 
-                                        \times 8/11
+                                        r4
+
+                                        \times 4/5
                                         {
 
-                                              %! COMMENT_MEASURE_NUMBERS
-                                              %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [trumpet voice measure 28]
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            fs'32
+                                            r16
                                             [
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            fs'32
+                                            fs'16
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            fs'16
                                             \stopGroup
 
-                                            f'32
+                                            f'16
                                             - \tweak HorizontalBracket.direction #DOWN
                                             - \tweak HorizontalBracket.staff-padding #5
                                             - \tweak HorizontalBracketText.text "2"
@@ -4143,792 +3643,33 @@
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            f'32
-                                            \stopGroup
-
-                                            fs'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "3"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            fs'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            fs'32
-                                            \stopGroup
-
-                                            f'32
-                                            \mf
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "4"
-                                            \startGroup
-                                            \>
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f'32
-
                                             \revert Staff.Stem.stemlet-length
-                                            r32
+                                            f'16
+                                            \stopGroup
                                             ]
 
                                         }
 
-                                        \times 4/5
-                                        {
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            f'32
-                                            \stopGroup
-                                            [
-
-                                            e'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "5"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            e'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            e'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            e'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            e'32
-                                            \stopGroup
-
-                                            f'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "6"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f'32
-
-                                            r32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \revert Staff.Stem.stemlet-length
-                                            f'32
-                                            ]
-
-                                        }
-
-                                        r4
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        f'32
+                                        fs'16
                                         [
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        f'32
-
-                                        r32
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        f'32
-                                        \stopGroup
-
-                                        e'32
                                         - \tweak HorizontalBracket.direction #DOWN
                                         - \tweak HorizontalBracket.staff-padding #5
                                         - \tweak HorizontalBracketText.text "2"
                                         \startGroup
 
+                                        r16
+
                                         \once \override Accidental.stencil = ##f
                                         \once \override NoteHead.no-ledgers = ##t
                                         \once \override NoteHead.transparent = ##t
-                                        e'32
+                                        fs'16
+                                        \pp
                                         \stopGroup
 
-                                        f'32
-                                        - \tweak HorizontalBracket.direction #DOWN
-                                        - \tweak HorizontalBracket.staff-padding #5
-                                        - \tweak HorizontalBracketText.text "3"
-                                        \startGroup
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
                                         \revert Staff.Stem.stemlet-length
-                                        f'32
+                                        r16
                                         ]
-
-                                        \tweak text #tuplet-number::calc-fraction-text
-                                        \times 8/7
-                                        {
-
-                                              %! COMMENT_MEASURE_NUMBERS
-                                              %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [trumpet voice measure 29]
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            f'32
-                                            \stopGroup
-                                            [
-
-                                            r32
-
-                                            e'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "4"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            e'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            e'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            e'32
-                                            \stopGroup
-
-                                            \revert Staff.Stem.stemlet-length
-                                            f'32
-                                            ]
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "5"
-                                            \startGroup
-
-                                        }
-
-                                        \tweak text #tuplet-number::calc-fraction-text
-                                        \times 4/3
-                                        {
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            f'32
-                                            [
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f'32
-                                            \stopGroup
-
-                                            e'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "2"
-                                            \startGroup
-
-                                            \revert Staff.Stem.stemlet-length
-                                            r32
-                                            ]
-
-                                        }
-
-                                        \times 4/5
-                                        {
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            e'16
-                                            \stopGroup
-                                            [
-
-                                            f'16
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "3"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f'16
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f'16
-                                            \stopGroup
-
-                                            \revert Staff.Stem.stemlet-length
-                                            e'16
-                                            ]
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "4"
-                                            \startGroup
-
-                                        }
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [trumpet voice measure 30]
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        e'32
-                                        [
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        e'32
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        e'32
-                                        \stopGroup
-
-                                        r32
-
-                                        f'32
-                                        - \tweak HorizontalBracket.direction #DOWN
-                                        - \tweak HorizontalBracket.staff-padding #5
-                                        - \tweak HorizontalBracketText.text "2"
-                                        \startGroup
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        f'32
-                                        \stopGroup
-
-                                        e'32
-                                        - \tweak HorizontalBracket.direction #DOWN
-                                        - \tweak HorizontalBracket.staff-padding #5
-                                        - \tweak HorizontalBracketText.text "3"
-                                        \startGroup
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        \revert Staff.Stem.stemlet-length
-                                        e'32
-                                        ]
-
-                                        r4
-
-                                        \tweak text #tuplet-number::calc-fraction-text
-                                        \times 8/7
-                                        {
-
-                                              %! COMMENT_MEASURE_NUMBERS
-                                              %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [trumpet voice measure 31]
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            e'32
-                                            \stopGroup
-                                            [
-
-                                            f'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "2"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f'32
-                                            \stopGroup
-
-                                            r32
-
-                                            fs'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "2"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            fs'32
-                                            \stopGroup
-
-                                            g'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "3"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            g'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            g'32
-                                            \stopGroup
-
-                                            fs'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "4"
-                                            \startGroup
-
-                                            r32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            fs'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            fs'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \revert Staff.Stem.stemlet-length
-                                            fs'32
-                                            \stopGroup
-                                            ]
-
-                                        }
-
-                                        \tweak text #tuplet-number::calc-fraction-text
-                                        \times 8/7
-                                        {
-
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            f'32
-                                            [
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "5"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f'32
-                                            \stopGroup
-
-                                            fs'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "6"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \revert Staff.Stem.stemlet-length
-                                            fs'32
-                                            ]
-
-                                        }
-
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        r32
-                                        [
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        fs'32
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        fs'32
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        fs'32
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        fs'32
-                                        \stopGroup
-
-                                        f'32
-                                        - \tweak HorizontalBracket.direction #DOWN
-                                        - \tweak HorizontalBracket.staff-padding #5
-                                        - \tweak HorizontalBracketText.text "7"
-                                        \startGroup
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        f'32
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        \revert Staff.Stem.stemlet-length
-                                        f'32
-                                        ]
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [trumpet voice measure 32]
-                                        r4
-
-                                        \times 4/5
-                                        {
-
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            r32
-                                            [
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f'32
-                                            \stopGroup
-
-                                            r32
-
-                                            fs'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "2"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            fs'32
-                                            \stopGroup
-
-                                            g'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "3"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \revert Staff.Stem.stemlet-length
-                                            g'32
-                                            ]
-
-                                        }
-
-                                        \times 8/11
-                                        {
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            g'32
-                                            \stopGroup
-                                            [
-
-                                            af'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "4"
-                                            \startGroup
-
-                                            r32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            af'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            af'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            af'32
-                                            \stopGroup
-
-                                            a'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "5"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            a'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            a'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            a'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \revert Staff.Stem.stemlet-length
-                                            a'32
-                                            \stopGroup
-                                            ]
-
-                                        }
-
-                                        \tweak text #tuplet-number::calc-fraction-text
-                                        \times 6/7
-                                        {
-
-                                              %! COMMENT_MEASURE_NUMBERS
-                                              %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [trumpet voice measure 33]
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            af'32
-                                            [
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "6"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            af'32
-
-                                            r32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            af'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            af'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            af'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            af'32
-                                            \stopGroup
-
-                                            g'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "2"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            g'32
-                                            \stopGroup
-
-                                            fs'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "3"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            fs'32
-
-                                            r32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            fs'32
-                                            \stopGroup
-
-                                            f'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "4"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f'32
-                                            \stopGroup
-
-                                            r32
-
-                                            e'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "5"
-                                            \startGroup
-
-                                            r32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            e'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            e'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            e'32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            e'32
-                                            \stopGroup
-
-                                            r32
-
-                                            f'32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "2"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f'32
-                                            \stopGroup
-
-                                            \revert Staff.Stem.stemlet-length
-                                            e'32
-                                            \pp
-                                            \stopGroup
-                                            ]
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "1"
-                                            \startGroup
-
-                                        }
-
-                                        r4
                                         \bar "||"
 
                                     }
@@ -5151,7 +3892,7 @@
                                         R1 * 3/8
 
                                         \tweak text #tuplet-number::calc-fraction-text
-                                        \times 32/31
+                                        \times 8/7
                                         {
 
                                               %! COMMENT_MEASURE_NUMBERS
@@ -5191,20 +3932,29 @@
                                             \once \override NoteHead.transparent = ##t
                                             e,32
 
+                                            \revert Staff.Stem.stemlet-length
                                             r32
+                                            ]
+
+                                        }
+
+                                        \times 2/3
+                                        {
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            e,32
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            e,16
+                                            [
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            e,32
+                                            e,16
                                             \stopGroup
 
-                                            ef,32
+                                            ef,16
                                             - \tweak HorizontalBracket.direction #DOWN
                                             - \tweak HorizontalBracket.staff-padding #5
                                             - \tweak HorizontalBracketText.text "5"
@@ -5213,27 +3963,36 @@
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            ef,32
+                                            ef,16
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            ef,32
+                                            ef,16
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            ef,32
+                                            \revert Staff.Stem.stemlet-length
+                                            ef,16
+                                            ]
 
-                                            r32
+                                        }
+
+                                        \times 4/5
+                                        {
+
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            r16
+                                            [
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            ef,32
+                                            ef,16
                                             \stopGroup
 
-                                            e,32
+                                            e,16
                                             - \tweak HorizontalBracket.direction #DOWN
                                             - \tweak HorizontalBracket.staff-padding #5
                                             - \tweak HorizontalBracketText.text "6"
@@ -5242,69 +4001,109 @@
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            e,32
+                                            e,16
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            e,32
+                                            \revert Staff.Stem.stemlet-length
+                                            e,16
+                                            ]
+
+                                        }
+
+                                        r4
+
+                                        \times 4/5
+                                        {
+
+                                              %! COMMENT_MEASURE_NUMBERS
+                                              %! evans.SegmentMaker.comment_measure_numbers()
+                                            % [tenor trombone voice measure 24]
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            e,16
+                                            [
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            e,32
+                                            e,16
+
+                                            r16
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            e,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            e,32
+                                            e,16
                                             \stopGroup
 
-                                            ef,32
+                                            \revert Staff.Stem.stemlet-length
+                                            ef,16
+                                            ]
                                             - \tweak HorizontalBracket.direction #DOWN
                                             - \tweak HorizontalBracket.staff-padding #5
                                             - \tweak HorizontalBracketText.text "7"
                                             \startGroup
 
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            ef,32
+                                        }
+
+                                        \times 2/3
+                                        {
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            ef,32
-
-                                            r32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            ef,32
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            ef,16
+                                            [
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            ef,32
+                                            ef,16
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            ef,32
+                                            ef,16
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            ef,32
+                                            ef,16
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            ef,16
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            \revert Staff.Stem.stemlet-length
+                                            ef,16
                                             \stopGroup
+                                            ]
 
+                                        }
+
+                                        r4
+
+                                        r4
+
+                                        \tweak text #tuplet-number::calc-fraction-text
+                                        \times 8/7
+                                        {
+
+                                              %! COMMENT_MEASURE_NUMBERS
+                                              %! evans.SegmentMaker.comment_measure_numbers()
+                                            % [tenor trombone voice measure 25]
+                                            \override Staff.Stem.stemlet-length = 0.75
                                             e,32
+                                            [
                                             - \tweak HorizontalBracket.direction #DOWN
                                             - \tweak HorizontalBracket.staff-padding #5
                                             - \tweak HorizontalBracketText.text "2"
@@ -5313,23 +4112,12 @@
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            \revert Staff.Stem.stemlet-length
                                             e,32
                                             \stopGroup
-                                            ]
 
-                                        }
+                                            r32
 
-                                        \tweak text #tuplet-number::calc-fraction-text
-                                        \times 4/3
-                                        {
-
-                                              %! COMMENT_MEASURE_NUMBERS
-                                              %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [tenor trombone voice measure 24]
-                                            \override Staff.Stem.stemlet-length = 0.75
                                             ef,32
-                                            [
                                             - \tweak HorizontalBracket.direction #DOWN
                                             - \tweak HorizontalBracket.staff-padding #5
                                             - \tweak HorizontalBracketText.text "3"
@@ -5340,30 +4128,23 @@
                                             \once \override NoteHead.transparent = ##t
                                             ef,32
 
-                                            r32
-
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
                                             ef,32
                                             \stopGroup
 
+                                            \revert Staff.Stem.stemlet-length
                                             e,32
+                                            ]
                                             - \tweak HorizontalBracket.direction #DOWN
                                             - \tweak HorizontalBracket.staff-padding #5
                                             - \tweak HorizontalBracketText.text "4"
                                             \startGroup
 
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \revert Staff.Stem.stemlet-length
-                                            e,32
-                                            ]
-
                                         }
 
-                                        \times 4/5
+                                        \times 2/3
                                         {
 
                                             \once \override Accidental.stencil = ##f
@@ -5377,9 +4158,14 @@
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
                                             e,16
-                                            \stopGroup
 
                                             r16
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            e,16
+                                            \stopGroup
 
                                             f,16
                                             - \tweak HorizontalBracket.direction #DOWN
@@ -5387,20 +4173,21 @@
                                             - \tweak HorizontalBracketText.text "5"
                                             \startGroup
 
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
                                             \revert Staff.Stem.stemlet-length
-                                            r16
+                                            f,16
                                             ]
 
                                         }
-
-                                        r2
 
                                         \times 4/5
                                         {
 
                                               %! COMMENT_MEASURE_NUMBERS
                                               %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [tenor trombone voice measure 25]
+                                            % [tenor trombone voice measure 26]
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
@@ -5417,57 +4204,80 @@
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
                                             f,16
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f,16
                                             \stopGroup
 
-                                            \revert Staff.Stem.stemlet-length
                                             fs,16
-                                            ]
                                             - \tweak HorizontalBracket.direction #DOWN
                                             - \tweak HorizontalBracket.staff-padding #5
                                             - \tweak HorizontalBracketText.text "6"
                                             \startGroup
 
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            \revert Staff.Stem.stemlet-length
+                                            fs,16
+                                            ]
+
                                         }
 
-                                        \tweak text #tuplet-number::calc-fraction-text
-                                        \times 4/3
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.transparent = ##t
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        fs,16
+                                        [
+
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.transparent = ##t
+                                        fs,16
+
+                                        r16
+
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.transparent = ##t
+                                        \revert Staff.Stem.stemlet-length
+                                        fs,16
+                                        ]
+
+                                        r4
+
+                                        \times 2/3
                                         {
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            fs,32
+                                            fs,16
+                                            \stopGroup
                                             [
 
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            fs,32
+                                            g,16
+                                            - \tweak HorizontalBracket.direction #DOWN
+                                            - \tweak HorizontalBracket.staff-padding #5
+                                            - \tweak HorizontalBracketText.text "7"
+                                            \startGroup
+
+                                            r16
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            fs,32
+                                            g,16
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            fs,32
+                                            g,16
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            fs,32
-                                            \stopGroup
-
                                             \revert Staff.Stem.stemlet-length
-                                            r32
+                                            g,16
                                             ]
 
                                         }
@@ -5478,134 +4288,130 @@
 
                                               %! COMMENT_MEASURE_NUMBERS
                                               %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [tenor trombone voice measure 26]
+                                            % [tenor trombone voice measure 27]
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
                                             \override Staff.Stem.stemlet-length = 0.75
                                             g,32
                                             [
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            g,32
+
+                                            r32
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            g,32
+                                            \stopGroup
+
+                                            r32
+
+                                            af,32
                                             - \tweak HorizontalBracket.direction #DOWN
                                             - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "7"
+                                            - \tweak HorizontalBracketText.text "3"
                                             \startGroup
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            g,32
+                                            \revert Staff.Stem.stemlet-length
+                                            af,32
+                                            ]
+
+                                        }
+
+                                        r4
+
+                                        r4
+
+                                        \times 2/3
+                                        {
+
+                                              %! COMMENT_MEASURE_NUMBERS
+                                              %! evans.SegmentMaker.comment_measure_numbers()
+                                            % [tenor trombone voice measure 28]
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            af,16
+                                            \stopGroup
+                                            [
+
+                                            g,16
+                                            - \tweak HorizontalBracket.direction #DOWN
+                                            - \tweak HorizontalBracket.staff-padding #5
+                                            - \tweak HorizontalBracketText.text "4"
+                                            \startGroup
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            g,32
+                                            g,16
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            g,32
+                                            g,16
+                                            \mp
+                                            \>
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            g,32
+                                            g,16
+                                            \stopGroup
+
+                                            \revert Staff.Stem.stemlet-length
+                                            fs,16
+                                            ]
+                                            - \tweak HorizontalBracket.direction #DOWN
+                                            - \tweak HorizontalBracket.staff-padding #5
+                                            - \tweak HorizontalBracketText.text "5"
+                                            \startGroup
+
+                                        }
+
+                                        \times 4/5
+                                        {
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            g,32
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            fs,16
+                                            [
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            fs,16
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            fs,16
+
+                                            r16
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
                                             \revert Staff.Stem.stemlet-length
-                                            g,32
+                                            fs,16
                                             \stopGroup
                                             ]
 
                                         }
 
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        af,32
-                                        [
-                                        - \tweak HorizontalBracket.direction #DOWN
-                                        - \tweak HorizontalBracket.staff-padding #5
-                                        - \tweak HorizontalBracketText.text "3"
-                                        \startGroup
-
-                                        r32
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        af,32
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        af,32
-                                        \stopGroup
-
-                                        g,32
-                                        - \tweak HorizontalBracket.direction #DOWN
-                                        - \tweak HorizontalBracket.staff-padding #5
-                                        - \tweak HorizontalBracketText.text "4"
-                                        \startGroup
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        g,32
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        g,32
-
-                                        \revert Staff.Stem.stemlet-length
-                                        r32
-                                        ]
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        g,32
-                                        \stopGroup
-                                        [
-
-                                        r32
-
-                                        fs,32
-                                        - \tweak HorizontalBracket.direction #DOWN
-                                        - \tweak HorizontalBracket.staff-padding #5
-                                        - \tweak HorizontalBracketText.text "5"
-                                        \startGroup
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        fs,32
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        fs,32
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        fs,32
-
-                                        r32
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        \revert Staff.Stem.stemlet-length
-                                        fs,32
-                                        \stopGroup
-                                        ]
-
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        f,32
+                                        f,16
                                         [
                                         - \tweak HorizontalBracket.direction #DOWN
                                         - \tweak HorizontalBracket.staff-padding #5
@@ -5615,561 +4421,73 @@
                                         \once \override Accidental.stencil = ##f
                                         \once \override NoteHead.no-ledgers = ##t
                                         \once \override NoteHead.transparent = ##t
-                                        f,32
+                                        f,16
 
                                         \once \override Accidental.stencil = ##f
                                         \once \override NoteHead.no-ledgers = ##t
                                         \once \override NoteHead.transparent = ##t
-                                        f,32
+                                        f,16
 
                                         \once \override Accidental.stencil = ##f
                                         \once \override NoteHead.no-ledgers = ##t
                                         \once \override NoteHead.transparent = ##t
-                                        f,32
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        f,32
-
-                                        r32
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        f,32
-                                        \stopGroup
-
                                         \revert Staff.Stem.stemlet-length
-                                        e,32
+                                        f,16
                                         ]
-                                        - \tweak HorizontalBracket.direction #DOWN
-                                        - \tweak HorizontalBracket.staff-padding #5
-                                        - \tweak HorizontalBracketText.text "3"
-                                        \startGroup
+
+                                        \times 4/5
+                                        {
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            f,16
+                                            [
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            f,16
+                                            \stopGroup
+
+                                            e,16
+                                            - \tweak HorizontalBracket.direction #DOWN
+                                            - \tweak HorizontalBracket.staff-padding #5
+                                            - \tweak HorizontalBracketText.text "3"
+                                            \startGroup
+
+                                            r16
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            \revert Staff.Stem.stemlet-length
+                                            e,16
+                                            ]
+
+                                        }
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [tenor trombone voice measure 27]
-                                        r4
-
-                                        \times 4/5
-                                        {
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            e,32
-                                            [
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            e,32
-                                            \stopGroup
-
-                                            f,32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "4"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f,32
-                                            \stopGroup
-
-                                            fs,32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "5"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            fs,32
-
-                                            r32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \revert Staff.Stem.stemlet-length
-                                            fs,32
-                                            ]
-
-                                        }
-
-                                        \times 8/11
-                                        {
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            fs,32
-                                            [
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            fs,32
-                                            \stopGroup
-
-                                            g,32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "3"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            g,32
-
-                                            r32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            g,32
-                                            \stopGroup
-
-                                            r32
-
-                                            fs,32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "4"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            fs,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            fs,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \revert Staff.Stem.stemlet-length
-                                            fs,32
-                                            \stopGroup
-                                            ]
-
-                                        }
-
-                                        \times 2/3
-                                        {
-
-                                              %! COMMENT_MEASURE_NUMBERS
-                                              %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [tenor trombone voice measure 28]
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            r32
-                                            [
-
-                                            g,32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "3"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            g,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            g,32
-                                            \stopGroup
-
-                                            af,32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "3"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            af,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            af,32
-                                            \stopGroup
-
-                                            r32
-
-                                            g,32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "4"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            g,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            g,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \revert Staff.Stem.stemlet-length
-                                            g,32
-                                            \stopGroup
-                                            ]
-
-                                        }
-
-                                        \times 8/9
-                                        {
-
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            af,32
-                                            [
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "5"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            af,32
-                                            \mp
-                                            \>
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            af,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            af,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            af,32
-                                            \stopGroup
-
-                                            g,32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "6"
-                                            \startGroup
-
-                                            r32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            g,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            g,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            g,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            g,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            g,32
-                                            \stopGroup
-
-                                            fs,32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "7"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            fs,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            fs,32
-
-                                            r32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            fs,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            fs,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            fs,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            fs,32
-                                            \stopGroup
-
-                                            f,32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "2"
-                                            \startGroup
-
-                                            r32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f,32
-                                            \stopGroup
-
-                                            r32
-
-                                            e,32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "3"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            e,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \revert Staff.Stem.stemlet-length
-                                            e,32
-                                            \stopGroup
-                                            ]
-
-                                        }
-
-                                        \times 4/5
-                                        {
-
-                                              %! COMMENT_MEASURE_NUMBERS
-                                              %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [tenor trombone voice measure 29]
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            f,32
-                                            [
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "4"
-                                            \startGroup
-
-                                            r32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f,32
-                                            \stopGroup
-
-                                            e,32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "5"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            e,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            e,32
-
-                                            r32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \revert Staff.Stem.stemlet-length
-                                            e,32
-                                            ]
-
-                                        }
-
-                                        \times 8/9
-                                        {
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            e,32
-                                            \stopGroup
-                                            [
-
-                                            f,32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "6"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f,32
-                                            \stopGroup
-
-                                            fs,32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "7"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \revert Staff.Stem.stemlet-length
-                                            fs,32
-                                            ]
-
-                                        }
-
+                                        % [tenor trombone voice measure 29]
                                         r4
 
                                         \tweak text #tuplet-number::calc-fraction-text
-                                        \times 16/15
+                                        \times 8/7
                                         {
 
-                                              %! COMMENT_MEASURE_NUMBERS
-                                              %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [tenor trombone voice measure 30]
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            fs,32
+                                            r32
                                             [
 
-                                            r32
-
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            fs,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            fs,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            fs,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            fs,32
+                                            e,32
                                             \stopGroup
 
-                                            g,32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "3"
-                                            \startGroup
-
-                                            r32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            g,32
-
-                                            r32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            g,32
-                                            \stopGroup
-
-                                            af,32
+                                            f,32
                                             - \tweak HorizontalBracket.direction #DOWN
                                             - \tweak HorizontalBracket.staff-padding #5
                                             - \tweak HorizontalBracketText.text "4"
@@ -6178,21 +4496,60 @@
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            af,32
+                                            f,32
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            af,32
+                                            f,32
 
-                                            \revert Staff.Stem.stemlet-length
                                             r32
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            \revert Staff.Stem.stemlet-length
+                                            f,32
+                                            \stopGroup
                                             ]
 
                                         }
 
-                                        \tweak text #tuplet-number::calc-fraction-text
-                                        \times 4/3
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        fs,16
+                                        [
+                                        - \tweak HorizontalBracket.direction #DOWN
+                                        - \tweak HorizontalBracket.staff-padding #5
+                                        - \tweak HorizontalBracketText.text "5"
+                                        \startGroup
+
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.transparent = ##t
+                                        fs,16
+
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.transparent = ##t
+                                        fs,16
+
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.transparent = ##t
+                                        \revert Staff.Stem.stemlet-length
+                                        fs,16
+                                        ]
+
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [tenor trombone voice measure 30]
+                                          %! applying invisibility
+                                        \once \override Rest.transparent = ##t
+                                        r1 * 1/4
+
+                                        R1 * 1/4
+
+                                        \times 4/5
                                         {
 
                                               %! COMMENT_MEASURE_NUMBERS
@@ -6202,70 +4559,34 @@
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            af,32
+                                            fs,16
                                             \stopGroup
                                             [
 
-                                            a,32
+                                            g,16
                                             - \tweak HorizontalBracket.direction #DOWN
                                             - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "5"
+                                            - \tweak HorizontalBracketText.text "3"
                                             \startGroup
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            a,32
+                                            g,16
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            a,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            a,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \revert Staff.Stem.stemlet-length
-                                            a,32
+                                            g,16
                                             \stopGroup
+
+                                            \revert Staff.Stem.stemlet-length
+                                            fs,16
                                             ]
-
-                                        }
-
-                                        \times 4/5
-                                        {
-
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            r16
-                                            [
-
-                                            bf,16
                                             - \tweak HorizontalBracket.direction #DOWN
                                             - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "6"
+                                            - \tweak HorizontalBracketText.text "4"
                                             \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            bf,16
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            bf,16
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \revert Staff.Stem.stemlet-length
-                                            bf,16
-                                            ]
 
                                         }
 
@@ -6273,79 +4594,92 @@
                                         \once \override NoteHead.no-ledgers = ##t
                                         \once \override NoteHead.transparent = ##t
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        bf,32
+                                        fs,16
                                         [
 
                                         \once \override Accidental.stencil = ##f
                                         \once \override NoteHead.no-ledgers = ##t
                                         \once \override NoteHead.transparent = ##t
-                                        bf,32
+                                        fs,16
+
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.transparent = ##t
+                                        fs,16
                                         \stopGroup
 
-                                        b,32
-                                        - \tweak HorizontalBracket.direction #DOWN
-                                        - \tweak HorizontalBracket.staff-padding #5
-                                        - \tweak HorizontalBracketText.text "3"
-                                        \startGroup
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        b,32
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        b,32
-                                        \stopGroup
-
-                                        bf,32
-                                        - \tweak HorizontalBracket.direction #DOWN
-                                        - \tweak HorizontalBracket.staff-padding #5
-                                        - \tweak HorizontalBracketText.text "4"
-                                        \startGroup
-
-                                        r32
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
                                         \revert Staff.Stem.stemlet-length
-                                        bf,32
+                                        r16
                                         ]
 
                                         \times 4/5
                                         {
 
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            bf,16
+                                            g,16
                                             [
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            bf,16
-                                            \stopGroup
-
-                                            a,16
                                             - \tweak HorizontalBracket.direction #DOWN
                                             - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "5"
+                                            - \tweak HorizontalBracketText.text "3"
                                             \startGroup
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            a,16
+                                            g,16
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            g,16
+                                            \stopGroup
+
+                                            af,16
+                                            - \tweak HorizontalBracket.direction #DOWN
+                                            - \tweak HorizontalBracket.staff-padding #5
+                                            - \tweak HorizontalBracketText.text "3"
+                                            \startGroup
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
                                             \revert Staff.Stem.stemlet-length
-                                            a,16
+                                            af,16
+                                            ]
+
+                                        }
+
+                                        \times 2/3
+                                        {
+
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            r16
+                                            [
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            af,16
+                                            \stopGroup
+
+                                            r16
+
+                                            g,16
+                                            - \tweak HorizontalBracket.direction #DOWN
+                                            - \tweak HorizontalBracket.staff-padding #5
+                                            - \tweak HorizontalBracketText.text "4"
+                                            \startGroup
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            g,16
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            \revert Staff.Stem.stemlet-length
+                                            g,16
                                             ]
 
                                         }
@@ -6353,7 +4687,30 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tenor trombone voice measure 32]
-                                        r2
+                                        r4
+
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.transparent = ##t
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        g,16
+                                        \stopGroup
+                                        [
+
+                                        r16
+
+                                        af,16
+                                        - \tweak HorizontalBracket.direction #DOWN
+                                        - \tweak HorizontalBracket.staff-padding #5
+                                        - \tweak HorizontalBracketText.text "5"
+                                        \startGroup
+
+                                        \once \override Accidental.stencil = ##f
+                                        \once \override NoteHead.no-ledgers = ##t
+                                        \once \override NoteHead.transparent = ##t
+                                        \revert Staff.Stem.stemlet-length
+                                        af,16
+                                        ]
 
                                         \tweak text #tuplet-number::calc-fraction-text
                                         \times 8/7
@@ -6363,202 +4720,102 @@
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            a,32
+                                            af,32
                                             [
 
-                                            r32
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            af,32
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            a,32
+                                            af,32
                                             \stopGroup
 
-                                            bf,32
+                                            g,32
                                             - \tweak HorizontalBracket.direction #DOWN
                                             - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "3"
+                                            - \tweak HorizontalBracketText.text "6"
                                             \startGroup
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            bf,32
+                                            g,32
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            bf,32
-                                            \stopGroup
+                                            g,32
 
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
                                             \revert Staff.Stem.stemlet-length
-                                            b,32
+                                            g,32
                                             ]
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "4"
-                                            \startGroup
 
                                         }
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tenor trombone voice measure 33]
+                                        r4
+
+                                        r4
+
                                         \once \override Accidental.stencil = ##f
                                         \once \override NoteHead.no-ledgers = ##t
                                         \once \override NoteHead.transparent = ##t
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        b,32
+                                        g,16
                                         [
 
-                                        r32
-
                                         \once \override Accidental.stencil = ##f
                                         \once \override NoteHead.no-ledgers = ##t
                                         \once \override NoteHead.transparent = ##t
-                                        b,32
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        b,32
+                                        g,16
                                         \stopGroup
 
-                                        c32
+                                        fs,16
                                         - \tweak HorizontalBracket.direction #DOWN
                                         - \tweak HorizontalBracket.staff-padding #5
-                                        - \tweak HorizontalBracketText.text "3"
+                                        - \tweak HorizontalBracketText.text "5"
                                         \startGroup
 
                                         \once \override Accidental.stencil = ##f
                                         \once \override NoteHead.no-ledgers = ##t
                                         \once \override NoteHead.transparent = ##t
-                                        c32
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        c32
-                                        \stopGroup
-
                                         \revert Staff.Stem.stemlet-length
-                                        cs32
+                                        fs,16
                                         ]
-                                        - \tweak HorizontalBracket.direction #DOWN
-                                        - \tweak HorizontalBracket.staff-padding #5
-                                        - \tweak HorizontalBracketText.text "3"
-                                        \startGroup
 
-                                        \times 8/9
+                                        \times 4/5
                                         {
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            cs32
+                                            fs,16
                                             [
 
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            cs32
-                                            \stopGroup
-
-                                            d32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "4"
-                                            \startGroup
+                                            r16
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            d32
+                                            fs,16
 
-                                            r32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            d32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            d32
-                                            \stopGroup
-
-                                            cs32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "5"
-                                            \startGroup
+                                            r16
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
                                             \revert Staff.Stem.stemlet-length
-                                            cs32
-                                            ]
-
-                                        }
-
-                                        r4
-
-                                        \times 8/11
-                                        {
-
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            r32
-                                            [
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            cs32
-
-                                            r32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            cs32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            cs32
-                                            \stopGroup
-
-                                            c32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "5"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            c32
-
-                                            r32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            c32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            c32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \revert Staff.Stem.stemlet-length
-                                            c32
+                                            fs,16
                                             \pp
                                             \stopGroup
                                             ]
@@ -6785,15 +5042,14 @@
 
                                         R1 * 3/8
 
-                                        \tweak text #tuplet-number::calc-fraction-text
-                                        \times 4/3
+                                        \times 2/3
                                         {
 
                                               %! COMMENT_MEASURE_NUMBERS
                                               %! evans.SegmentMaker.comment_measure_numbers()
                                             % [tuba voice measure 23]
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            d,32
+                                            d,16
                                             \pp
                                             [
                                             - \tweak HorizontalBracket.direction #DOWN
@@ -6802,26 +5058,26 @@
                                             \startGroup
                                             \<
 
-                                            r32
+                                            r16
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            d,32
+                                            d,16
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            d,32
+                                            d,16
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            d,32
+                                            d,16
                                             \stopGroup
 
                                             \revert Staff.Stem.stemlet-length
-                                            ef,32
+                                            ef,16
                                             ]
                                             - \tweak HorizontalBracket.direction #DOWN
                                             - \tweak HorizontalBracket.staff-padding #5
@@ -6830,36 +5086,46 @@
 
                                         }
 
-                                        \tweak text #tuplet-number::calc-fraction-text
-                                        \times 8/7
+                                        \times 4/5
                                         {
 
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            r32
+                                            r16
                                             [
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            ef,32
+                                            ef,16
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            ef,32
+                                            ef,16
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            ef,32
+                                            ef,16
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            ef,32
+                                            \revert Staff.Stem.stemlet-length
+                                            ef,16
                                             \stopGroup
+                                            ]
 
-                                            d,32
+                                        }
+
+                                        r4
+
+                                        \times 4/5
+                                        {
+
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            d,16
+                                            [
                                             - \tweak HorizontalBracket.direction #DOWN
                                             - \tweak HorizontalBracket.staff-padding #5
                                             - \tweak HorizontalBracketText.text "6"
@@ -6868,32 +5134,42 @@
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            d,32
-
-                                            r32
+                                            d,16
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            d,32
+                                            d,16
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            d,32
+                                            d,16
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            d,32
+                                            \revert Staff.Stem.stemlet-length
+                                            d,16
+                                            ]
 
+                                        }
+
+                                        \times 2/3
+                                        {
+
+                                              %! COMMENT_MEASURE_NUMBERS
+                                              %! evans.SegmentMaker.comment_measure_numbers()
+                                            % [tuba voice measure 24]
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            d,32
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            d,16
                                             \stopGroup
+                                            [
 
-                                            ef,32
+                                            ef,16
                                             - \tweak HorizontalBracket.direction #DOWN
                                             - \tweak HorizontalBracket.staff-padding #5
                                             - \tweak HorizontalBracketText.text "7"
@@ -6902,142 +5178,45 @@
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            ef,32
+                                            ef,16
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            ef,32
+                                            ef,16
+
+                                            r16
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            ef,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            ef,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            ef,32
-
-                                            r32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            ef,32
-                                            \stopGroup
-
                                             \revert Staff.Stem.stemlet-length
-                                            d,32
+                                            ef,16
                                             ]
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "2"
-                                            \startGroup
 
                                         }
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [tuba voice measure 24]
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        d,32
-                                        \stopGroup
-                                        [
-
-                                        ef,32
-                                        - \tweak HorizontalBracket.direction #DOWN
-                                        - \tweak HorizontalBracket.staff-padding #5
-                                        - \tweak HorizontalBracketText.text "3"
-                                        \startGroup
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        ef,32
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        ef,32
-                                        \stopGroup
-
-                                        d,32
-                                        - \tweak HorizontalBracket.direction #DOWN
-                                        - \tweak HorizontalBracket.staff-padding #5
-                                        - \tweak HorizontalBracketText.text "4"
-                                        \startGroup
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        d,32
-
-                                        r32
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        \revert Staff.Stem.stemlet-length
-                                        d,32
-                                        ]
 
                                         r4
 
-                                        \tweak text #tuplet-number::calc-fraction-text
-                                        \times 4/3
-                                        {
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            d,32
-                                            \stopGroup
-                                            [
-
-                                            r32
-
-                                            ef,32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "5"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            ef,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            ef,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \revert Staff.Stem.stemlet-length
-                                            ef,32
-                                            ]
-
-                                        }
+                                        r4
 
                                         \tweak text #tuplet-number::calc-fraction-text
                                         \times 8/7
                                         {
 
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
                                             \override Staff.Stem.stemlet-length = 0.75
+                                            ef,32
+                                            [
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            ef,32
+
                                             r32
-                                            [
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
@@ -7045,92 +5224,7 @@
                                             ef,32
                                             \stopGroup
 
-                                            d,32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "6"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            d,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            d,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            d,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \revert Staff.Stem.stemlet-length
-                                            d,32
-                                            ]
-
-                                        }
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [tuba voice measure 25]
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        r32
-                                        [
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        d,32
-                                        \stopGroup
-
-                                        ef,32
-                                        - \tweak HorizontalBracket.direction #DOWN
-                                        - \tweak HorizontalBracket.staff-padding #5
-                                        - \tweak HorizontalBracketText.text "7"
-                                        \startGroup
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        ef,32
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        ef,32
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        ef,32
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        ef,32
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        \revert Staff.Stem.stemlet-length
-                                        ef,32
-                                        ]
-
-                                        \times 8/9
-                                        {
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            ef,32
-                                            \stopGroup
-                                            [
+                                            r32
 
                                             d,32
                                             - \tweak HorizontalBracket.direction #DOWN
@@ -7141,12 +5235,41 @@
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
+                                            \revert Staff.Stem.stemlet-length
                                             d,32
                                             \stopGroup
+                                            ]
 
-                                            r32
+                                        }
 
-                                            ef,32
+                                        \times 2/3
+                                        {
+
+                                              %! COMMENT_MEASURE_NUMBERS
+                                              %! evans.SegmentMaker.comment_measure_numbers()
+                                            % [tuba voice measure 25]
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            ef,16
+                                            [
+                                            - \tweak HorizontalBracket.direction #DOWN
+                                            - \tweak HorizontalBracket.staff-padding #5
+                                            - \tweak HorizontalBracketText.text "3"
+                                            \startGroup
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            ef,16
+
+                                            r16
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            ef,16
+                                            \stopGroup
+
+                                            d,16
                                             - \tweak HorizontalBracket.direction #DOWN
                                             - \tweak HorizontalBracket.staff-padding #5
                                             - \tweak HorizontalBracketText.text "4"
@@ -7155,26 +5278,42 @@
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            ef,32
+                                            \revert Staff.Stem.stemlet-length
+                                            d,16
+                                            ]
+
+                                        }
+
+                                        \times 4/5
+                                        {
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            ef,32
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            d,16
+                                            [
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            ef,32
+                                            d,16
                                             \stopGroup
 
-                                            \revert Staff.Stem.stemlet-length
-                                            d,32
-                                            ]
+                                            ef,16
                                             - \tweak HorizontalBracket.direction #DOWN
                                             - \tweak HorizontalBracket.staff-padding #5
                                             - \tweak HorizontalBracketText.text "5"
                                             \startGroup
+
+                                            r16
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            \revert Staff.Stem.stemlet-length
+                                            ef,16
+                                            ]
 
                                         }
 
@@ -7183,66 +5322,6 @@
                                         % [tuba voice measure 26]
                                         r4
 
-                                        \times 8/11
-                                        {
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            d,32
-                                            [
-
-                                            r32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            d,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            d,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            d,32
-                                            \stopGroup
-
-                                            ef,32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "6"
-                                            \startGroup
-
-                                            r32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            ef,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            ef,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            ef,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \revert Staff.Stem.stemlet-length
-                                            ef,32
-                                            ]
-
-                                        }
-
                                         \times 4/5
                                         {
 
@@ -7250,50 +5329,143 @@
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            ef,32
-                                            \stopGroup
+                                            ef,16
                                             [
 
-                                            e,32
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            ef,16
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            ef,16
+                                            \stopGroup
+
+                                            d,16
+                                            - \tweak HorizontalBracket.direction #DOWN
+                                            - \tweak HorizontalBracket.staff-padding #5
+                                            - \tweak HorizontalBracketText.text "6"
+                                            \startGroup
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            \revert Staff.Stem.stemlet-length
+                                            d,16
+                                            ]
+
+                                        }
+
+                                        \times 2/3
+                                        {
+
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            r16
+                                            [
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            d,16
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            d,16
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            d,16
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            d,16
+                                            \stopGroup
+
+                                            \revert Staff.Stem.stemlet-length
+                                            ef,16
+                                            ]
                                             - \tweak HorizontalBracket.direction #DOWN
                                             - \tweak HorizontalBracket.staff-padding #5
                                             - \tweak HorizontalBracketText.text "7"
                                             \startGroup
 
+                                        }
+
+                                        r4
+
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [tuba voice measure 27]
+                                        r4
+
+                                        \tweak text #tuplet-number::calc-fraction-text
+                                        \times 8/7
+                                        {
+
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            r32
+                                            [
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            ef,32
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            ef,32
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            ef,32
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            ef,32
+
                                             r32
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            e,32
+                                            \revert Staff.Stem.stemlet-length
+                                            ef,32
+                                            ]
+
+                                        }
+
+                                        \times 2/3
+                                        {
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            e,32
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            ef,16
+                                            \stopGroup
+                                            [
+
+                                            d,16
+                                            - \tweak HorizontalBracket.direction #DOWN
+                                            - \tweak HorizontalBracket.staff-padding #5
+                                            - \tweak HorizontalBracketText.text "2"
+                                            \startGroup
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            e,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            e,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            e,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            e,32
+                                            d,16
                                             \stopGroup
 
-                                            ef,32
+                                            ef,16
                                             - \tweak HorizontalBracket.direction #DOWN
                                             - \tweak HorizontalBracket.staff-padding #5
                                             - \tweak HorizontalBracketText.text "4"
@@ -7302,22 +5474,34 @@
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            ef,32
+                                            ef,16
+
+                                            \revert Staff.Stem.stemlet-length
+                                            r16
+                                            ]
+
+                                        }
+
+                                        \times 4/5
+                                        {
+
+                                              %! COMMENT_MEASURE_NUMBERS
+                                              %! evans.SegmentMaker.comment_measure_numbers()
+                                            % [tuba voice measure 28]
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            ef,16
+                                            [
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            ef,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            ef,32
+                                            ef,16
                                             \stopGroup
 
-                                            r32
-
-                                            d,32
+                                            d,16
                                             - \tweak HorizontalBracket.direction #DOWN
                                             - \tweak HorizontalBracket.staff-padding #5
                                             - \tweak HorizontalBracketText.text "5"
@@ -7326,93 +5510,18 @@
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            d,32
+                                            d,16
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            d,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            d,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            d,32
-                                            \stopGroup
-
                                             \revert Staff.Stem.stemlet-length
-                                            ef,32
-                                            ]
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "6"
-                                            \startGroup
-
-                                        }
-
-                                        \times 8/11
-                                        {
-
-                                              %! COMMENT_MEASURE_NUMBERS
-                                              %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [tuba voice measure 27]
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            ef,32
-                                            [
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            ef,32
-
-                                            r32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            ef,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            ef,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            ef,32
-                                            \stopGroup
-
-                                            d,32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "4"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            d,32
-
-                                            r32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            d,32
-
-                                            \revert Staff.Stem.stemlet-length
-                                            r32
+                                            d,16
                                             ]
 
                                         }
+
+                                        r4
 
                                         \times 4/5
                                         {
@@ -7421,161 +5530,76 @@
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            d,32
-                                            \stopGroup
+                                            d,16
+                                            \mf
                                             [
+                                            \>
 
-                                            ef,32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "5"
-                                            \startGroup
+                                            r16
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            ef,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            ef,32
-
-                                            r32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            ef,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            ef,32
+                                            d,16
                                             \stopGroup
 
-                                            e,32
+                                            ef,16
                                             - \tweak HorizontalBracket.direction #DOWN
                                             - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "4"
+                                            - \tweak HorizontalBracketText.text "6"
                                             \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            e,32
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
                                             \revert Staff.Stem.stemlet-length
-                                            e,32
+                                            ef,16
                                             ]
 
                                         }
 
-                                        \times 8/9
+                                        \times 2/3
                                         {
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            e,32
-                                            \stopGroup
+                                            ef,16
                                             [
 
-                                            r32
-
-                                            f,32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "4"
-                                            \startGroup
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            ef,16
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            f,32
-                                            \mf
-                                            \>
+                                            ef,16
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            f,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f,32
+                                            ef,16
                                             \stopGroup
 
-                                            e,32
+                                            e,16
                                             - \tweak HorizontalBracket.direction #DOWN
                                             - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "5"
+                                            - \tweak HorizontalBracketText.text "7"
                                             \startGroup
 
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            e,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
                                             \revert Staff.Stem.stemlet-length
-                                            e,32
+                                            r16
                                             ]
 
                                         }
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [tuba voice measure 28]
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        e,32
-                                        [
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        e,32
-                                        \stopGroup
-
-                                        ef,32
-                                        - \tweak HorizontalBracket.direction #DOWN
-                                        - \tweak HorizontalBracket.staff-padding #5
-                                        - \tweak HorizontalBracketText.text "6"
-                                        \startGroup
-
-                                        r32
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        ef,32
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        ef,32
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        ef,32
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        \revert Staff.Stem.stemlet-length
-                                        ef,32
-                                        ]
+                                        % [tuba voice measure 29]
+                                        r4
 
                                         r4
 
@@ -7587,95 +5611,50 @@
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            ef,32
-                                            \stopGroup
+                                            e,32
                                             [
 
-                                            d,32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "7"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            d,32
-
                                             r32
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            d,32
-
-                                            r32
+                                            e,32
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            d,32
+                                            e,32
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            d,32
+                                            e,32
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            d,32
+                                            e,32
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            d,32
-                                            \stopGroup
-
-                                            r32
-
-                                            ef,32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "2"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            ef,32
-                                            \stopGroup
-
                                             \revert Staff.Stem.stemlet-length
-                                            d,32
+                                            e,32
+                                            \stopGroup
                                             ]
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "3"
-                                            \startGroup
 
                                         }
 
-                                        \times 8/13
+                                        \times 2/3
                                         {
 
                                               %! COMMENT_MEASURE_NUMBERS
                                               %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [tuba voice measure 29]
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
+                                            % [tuba voice measure 30]
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            d,16
-                                            [
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            d,16
-                                            \stopGroup
-
                                             ef,16
+                                            [
                                             - \tweak HorizontalBracket.direction #DOWN
                                             - \tweak HorizontalBracket.staff-padding #5
                                             - \tweak HorizontalBracketText.text "4"
@@ -7699,31 +5678,40 @@
                                             ef,16
                                             \stopGroup
 
-                                            e,16
+                                            \revert Staff.Stem.stemlet-length
+                                            d,16
+                                            ]
                                             - \tweak HorizontalBracket.direction #DOWN
                                             - \tweak HorizontalBracket.staff-padding #5
                                             - \tweak HorizontalBracketText.text "5"
                                             \startGroup
 
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            e,16
+                                        }
+
+                                        \times 4/5
+                                        {
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            e,16
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            d,16
+                                            [
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            e,16
+                                            d,16
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            e,16
+                                            d,16
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            d,16
                                             \stopGroup
 
                                             \revert Staff.Stem.stemlet-length
@@ -7733,121 +5721,6 @@
                                             - \tweak HorizontalBracket.staff-padding #5
                                             - \tweak HorizontalBracketText.text "6"
                                             \startGroup
-
-                                        }
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        ef,32
-                                        [
-
-                                        r32
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        ef,32
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        ef,32
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        ef,32
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        ef,32
-                                        \stopGroup
-
-                                        e,32
-                                        - \tweak HorizontalBracket.direction #DOWN
-                                        - \tweak HorizontalBracket.staff-padding #5
-                                        - \tweak HorizontalBracketText.text "7"
-                                        \startGroup
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        \revert Staff.Stem.stemlet-length
-                                        e,32
-                                        ]
-
-                                        \times 4/5
-                                        {
-
-                                              %! COMMENT_MEASURE_NUMBERS
-                                              %! evans.SegmentMaker.comment_measure_numbers()
-                                            % [tuba voice measure 30]
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            e,16
-                                            [
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            e,16
-
-                                            r16
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            e,16
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \revert Staff.Stem.stemlet-length
-                                            e,16
-                                            ]
-
-                                        }
-
-                                        \tweak text #tuplet-number::calc-fraction-text
-                                        \times 4/3
-                                        {
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            e,32
-                                            \stopGroup
-                                            [
-
-                                            f,32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "2"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f,32
-                                            \stopGroup
-
-                                            r32
-
-                                            fs,32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "4"
-                                            \startGroup
-
-                                            \revert Staff.Stem.stemlet-length
-                                            r32
-                                            ]
 
                                         }
 
@@ -7856,104 +5729,6 @@
                                         % [tuba voice measure 31]
                                         r4
 
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        fs,32
-                                        [
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        fs,32
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        fs,32
-                                        \stopGroup
-
-                                        f,32
-                                        - \tweak HorizontalBracket.direction #DOWN
-                                        - \tweak HorizontalBracket.staff-padding #5
-                                        - \tweak HorizontalBracketText.text "5"
-                                        \startGroup
-
-                                        r32
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        f,32
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        f,32
-
-                                        \once \override Accidental.stencil = ##f
-                                        \once \override NoteHead.no-ledgers = ##t
-                                        \once \override NoteHead.transparent = ##t
-                                        \revert Staff.Stem.stemlet-length
-                                        f,32
-                                        ]
-
-                                        \times 8/9
-                                        {
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            f,32
-                                            \stopGroup
-                                            [
-
-                                            fs,32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "6"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            fs,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            fs,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            fs,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            fs,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            fs,32
-                                            \stopGroup
-
-                                            r32
-
-                                            \revert Staff.Stem.stemlet-length
-                                            g,32
-                                            ]
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "7"
-                                            \startGroup
-
-                                        }
-
                                         \times 4/5
                                         {
 
@@ -7961,83 +5736,175 @@
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            g,32
+                                            ef,16
                                             [
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            g,32
+                                            ef,16
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            g,32
+                                            ef,16
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            g,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            g,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            g,32
-                                            \stopGroup
-
-                                            fs,32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "4"
-                                            \startGroup
-
-                                            r32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            fs,32
+                                            ef,16
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
                                             \revert Staff.Stem.stemlet-length
-                                            fs,32
+                                            ef,16
+                                            \stopGroup
                                             ]
 
                                         }
 
+                                        \times 2/3
+                                        {
+
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            d,16
+                                            [
+                                            - \tweak HorizontalBracket.direction #DOWN
+                                            - \tweak HorizontalBracket.staff-padding #5
+                                            - \tweak HorizontalBracketText.text "4"
+                                            \startGroup
+
+                                            r16
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            d,16
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            d,16
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            d,16
+                                            \stopGroup
+
+                                            \revert Staff.Stem.stemlet-length
+                                            ef,16
+                                            ]
+                                            - \tweak HorizontalBracket.direction #DOWN
+                                            - \tweak HorizontalBracket.staff-padding #5
+                                            - \tweak HorizontalBracketText.text "5"
+                                            \startGroup
+
+                                        }
+
+                                        r4
+
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [tuba voice measure 32]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
+                                        r4
 
-                                        R1 * 3/8
+                                        \tweak text #tuplet-number::calc-fraction-text
+                                        \times 8/7
+                                        {
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            ef,32
+                                            [
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            ef,32
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            ef,32
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            ef,32
+                                            \stopGroup
+
+                                            r32
+
+                                            e,32
+                                            - \tweak HorizontalBracket.direction #DOWN
+                                            - \tweak HorizontalBracket.staff-padding #5
+                                            - \tweak HorizontalBracketText.text "4"
+                                            \startGroup
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            \revert Staff.Stem.stemlet-length
+                                            e,32
+                                            ]
+
+                                        }
 
                                         \times 2/3
+                                        {
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            e,16
+                                            [
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            e,16
+                                            \stopGroup
+
+                                            f,16
+                                            - \tweak HorizontalBracket.direction #DOWN
+                                            - \tweak HorizontalBracket.staff-padding #5
+                                            - \tweak HorizontalBracketText.text "4"
+                                            \startGroup
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            f,16
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            f,16
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            \revert Staff.Stem.stemlet-length
+                                            f,16
+                                            \stopGroup
+                                            ]
+
+                                        }
+
+                                        \times 4/5
                                         {
 
                                               %! COMMENT_MEASURE_NUMBERS
                                               %! evans.SegmentMaker.comment_measure_numbers()
                                             % [tuba voice measure 33]
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
                                             \override Staff.Stem.stemlet-length = 0.75
-                                            fs,32
-                                            \stopGroup
+                                            e,16
                                             [
-
-                                            r32
-
-                                            f,32
                                             - \tweak HorizontalBracket.direction #DOWN
                                             - \tweak HorizontalBracket.staff-padding #5
                                             - \tweak HorizontalBracketText.text "5"
@@ -8046,174 +5913,96 @@
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            f,32
+                                            e,16
+
+                                            r16
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
-                                            f,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f,32
-                                            \stopGroup
-
-                                            e,32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "6"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            e,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            e,32
-
-                                            r32
+                                            e,16
 
                                             \once \override Accidental.stencil = ##f
                                             \once \override NoteHead.no-ledgers = ##t
                                             \once \override NoteHead.transparent = ##t
                                             \revert Staff.Stem.stemlet-length
-                                            e,32
-                                            ]
-
-                                        }
-
-                                        \times 8/11
-                                        {
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            e,32
-                                            [
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            e,32
-                                            \stopGroup
-
-                                            f,32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "4"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f,32
-
-                                            r32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f,32
-
-                                            r32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            f,32
-                                            \stopGroup
-
-                                            fs,32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "5"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            fs,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \revert Staff.Stem.stemlet-length
-                                            fs,32
-                                            ]
-
-                                        }
-
-                                        \times 4/5
-                                        {
-
-                                            \override Staff.Stem.stemlet-length = 0.75
-                                            r32
-                                            [
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            fs,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            fs,32
-                                            \stopGroup
-
-                                            g,32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "4"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            g,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            g,32
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            g,32
-                                            \stopGroup
-
-                                            r32
-
-                                            af,32
-                                            - \tweak HorizontalBracket.direction #DOWN
-                                            - \tweak HorizontalBracket.staff-padding #5
-                                            - \tweak HorizontalBracketText.text "2"
-                                            \startGroup
-
-                                            \once \override Accidental.stencil = ##f
-                                            \once \override NoteHead.no-ledgers = ##t
-                                            \once \override NoteHead.transparent = ##t
-                                            \revert Staff.Stem.stemlet-length
-                                            af,32
-                                            \pp
-                                            \stopGroup
+                                            e,16
                                             ]
 
                                         }
 
                                         r4
-                                        \bar "||"
+
+                                        \times 4/5
+                                        {
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            e,16
+                                            \stopGroup
+                                            [
+
+                                            ef,16
+                                            - \tweak HorizontalBracket.direction #DOWN
+                                            - \tweak HorizontalBracket.staff-padding #5
+                                            - \tweak HorizontalBracketText.text "6"
+                                            \startGroup
+
+                                            r16
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            ef,16
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            \revert Staff.Stem.stemlet-length
+                                            ef,16
+                                            ]
+
+                                        }
+
+                                        \times 2/3
+                                        {
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            \override Staff.Stem.stemlet-length = 0.75
+                                            ef,16
+                                            [
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            ef,16
+
+                                            \once \override Accidental.stencil = ##f
+                                            \once \override NoteHead.no-ledgers = ##t
+                                            \once \override NoteHead.transparent = ##t
+                                            ef,16
+                                            \stopGroup
+
+                                            r16
+
+                                            d,16
+                                            \pp
+                                            \stopGroup
+                                            - \tweak HorizontalBracket.direction #DOWN
+                                            - \tweak HorizontalBracket.staff-padding #5
+                                            - \tweak HorizontalBracketText.text "1"
+                                            \startGroup
+
+                                            \revert Staff.Stem.stemlet-length
+                                            r16
+                                            ]
+                                            \bar "||"
+
+                                        }
 
                                     }
 
@@ -8612,7 +6401,7 @@
                                         \staff-line-count #1
                                         c'2.
                                         \f
-                                        - \boxed-markup "bass drum" #1
+                                        - \boxed-markup "tam tam" #1
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
@@ -9624,7 +7413,7 @@
                     \tag #'group6
                     {
 
-                        \context PianoStaff = "sub group 5"
+                        \context StaffGroup = "sub group 5"
                         <<
 
                             \tag #'voice13
@@ -11319,33 +9108,6 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [violin 2 voice measure 12]
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        f'8
-                                        [
-
-                                        \revert Staff.Stem.stemlet-length
-                                        f'8
-                                        ]
-
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        f'8
-                                        [
-
-                                        \revert Staff.Stem.stemlet-length
-                                        f'8
-                                        ]
-
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        f'8
-                                        [
-
-                                        \revert Staff.Stem.stemlet-length
-                                        f'8
-                                        ]
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 13]
                                         e'8.
                                         - \baca-full-upbow
                                         \pp
@@ -11360,34 +9122,33 @@
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        e'16
+                                        e'8
                                         - \baca-stop-on-string-full-upbow
-                                        ~
+                                          %! abjad.glissando(7)
+                                        \glissando
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 14]
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        e'16
+                                        d''16
+                                        - \baca-stop-on-string-full-downbow
                                         [
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        d''16
-                                        - \baca-stop-on-string-full-downbow
-                                        ]
-                                          %! abjad.glissando(7)
-                                        \glissando
-
-                                        r8.
+                                        r8
                                         \f
+                                        ]
 
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [violin 2 voice measure 13]
                                         \override Staff.Stem.stemlet-length = 0.75
+                                        r16
+                                        [
+
                                         f'16
                                         - \baca-full-upbow
                                         \sfp
-                                        [
                                         - \tweak stencil #constante-hairpin
                                         \<
                                           %! abjad.glissando(7)
@@ -11400,20 +9161,30 @@
                                           %! abjad.glissando(7)
                                         \glissando
 
+                                        \override Staff.Stem.stemlet-length = 0.75
                                         f'8
                                         - \baca-full-upbow
+                                        [
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        g'8.
+                                        \revert Staff.Stem.stemlet-length
+                                        g'8
                                         - \baca-full-downbow
+                                        ]
+                                        ~
+
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [violin 2 voice measure 14]
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        g'16
+                                        [
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        \override Staff.Stem.stemlet-length = 0.75
                                         r16
                                         \!
-                                        [
 
                                         \revert Staff.Stem.stemlet-length
                                         e'8
@@ -11424,9 +9195,6 @@
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 15]
                                         e''8.
                                         - \baca-stop-on-string-full-downbow
                                           %! abjad.glissando(7)
@@ -11442,19 +9210,28 @@
                                           %! abjad.glissando(7)
                                         \glissando
 
+                                        \override Staff.Stem.stemlet-length = 0.75
                                         f'16
                                         - \baca-full-upbow
+                                        [
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        r8.
+                                        \revert Staff.Stem.stemlet-length
+                                        r8
                                         \p
+                                        ]
 
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [violin 2 voice measure 15]
                                         \override Staff.Stem.stemlet-length = 0.75
+                                        r16
+                                        [
+
                                         e'16
                                         - \baca-full-downbow
                                         \mp
-                                        [
                                         \<
                                           %! abjad.glissando(7)
                                         \glissando
@@ -11466,9 +9243,6 @@
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 16]
                                         g'8
                                         - \baca-stop-on-string-full-downbow
                                           %! abjad.glissando(7)
@@ -11509,7 +9283,7 @@
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 17]
+                                        % [violin 2 voice measure 16]
                                         d''8.
                                           %! abjad.glissando(7)
                                         \glissando
@@ -11546,7 +9320,7 @@
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 18]
+                                        % [violin 2 voice measure 17]
                                         e'8
                                         - \baca-full-upbow
                                           %! abjad.glissando(7)
@@ -11571,33 +9345,33 @@
                                           %! abjad.glissando(7)
                                         \glissando
 
+                                        \override Staff.Stem.stemlet-length = 0.75
                                         f'8.
                                         - \baca-full-upbow
-                                          %! abjad.glissando(7)
-                                        \glissando
-
-                                        e'4
-                                        - \baca-full-downbow
-                                          %! abjad.glissando(7)
-                                        \glissando
-
-                                        f'16
-                                        - \baca-full-upbow
-                                        ~
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 19]
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        f'16
                                         [
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        g'16
+                                        e'16
                                         - \baca-full-downbow
                                         ]
+                                        ~
+
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [violin 2 voice measure 18]
+                                        e'8.
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        f'8
+                                        - \baca-full-upbow
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        g'16
+                                        - \baca-full-downbow
                                           %! abjad.glissando(7)
                                         \glissando
 
@@ -11620,20 +9394,30 @@
                                           %! abjad.glissando(7)
                                         \glissando
 
+                                        \override Staff.Stem.stemlet-length = 0.75
                                         d''8
                                         - \baca-full-downbow
+                                        [
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        f'8.
+                                        \revert Staff.Stem.stemlet-length
+                                        f'8
                                         - \baca-full-upbow
+                                        ]
+                                        ~
+
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [violin 2 voice measure 19]
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        f'16
+                                        [
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        \override Staff.Stem.stemlet-length = 0.75
                                         e'16
                                         - \baca-full-downbow
-                                        [
                                           %! abjad.glissando(7)
                                         \glissando
 
@@ -11644,9 +9428,6 @@
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 20]
                                         g'8.
                                         - \baca-stop-on-string-full-downbow
                                           %! abjad.glissando(7)
@@ -11662,20 +9443,30 @@
                                           %! abjad.glissando(7)
                                         \glissando
 
+                                        \override Staff.Stem.stemlet-length = 0.75
                                         e'16
                                         - \baca-full-upbow
+                                        [
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        d''8.
+                                        \revert Staff.Stem.stemlet-length
+                                        d''8
                                         - \baca-full-downbow
+                                        ]
+                                        ~
+
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [violin 2 voice measure 20]
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        d''16
+                                        [
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        \override Staff.Stem.stemlet-length = 0.75
                                         f'16
                                         - \baca-stop-on-string-full-upbow
-                                        [
                                           %! abjad.glissando(7)
                                         \glissando
 
@@ -11686,9 +9477,6 @@
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 21]
                                         f'8
                                         - \baca-full-upbow
                                           %! abjad.glissando(7)
@@ -11713,33 +9501,33 @@
                                           %! abjad.glissando(7)
                                         \glissando
 
+                                        \override Staff.Stem.stemlet-length = 0.75
                                         e'8.
                                         - \baca-stop-on-string-full-upbow
-                                          %! abjad.glissando(7)
-                                        \glissando
-
-                                        d''4
-                                        - \baca-stop-on-string-full-downbow
-                                          %! abjad.glissando(7)
-                                        \glissando
-
-                                        f'16
-                                        - \baca-full-upbow
-                                        ~
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 22]
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        f'16
                                         [
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
+                                        d''16
+                                        - \baca-stop-on-string-full-downbow
+                                        ]
+                                        ~
+
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [violin 2 voice measure 21]
+                                        d''8.
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        f'8
+                                        - \baca-full-upbow
+                                          %! abjad.glissando(7)
+                                        \glissando
+
                                         e'16
                                         - \baca-full-downbow
-                                        ]
                                           %! abjad.glissando(7)
                                         \glissando
 
@@ -11777,7 +9565,7 @@
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 23]
+                                        % [violin 2 voice measure 22]
                                         \override Staff.Stem.stemlet-length = 0.75
                                         e'16
                                         [
@@ -11806,35 +9594,35 @@
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        g'8
+                                        g'16
                                         - \baca-stop-on-string-full-downbow
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [violin 2 voice measure 23]
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        e'16
-                                        - \baca-full-upbow
+                                        g'16
                                         [
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        e''8
-                                        - \baca-full-downbow
+                                        e'16
+                                        - \baca-full-upbow
                                         ]
-                                        ~
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 24]
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        e''16
-                                        [
                                           %! abjad.glissando(7)
                                         \glissando
 
+                                        e''8.
+                                        - \baca-full-downbow
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        \override Staff.Stem.stemlet-length = 0.75
                                         e'16
                                         - \baca-full-upbow
+                                        [
                                           %! abjad.glissando(7)
                                         \glissando
 
@@ -11869,22 +9657,16 @@
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        \override Staff.Stem.stemlet-length = 0.75
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [violin 2 voice measure 24]
                                         e'8.
                                         - \baca-full-upbow
-                                        [
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        \revert Staff.Stem.stemlet-length
-                                        r16
+                                        r4
                                         \!
-                                        ]
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 25]
-                                        r8.
 
                                         e''8
                                         - \baca-full-downbow
@@ -11893,30 +9675,20 @@
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        \override Staff.Stem.stemlet-length = 0.75
                                         e'16
                                         - \baca-stop-on-string-full-upbow
-                                        [
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        \revert Staff.Stem.stemlet-length
-                                        d''8
+                                        d''8.
                                         - \baca-stop-on-string-full-downbow
-                                        ]
-                                        ~
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 26]
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        d''16
-                                        [
                                           %! abjad.glissando(7)
                                         \glissando
 
+                                        \override Staff.Stem.stemlet-length = 0.75
                                         f'16
                                         - \baca-full-upbow
+                                        [
                                           %! abjad.glissando(7)
                                         \glissando
 
@@ -11925,6 +9697,9 @@
                                         \f
                                         ]
 
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [violin 2 voice measure 25]
                                         e'8
                                         - \baca-full-downbow
                                         \mp
@@ -11951,22 +9726,16 @@
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        \override Staff.Stem.stemlet-length = 0.75
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [violin 2 voice measure 26]
                                         e''8.
                                         - \baca-stop-on-string-full-downbow
-                                        [
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        \revert Staff.Stem.stemlet-length
-                                        r16
+                                        r4
                                         \f
-                                        ]
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 27]
-                                        r8.
 
                                         e'8
                                         - \baca-full-upbow
@@ -12002,7 +9771,7 @@
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 28]
+                                        % [violin 2 voice measure 27]
                                         f'8
                                         - \baca-stop-on-string-full-upbow
                                           %! abjad.glissando(7)
@@ -12027,33 +9796,32 @@
                                           %! abjad.glissando(7)
                                         \glissando
 
+                                        \override Staff.Stem.stemlet-length = 0.75
                                         e'8.
                                         - \baca-full-upbow
-                                          %! abjad.glissando(7)
-                                        \glissando
-
-                                        r4
-                                        \ppp
-
-                                        d''16
-                                        - \baca-full-downbow
-                                        \f
-                                        \>
-                                        ~
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 29]
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        d''16
                                         [
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
+                                        r16
+                                        \ppp
+                                        ]
+
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [violin 2 voice measure 28]
+                                        r8.
+
+                                        d''8
+                                        - \baca-full-downbow
+                                        \f
+                                        \>
+                                          %! abjad.glissando(7)
+                                        \glissando
+
                                         f'16
                                         - \baca-stop-on-string-full-upbow
-                                        ]
                                           %! abjad.glissando(7)
                                         \glissando
 
@@ -12091,7 +9859,7 @@
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 30]
+                                        % [violin 2 voice measure 29]
                                         \override Staff.Stem.stemlet-length = 0.75
                                         e''16
                                         [
@@ -12110,33 +9878,33 @@
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        \override Staff.Stem.stemlet-length = 0.75
                                         f'8.
                                         - \baca-full-upbow
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        e'4
+                                        - \baca-full-downbow
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        f'16
+                                        - \baca-full-upbow
+                                        ~
+
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [violin 2 voice measure 30]
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        f'16
                                         [
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
-                                        e'16
-                                        - \baca-full-downbow
-                                        ]
-                                        ~
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 31]
-                                        e'8.
-                                          %! abjad.glissando(7)
-                                        \glissando
-
-                                        f'8
-                                        - \baca-full-upbow
-                                          %! abjad.glissando(7)
-                                        \glissando
-
                                         g'16
                                         - \baca-full-downbow
+                                        ]
                                           %! abjad.glissando(7)
                                         \glissando
 
@@ -12159,30 +9927,23 @@
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        d''8
-                                        - \baca-full-downbow
-                                        [
-                                          %! abjad.glissando(7)
-                                        \glissando
-
-                                        \revert Staff.Stem.stemlet-length
-                                        f'8
-                                        - \baca-full-upbow
-                                        ]
-                                        ~
-
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 32]
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        f'16
-                                        [
+                                        % [violin 2 voice measure 31]
+                                        d''8
+                                        - \baca-full-downbow
                                           %! abjad.glissando(7)
                                         \glissando
 
+                                        f'8.
+                                        - \baca-full-upbow
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        \override Staff.Stem.stemlet-length = 0.75
                                         e'16
                                         - \baca-full-downbow
+                                        [
                                           %! abjad.glissando(7)
                                         \glissando
 
@@ -12209,7 +9970,7 @@
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [violin 2 voice measure 33]
+                                        % [violin 2 voice measure 32]
                                         \override Staff.Stem.stemlet-length = 0.75
                                         e''16
                                         [
@@ -12242,26 +10003,65 @@
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        f'8
-                                        - \baca-full-upbow
-                                          %! abjad.glissando(7)
-                                        \glissando
-
-                                        g'8.
-                                        - \baca-full-downbow
-                                          %! abjad.glissando(7)
-                                        \glissando
-
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        e'16
+                                        f'8
                                         - \baca-full-upbow
                                         [
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
+                                        g'8
+                                        - \baca-full-downbow
+                                        ]
+                                        ~
+
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [violin 2 voice measure 33]
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        g'16
+                                        [
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        e'16
+                                        - \baca-full-upbow
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        \revert Staff.Stem.stemlet-length
                                         e''8
                                         - \baca-full-downbow
+                                        ]
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        e'8.
+                                        - \baca-stop-on-string-full-upbow
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        d''4
+                                        - \baca-stop-on-string-full-downbow
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        f'8
+                                        - \baca-full-upbow
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        e'16
+                                        - \baca-full-downbow
+                                        [
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        \revert Staff.Stem.stemlet-length
+                                        f'8
+                                        - \baca-full-upbow
                                         ]
                                         \bar "||"
 
@@ -12624,68 +10424,6 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [viola voice measure 11]
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        b8
-                                        [
-
-                                        \revert Staff.Stem.stemlet-length
-                                        b8
-                                        ]
-
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        b8
-                                        [
-
-                                        \revert Staff.Stem.stemlet-length
-                                        b8
-                                        ]
-
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        b8
-                                        [
-
-                                        \revert Staff.Stem.stemlet-length
-                                        b8
-                                        ]
-
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        b8
-                                        [
-
-                                        \revert Staff.Stem.stemlet-length
-                                        b8
-                                        ]
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [viola voice measure 12]
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        b8
-                                        [
-
-                                        \revert Staff.Stem.stemlet-length
-                                        b8
-                                        ]
-
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        b8
-                                        [
-
-                                        \revert Staff.Stem.stemlet-length
-                                        b8
-                                        ]
-
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        b8
-                                        [
-
-                                        \revert Staff.Stem.stemlet-length
-                                        b8
-                                        ]
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [viola voice measure 13]
                                         c'4.
                                         - \baca-full-downbow
                                         \sfp
@@ -12695,45 +10433,42 @@
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        b8
+                                        b2
                                         - \baca-full-upbow
-                                        ~
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [viola voice measure 14]
-                                        b4.
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        a4
+                                        a8
                                         - \baca-full-downbow
-                                          %! abjad.glissando(7)
-                                        \glissando
-
-                                        b8
-                                        - \baca-stop-on-string-full-upbow
-                                          %! abjad.glissando(7)
-                                        \glissando
-
-                                        g'4
-                                        - \baca-stop-on-string-full-downbow
                                         ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [viola voice measure 15]
+                                        % [viola voice measure 12]
                                         \override Staff.Stem.stemlet-length = 0.75
-                                        g'8
+                                        a8
                                         [
                                           %! abjad.glissando(7)
                                         \glissando
 
                                         \revert Staff.Stem.stemlet-length
+                                        b8
+                                        - \baca-stop-on-string-full-upbow
+                                        ]
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        g'4.
+                                        - \baca-stop-on-string-full-downbow
+                                          %! abjad.glissando(7)
+                                        \glissando
+
                                         r8
                                         \!
-                                        ]
 
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [viola voice measure 13]
                                         a2
                                         - \baca-full-upbow
                                         \mp
@@ -12741,14 +10476,14 @@
                                           %! abjad.glissando(7)
                                         \glissando
 
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [viola voice measure 14]
                                         f4
                                         - \baca-full-downbow
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [viola voice measure 16]
                                         a4
                                         - \baca-full-upbow
                                           %! abjad.glissando(7)
@@ -12766,7 +10501,7 @@
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [viola voice measure 17]
+                                        % [viola voice measure 15]
                                         r4
                                         \p
 
@@ -12777,14 +10512,14 @@
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        b8
+                                        b4.
                                         - \baca-full-upbow
                                         ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [viola voice measure 18]
-                                        b4.
+                                        % [viola voice measure 16]
+                                        b8
                                           %! abjad.glissando(7)
                                         \glissando
 
@@ -12805,7 +10540,7 @@
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [viola voice measure 19]
+                                        % [viola voice measure 17]
                                         \override Staff.Stem.stemlet-length = 0.75
                                         a8
                                         [
@@ -12824,14 +10559,14 @@
                                           %! abjad.glissando(7)
                                         \glissando
 
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [viola voice measure 18]
                                         c'4
                                         - \baca-stop-on-string-full-downbow
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [viola voice measure 20]
                                         b4
                                         - \baca-full-upbow
                                           %! abjad.glissando(7)
@@ -12845,6 +10580,9 @@
                                         r8
                                         \p
 
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [viola voice measure 19]
                                         b4
                                         - \baca-full-upbow
                                         \ff
@@ -12853,166 +10591,6 @@
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [viola voice measure 21]
-                                        g'4.
-                                        - \baca-full-downbow
-                                          %! abjad.glissando(7)
-                                        \glissando
-
-                                        a2
-                                        - \baca-stop-on-string-full-upbow
-                                          %! abjad.glissando(7)
-                                        \glissando
-
-                                        f8
-                                        - \baca-stop-on-string-full-downbow
-                                        ~
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [viola voice measure 22]
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        f8
-                                        [
-                                          %! abjad.glissando(7)
-                                        \glissando
-
-                                        \revert Staff.Stem.stemlet-length
-                                        a8
-                                        - \baca-full-upbow
-                                        ]
-                                          %! abjad.glissando(7)
-                                        \glissando
-
-                                        c'4.
-                                        - \baca-full-downbow
-                                          %! abjad.glissando(7)
-                                        \glissando
-
-                                        b8
-                                        - \baca-full-upbow
-                                          %! abjad.glissando(7)
-                                        \glissando
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [viola voice measure 23]
-                                        a2
-                                        - \baca-full-downbow
-                                          %! abjad.glissando(7)
-                                        \glissando
-
-                                        b4
-                                        - \baca-stop-on-string-full-upbow
-                                          %! abjad.glissando(7)
-                                        \glissando
-
-                                        g'4
-                                        - \baca-stop-on-string-full-downbow
-                                          %! abjad.glissando(7)
-                                        \glissando
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [viola voice measure 24]
-                                        a4.
-                                        - \baca-full-upbow
-                                          %! abjad.glissando(7)
-                                        \glissando
-
-                                        f8
-                                        - \baca-full-downbow
-                                          %! abjad.glissando(7)
-                                        \glissando
-
-                                        a4
-                                        - \baca-full-upbow
-                                          %! abjad.glissando(7)
-                                        \glissando
-
-                                        c'4
-                                        - \baca-full-downbow
-                                        ~
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [viola voice measure 25]
-                                        c'8
-                                          %! abjad.glissando(7)
-                                        \glissando
-
-                                        b4.
-                                        - \baca-stop-on-string-full-upbow
-                                        ~
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [viola voice measure 26]
-                                        b8
-                                          %! abjad.glissando(7)
-                                        \glissando
-
-                                        a4
-                                        - \baca-stop-on-string-full-downbow
-                                          %! abjad.glissando(7)
-                                        \glissando
-
-                                        b8
-                                        - \baca-full-upbow
-                                          %! abjad.glissando(7)
-                                        \glissando
-
-                                        g'4.
-                                        - \baca-full-downbow
-                                          %! abjad.glissando(7)
-                                        \glissando
-
-                                        a8
-                                        - \baca-full-upbow
-                                          %! abjad.glissando(7)
-                                        \glissando
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [viola voice measure 27]
-                                        f2
-                                        - \baca-full-downbow
-                                          %! abjad.glissando(7)
-                                        \glissando
-
-                                        a4
-                                        - \baca-stop-on-string-full-upbow
-                                          %! abjad.glissando(7)
-                                        \glissando
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [viola voice measure 28]
-                                        c'4
-                                        - \baca-stop-on-string-full-downbow
-                                          %! abjad.glissando(7)
-                                        \glissando
-
-                                        b4.
-                                        - \baca-full-upbow
-                                          %! abjad.glissando(7)
-                                        \glissando
-
-                                        a8
-                                        - \baca-full-downbow
-                                          %! abjad.glissando(7)
-                                        \glissando
-
-                                        b4
-                                        - \baca-full-upbow
-                                          %! abjad.glissando(7)
-                                        \glissando
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [viola voice measure 29]
                                         g'4.
                                         - \baca-full-downbow
                                           %! abjad.glissando(7)
@@ -13024,7 +10602,7 @@
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [viola voice measure 30]
+                                        % [viola voice measure 20]
                                         a8
                                           %! abjad.glissando(7)
                                         \glissando
@@ -13039,9 +10617,6 @@
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [viola voice measure 31]
                                         c'4.
                                         - \baca-full-downbow
                                           %! abjad.glissando(7)
@@ -13052,19 +10627,179 @@
                                           %! abjad.glissando(7)
                                         \glissando
 
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [viola voice measure 21]
                                         a2
                                         - \baca-full-downbow
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [viola voice measure 32]
                                         b4
                                         - \baca-stop-on-string-full-upbow
                                           %! abjad.glissando(7)
                                         \glissando
 
+                                        g'4
+                                        - \baca-stop-on-string-full-downbow
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [viola voice measure 22]
+                                        a4.
+                                        - \baca-full-upbow
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        f8
+                                        - \baca-full-downbow
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        a4
+                                        - \baca-full-upbow
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [viola voice measure 23]
+                                        c'4.
+                                        - \baca-full-downbow
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        b2
+                                        - \baca-stop-on-string-full-upbow
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        a8
+                                        - \baca-stop-on-string-full-downbow
+                                        ~
+
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [viola voice measure 24]
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        a8
+                                        [
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        \revert Staff.Stem.stemlet-length
+                                        b8
+                                        - \baca-full-upbow
+                                        ]
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        g'4.
+                                        - \baca-full-downbow
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        a8
+                                        - \baca-full-upbow
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        f4
+                                        - \baca-full-downbow
+                                        ~
+
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [viola voice measure 25]
+                                        f4
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        a4
+                                        - \baca-stop-on-string-full-upbow
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [viola voice measure 26]
+                                        c'4
+                                        - \baca-stop-on-string-full-downbow
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        b4.
+                                        - \baca-full-upbow
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        a8
+                                        - \baca-full-downbow
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        b4
+                                        - \baca-full-upbow
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [viola voice measure 27]
+                                        g'4.
+                                        - \baca-full-downbow
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        a4.
+                                        - \baca-stop-on-string-full-upbow
+                                        ~
+
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [viola voice measure 28]
+                                        a8
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        f4
+                                        - \baca-stop-on-string-full-downbow
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        a8
+                                        - \baca-full-upbow
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        c'4.
+                                        - \baca-full-downbow
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        b8
+                                        - \baca-full-upbow
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [viola voice measure 29]
+                                        a2
+                                        - \baca-full-downbow
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        b4
+                                        - \baca-stop-on-string-full-upbow
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [viola voice measure 30]
                                         g'4
                                         - \baca-stop-on-string-full-downbow
                                           %! abjad.glissando(7)
@@ -13076,7 +10811,7 @@
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [viola voice measure 33]
+                                        % [viola voice measure 31]
                                         \override Staff.Stem.stemlet-length = 0.75
                                         a8
                                         [
@@ -13102,6 +10837,40 @@
 
                                         c'8
                                         - \baca-full-downbow
+                                        ~
+
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [viola voice measure 32]
+                                        c'4.
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        b4
+                                        - \baca-stop-on-string-full-upbow
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        a8
+                                        - \baca-stop-on-string-full-downbow
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [viola voice measure 33]
+                                        b4.
+                                        - \baca-full-upbow
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        r8
+                                        \f
+
+                                        g'2
+                                        - \baca-full-downbow
+                                        \mp
+                                        \<
                                         \bar "||"
 
                                     }
@@ -13436,95 +11205,6 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [cello voice measure 10]
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        f8
-                                        [
-
-                                        \revert Staff.Stem.stemlet-length
-                                        f8
-                                        ]
-
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        f8
-                                        [
-
-                                        \revert Staff.Stem.stemlet-length
-                                        f8
-                                        ]
-
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        f8
-                                        [
-
-                                        \revert Staff.Stem.stemlet-length
-                                        f8
-                                        ]
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [cello voice measure 11]
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        f8
-                                        [
-
-                                        \revert Staff.Stem.stemlet-length
-                                        f8
-                                        ]
-
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        f8
-                                        [
-
-                                        \revert Staff.Stem.stemlet-length
-                                        f8
-                                        ]
-
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        f8
-                                        [
-
-                                        \revert Staff.Stem.stemlet-length
-                                        f8
-                                        ]
-
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        f8
-                                        [
-
-                                        \revert Staff.Stem.stemlet-length
-                                        f8
-                                        ]
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [cello voice measure 12]
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        f8
-                                        [
-
-                                        \revert Staff.Stem.stemlet-length
-                                        f8
-                                        ]
-
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        f8
-                                        [
-
-                                        \revert Staff.Stem.stemlet-length
-                                        f8
-                                        ]
-
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        f8
-                                        [
-
-                                        \revert Staff.Stem.stemlet-length
-                                        f8
-                                        ]
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [cello voice measure 13]
                                         c4.
                                         - \baca-full-upbow
                                         \mp
@@ -13533,14 +11213,14 @@
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        a,8
+                                        a,4.
                                         - \baca-full-downbow
                                         ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [cello voice measure 14]
-                                        a,4.
+                                        % [cello voice measure 11]
+                                        a,8
                                           %! abjad.glissando(7)
                                         \glissando
 
@@ -13554,26 +11234,19 @@
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        b,4
+                                        b,4.
                                         - \baca-stop-on-string-full-upbow
-                                        ~
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        a8
+                                        - \baca-stop-on-string-full-downbow
+                                          %! abjad.glissando(7)
+                                        \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [cello voice measure 15]
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        b,8
-                                        [
-                                          %! abjad.glissando(7)
-                                        \glissando
-
-                                        \revert Staff.Stem.stemlet-length
-                                        a8
-                                        - \baca-stop-on-string-full-downbow
-                                        ]
-                                          %! abjad.glissando(7)
-                                        \glissando
-
+                                        % [cello voice measure 12]
                                         r2
                                         \p
 
@@ -13585,24 +11258,24 @@
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [cello voice measure 16]
+                                        % [cello voice measure 13]
                                         d4.
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        a4
+                                        a8
                                         - \baca-full-downbow
-                                          %! abjad.glissando(7)
-                                        \glissando
-
-                                        c8
-                                        - \baca-full-upbow
                                         ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [cello voice measure 17]
-                                        c8
+                                        % [cello voice measure 14]
+                                        a8
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        c4
+                                        - \baca-full-upbow
                                           %! abjad.glissando(7)
                                         \glissando
 
@@ -13627,7 +11300,7 @@
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [cello voice measure 18]
+                                        % [cello voice measure 15]
                                         a8
                                           %! abjad.glissando(7)
                                         \glissando
@@ -13644,7 +11317,7 @@
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [cello voice measure 19]
+                                        % [cello voice measure 16]
                                         a4
                                         - \baca-full-downbow
                                           %! abjad.glissando(7)
@@ -13658,40 +11331,33 @@
                                         r4.
                                         \p
 
-                                        \override Staff.Stem.stemlet-length = 0.75
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [cello voice measure 17]
                                         a8
                                         - \baca-full-downbow
                                         \ff
-                                        [
                                         - \tweak stencil #constante-hairpin
                                         \<
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        \revert Staff.Stem.stemlet-length
-                                        c8
+                                        c2
                                         - \baca-stop-on-string-full-upbow
-                                        ]
-                                        ~
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [cello voice measure 20]
-                                        c4.
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        a,2
+                                        a,8
                                         - \baca-stop-on-string-full-downbow
                                         ~
 
-                                        a,8
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [cello voice measure 18]
+                                        a,2
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [cello voice measure 21]
                                         a4
                                         - \baca-full-upbow
                                           %! abjad.glissando(7)
@@ -13702,6 +11368,9 @@
                                           %! abjad.glissando(7)
                                         \glissando
 
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [cello voice measure 19]
                                         b,4.
                                         - \baca-full-upbow
                                           %! abjad.glissando(7)
@@ -13712,27 +11381,24 @@
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [cello voice measure 22]
                                         d4
                                         - \baca-stop-on-string-full-upbow
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        a4.
+                                        a4
                                         - \baca-stop-on-string-full-downbow
-                                          %! abjad.glissando(7)
-                                        \glissando
-
-                                        c8
-                                        - \baca-full-upbow
                                         ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [cello voice measure 23]
-                                        c4.
+                                        % [cello voice measure 20]
+                                        a8
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        c2
+                                        - \baca-full-upbow
                                           %! abjad.glissando(7)
                                         \glissando
 
@@ -13746,23 +11412,16 @@
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        a,4
-                                        - \baca-full-downbow
-                                        ~
-
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [cello voice measure 24]
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        a,8
-                                        [
+                                        % [cello voice measure 21]
+                                        a,4.
+                                        - \baca-full-downbow
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        \revert Staff.Stem.stemlet-length
                                         b,8
                                         - \baca-stop-on-string-full-upbow
-                                        ]
                                           %! abjad.glissando(7)
                                         \glissando
 
@@ -13771,24 +11430,28 @@
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        d4
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [cello voice measure 22]
+                                        d2
                                         - \baca-full-upbow
                                         ~
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [cello voice measure 25]
-                                        d4.
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        d8
+                                        [
                                           %! abjad.glissando(7)
                                         \glissando
 
+                                        \revert Staff.Stem.stemlet-length
                                         a8
                                         - \baca-full-downbow
+                                        ]
                                         ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [cello voice measure 26]
+                                        % [cello voice measure 23]
                                         a8
                                           %! abjad.glissando(7)
                                         \glissando
@@ -13818,7 +11481,7 @@
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [cello voice measure 27]
+                                        % [cello voice measure 24]
                                         a,8
                                           %! abjad.glissando(7)
                                         \glissando
@@ -13828,14 +11491,12 @@
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        r4
+                                        r2
                                         \!
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [cello voice measure 28]
-                                        r4
-
+                                        % [cello voice measure 25]
                                         a4
                                         - \baca-full-downbow
                                         \mf
@@ -13843,19 +11504,26 @@
                                           %! abjad.glissando(7)
                                         \glissando
 
+                                        \override Staff.Stem.stemlet-length = 0.75
                                         d8
                                         - \baca-full-upbow
+                                        [
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        a4.
+                                        \revert Staff.Stem.stemlet-length
+                                        a8
                                         - \baca-full-downbow
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ]
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [cello voice measure 29]
+                                        % [cello voice measure 26]
+                                        a4
+                                          %! abjad.glissando(7)
+                                        \glissando
+
                                         r8
                                         \f
 
@@ -13872,19 +11540,19 @@
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [cello voice measure 30]
+                                        % [cello voice measure 27]
                                         a,2
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [cello voice measure 31]
                                         a4
                                         - \baca-full-upbow
                                           %! abjad.glissando(7)
                                         \glissando
 
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [cello voice measure 28]
                                         a,4
                                         - \baca-full-downbow
                                           %! abjad.glissando(7)
@@ -13900,12 +11568,12 @@
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [cello voice measure 32]
                                         r4
                                         \f
 
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [cello voice measure 29]
                                         d4.
                                         - \baca-stop-on-string-full-upbow
                                         \p
@@ -13914,14 +11582,14 @@
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        a8
+                                        a4.
                                         - \baca-stop-on-string-full-downbow
                                         ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [cello voice measure 33]
-                                        a4.
+                                        % [cello voice measure 30]
+                                        a8
                                           %! abjad.glissando(7)
                                         \glissando
 
@@ -13935,8 +11603,71 @@
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        a4
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [cello voice measure 31]
+                                        a4.
                                         - \baca-full-upbow
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        a,8
+                                        - \baca-full-downbow
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        b,2
+                                        - \baca-stop-on-string-full-upbow
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [cello voice measure 32]
+                                        a2
+                                        - \baca-stop-on-string-full-downbow
+                                        ~
+
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        a8
+                                        [
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        \revert Staff.Stem.stemlet-length
+                                        d8
+                                        - \baca-full-upbow
+                                        ]
+                                        ~
+
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [cello voice measure 33]
+                                        d8
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        a4
+                                        - \baca-full-downbow
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        c4.
+                                        - \baca-full-upbow
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        \override Staff.Stem.stemlet-length = 0.75
+                                        a,8
+                                        - \baca-full-downbow
+                                        [
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        \revert Staff.Stem.stemlet-length
+                                        a8
+                                        - \baca-stop-on-string-full-upbow
+                                        ]
                                         \bar "||"
 
                                     }
@@ -14236,155 +11967,28 @@
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
                                         % [contrabass voice measure 9]
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        bf8
-                                        [
-
-                                        \revert Staff.Stem.stemlet-length
-                                        bf8
-                                        ]
-
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        bf8
-                                        [
-
-                                        \revert Staff.Stem.stemlet-length
-                                        bf8
-                                        ]
-
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        bf8
-                                        [
-
-                                        \revert Staff.Stem.stemlet-length
-                                        bf8
-                                        ]
-
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        bf8
-                                        [
-
-                                        \revert Staff.Stem.stemlet-length
-                                        bf8
-                                        ]
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [contrabass voice measure 10]
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        bf8
-                                        [
-
-                                        \revert Staff.Stem.stemlet-length
-                                        bf8
-                                        ]
-
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        bf8
-                                        [
-
-                                        \revert Staff.Stem.stemlet-length
-                                        bf8
-                                        ]
-
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        bf8
-                                        [
-
-                                        \revert Staff.Stem.stemlet-length
-                                        bf8
-                                        ]
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [contrabass voice measure 11]
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        bf8
-                                        [
-
-                                        \revert Staff.Stem.stemlet-length
-                                        bf8
-                                        ]
-
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        bf8
-                                        [
-
-                                        \revert Staff.Stem.stemlet-length
-                                        bf8
-                                        ]
-
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        bf8
-                                        [
-
-                                        \revert Staff.Stem.stemlet-length
-                                        bf8
-                                        ]
-
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        bf8
-                                        [
-
-                                        \revert Staff.Stem.stemlet-length
-                                        bf8
-                                        ]
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [contrabass voice measure 12]
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        bf8
-                                        [
-
-                                        \revert Staff.Stem.stemlet-length
-                                        bf8
-                                        ]
-
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        bf8
-                                        [
-
-                                        \revert Staff.Stem.stemlet-length
-                                        bf8
-                                        ]
-
-                                        \override Staff.Stem.stemlet-length = 0.75
-                                        bf8
-                                        [
-
-                                        \revert Staff.Stem.stemlet-length
-                                        bf8
-                                        ]
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [contrabass voice measure 13]
-                                        g,2
+                                        g,2.
                                         - \baca-stop-on-string-full-downbow
                                         \mp
                                         ^ \markup "arco"
                                         \<
-                                        ~
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [contrabass voice measure 14]
-                                        g,4
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        f2.
+                                        f4
                                         - \baca-full-upbow
                                         ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [contrabass voice measure 15]
-                                        f4
+                                        % [contrabass voice measure 10]
+                                        f2.
                                           %! abjad.glissando(7)
                                         \glissando
 
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [contrabass voice measure 11]
                                         c2
                                         - \baca-full-downbow
                                           %! abjad.glissando(7)
@@ -14395,33 +11999,30 @@
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [contrabass voice measure 16]
-                                          %! applying invisibility
-                                        \once \override Rest.transparent = ##t
-                                        r1 * 3/8
-                                          %! applying indicators
+                                        r4
                                         \mf
 
-                                        R1 * 3/8
-
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [contrabass voice measure 17]
+                                        % [contrabass voice measure 12]
+                                        r2
+
                                         c4
                                         - \baca-full-downbow
                                         \fff
                                         - \tweak stencil #abjad-flared-hairpin
                                         \>
 
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [contrabass voice measure 13]
                                         c2
                                         - \baca-stop-on-string-full-upbow
                                         ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [contrabass voice measure 18]
+                                        % [contrabass voice measure 14]
                                         c2
                                           %! abjad.glissando(7)
                                         \glissando
@@ -14432,7 +12033,7 @@
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [contrabass voice measure 19]
+                                        % [contrabass voice measure 15]
                                         f2.
                                           %! abjad.glissando(7)
                                         \glissando
@@ -14443,31 +12044,32 @@
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [contrabass voice measure 20]
+                                        % [contrabass voice measure 16]
                                         c2
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        g,2
+                                        g,4
                                         - \baca-full-downbow
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [contrabass voice measure 21]
+                                        % [contrabass voice measure 17]
+                                        g,4
+                                          %! abjad.glissando(7)
+                                        \glissando
+
                                         f2
                                         - \baca-full-upbow
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        r2
-                                        \p
-
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [contrabass voice measure 22]
-                                        r4
+                                        % [contrabass voice measure 18]
+                                        r2.
+                                        \p
 
                                         c4
                                         - \baca-full-downbow
@@ -14477,44 +12079,47 @@
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        f4
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [contrabass voice measure 19]
+                                        f2
                                         - \baca-stop-on-string-full-upbow
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        c2
+                                        - \baca-stop-on-string-full-downbow
                                         ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [contrabass voice measure 23]
-                                        f4
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        % [contrabass voice measure 20]
+                                        c4
 
                                         c2.
-                                        - \baca-stop-on-string-full-downbow
+                                        - \baca-full-upbow
+                                        ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [contrabass voice measure 24]
-                                        c1
-                                        - \baca-full-upbow
+                                        % [contrabass voice measure 21]
+                                        c4
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [contrabass voice measure 25]
                                         f2
                                         - \baca-full-downbow
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [contrabass voice measure 26]
                                         c4
                                         - \baca-full-upbow
                                           %! abjad.glissando(7)
                                         \glissando
 
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [contrabass voice measure 22]
                                         g,2.
                                         - \baca-full-downbow
                                           %! abjad.glissando(7)
@@ -14522,21 +12127,21 @@
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [contrabass voice measure 27]
+                                        % [contrabass voice measure 23]
                                         f4
                                         - \baca-stop-on-string-full-upbow
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        r2
+                                        r2.
                                         \!
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [contrabass voice measure 28]
-                                        r2
+                                        % [contrabass voice measure 24]
+                                        r4
 
-                                        c2
+                                        c2.
                                         - \baca-stop-on-string-full-downbow
                                         \mf
                                         \<
@@ -14544,47 +12149,38 @@
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [contrabass voice measure 29]
-                                        c2.
+                                        % [contrabass voice measure 25]
+                                        c2
                                           %! abjad.glissando(7)
                                         \glissando
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [contrabass voice measure 30]
-                                        f2
+                                        % [contrabass voice measure 26]
+                                        f2.
                                         - \baca-full-upbow
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        c4
+                                        - \baca-full-downbow
                                         ~
 
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [contrabass voice measure 31]
-                                        f4
-                                          %! abjad.glissando(7)
-                                        \glissando
+                                        % [contrabass voice measure 27]
+                                        c4
 
                                         c2
-                                        - \baca-full-downbow
-
-                                        c4
                                         - \baca-full-upbow
-                                        ~
-
-                                          %! COMMENT_MEASURE_NUMBERS
-                                          %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [contrabass voice measure 32]
-                                        c4
                                           %! abjad.glissando(7)
                                         \glissando
 
-                                        f2
-                                        - \baca-full-downbow
-                                        ~
-
                                           %! COMMENT_MEASURE_NUMBERS
                                           %! evans.SegmentMaker.comment_measure_numbers()
-                                        % [contrabass voice measure 33]
-                                        f4
+                                        % [contrabass voice measure 28]
+                                        f2.
+                                        - \baca-full-downbow
                                           %! abjad.glissando(7)
                                         \glissando
 
@@ -14593,8 +12189,54 @@
                                           %! abjad.glissando(7)
                                         \glissando
 
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [contrabass voice measure 29]
                                         r2
                                         \f
+
+                                        g,4
+                                        - \baca-stop-on-string-full-downbow
+                                        \mp
+                                        \<
+                                        ~
+
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [contrabass voice measure 30]
+                                        g,2
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [contrabass voice measure 31]
+                                        f1
+                                        - \baca-full-upbow
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [contrabass voice measure 32]
+                                        c2
+                                        - \baca-full-downbow
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                        f4
+                                        - \baca-full-upbow
+                                          %! abjad.glissando(7)
+                                        \glissando
+
+                                          %! COMMENT_MEASURE_NUMBERS
+                                          %! evans.SegmentMaker.comment_measure_numbers()
+                                        % [contrabass voice measure 33]
+                                        c2.
+                                        - \baca-full-downbow
+
+                                        c4
+                                        - \baca-stop-on-string-full-upbow
                                         \bar "||"
 
                                     }
